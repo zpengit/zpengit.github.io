@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、创建建数据库、创建建数据表、查看数据库、查看数据表  – 01.查看mysql服务器中所有数据库 show databases;– 02.进入某一数据库（进入数据库后，才能操作库中的表和表记录） use test;– 查看已进入的库 select database();– 03.查看当前数据库中的所有表 show tables;– 04.删除mydb1库 -- 语法：drop databas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sql语句">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/Sql%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:site_name" content="ZpengBlog">
+<meta property="og:description" content="一、创建建数据库、创建建数据表、查看数据库、查看数据表  – 01.查看mysql服务器中所有数据库 show databases;– 02.进入某一数据库（进入数据库后，才能操作库中的表和表记录） use test;– 查看已进入的库 select database();– 03.查看当前数据库中的所有表 show tables;– 04.删除mydb1库 -- 语法：drop databas">
+<meta property="og:locale" content="CN">
+<meta property="article:published_time" content="2020-04-30T15:19:59.365Z">
+<meta property="article:modified_time" content="2020-04-22T09:00:47.564Z">
+<meta property="article:author" content="Zpeng">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/30/Sql语句/"/>
+
+
+
+
+
+  <title>Sql语句 | ZpengBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZpengBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">ôô</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/Sql%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zpeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZpengBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Sql语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:59+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>一、创建建数据库、创建建数据表、查看数据库、查看数据表</p>
+<hr>
+<p>– 01.查看mysql服务器中所有数据库</p>
+<pre><code>show databases;</code></pre><p>– 02.进入某一数据库（进入数据库后，才能操作库中的表和表记录）</p>
+<pre><code>use test;</code></pre><p>– 查看已进入的库</p>
+<pre><code>select database();</code></pre><p>– 03.查看当前数据库中的所有表</p>
+<pre><code>show tables;</code></pre><p>– 04.删除mydb1库</p>
+<pre><code>-- 语法：drop database 库名;
+drop database  mydb1;
+-- 思考：当删除的表不存在时，如何避免错误产生?
+drop database if exists mydb1;</code></pre><p>– 05.重新创建mydb1库，指定编码为utf8</p>
+<pre><code>-- 语法：create database 库名 charset 编码;
+create database mydb1 charset utf8;
+
+-- 如果不存在则创建mydb1;
+create database mydb1 if not exists charset utf8; </code></pre><p>– 06.查看建库时的语句（并验证数据库库使用的编码）</p>
+<pre><code>-- 语法：show create database 库名;
+show create database mydb1;</code></pre><p>– 07.进入mydb1库，删除stu学生表(如果存在)</p>
+<pre><code>-- 语法：drop table 表名;
+use mydb1
+drop table stu;
+drop table if exists stu;</code></pre><p>– 08.创建stu学生表（编号[数值类型]、姓名、性别、出生年月、考试成绩[浮点型]）</p>
+<pre><code>/* 建表的语法：
+create table 表名(
+    列名 数据类型,
+    列名 数据类型,
+    ...
+); */</code></pre><hr>
+<pre><code>create table if not exists stu(
+    id int primary key auto_increment,
+    name varchar(20),
+    genger varchar(10),
+    birthday date,
+    score double
+);</code></pre><p>– 09.查看stu学生表结构</p>
+<pre><code>show create table stu;
+desc stu;</code></pre><hr>
+<p>二、新增、修改、删除表记录 <strong><strong>**</strong></strong></p>
+<hr>
+<p>– 10.往学生表(stu)中插入记录(数据)</p>
+<pre><code>-- 插入记录：insert into 表名(列1，列2，列3...) values(值1，值2，值3...);
+insert into stu(id,name,genger,birthday,score)     values(null,&apos;赵伟成&apos;,&apos;女&apos;,&apos;2018-3-9&apos;,33);
+
+insert into stu values(null,&apos;赵伟成&apos;,&apos;女&apos;,&apos;2018-3-9&apos;,33);
+insert into stu values(null,&apos;张三&apos;,&apos;男&apos;,&apos;2018-3-9&apos;,11);
+insert into stu values(null,&apos;卫程&apos;,&apos;女&apos;,&apos;2022-1-11&apos;,55);
+/* 提示：
+ 设置编码：set names gbk;
+ 查看MySQL数据库使用的编码：show variables like &apos;char%&apos;;
+ mysql --default-character-set=gbk -uroot -proot */</code></pre><p>– 11.查询stu表所有学生的信息</p>
+<pre><code>select * from stu;
+select id,name from stu;</code></pre><p>– 12.修改stu表中所有学生的成绩，加10分特长分</p>
+<pre><code>-- 修改语法: update 表名 set 列=值,列=值,列=值...;
+update stu set score=score+10;</code></pre><p>– 13.修改stu表中王海涛的成绩，将成绩改为88分。\c取消当前语句的执行</p>
+<pre><code>update stu set score=88
+where name = &apos;卫程&apos;;
+
+/* 提示：where子句用于对记录进行筛选过滤，
+   保留符合条件的记录，将不符合条件的记录剔除。*/</code></pre><p>– 14.删除stu表中所有的记录</p>
+<pre><code>-- 删除记录语法: delete from 表名 [where条件] 
+delete from stu;
+
+-- 仅删除符合条件的
+delete from stu where id= 1;</code></pre><hr>
+<p>三、基础查询、where子句查询</p>
+<hr>
+<p>– 准备数据： 以下练习将使用db10库中的表及表记录，请先进入db10数据库!!!<br>– 准备数据： 以下练习将使用db10库中的表及表记录，请先进入db10数据库!!!</p>
+<p>– <strong>****</strong> 基础查询 <strong>****</strong><br>– 15.查询emp表中的所有员工，显示姓名，薪资，奖金</p>
+<pre><code>use db10;
+select name,sal,bonus  
+from emp;</code></pre><p>– 16.查询emp表中的所有员工，显示所有列</p>
+<pre><code>select * from emp;
+/* 使用 *（星号）的缺点：把不必要的列也查询出来了，而且效率不如直接指定列名 */</code></pre><p>– 17.查询emp表中的所有部门和职位</p>
+<pre><code>select dept,job 
+from emp;
+
+/* 思考：如果查询的结果中，存在大量重复的记录，如何剔除重复记录，只保留一条？ */
+
+-- distinct 用于剔除重复的记录
+select distinct dept,job from emp;</code></pre><p>– <strong>****</strong> WHERE子句查询 <strong>****</strong><br>– 18.查询emp表中薪资大于3000的所有员工，显示员工姓名、薪资</p>
+<pre><code>select name,sal from emp
+where sal&gt;3000;</code></pre><p>– 19.查询emp表中总薪资(薪资+奖金)大于3500的所有员工，显示员工姓名、总薪资</p>
+<pre><code>select name,sal+ifnull(bonus,0) from emp
+where sal+ifnull(bonus,0)&gt;3500;
+-- ifnull(列, 值)函数: 判断指定的列是否包含null值, 如果有null值, 用第二个值替换null值</code></pre><p>select name,sal+ifnull(bonus,0) from emp</p>
+<pre><code>where sal+ifnull(bonus,0)&gt;3500;
+-- 注意查看上面查询结果中的表头，如何将表头中的 sal+bonus 修改为 &quot;总薪资&quot;，as可省略</code></pre><p>select name  姓名,sal+ifnull(bonus,0) as 总薪资 from emp</p>
+<pre><code>where sal+ifnull(bonus,0)&gt;3500;
+
+-- 试一试：where中能使用定义好的别名吗?
+不能</code></pre><p>– 20.查询emp表中薪资在3000和4500之间的员工，显示员工姓名和薪资</p>
+<pre><code>select name,sal from emp
+where sal&gt;=3000&amp;&amp;sal&lt;=4500;
+-- 提示: between...and... 在...之间
+select name,sal from emp
+where sal between 3200 and 4500;</code></pre><p>– 21.查询emp表中薪资为 1400、1600、1800的员工，显示员工姓名和薪资<br>select name,sal</p>
+<pre><code>from emp
+where sal=1400 or sal=1600 or sal=1800;
+-- 或者
+select name,sal
+from emp
+where sal in(1400,1600,1800);</code></pre><p>– 22.查询薪资不为1400、1600、1800的员工</p>
+<pre><code>select name,sal
+from emp
+where not (sal=1400 or sal=1600 or sal=1800);
+-- 或者
+select name,sal
+from emp
+where sal!=1400 and sal!=1600 and sal!=1800;
+-- 或者
+select name,sal
+from emp
+where sal not in(1400,1600,1800);</code></pre><p>– 23.查询emp表中薪资大于4000和薪资小于2000的员工，显示员工姓名、薪资。</p>
+<pre><code>select name,sal
+from emp
+where sal&gt;4000 or sal&lt;2000;</code></pre><p>– 24.查询emp表中薪资大于3000并且奖金小于600的员工，显示员工姓名、薪资、奖金。</p>
+<pre><code>select name,sal,bonus
+from emp
+where sal&gt;3000 and bonus&lt;600;
+-- 处理null值
+select name,sal,bonus
+from emp
+where sal&gt;3000 and ifnull(bonus,0)&lt;600;
+-- 处理null值</code></pre><p>– 25.查询没有部门的员工（即部门列为null值）</p>
+<pre><code>select * from emp
+where dept is null;
+-- 思考：如何查询有部门的员工（即部门列不为null值）
+select * from emp
+where dept is not null;
+-- 思考：如何查询有部门的员工（即部门列不为null值）</code></pre><p>– <strong>****</strong> Like模糊查询 <strong>****</strong><br>– 26.查询emp表中姓名中以”刘”开头的员工，显示员工姓名。</p>
+<pre><code>select name from emp
+where name like&apos;刘%&apos;;
+
+/* like进行模糊查询，&quot;%&quot; 表示通配，表示0或多个字符。
+&quot;_&quot;表示一个任意的字符 */
+select name from emp
+where name like&apos;刘_&apos;;</code></pre><p>– 27.查询emp表中姓名中包含”涛”员工，显示员工姓名。\</p>
+<pre><code>select name from emp
+where name like&apos;%涛%&apos;;</code></pre><p>– 28.查询emp表中姓名以”刘”开头并且姓名为2个字的员工，显示员工姓名。</p>
+<pre><code>select name from emp
+where name like&apos;刘_&apos;;</code></pre><hr>
+<p>– 三、分组查询、聚合函数、排序查询</p>
+<hr>
+<p>– 29.对emp表按照部门对员工进行分组，查看分组后效果</p>
+<pre><code>/* 分组的语法: 
+select 查询的列 from 表名 group by 列名
+根据指定的列进行分组 */
+select * from emp 
+group by dept;</code></pre><p>– 30.对emp表按照职位进行分组, 并统计每个职位的人数, 显示职位和对应人数</p>
+<pre><code>select count(id) 人数,job 职位 
+from emp 
+group by job;</code></pre><p>– 31.对emp表按照部门进行分组, 求每个部门的最高薪资(不包含奖金)，显示部门名称和最高薪资 max() min(),</p>
+<pre><code>select dept 部门,max(sal) 最高薪资
+from emp
+group by dept;</code></pre><p>– 32.统计emp表中薪资大于3000的员工个数（- count(column)统计某列的行数）</p>
+<pre><code>select count(*) from emp
+where sal&gt;3000;</code></pre><p>– 33.统计emp表中所有员工的薪资总和(不包含奖金)（- sum(column)对某列的值求和）</p>
+<pre><code>select sum(sal) from emp ;</code></pre><p>– 34.统计emp表员工的平均薪资(不包含奖金)（- avg(column)对某列的值求平均值）</p>
+<pre><code>select avg(sal) from emp ;</code></pre><p>– 35.查询emp表中所有在1993和1995年之间出生的员工，显示姓名、出生日期。</p>
+<pre><code>select name,birthday 
+from emp
+where birthday between &apos;1993-01-01&apos; and &apos;1995-12-31&apos;;
+
+-- 或者 year(),month(),day(),
+select name,birthday 
+from emp
+where year(birthday) between 1993 and 1995;</code></pre><p>– 36.查询本月过生日的所有员工</p>
+<pre><code>select * from emp
+where month(curdate())= month(birthday);
+/* 
+curdate() 获取当前日期 年月日
+select curdate();
+curtime() 获取当前时间 时分秒
+select curtime();
+sysdate() 获取当前日期+时间 年月日 时分秒 
+select sysdate();
+select now();
+*/</code></pre><hr>
+<p>– <strong><strong><strong>****</strong></strong></strong> 排序查询 <strong><strong><strong>***</strong></strong></strong></p>
+<hr>
+<pre><code>/* order by 排序的列 asc 升序(从低到高)
+order by 排序的列 desc 降序(从高到低)
+默认就是升序，所以asc可以省略不写 */</code></pre><p>– 37.对emp表中所有员工的薪资进行升序(从低到高)排序，显示员工姓名、薪资。</p>
+<pre><code>select name,sal from emp
+order by sal;</code></pre><p>– 38.对emp表中所有员工奖金进行降序(从高到低)排序，显示员工姓名、奖金。</p>
+<pre><code>select name,bonus from emp
+order by bonus desc;</code></pre><hr>
+<p>– <strong><strong><strong>****</strong></strong></strong> 分页查询 <strong><strong><strong>***</strong></strong></strong></p>
+<hr>
+<pre><code>/* 在mysql中，通过limit进行分页查询：
+limit (页码-1)*每页显示记录数, 每页显示记录数 */</code></pre><p>– 39.查询emp表中的所有记录，分页显示：每页显示3条记录，返回第 1 页。</p>
+<pre><code>select * from emp
+limit 0,3;
+select * from emp
+limit 6,3;</code></pre><p>– 40.查询emp表中的所有记录，分页显示：每页显示3条记录，返回第 2 页。</p>
+<pre><code>select * from emp
+limit 3,3;
+
+select * from emp
+limit 9,3;</code></pre><hr>
+<p>– 三、外键</p>
+<hr>
+<p>– 准备数据： 以下练习将使用db20库中的表及表记录，请先进入db20数据库!!!<br>– 准备数据： 以下练习将使用db20库中的表及表记录，请先进入db20数据库!!!<br>– 41.尝试删除dept表中的某一个部门</p>
+<pre><code>/* 上面的部门删除成功后，员工表里的某些员工就没有了对应的部门,
+这种我们称之为数据的完整性被破坏了,
+为了避免这种情况，可以在删除之前，查看将要删除的部门下是否还有员工存在，如果有就不要删除;
+或者，让数据库帮我们去维护这样的对应关系，也就是当将要被删除的部门下如果还有员工，
+就阻止删除操作，让数据库帮我们维护这样的对应关系，就需要指定外键。*/</code></pre><p>– 42.重新创建db20中的dept和emp表，在创建时，指定emp表中的dept_id列为外键，即这一列要严格参考dept表中的id列, 再次尝试删除dept表中的某一个部门，查看是否能删除成功</p>
+<hr>
+<p>– 四、关联查询、外连接查询</p>
+<hr>
+<p>– 准备数据： 以下练习将使用db30库中的表及表记录，请先进入db30数据库!!!<br>– 准备数据： 以下练习将使用db30库中的表及表记录，请先进入db30数据库!!!</p>
+<p>– 43.查询部门和部门对应的员工信息</p>
+<pre><code>select * from emp,dept
+where dept.id = emp.dept_id;
+--
+select * from dept inner join emp
+on dept.id = emp.dept_id;</code></pre><p>– 44.查询所有部门和部门下的员工，如果部门下没有员工，员工显示为null</p>
+<pre><code>select * from dept left join emp
+on dept.id = emp.dept_id;</code></pre><p>– 45.查询部门和所有员工，如果员工没有所属部门，部门显示为null</p>
+<pre><code>select * from dept right join emp
+on dept.id = emp.dept_id;</code></pre><hr>
+<p>– 五、子查询、多表查询</p>
+<hr>
+<p>– 准备数据：以下练习将使用db40库中的表及表记录，请先进入db40数据库!!!<br>– 准备数据：以下练习将使用db40库中的表及表记录，请先进入db40数据库!!!</p>
+<p>– 46.列出薪资比’王海涛’薪资高的所有员工，显示姓名、薪资</p>
+<pre><code>select name,sal from emp
+where sal&gt;(
+select sal from emp
+where name= &apos;王海涛&apos;
+);</code></pre><p>– 47.列出与’刘沛霞’从事相同职位的所有员工，显示姓名、职位。</p>
+<pre><code>select name,job from emp
+where job = (
+select job from emp
+where name = &apos;刘沛霞&apos;
+);</code></pre><p>– 48.列出薪资比’大数据部’部门(已知部门编号为30)所有员工薪资都高的员工信息，显示员工姓名、薪资和部门名称。</p>
+<pre><code>select emp.name,sal,dept.name 
+from emp,dept
+where emp.dept_id = dept.id and sal&gt;(
+    select max(sal) from emp,dept
+    where dept_id = 30 and emp.dept_id = dept.id
+);
+
+select emp.name,sal,dept.name 
+from emp left join dept
+on emp.dept_id = dept.id and 
+where sal&gt;(
+    select max(sal) from emp
+    where dept_id = 30 
+);</code></pre><p>– 49.列出在’培优部’任职的员工，假定不知道’培优部’的部门编号， 显示部门名称，员工名称。</p>
+<pre><code>-- 关联查询两张表
+-- 求出在培优部的员工
+select dept.name,emp.name 
+from emp,dept
+where emp.dept_id = dept.id and 
+   dept.name = &apos;培优部&apos;;</code></pre><p>– 50.(自查询)列出所有员工及其直接上级，显示员工姓名、上级编号，上级姓名</p>
+<pre><code>select e1.name,e2.topid,e2.name 
+from emp as e1,emp e2
+where e1.topid = e2.id;</code></pre><p>– 51.列出最低薪资大于1500的各种职位，显示职位和该职位最低薪资</p>
+<pre><code>select job, min(sal)
+from emp
+group by job
+having min(sal)&gt;1500;</code></pre><p>– 52.列出在每个部门就职的员工数量、平均工资。显示部门编号、员工数量，平均薪资。</p>
+<pre><code>select dept_id,count(*),avg(sal)
+from emp
+group by dept_id;</code></pre><p>– 53.查出至少有一个员工的部门。显示部门编号、部门名称、部门位置、部门人数。</p>
+<pre><code>-- 关联查询两张表(dept, emp)
+-- 替换要显示的列和统计部门人数
+select dept.id,dept.name,dept.loc,count(*)
+from emp,dept
+where emp.dept_id = dept.id 
+group by dept.name;</code></pre><p>– 54.列出受雇日期早于直接上级的所有员工的编号、姓名、部门名称。</p>
+<pre><code>/* 
+列: e1.id, e1.name, d.name
+表:    emp e1: 员工表
+    emp e2: 上级表
+    dept d: 部门表
+关联条件: e1.topid=e2.id
+        e1.dept_id=d.id
+        e1.hdate&lt;e2.hdate  */
+select e1.id, e1.name, d.name
+from emp e1,emp e2,dept d
+where e1.topid=e2.id and e1.dept_id=d.id
+    and e1.hdate&lt;e2.hdate;</code></pre><p>– 55.列出每个部门薪资最高的员工信息，显示部门编号、员工姓名、薪资</p>
+<pre><code>-- 查询emp表中所有员工的部门编号、姓名、薪资
+-- 查询emp表中每个部门的最高薪资，显示部门编号、最高薪资
+-- 第二次查询的结果作为一张临时表和第一次查询进行关联查询
+
+select emp.dept_id, t1.ms,emp.name
+from emp,(
+    select dept_id, max(sal) ms 
+    from emp 
+    group by dept_id) t1
+where emp.dept_id = t1.dept_id and t1.ms=emp.sal;</code></pre><p>======================================<br>补充1、笛卡尔积查询：</p>
+<pre><code>笛卡尔积查询：如果同时查询两张表，左边表有m条数据，右边表有n条数据，那么笛卡尔积查询是结果就是 m*n 条记录。这就是笛卡尔积查询。例如： 
+select * from dept,emp;
+上面的查询中包含大量错误的数据, 一般不使用这种查询。
+
+如果只想保留正确的记录，可以通过where条件进行筛选，将符合条件的保留下来，不符合条件的自然就会被剔除，例如：
+select * from dept,emp
+where dept.id=emp.dept_id;</code></pre><p>补充2、左外连接和右外连接查询：</p>
+<pre><code>(1) 左外连接查询：是将左边表中所有数据都查询出来, 如果在右边表中没有对应的记录, 右边表显示为null即可。
+(2) 右外连接查询：是将右边表中所有数据都查询出来, 如果在左边表中没有对应的记录, 左边表显示为null即可。</code></pre><p>补充3、where和having都用于筛选过滤，但是： </p>
+<pre><code>(1) where用于在分组之前进行筛选, having用于在分组之后进行筛选
+(2) 并且where中不能使用列别名, having中可以使用别名
+(3) where子句中不能使用列别名(可以使用表别名), 因为where子句比select先执行!!</code></pre><p>补充4、SQL语句的书写顺序和执行顺序:<br>  SQL语句的书写顺序：</p>
+<pre><code>select...
+from...
+where...
+group by...
+order by...
+...</code></pre><p>  SQL语句的执行顺序：</p>
+<pre><code>from... -- 确定要查询的是哪张表 (定义表别名)
+where... -- 从整张表的数据中进行筛选过滤
+select... -- 确定要显示哪些列 (定义列别名)
+group by... -- 根据指定的列进行分组
+order by... -- 根据指定的列进行排序
+...</code></pre><p>======================================</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/30/github%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/" rel="next" title="github部署静态网页">
+                <i class="fa fa-chevron-left"></i> github部署静态网页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="数据结构">
+                数据结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zpeng" />
+          <p class="site-author-name" itemprop="name">Zpeng</p>
+           
+              <p class="site-description motion-element" itemprop="description">���Է����Ĳ�����ֻ�м���</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zpeng</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

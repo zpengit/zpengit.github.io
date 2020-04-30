@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.1Redis 命令1.1.1String类型   命令 说明 案例    set 添加key-value set username admin   get 根据key获取数据 get username   strlen 获取key的长度 strlen key   exists 判断key是否存在 exists name 返回1存在  0不存在   del 删除redis中的key del ke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis命令">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/Redis%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="ZpengBlog">
+<meta property="og:description" content="1.1Redis 命令1.1.1String类型   命令 说明 案例    set 添加key-value set username admin   get 根据key获取数据 get username   strlen 获取key的长度 strlen key   exists 判断key是否存在 exists name 返回1存在  0不存在   del 删除redis中的key del ke">
+<meta property="og:locale" content="CN">
+<meta property="article:published_time" content="2020-04-30T15:16:15.003Z">
+<meta property="article:modified_time" content="2020-04-22T08:53:22.942Z">
+<meta property="article:author" content="Zpeng">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/30/Redis命令/"/>
+
+
+
+
+
+  <title>Redis命令 | ZpengBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZpengBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">ôô</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/Redis%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zpeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZpengBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Redis命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-1Redis-命令"><a href="#1-1Redis-命令" class="headerlink" title="1.1Redis 命令"></a>1.1Redis 命令</h1><h3 id="1-1-1String类型"><a href="#1-1-1String类型" class="headerlink" title="1.1.1String类型"></a>1.1.1String类型</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set</td>
+<td>添加key-value</td>
+<td>set username admin</td>
+</tr>
+<tr>
+<td>get</td>
+<td>根据key获取数据</td>
+<td>get username</td>
+</tr>
+<tr>
+<td>strlen</td>
+<td>获取key的长度</td>
+<td>strlen key</td>
+</tr>
+<tr>
+<td>exists</td>
+<td>判断key是否存在</td>
+<td>exists name 返回1存在  0不存在</td>
+</tr>
+<tr>
+<td>del</td>
+<td>删除redis中的key</td>
+<td>del key</td>
+</tr>
+<tr>
+<td>Keys</td>
+<td>用于查询符合条件的key</td>
+<td>keys * 查询redis中全部的keykeys n?me 使用占位符获取数据keys nam* 获取nam开头的数据</td>
+</tr>
+<tr>
+<td>mset</td>
+<td>赋值多个key-value</td>
+<td>mset key1 value1 key2 value2 key3 value3</td>
+</tr>
+<tr>
+<td>mget</td>
+<td>获取多个key的值</td>
+<td>mget key1 key2</td>
+</tr>
+<tr>
+<td>append</td>
+<td>对某个key的值进行追加</td>
+<td>append key value</td>
+</tr>
+<tr>
+<td>type</td>
+<td>检查某个key的类型</td>
+<td>type key</td>
+</tr>
+<tr>
+<td>select</td>
+<td>切换redis数据库</td>
+<td>select 0-15 redis中共有16个数据库</td>
+</tr>
+<tr>
+<td>flushdb</td>
+<td>清空单个数据库</td>
+<td>flushdb</td>
+</tr>
+<tr>
+<td>flushall</td>
+<td>清空全部数据库</td>
+<td>flushall</td>
+</tr>
+<tr>
+<td>incr</td>
+<td>自动加1</td>
+<td>incr key</td>
+</tr>
+<tr>
+<td>decr</td>
+<td>自动减1</td>
+<td>decr key</td>
+</tr>
+<tr>
+<td>incrby</td>
+<td>指定数值添加</td>
+<td>incrby 10</td>
+</tr>
+<tr>
+<td>decrby</td>
+<td>指定数值减</td>
+<td>decrby 10</td>
+</tr>
+<tr>
+<td>expire</td>
+<td>指定key的生效时间 单位秒</td>
+<td>expire key 20 key20秒后失效</td>
+</tr>
+<tr>
+<td>pexpire</td>
+<td>指定key的失效时间 单位毫秒</td>
+<td>pexpire key 2000key 2000毫秒后失效</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>检查key的剩余存活时间</td>
+<td>ttl key</td>
+</tr>
+<tr>
+<td>persist</td>
+<td>撤销key的失效时间</td>
+<td>persist key</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-1-2Hash类型"><a href="#1-1-1-2Hash类型" class="headerlink" title="1. 1.1.2Hash类型"></a>1. 1.1.2Hash类型</h3><p>说明:可以用散列类型保存对象和属性值</p>
+<p>例子:User对象{id:2,name:小明,age:19}</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hset</td>
+<td>为对象添加数据</td>
+<td>hset key field value</td>
+</tr>
+<tr>
+<td>hget</td>
+<td>获取对象的属性值</td>
+<td>hget key field</td>
+</tr>
+<tr>
+<td>hexists</td>
+<td>判断对象的属性是否存在</td>
+<td>HEXISTS key field1表示存在  0表示不存在</td>
+</tr>
+<tr>
+<td>hdel</td>
+<td>删除hash中的属性</td>
+<td>hdel user field [field …]</td>
+</tr>
+<tr>
+<td>hgetall</td>
+<td>获取hash全部元素和值</td>
+<td>HGETALL key</td>
+</tr>
+<tr>
+<td>hkyes</td>
+<td>获取hash中的所有字段</td>
+<td>HKEYS key</td>
+</tr>
+<tr>
+<td>hlen</td>
+<td>获取hash中所有属性的数量</td>
+<td>hlen key</td>
+</tr>
+<tr>
+<td>hmget</td>
+<td>获取hash里面指定字段的值</td>
+<td>hmget key field [field …]</td>
+</tr>
+<tr>
+<td>hmset</td>
+<td>为hash的多个字段设定值</td>
+<td>hmset key field value [field value …]</td>
+</tr>
+<tr>
+<td>hsetnx</td>
+<td>设置hash的一个字段,只有当这个字段不存在时有效</td>
+<td>HSETNX key field value</td>
+</tr>
+<tr>
+<td>hstrlen</td>
+<td>获取hash中指定key的长度</td>
+<td>HSTRLEN key field</td>
+</tr>
+<tr>
+<td>hvals</td>
+<td>获取hash的所有值</td>
+<td>HVALS user</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-1-3List类型"><a href="#1-1-1-3List类型" class="headerlink" title="1. 1.1.3List类型"></a>1. 1.1.3List类型</h3><p>说明:Redis中的List集合是双端循环列表,分别可以从左右两个方向插入数据.</p>
+<p>List集合可以当做队列使用,也可以当做栈使用</p>
+<p>队列:存入数据的方向和获取数据的方向相反</p>
+<p>栈:存入数据的方向和获取数据的方向相同</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lpush</td>
+<td>从队列的左边入队一个或多个元素</td>
+<td>LPUSH key value [value …]</td>
+</tr>
+<tr>
+<td>rpush</td>
+<td>从队列的右边入队一个或多个元素</td>
+<td>RPUSH key value [value …]</td>
+</tr>
+<tr>
+<td>lpop</td>
+<td>从队列的左端出队一个元素</td>
+<td>LPOP key</td>
+</tr>
+<tr>
+<td>rpop</td>
+<td>从队列的右端出队一个元素</td>
+<td>RPOP key</td>
+</tr>
+<tr>
+<td>lpushx</td>
+<td>当队列存在时从队列的左侧入队一个元素</td>
+<td>LPUSHX key value</td>
+</tr>
+<tr>
+<td>rpushx</td>
+<td>当队列存在时从队列的右侧入队一个元素</td>
+<td>RPUSHx key value</td>
+</tr>
+<tr>
+<td>lrange</td>
+<td>从列表中获取指定返回的元素</td>
+<td>LRANGE key start stop  Lrange key 0 -1 获取全部队列的数据</td>
+</tr>
+<tr>
+<td>lrem</td>
+<td>从存于 key 的列表里移除前 count 次出现的值为 value 的元素。 这个 count 参数通过下面几种方式影响这个操作：</td>
+<td></td>
+</tr>
+<tr>
+<td>- count &gt; 0: 从头往尾移除值为 value 的元素。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- count &lt; 0: 从尾往头移除值为 value 的元素。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- count = 0: 移除所有值为 value 的元素。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LREM list -2 “hello” 会从存于 list 的列表里移除最后两个出现的 “hello”。需要注意的是，如果list里没有存在key就会被当作空list处理，所以当 key 不存在的时候，这个命令会返回 0。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Lset</td>
+<td>设置 index 位置的list元素的值为 value</td>
+<td>LSET key index value</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-1-4Redis事务命令"><a href="#1-1-1-4Redis事务命令" class="headerlink" title="1.1.1.4Redis事务命令"></a>1.1.1.4Redis事务命令</h3><p>说明:redis中操作可以添加事务的支持.一项任务可以由多个redis命令完成,如果有一个命令失败导致入库失败时.需要实现事务回滚.</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>multi</td>
+<td>标记一个事务开始</td>
+<td>127.0.0.1:6379&gt; MULTIOK</td>
+</tr>
+<tr>
+<td>exec</td>
+<td>执行所有multi之后发的命令</td>
+<td>127.0.0.1:6379&gt; EXEC OK</td>
+</tr>
+<tr>
+<td>discard</td>
+<td>丢弃所有multi之后发的命令</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="2Redis高级应用"><a href="#2Redis高级应用" class="headerlink" title="2Redis高级应用"></a>2Redis高级应用</h1><h2 id="2-1-Redis入门案例"><a href="#2-1-Redis入门案例" class="headerlink" title="2.1 Redis入门案例"></a>2.1 Redis入门案例</h2><h3 id="2-1-1添加jar包文件"><a href="#2-1-1添加jar包文件" class="headerlink" title="2.1.1添加jar包文件"></a>2.1.1添加jar包文件</h3><p>说明:在JT-PARENT项目中添加jar包文件</p>
+<pre><code>&lt;!-- jedis --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+        &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+        &lt;version&gt;${jedis.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;!--添加spring-datajar包  --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;
+        &lt;version&gt;1.4.1.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre><p>2.1.2入门案例-String</p>
+<pre><code>/**
+ * 连接单台redis  
+ * 参数介绍:
+ *     redisIP地址.
+ *  redis:6379
+ */
+@Test
+public void test01(){
+    Jedis jedis = new Jedis(&quot;192.168.126.166&quot;,6379);
+    jedis.set(&quot;redis&quot;, &quot;redis入门案例&quot;);
+    System.out.println
+    (&quot;获取redis中的数据:&quot;+jedis.get(&quot;redis&quot;));
+    //为数据设定超时时间  单位秒
+    jedis.setex(&quot;1804&quot;, 100, &quot;1804班&quot;);
+}</code></pre><p>2.1.3入门案例-hash</p>
+<pre><code>@Test
+public void test01(){
+    Jedis jedis = new Jedis(&quot;192.168.126.148&quot;, 6379);
+    jedis.hset(&quot;user&quot;, &quot;id&quot;, &quot;1&quot;);
+    jedis.hset(&quot;user&quot;, &quot;name&quot;, &quot;tomcat&quot;);
+    jedis.hset(&quot;user&quot;, &quot;age&quot;, &quot;18&quot;);
+    System.out.println(&quot;操作完成!!!&quot;+jedis.hget(&quot;user&quot;, &quot;id&quot;));
+    Map&lt;String,String&gt; map = jedis.hgetAll(&quot;user&quot;);
+    System.out.println(map);
+}</code></pre><p>结果展现:<br>操作完成!!!1<br>{name=tomcat, age=18, id=1}<br>2.1.4入门案例-List</p>
+<pre><code>@Test
+public void test02(){
+    Jedis jedis = new Jedis(&quot;192.168.126.148&quot;, 6379);
+    Long number = jedis.lpush(&quot;list&quot;, &quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;);
+    System.out.println(&quot;获取数据&quot;+number);
+    List&lt;String&gt; list= jedis.lrange(&quot;list&quot;, 0, -1);
+    System.out.println(&quot;获取参数:&quot;+list);
+}</code></pre><p>结果展现:<br>获取数据5<br>获取参数:[e, d, c, b, a]</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/30/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/30/SpringCloud%E3%80%81RabbitMQ%E3%80%81Solr%E3%80%81Docker%E3%80%81Kubernetes/" rel="prev" title="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes">
+                SpringCloud、RabbitMQ、Solr、Docker、Kubernetes <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zpeng" />
+          <p class="site-author-name" itemprop="name">Zpeng</p>
+           
+              <p class="site-description motion-element" itemprop="description">���Է����Ĳ�����ֻ�м���</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-1Redis-命令"><span class="nav-number">1.</span> <span class="nav-text">1.1Redis 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1String类型"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1.1String类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-2Hash类型"><span class="nav-number">1.0.2.</span> <span class="nav-text">1. 1.1.2Hash类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-3List类型"><span class="nav-number">1.0.3.</span> <span class="nav-text">1. 1.1.3List类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-4Redis事务命令"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.1.1.4Redis事务命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2Redis高级应用"><span class="nav-number">2.</span> <span class="nav-text">2Redis高级应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Redis入门案例"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Redis入门案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1添加jar包文件"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1添加jar包文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zpeng</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

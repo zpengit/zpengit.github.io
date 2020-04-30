@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="2.SSM框架综合案例实现(注解方式)2.1.业务描述通过spring整合mybatis完成商品数据库中数据的查询,并在客户端以json格式对数据进行输出?思路:1)创建maven web项目(打包方式war):CGB-SSM-012)配置项目?(运行时环境,编码,编译版本)3)添加依赖?(mysql,druid,mybatis,junit,spring-webmvc,..)4)整合资源?(连接池">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM框架综合案例实现">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/SSM%E6%A1%86%E6%9E%B6%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:site_name" content="ZpengBlog">
+<meta property="og:description" content="2.SSM框架综合案例实现(注解方式)2.1.业务描述通过spring整合mybatis完成商品数据库中数据的查询,并在客户端以json格式对数据进行输出?思路:1)创建maven web项目(打包方式war):CGB-SSM-012)配置项目?(运行时环境,编码,编译版本)3)添加依赖?(mysql,druid,mybatis,junit,spring-webmvc,..)4)整合资源?(连接池">
+<meta property="og:locale" content="CN">
+<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-e0e83512c916471aaa3961fc4299d37b.png">
+<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-b79885d125f24239b23067babe1e3333.png">
+<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-2c8c25e8740f4e56b2b9d96c7e01008a.png">
+<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-672453807116433ca5a8bab6a294760f.png">
+<meta property="article:published_time" content="2020-04-30T15:16:15.047Z">
+<meta property="article:modified_time" content="2020-04-22T08:52:06.809Z">
+<meta property="article:author" content="Zpeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.zhangpeng.fun/upload/2019/12/image-e0e83512c916471aaa3961fc4299d37b.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/30/SSM框架综合案例实现/"/>
+
+
+
+
+
+  <title>SSM框架综合案例实现 | ZpengBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZpengBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">ôô</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/SSM%E6%A1%86%E6%9E%B6%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zpeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZpengBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SSM框架综合案例实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="2-SSM框架综合案例实现-注解方式"><a href="#2-SSM框架综合案例实现-注解方式" class="headerlink" title="2.SSM框架综合案例实现(注解方式)"></a>2.SSM框架综合案例实现(注解方式)</h1><h2 id="2-1-业务描述"><a href="#2-1-业务描述" class="headerlink" title="2.1.业务描述"></a>2.1.业务描述</h2><p>通过spring整合mybatis完成商品数据库中数据的查询,并在客户端以json格式对数据进行输出?<br>思路:<br>1)创建maven web项目(打包方式war):CGB-SSM-01<br>2)配置项目?(运行时环境,编码,编译版本)<br>3)添加依赖?(mysql,druid,mybatis,junit,spring-webmvc,..)<br>4)整合资源?(连接池,mybatis,spring mvc..)</p>
+<h2 id="2-2-初始化化数据环境"><a href="#2-2-初始化化数据环境" class="headerlink" title="2.2.初始化化数据环境"></a>2.2.初始化化数据环境</h2><p>数据库脚本分析:</p>
+<pre><code>drop database if exists dbgoods;
+create database dbgoods default character set utf8;
+use dbgoods;
+create table tb_goods(
+   id bigint auto_increment,
+   name varchar(200) not null,
+   remark text,
+   createdTime datetime,
+   primary key (id)
+)engine=InnoDB;
+
+insert into tb_goods values (null,&apos;A&apos;,&apos;A...&apos;,now());
+insert into tb_goods values (null,&apos;B&apos;,&apos;B...&apos;,now());
+insert into tb_goods values (null,&apos;C&apos;,&apos;C...&apos;,now());</code></pre><p>说明:可以将如上脚本写到db-goods.sql文件中,然后去执行完成完成初始化.</p>
+<h2 id="2-3-项目创建及配置"><a href="#2-3-项目创建及配置" class="headerlink" title="2.3.项目创建及配置"></a>2.3.项目创建及配置</h2><p>1.创建maven web项目:CGB-SSM-01<br>2.在pom.xml添加war包插件,修改其配置(这样项目可以不写web.xml)</p>
+<pre><code>&lt;build&gt;
+   &lt;plugins&gt;
+       &lt;plugin&gt;
+           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+           &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+           &lt;version&gt;2.6&lt;/version&gt;
+           &lt;configuration&gt;
+             &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
+           &lt;/configuration&gt;
+       &lt;/plugin&gt;
+   &lt;/plugins&gt;
+ &lt;/build&gt;</code></pre><p>3.配置项目(设置运行时环境-tomcat,编译版本JDK1.8)<br>4.添加项目依赖(参考如下图中的依赖)<br><img src="http://www.zhangpeng.fun/upload/2019/12/image-e0e83512c916471aaa3961fc4299d37b.png" alt="image.png"></p>
+<h2 id="2-4-项目资源整合实现"><a href="#2-4-项目资源整合实现" class="headerlink" title="2.4.项目资源整合实现"></a>2.4.项目资源整合实现</h2><h3 id="2-4-1-配置架构分析及实现"><a href="#2-4-1-配置架构分析及实现" class="headerlink" title="2.4.1.配置架构分析及实现"></a>2.4.1.配置架构分析及实现</h3><p>配置架构分析:</p>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-b79885d125f24239b23067babe1e3333.png" alt="image.png"></p>
+<p>其中:<br>1)SpringRepositoryConfig 负责数据层配置<br>2)SpringServiceConfig负责业务层配置<br>3)SpringWebConfig负责请求处理层配置(Spring MVC中的V,C)<br>4)WebInitializer 负责启动初始化.</p>
+<p>基于配置架构,创建配置类:</p>
+<p>数据层配置类</p>
+<pre><code>package com.cy.pj.common.config;
+@Configuration
+@MapperScan(&quot;com.cy.pj.goods.dao&quot;)//扫描dao
+public class SpringRepositoryConfig {
+}</code></pre><p>业务层配置类:<br>package com.cy.pj.common.config;<br>@Configuration<br>@ComponentScan(“com.cy.pj.goods.service”)<br>public class SpringServiceConfig {<br>    //…..<br>}</p>
+<p>控制层配置类</p>
+<pre><code>package com.cy.pj.common.config;
+@ComponentScan(&quot;com.cy.pj.goods.controller&quot;)
+@EnableWebMvc
+@Configuration 
+public class SpringWebConfig implements WebMvcConfigurer{
+
+}</code></pre><p>WebInitializer 启动类配置:</p>
+<pre><code>package com.cy.pj.common.config;
+//--&gt;web.xml
+public class WebInitializer extends 
+AbstractAnnotationConfigDispatcherServletInitializer {
+    //Service,Repository
+    @Override
+    protected Class&lt;?&gt;[] getRootConfigClasses() {
+        System.out.println(&quot;getRootConfigClasses()&quot;);
+        return new Class[] {SpringRepositoryConfig.class,
+SpringServiceConfig.class};
+    }
+    //View,Controller
+    @Override
+    protected Class&lt;?&gt;[] getServletConfigClasses() {
+        System.out.println(&quot;getServletConfigClasses()&quot;);
+        return new Class[] {SpringWebConfig.class};
+    }
+    @Override
+    protected String[] getServletMappings() {
+        System.out.println(&quot;getServletMappings()&quot;);
+        return new String[] {&quot;/&quot;};
+    }
+
+}</code></pre><p>整合过程分析:(顺序从右到左)<br><img src="http://www.zhangpeng.fun/upload/2019/12/image-2c8c25e8740f4e56b2b9d96c7e01008a.png" alt="image.png"></p>
+<h3 id="2-4-2-整合连接池对象"><a href="#2-4-2-整合连接池对象" class="headerlink" title="2.4.2.整合连接池对象"></a>2.4.2.整合连接池对象</h3><p>在SpringRepositoryConfig 类中添加dataSource()方法,在方法中创建<br>DruidDataSource对象.并将此对象交给spring管理.</p>
+<pre><code>@Bean(value=&quot;druid&quot;,initMethod=&quot;init&quot;,destroyMethod=&quot;close&quot;)
+public DruidDataSource dataSource() {
+    DruidDataSource ds=new DruidDataSource();
+    ds.setUrl(&quot;jdbc:mysql:///dbgoods?serverTimezone=GMT%2B8&quot;);
+    ds.setUsername(&quot;root&quot;);
+    ds.setPassword(&quot;root&quot;);
+    return ds;
+}</code></pre><p>说明:@Bean注解要配合@Configuration注解使用,@Configuration用于描述类.</p>
+<h3 id="2-4-3-整合mybatis框架"><a href="#2-4-3-整合mybatis框架" class="headerlink" title="2.4.3.整合mybatis框架"></a>2.4.3.整合mybatis框架</h3><p>在SpringRepositoryConfig类中添加创建SqlSessionFactory对象创建<br>的方法:</p>
+<pre><code>@Bean(&quot;sqlSessionFactory&quot;)
+public SqlSessionFactory newSqlSessionFactory(
+        DataSource dataSource) 
+        throws Exception {
+  //构建SqlSessionFactoryBean对象
+  SqlSessionFactoryBean factoryBean =
+  new SqlSessionFactoryBean();
+  factoryBean.setDataSource(dataSource);
+  //调用FactoryBean的getObject方法创建SqlSessionFactory
+  //底层会使用SqlSessionFactoryBuilder创建
+  return factoryBean.getObject();
+}</code></pre><p>参考:<a href="http://www.mybatis.org/spring" target="_blank" rel="noopener">www.mybatis.org/spring</a></p>
+<h3 id="2-4-4-整合Spring-MVC-模块"><a href="#2-4-4-整合Spring-MVC-模块" class="headerlink" title="2.4.4.整合Spring MVC 模块"></a>2.4.4.整合Spring MVC 模块</h3><p>在Spring MVC配置类中添加视图解析配置,默认servlet处理等配置.</p>
+<pre><code>package com.cy.pj.common.config;
+
+@Configuration 
+@ComponentScan(&quot;com.cy.pj.goods.controller&quot;)
+@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
+public class SpringWebConfig implements WebMvcConfigurer{
+    //&lt;mvc:default-servlet-handler/&gt;
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+    @Override
+    public void configureViewResolvers(
+        ViewResolverRegistry registry) {
+        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
+    }
+}</code></pre><h2 id="2-5-业务设计分析及实现"><a href="#2-5-业务设计分析及实现" class="headerlink" title="2.5.业务设计分析及实现"></a>2.5.业务设计分析及实现</h2><h3 id="2-5-1-业务架构"><a href="#2-5-1-业务架构" class="headerlink" title="2.5.1.业务架构"></a>2.5.1.业务架构</h3><p><img src="http://www.zhangpeng.fun/upload/2019/12/image-672453807116433ca5a8bab6a294760f.png" alt="image.png"></p>
+<h3 id="2-5-2-POJO实现"><a href="#2-5-2-POJO实现" class="headerlink" title="2.5.2.POJO实现"></a>2.5.2.POJO实现</h3><p>定义pojo对象Goods用于封装数据:</p>
+<pre><code>package com.cy.pj.goods.pojo;
+import java.io.Serializable;
+import java.util.Date;
+public class Goods implements Serializable{
+    private static final long serialVersionUID = 690138036951052829L;
+    private Long id;
+    private String name;
+    private String remark;
+    private Date createdTime;
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Goods [id=&quot; + id + &quot;, name=&quot; + name + &quot;, remark=&quot; + remark + &quot;, createdTime=&quot; + createdTime + &quot;]&quot;;
+    }
+}</code></pre><h3 id="2-5-3-Dao实现"><a href="#2-5-3-Dao实现" class="headerlink" title="2.5.3.Dao实现"></a>2.5.3.Dao实现</h3><p>定义GoodsDao接口,代码如下:</p>
+<pre><code>package com.cy.pj.goods.dao;
+import org.apache.ibatis.annotations.Select;
+public interface GoodsDao {
+
+@Select(&quot;select * from tb_goods&quot;)
+    List&lt;Goods&gt; findGoods();
+}</code></pre><p>在SpringRepositoryConfig类上添加@MapperScan注解,实现对指定包下Dao接口的扫描:</p>
+<pre><code>@Configuration
+@MapperScan(&quot;com.cy.pj.goods.dao&quot;)//扫描dao
+public class SpringRepositoryConfig {
+  //....
+}</code></pre><p>编写单元测试类TestGoodsDao,然后getRowCount方法进行测试</p>
+<pre><code>public class TestGoodsDao extends TestBase{
+     @Test
+     public void testFindGoods() {
+           GoodsDao dao=ctx.getBean(&quot;goodsDao&quot;,GoodsDao.class);
+           List&lt;Goods&gt; list=dao.findGoods();
+           for(Goods g:list) {
+            System.out.println(g);
+           }
+     }
+}</code></pre><h3 id="2-5-4-Service实现"><a href="#2-5-4-Service实现" class="headerlink" title="2.5.4.Service实现"></a>2.5.4.Service实现</h3><p>创建GoodsService接口,实现具体业务:</p>
+<pre><code>package com.cy.pj.goods.service;
+import java.util.List;
+import com.cy.pj.goods.pojo.Goods;
+public interface GoodsService {
+     List&lt;Goods&gt; findGoods();
+}</code></pre><p>创建接口实现类:</p>
+<pre><code>package com.cy.pj.goods.service.impl;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.cy.pj.goods.dao.GoodsDao;
+import com.cy.pj.goods.pojo.Goods;
+import com.cy.pj.goods.service.GoodsService;
+@Service
+public class GoodsServiceImpl implements GoodsService {
+    @Autowired
+    private GoodsDao goodsDao;
+    @Override
+    public List&lt;Goods&gt; findGoods() {
+        //...
+        List&lt;Goods&gt; list=goodsDao.findGoods();
+        //...
+        return list;
+    }
+}</code></pre><p>编写Service配置类(需要在容器启动时加载),对service对象进行扫描</p>
+<pre><code>package com.cy.pj.common.config;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+@Configuration
+@ComponentScan(&quot;com.cy.pj.goods.service&quot;)
+public class SpringServiceConfig {
+
+    //.....
+}</code></pre><p>编写测试类执行单元测试:</p>
+<pre><code>public class TestGoodsService extends TestBase{
+    @Test
+    public void testFindGoods() {
+        GoodsService gs=
+        ctx.getBean(&quot;goodsServiceImpl&quot;, GoodsService.class);
+        List&lt;Goods&gt; list=gs.findGoods();
+        for(Goods g:list) {
+            System.out.println(g);
+        }
+    }
+}</code></pre><p>2.5.5.Controller实现<br>编写controller,用于处理客户端的请求:</p>
+<pre><code>package com.cy.pj.goods.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.cy.pj.goods.pojo.Goods;
+import com.cy.pj.goods.service.GoodsService;
+
+@Controller
+@RequestMapping(&quot;/goods/&quot;)
+public class GoodsController {
+    @Autowired
+    private GoodsService goodsService;
+    @RequestMapping(&quot;doFindGoods&quot;)
+    @ResponseBody
+    public List&lt;Goods&gt; doFindGoods(){
+        return goodsService.findGoods();
+    }//json 串:spring mvc 启动API将对象转换为JSON串
+}</code></pre><p>2.6.项目部署及运行分析<br>项目部署到tomcat,然后启动进行访问测试.</p>
+<p><a href="http://localhost/CGB-SSM-01/goods/doFindGoods" target="_blank" rel="noopener">http://localhost/CGB-SSM-01/goods/doFindGoods</a></p>
+<h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/30/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/" rel="next" title="SPRING框架核心进阶">
+                <i class="fa fa-chevron-left"></i> SPRING框架核心进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/30/Mybatis%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" rel="prev" title="Mybatis原理分析">
+                Mybatis原理分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zpeng" />
+          <p class="site-author-name" itemprop="name">Zpeng</p>
+           
+              <p class="site-description motion-element" itemprop="description">���Է����Ĳ�����ֻ�м���</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-SSM框架综合案例实现-注解方式"><span class="nav-number">1.</span> <span class="nav-text">2.SSM框架综合案例实现(注解方式)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-业务描述"><span class="nav-number">1.1.</span> <span class="nav-text">2.1.业务描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-初始化化数据环境"><span class="nav-number">1.2.</span> <span class="nav-text">2.2.初始化化数据环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-项目创建及配置"><span class="nav-number">1.3.</span> <span class="nav-text">2.3.项目创建及配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-项目资源整合实现"><span class="nav-number">1.4.</span> <span class="nav-text">2.4.项目资源整合实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-配置架构分析及实现"><span class="nav-number">1.4.1.</span> <span class="nav-text">2.4.1.配置架构分析及实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-整合连接池对象"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.4.2.整合连接池对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-3-整合mybatis框架"><span class="nav-number">1.4.3.</span> <span class="nav-text">2.4.3.整合mybatis框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-4-整合Spring-MVC-模块"><span class="nav-number">1.4.4.</span> <span class="nav-text">2.4.4.整合Spring MVC 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-业务设计分析及实现"><span class="nav-number">1.5.</span> <span class="nav-text">2.5.业务设计分析及实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-业务架构"><span class="nav-number">1.5.1.</span> <span class="nav-text">2.5.1.业务架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-2-POJO实现"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.5.2.POJO实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-3-Dao实现"><span class="nav-number">1.5.3.</span> <span class="nav-text">2.5.3.Dao实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-4-Service实现"><span class="nav-number">1.5.4.</span> <span class="nav-text">2.5.4.Service实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#少年易老学难成，一寸光阴不可轻。"><span class="nav-number">2.</span> <span class="nav-text">少年易老学难成，一寸光阴不可轻。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zpeng</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
