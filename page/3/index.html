@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="CN">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,7 +100,6 @@
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="ZpengBlog">
 <meta property="og:description" content="���Է����Ĳ�����ֻ�м���">
-<meta property="og:locale" content="CN">
 <meta property="article:author" content="Zpeng">
 <meta name="twitter:card" content="summary">
 
@@ -110,14 +109,14 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -155,7 +154,7 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -205,7 +204,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -215,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -225,7 +234,37 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-plane"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            相册
           </a>
         </li>
       
@@ -262,12 +301,336 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zpeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZpengBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/30/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" itemprop="url">Nginx相关知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:37+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/Nginx相关知识/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-nginx-介绍"><a href="#1-nginx-介绍" class="headerlink" title="1.nginx 介绍"></a>1.nginx 介绍</h2><p>Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。</p>
+<h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><p>安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure>
+
+<p>让nginx随系统启动而启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure>
+<p>/etc/nginx</p>
+<h2 id="3-nginx-负载均衡"><a href="#3-nginx-负载均衡" class="headerlink" title="3.nginx 负载均衡"></a>3.nginx 负载均衡</h2><p>Nginx通过反向代理可以实现服务的负载均衡，避免了服务器单节点故障，把请求按照一定的策略转发到不同的服务器上，达到负载的效果。<br>1、轮询<br>将请求按顺序轮流地分配到后端服务器上，它均衡地对待后端的每一台服务器，而不关心服务器实际的连接数和当前的系统负载。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">    upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.103:8080;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.104:8080;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ……略</span><br><span class="line"></span><br><span class="line">   server &#123;</span><br><span class="line"></span><br><span class="line">        listen 80;</span><br><span class="line"></span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">        ……略</span><br><span class="line"></span><br><span class="line">        location &#x2F;webautotest&#x2F; &#123;</span><br><span class="line"></span><br><span class="line">            proxy_buffering off;</span><br><span class="line"></span><br><span class="line">            proxy_pass http:&#x2F;&#x2F;myapp1;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、加权轮询<br>不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。</p>
+<p>给配置高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">       server srv1.example.com weight&#x3D;3;</span><br><span class="line"></span><br><span class="line">       server srv2.example.com;</span><br><span class="line"></span><br><span class="line">       server srv3.example.com;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、ip_hash（源地址哈希法）<br>根据获取客户端的IP地址，通过哈希函数计算得到一个数值，用该数值对服务器列表的大小进行取模运算，得到的结果便是客户端要访问服务器的序号。</p>
+<p>采用源地址哈希法进行负载均衡，同一IP地址的客户端，当后端服务器列表不变时，它每次都会映射到同一台后端服务器进行访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">    ip_hash;</span><br><span class="line"></span><br><span class="line">    server srv1.example.com;</span><br><span class="line"></span><br><span class="line">    server srv2.example.com;</span><br><span class="line"></span><br><span class="line">    server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、least_conn（最小连接数法）<br>由于后端服务器的配置不尽相同，对于请求的处理有快有慢，最小连接数法根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前的请求，尽可能地提高后端服务的利用效率，将负责合理地分流到每一台服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        least_conn;</span><br><span class="line"></span><br><span class="line">        server srv1.example.com;</span><br><span class="line"></span><br><span class="line">        server srv2.example.com;</span><br><span class="line"></span><br><span class="line">        server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、随机</p>
+<h2 id="4-nginx-反向代理"><a href="#4-nginx-反向代理" class="headerlink" title="4.nginx 反向代理"></a>4.nginx 反向代理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim Nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	# 监听80端口，一般不用改</span><br><span class="line">    listen 80;</span><br><span class="line">	# 将这里的example换成自己的域名</span><br><span class="line">    server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_set_header HOST $host;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		# 这里的http后面的url就是你访问你上方的域名代理的地址</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+<h2 id="5-配置SSL证书"><a href="#5-配置SSL证书" class="headerlink" title="5.配置SSL证书"></a>5.配置SSL证书</h2><p>1.下载证书上传<br>在阿里云购买免费版本的SSL证书后，下载SSL证书到本地，选择Nginx版本。<br>下载的证书共有两个文件，分别是：</p>
+<p>xxxxxxxx.pem<br>xxxxxxxx.key</p>
+<p>在服务上/root路径下新建ssl文件夹，并将下载到本地的证书文件上传至该文件夹。</p>
+<p>可使用rz命令或者Xftp来上传,也可以使用filezilla上传。<br>2.配置<br>在/etc/nginx/conf.d/路径下新建文件nginx.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 443 ssl;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">ssl_certificate &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.pem;</span><br><span class="line">ssl_certificate_key &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.key;</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">location &#x2F; &#123;</span><br><span class="line">proxy_buffer_size 128k;</span><br><span class="line">proxy_buffers 32 32k;</span><br><span class="line">proxy_busy_buffers_size 128k;</span><br><span class="line">proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">rewrite ^(.*)$ https:&#x2F;&#x2F;host1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将其中的 yuzho.cn, <a href="http://www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。" target="_blank" rel="noopener">www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。</a><br>3.重新加载nginx<br>使用nginx -t命令来检查语法错误，使用nginx -s reload命令来重新加载nginx。<br>如nginx -t正确，而nginx -s reload命令出现错误提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx: [error] invalid PID number &quot;&quot; in &quot;&#x2F;run&#x2F;nginx.pid&quot;</span><br></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -c &#x2F;etc&#x2F;nginx&#x2F;nginx.conf</span><br><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
+<p>引用 <a href="https://www.cnblogs.com/liulun/p/11518252.html" target="_blank" rel="noopener">https://www.cnblogs.com/liulun/p/11518252.html</a></p>
+<h2 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h2><p>Nginx中文文档 ：      <a href="https://www.nginx.cn/doc/" target="_blank" rel="noopener">https://www.nginx.cn/doc/</a><br>官网 ： <a href="https://www.nginx.com/" target="_blank" rel="noopener">https://www.nginx.com/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/lombok%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zpeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZpengBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/30/lombok%E6%8F%92%E4%BB%B6/" itemprop="url">lombok插件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:37+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/lombok%E6%8F%92%E4%BB%B6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/lombok插件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="lombok插件-简化代码"><a href="#lombok插件-简化代码" class="headerlink" title="lombok插件 简化代码"></a>lombok插件 简化代码</h2><p><a href="https://projectlombok.org/" target="_blank" rel="noopener">lombok</a><br>&emsp;&emsp;Project Lombok<br>&emsp;&emsp;Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.<br>Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.<br>&emsp;&emsp;Lombok项目是一个Java库，它会自动插入编辑器和构建工具中，Lombok提供了一组有用的注释，用来消除Java类中的大量样板代码。仅五个字符(@Data)就可以替换数百行代码从而产生干净，简洁且易于维护的Java类。<br>&emsp;&emsp;Lombok通过增加一些“处理程序”，可以让java变得简洁、快速。<br>&emsp;&emsp;Lombok能以简单的注解形式来简化java代码，提高开发人员的开发效率。例如开发中经常需要写的javabean，都需要花时间去添加相应的getter/setter，也许还要去写构造器、equals等方法，而且需要维护，当属性多时会出现大量的getter/setter方法，这些显得很冗长也没有太多技术含量，一旦修改属性，就容易出现忘记修改对应方法的失误。</p>
+<p>&emsp;&emsp;Lombok能通过注解的方式，在编译时自动为属性生成构造器、getter/setter、equals、hashcode、toString方法。出现的神奇就是在源码中没有getter和setter方法，但是在编译生成的字节码文件中有getter和setter方法。这样就省去了手动重建这些代码的麻烦，使代码看起来更简洁些。</p>
+<h3 id="1-引入jar包"><a href="#1-引入jar包" class="headerlink" title="1.引入jar包"></a>1.引入jar包</h3><p>引入插件lombok 自动的set/get/构造方法插件  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-找到lombokjar包文件位置-以java方式运行"><a href="#2-找到lombokjar包文件位置-以java方式运行" class="headerlink" title="2.找到lombokjar包文件位置 以java方式运行"></a>2.找到lombokjar包文件位置 以java方式运行</h3><p><img src="http://www.zhangpeng.fun/upload/2020/3/image-2bd1b12e0041491ab1c25d89b3ceab8d.png" alt="image.png"></p>
+<h3 id="3-命令"><a href="#3-命令" class="headerlink" title="3.命令:"></a>3.命令:</h3><p><img src="http://www.zhangpeng.fun/upload/2020/3/image-25ea6cb0fe704751bf0efd0e5f425ac5.png" alt="image.png"><br>之后点击install/update即可<br>在eclipse安装的根目录下会生成lombok.jar包文件,表示插件安装成功.<br><img src="http://www.zhangpeng.fun/upload/2020/3/image-0be5f4eabff74481a5fa694174e65640.png" alt="image.png"></p>
+<h3 id="4-配置"><a href="#4-配置" class="headerlink" title="4.配置"></a>4.配置</h3><p>在文件安装的根目录找到SpringToolSuite4.ini中<br>手动在ini文件中最后一行添加<br>-vmargs -javaagent:lombok.jar</p>
+<p>安装完成后重启Eclipse即可</p>
+<h3 id="5-常用注解"><a href="#5-常用注解" class="headerlink" title="5.常用注解"></a>5.常用注解</h3><p> Lombok主要常用的注解有：@Data,@getter,@setter,@NoArgsConstructor,@AllArgsConstructor,@ToString,@EqualsAndHashCode,@Slf4j,@Log4j。我们一个一个来看：</p>
+<p>@Data注解：在JavaBean或类JavaBean中使用，这个注解包含范围最广，它包含getter、setter、NoArgsConstructor注解，即当使用当前注解时，会自动生成包含的所有方法；</p>
+<p>@getter注解：在JavaBean或类JavaBean中使用，使用此注解会生成对应的getter方法；</p>
+<p>@setter注解：在JavaBean或类JavaBean中使用，使用此注解会生成对应的setter方法；</p>
+<p>@NoArgsConstructor注解：在JavaBean或类JavaBean中使用，使用此注解会生成对应的无参构造方法；</p>
+<p>@AllArgsConstructor注解：在JavaBean或类JavaBean中使用，使用此注解会生成对应的有参构造方法；</p>
+<p>@ToString注解：在JavaBean或类JavaBean中使用，使用此注解会自动重写对应的toStirng方法；</p>
+<p>@EqualsAndHashCode注解：在JavaBean或类JavaBean中使用，使用此注解会自动重写对应的equals方法和hashCode方法；</p>
+<p>@Slf4j：在需要打印日志的类中使用，当项目中使用了slf4j打印日志框架时使用该注解，会简化日志的打印流程，只需调用info方法即可；</p>
+<p>@Log4j：在需要打印日志的类中使用，当项目中使用了log4j打印日志框架时使用该注解，会简化日志的打印流程，只需调用info方法即可；</p>
+<p>在使用以上注解需要处理参数时，处理方法如下（以@ToString注解为例，其他注解同@ToString注解）：</p>
+<p>@ToString(exclude=”column”)</p>
+<p>意义：排除column列所对应的元素，即在生成toString方法时不包含column参数；</p>
+<p>@ToString(exclude={“column1”,”column2”})</p>
+<p>意义：排除多个column列所对应的元素，其中间用英文状态下的逗号进行分割，即在生成toString方法时不包含多个column参数；</p>
+<p>@ToString(of=”column”)</p>
+<p>意义：只生成包含column列所对应的元素的参数的toString方法，即在生成toString方法时只包含column参数；；</p>
+<p>@ToString(of={“column1”,”column2”})<br>意义：只生成包含多个column列所对应的元素的参数的toString方法，其中间用英文状态下的逗号进行分割，即在生成toString方法时只包含多个column参数；<br>@Accessors(chain=true)<br>链式加载</p>
+<h3 id="可能问题"><a href="#可能问题" class="headerlink" title="可能问题"></a>可能问题</h3><p><img src="http://www.zhangpeng.fun/upload/2020/3/image-e3803a1ea7cd48f79d857b2a00fbe985.png" alt="image.png"><br>sts安装lombok后重启时，如报以上错误，是没有找到jdk的安装路径<br>解决：<br>    在SpringToolSuite4.ini中加入如下代码：<br><img src="http://www.zhangpeng.fun/upload/2020/3/image-7000f78eee3a4955ba436dcf5597926a.png" alt="image.png">    </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -291,9 +654,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
                 2020-04-30
               </time>
             
@@ -306,6 +669,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/关于本站/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -391,7 +764,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -415,9 +788,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
                 2020-04-30
               </time>
             
@@ -430,6 +803,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/本博客微信小程序正式上线/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -517,7 +900,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -541,9 +924,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
                 2020-04-30
               </time>
             
@@ -556,6 +939,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E6%88%91%E7%9A%84java%E4%B9%8B%E8%B7%AF%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/我的java之路总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -705,7 +1098,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -729,9 +1122,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:31+08:00">
                 2020-04-30
               </time>
             
@@ -744,6 +1137,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E5%85%B3%E4%BA%8E%E6%88%91/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/关于我/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -840,7 +1243,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -864,9 +1267,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:26+08:00">
                 2020-04-30
               </time>
             
@@ -879,6 +1282,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E7%88%AC%E8%99%AB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/爬虫/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1110,7 +1523,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1134,9 +1547,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:19:26+08:00">
                 2020-04-30
               </time>
             
@@ -1149,6 +1562,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/分布式锁/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1273,7 +1696,7 @@ end</code></pre><p>测试类</p>
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1297,9 +1720,9 @@ end</code></pre><p>测试类</p>
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
                 2020-04-30
               </time>
             
@@ -1312,6 +1735,16 @@ end</code></pre><p>测试类</p>
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/Redis/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/Redis/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1486,7 +1919,7 @@ end</code></pre><p>测试类</p>
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zpeng">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1510,9 +1943,9 @@ end</code></pre><p>测试类</p>
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
                 2020-04-30
               </time>
             
@@ -1525,6 +1958,16 @@ end</code></pre><p>测试类</p>
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/30/Mybatis%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/04/30/Mybatis原理分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1764,705 +2207,6 @@ int getRowCount();</code></pre><p>第三步：在TestGoodsDao02测试类中添�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/SSM%E6%A1%86%E6%9E%B6%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E5%AE%9E%E7%8E%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zpeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZpengBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/30/SSM%E6%A1%86%E6%9E%B6%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E5%AE%9E%E7%8E%B0/" itemprop="url">SSM框架综合案例实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
-                2020-04-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="2-SSM框架综合案例实现-注解方式"><a href="#2-SSM框架综合案例实现-注解方式" class="headerlink" title="2.SSM框架综合案例实现(注解方式)"></a>2.SSM框架综合案例实现(注解方式)</h1><h2 id="2-1-业务描述"><a href="#2-1-业务描述" class="headerlink" title="2.1.业务描述"></a>2.1.业务描述</h2><p>通过spring整合mybatis完成商品数据库中数据的查询,并在客户端以json格式对数据进行输出?<br>思路:<br>1)创建maven web项目(打包方式war):CGB-SSM-01<br>2)配置项目?(运行时环境,编码,编译版本)<br>3)添加依赖?(mysql,druid,mybatis,junit,spring-webmvc,..)<br>4)整合资源?(连接池,mybatis,spring mvc..)</p>
-<h2 id="2-2-初始化化数据环境"><a href="#2-2-初始化化数据环境" class="headerlink" title="2.2.初始化化数据环境"></a>2.2.初始化化数据环境</h2><p>数据库脚本分析:</p>
-<pre><code>drop database if exists dbgoods;
-create database dbgoods default character set utf8;
-use dbgoods;
-create table tb_goods(
-   id bigint auto_increment,
-   name varchar(200) not null,
-   remark text,
-   createdTime datetime,
-   primary key (id)
-)engine=InnoDB;
-
-insert into tb_goods values (null,&apos;A&apos;,&apos;A...&apos;,now());
-insert into tb_goods values (null,&apos;B&apos;,&apos;B...&apos;,now());
-insert into tb_goods values (null,&apos;C&apos;,&apos;C...&apos;,now());</code></pre><p>说明:可以将如上脚本写到db-goods.sql文件中,然后去执行完成完成初始化.</p>
-<h2 id="2-3-项目创建及配置"><a href="#2-3-项目创建及配置" class="headerlink" title="2.3.项目创建及配置"></a>2.3.项目创建及配置</h2><p>1.创建maven web项目:CGB-SSM-01<br>2.在pom.xml添加war包插件,修改其配置(这样项目可以不写web.xml)</p>
-<pre><code>&lt;build&gt;
-   &lt;plugins&gt;
-       &lt;plugin&gt;
-           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-           &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
-           &lt;version&gt;2.6&lt;/version&gt;
-           &lt;configuration&gt;
-             &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
-           &lt;/configuration&gt;
-       &lt;/plugin&gt;
-   &lt;/plugins&gt;
- &lt;/build&gt;</code></pre><p>3.配置项目(设置运行时环境-tomcat,编译版本JDK1.8)<br>4.添加项目依赖(参考如下图中的依赖)<br><img src="http://www.zhangpeng.fun/upload/2019/12/image-e0e83512c916471aaa3961fc4299d37b.png" alt="image.png"></p>
-<h2 id="2-4-项目资源整合实现"><a href="#2-4-项目资源整合实现" class="headerlink" title="2.4.项目资源整合实现"></a>2.4.项目资源整合实现</h2><h3 id="2-4-1-配置架构分析及实现"><a href="#2-4-1-配置架构分析及实现" class="headerlink" title="2.4.1.配置架构分析及实现"></a>2.4.1.配置架构分析及实现</h3><p>配置架构分析:</p>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-b79885d125f24239b23067babe1e3333.png" alt="image.png"></p>
-<p>其中:<br>1)SpringRepositoryConfig 负责数据层配置<br>2)SpringServiceConfig负责业务层配置<br>3)SpringWebConfig负责请求处理层配置(Spring MVC中的V,C)<br>4)WebInitializer 负责启动初始化.</p>
-<p>基于配置架构,创建配置类:</p>
-<p>数据层配置类</p>
-<pre><code>package com.cy.pj.common.config;
-@Configuration
-@MapperScan(&quot;com.cy.pj.goods.dao&quot;)//扫描dao
-public class SpringRepositoryConfig {
-}</code></pre><p>业务层配置类:<br>package com.cy.pj.common.config;<br>@Configuration<br>@ComponentScan(“com.cy.pj.goods.service”)<br>public class SpringServiceConfig {<br>    //…..<br>}</p>
-<p>控制层配置类</p>
-<pre><code>package com.cy.pj.common.config;
-@ComponentScan(&quot;com.cy.pj.goods.controller&quot;)
-@EnableWebMvc
-@Configuration 
-public class SpringWebConfig implements WebMvcConfigurer{
-
-}</code></pre><p>WebInitializer 启动类配置:</p>
-<pre><code>package com.cy.pj.common.config;
-//--&gt;web.xml
-public class WebInitializer extends 
-AbstractAnnotationConfigDispatcherServletInitializer {
-    //Service,Repository
-    @Override
-    protected Class&lt;?&gt;[] getRootConfigClasses() {
-        System.out.println(&quot;getRootConfigClasses()&quot;);
-        return new Class[] {SpringRepositoryConfig.class,
-SpringServiceConfig.class};
-    }
-    //View,Controller
-    @Override
-    protected Class&lt;?&gt;[] getServletConfigClasses() {
-        System.out.println(&quot;getServletConfigClasses()&quot;);
-        return new Class[] {SpringWebConfig.class};
-    }
-    @Override
-    protected String[] getServletMappings() {
-        System.out.println(&quot;getServletMappings()&quot;);
-        return new String[] {&quot;/&quot;};
-    }
-
-}</code></pre><p>整合过程分析:(顺序从右到左)<br><img src="http://www.zhangpeng.fun/upload/2019/12/image-2c8c25e8740f4e56b2b9d96c7e01008a.png" alt="image.png"></p>
-<h3 id="2-4-2-整合连接池对象"><a href="#2-4-2-整合连接池对象" class="headerlink" title="2.4.2.整合连接池对象"></a>2.4.2.整合连接池对象</h3><p>在SpringRepositoryConfig 类中添加dataSource()方法,在方法中创建<br>DruidDataSource对象.并将此对象交给spring管理.</p>
-<pre><code>@Bean(value=&quot;druid&quot;,initMethod=&quot;init&quot;,destroyMethod=&quot;close&quot;)
-public DruidDataSource dataSource() {
-    DruidDataSource ds=new DruidDataSource();
-    ds.setUrl(&quot;jdbc:mysql:///dbgoods?serverTimezone=GMT%2B8&quot;);
-    ds.setUsername(&quot;root&quot;);
-    ds.setPassword(&quot;root&quot;);
-    return ds;
-}</code></pre><p>说明:@Bean注解要配合@Configuration注解使用,@Configuration用于描述类.</p>
-<h3 id="2-4-3-整合mybatis框架"><a href="#2-4-3-整合mybatis框架" class="headerlink" title="2.4.3.整合mybatis框架"></a>2.4.3.整合mybatis框架</h3><p>在SpringRepositoryConfig类中添加创建SqlSessionFactory对象创建<br>的方法:</p>
-<pre><code>@Bean(&quot;sqlSessionFactory&quot;)
-public SqlSessionFactory newSqlSessionFactory(
-        DataSource dataSource) 
-        throws Exception {
-  //构建SqlSessionFactoryBean对象
-  SqlSessionFactoryBean factoryBean =
-  new SqlSessionFactoryBean();
-  factoryBean.setDataSource(dataSource);
-  //调用FactoryBean的getObject方法创建SqlSessionFactory
-  //底层会使用SqlSessionFactoryBuilder创建
-  return factoryBean.getObject();
-}</code></pre><p>参考:<a href="http://www.mybatis.org/spring" target="_blank" rel="noopener">www.mybatis.org/spring</a></p>
-<h3 id="2-4-4-整合Spring-MVC-模块"><a href="#2-4-4-整合Spring-MVC-模块" class="headerlink" title="2.4.4.整合Spring MVC 模块"></a>2.4.4.整合Spring MVC 模块</h3><p>在Spring MVC配置类中添加视图解析配置,默认servlet处理等配置.</p>
-<pre><code>package com.cy.pj.common.config;
-
-@Configuration 
-@ComponentScan(&quot;com.cy.pj.goods.controller&quot;)
-@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
-public class SpringWebConfig implements WebMvcConfigurer{
-    //&lt;mvc:default-servlet-handler/&gt;
-    @Override
-    public void configureDefaultServletHandling(
-            DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
-    @Override
-    public void configureViewResolvers(
-        ViewResolverRegistry registry) {
-        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
-    }
-}</code></pre><h2 id="2-5-业务设计分析及实现"><a href="#2-5-业务设计分析及实现" class="headerlink" title="2.5.业务设计分析及实现"></a>2.5.业务设计分析及实现</h2><h3 id="2-5-1-业务架构"><a href="#2-5-1-业务架构" class="headerlink" title="2.5.1.业务架构"></a>2.5.1.业务架构</h3><p><img src="http://www.zhangpeng.fun/upload/2019/12/image-672453807116433ca5a8bab6a294760f.png" alt="image.png"></p>
-<h3 id="2-5-2-POJO实现"><a href="#2-5-2-POJO实现" class="headerlink" title="2.5.2.POJO实现"></a>2.5.2.POJO实现</h3><p>定义pojo对象Goods用于封装数据:</p>
-<pre><code>package com.cy.pj.goods.pojo;
-import java.io.Serializable;
-import java.util.Date;
-public class Goods implements Serializable{
-    private static final long serialVersionUID = 690138036951052829L;
-    private Long id;
-    private String name;
-    private String remark;
-    private Date createdTime;
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public Date getCreatedTime() {
-        return createdTime;
-    }
-
-    public void setCreatedTime(Date createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    @Override
-    public String toString() {
-        return &quot;Goods [id=&quot; + id + &quot;, name=&quot; + name + &quot;, remark=&quot; + remark + &quot;, createdTime=&quot; + createdTime + &quot;]&quot;;
-    }
-}</code></pre><h3 id="2-5-3-Dao实现"><a href="#2-5-3-Dao实现" class="headerlink" title="2.5.3.Dao实现"></a>2.5.3.Dao实现</h3><p>定义GoodsDao接口,代码如下:</p>
-<pre><code>package com.cy.pj.goods.dao;
-import org.apache.ibatis.annotations.Select;
-public interface GoodsDao {
-
-@Select(&quot;select * from tb_goods&quot;)
-    List&lt;Goods&gt; findGoods();
-}</code></pre><p>在SpringRepositoryConfig类上添加@MapperScan注解,实现对指定包下Dao接口的扫描:</p>
-<pre><code>@Configuration
-@MapperScan(&quot;com.cy.pj.goods.dao&quot;)//扫描dao
-public class SpringRepositoryConfig {
-  //....
-}</code></pre><p>编写单元测试类TestGoodsDao,然后getRowCount方法进行测试</p>
-<pre><code>public class TestGoodsDao extends TestBase{
-     @Test
-     public void testFindGoods() {
-           GoodsDao dao=ctx.getBean(&quot;goodsDao&quot;,GoodsDao.class);
-           List&lt;Goods&gt; list=dao.findGoods();
-           for(Goods g:list) {
-            System.out.println(g);
-           }
-     }
-}</code></pre><h3 id="2-5-4-Service实现"><a href="#2-5-4-Service实现" class="headerlink" title="2.5.4.Service实现"></a>2.5.4.Service实现</h3><p>创建GoodsService接口,实现具体业务:</p>
-<pre><code>package com.cy.pj.goods.service;
-import java.util.List;
-import com.cy.pj.goods.pojo.Goods;
-public interface GoodsService {
-     List&lt;Goods&gt; findGoods();
-}</code></pre><p>创建接口实现类:</p>
-<pre><code>package com.cy.pj.goods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.cy.pj.goods.dao.GoodsDao;
-import com.cy.pj.goods.pojo.Goods;
-import com.cy.pj.goods.service.GoodsService;
-@Service
-public class GoodsServiceImpl implements GoodsService {
-    @Autowired
-    private GoodsDao goodsDao;
-    @Override
-    public List&lt;Goods&gt; findGoods() {
-        //...
-        List&lt;Goods&gt; list=goodsDao.findGoods();
-        //...
-        return list;
-    }
-}</code></pre><p>编写Service配置类(需要在容器启动时加载),对service对象进行扫描</p>
-<pre><code>package com.cy.pj.common.config;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-@Configuration
-@ComponentScan(&quot;com.cy.pj.goods.service&quot;)
-public class SpringServiceConfig {
-
-    //.....
-}</code></pre><p>编写测试类执行单元测试:</p>
-<pre><code>public class TestGoodsService extends TestBase{
-    @Test
-    public void testFindGoods() {
-        GoodsService gs=
-        ctx.getBean(&quot;goodsServiceImpl&quot;, GoodsService.class);
-        List&lt;Goods&gt; list=gs.findGoods();
-        for(Goods g:list) {
-            System.out.println(g);
-        }
-    }
-}</code></pre><p>2.5.5.Controller实现<br>编写controller,用于处理客户端的请求:</p>
-<pre><code>package com.cy.pj.goods.controller;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.cy.pj.goods.pojo.Goods;
-import com.cy.pj.goods.service.GoodsService;
-
-@Controller
-@RequestMapping(&quot;/goods/&quot;)
-public class GoodsController {
-    @Autowired
-    private GoodsService goodsService;
-    @RequestMapping(&quot;doFindGoods&quot;)
-    @ResponseBody
-    public List&lt;Goods&gt; doFindGoods(){
-        return goodsService.findGoods();
-    }//json 串:spring mvc 启动API将对象转换为JSON串
-}</code></pre><p>2.6.项目部署及运行分析<br>项目部署到tomcat,然后启动进行访问测试.</p>
-<p><a href="http://localhost/CGB-SSM-01/goods/doFindGoods" target="_blank" rel="noopener">http://localhost/CGB-SSM-01/goods/doFindGoods</a></p>
-<h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zpeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZpengBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/30/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/" itemprop="url">SPRING框架核心进阶</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:16:15+08:00">
-                2020-04-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-SPRING-框架核心进阶"><a href="#1-SPRING-框架核心进阶" class="headerlink" title="1.SPRING 框架核心进阶"></a>1.SPRING 框架核心进阶</h1><h2 id="1-1-SPRING-框架架构分析"><a href="#1-1-SPRING-框架架构分析" class="headerlink" title="1.1.SPRING 框架架构分析"></a>1.1.SPRING 框架架构分析</h2><h3 id="1-1-1-Spring-框架应用架构"><a href="#1-1-1-Spring-框架应用架构" class="headerlink" title="1.1.1.Spring 框架应用架构"></a>1.1.1.Spring 框架应用架构</h3><hr>
-<p>Spring 官网资源:spring.io/projects<br>Spring 是一个”资源整合”框架,通过spring可将很多资源(例如连接池,<br>mybatis,…)等整合在一起,对外提供相关服务(例如,秒杀服务,支付服务,…)。</p>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-d92bfc62abae4b1abbc7a002da599370.png" alt="image.png"></h2><p>说明:spring 框架中一切资源的整合都源于IOC模块，IOC要实现对象生命周期的管理，对象依赖关系的管理。</p>
-<h3 id="1-1-2-Spring-框架产品架构"><a href="#1-1-2-Spring-框架产品架构" class="headerlink" title="1.1.2. Spring 框架产品架构"></a>1.1.2. Spring 框架产品架构</h3><hr>
-<p>产品架构主要从这个框架对外提供的服务（功能）进行理解.</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-9dbc108b167f467ca8b895cd29288f64.png" alt="image.png"></h2><h3 id="1-1-3-Spring-框架技术架构"><a href="#1-1-3-Spring-框架技术架构" class="headerlink" title="1.1.3.Spring 框架技术架构"></a>1.1.3.Spring 框架技术架构</h3><p>IOC API基础架构(Spring 工厂对象分析)</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-96662d4783ed4306993deb401bac9c8b.png" alt="image.png"><br>IOC(控制反转) 容器初始化过程分析.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-92dc43a7d1364ae694bd834ebf80e959.png" alt="image.png"></p>
-<h2 id="1-2-SPRING框架快速实践-注解方式-脱离文档"><a href="#1-2-SPRING框架快速实践-注解方式-脱离文档" class="headerlink" title="1.2.SPRING框架快速实践 (注解方式-脱离文档)"></a>1.2.SPRING框架快速实践 (注解方式-脱离文档)</h2><h3 id="1-2-1-Spring项目创建及配置"><a href="#1-2-1-Spring项目创建及配置" class="headerlink" title="1.2.1.Spring项目创建及配置"></a>1.2.1.Spring项目创建及配置</h3><p>1.创建maven项目(jar包项目)<br>1)项目名称 CGB-SPRING-01<br>2)组id:com.cy<br>3)打包方式:jar</p>
-<p>2.添加项目依赖(spring-context)</p>
-<p>添加spring依赖</p>
-<pre><code>&lt;dependency&gt;
- &lt;groupId&gt;org.springframework&lt;/groupId&gt;
- &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
- &lt;version&gt;5.1.9.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>添加junit依赖</p>
-<pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;junit&lt;/groupId&gt;
-  &lt;artifactId&gt;junit&lt;/artifactId&gt;
-  &lt;version&gt;4.12&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><h3 id="1-2-2-Spring基本测试环境创建"><a href="#1-2-2-Spring基本测试环境创建" class="headerlink" title="1.2.2.Spring基本测试环境创建"></a>1.2.2.Spring基本测试环境创建</h3><p>添加spring配置类(SpringConfig)</p>
-<pre><code>package com.cy.spring.config;
-import org.springframework.context.annotation.ComponentScan;
-/**
- * @ComponentScan 用于告诉spring容器从
-   * 从指定包进行bean的扫描
- */
-@ComponentScan(&quot;com.cy.spring.beans&quot;)
-public class SpringConfig {//spring-configs.xml
-
-}</code></pre><p>定义测试基类 </p>
-<pre><code>package com.spring;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-public class TestBase {
-     protected AnnotationConfigApplicationContext ctx;
-     @Before
-     public void init() {
-      ctx=new AnnotationConfigApplicationContext(
-                 SpringConfig.class);
-     }
-     @After
-     public void close() {
-         ctx.close();
-     }
-     @Test
-     public void testCtx() {
-         System.out.println(ctx);
-     }
-}</code></pre><h3 id="1-2-3-Spring项目基本业务实现"><a href="#1-2-3-Spring项目基本业务实现" class="headerlink" title="1.2.3.Spring项目基本业务实现"></a>1.2.3.Spring项目基本业务实现</h3><p>业务描述,创建一个DefaultCache对象然后将此对象交给Spring容器管理.<br>创建DefaultCache类,并明确此类交给spring管理.</p>
-<pre><code>package com.cy.spring.beans;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-/**
-@Component 注解用于告诉spring容器
-请将这个类交给spring管理.
-@Lazy 用于告诉spring容器此对象要延迟加载
-@Scope 用于告诉spring容器此bean的作用域
-1)singleton (单例作用域-默认,会存储到池中)
-2)prototype (多例作用域,每次获取都创建新对象)
- */
-@Lazy
-@Scope(&quot;singleton&quot;) 
-@Component //@Controller,@Service,...
-public class DefaultCache {
-     public DefaultCache() {
-         System.out.println(&quot;DefaultCache()&quot;);
-     }
-     @PostConstruct //告诉spring 此对象初始化时执行init方法
-     public void init() {
-         System.out.println(&quot;init()&quot;);
-     }
-     @PreDestroy//告诉spring 此对象销毁时执行close方法
-     public void close() {
-         System.out.println(&quot;close()&quot;);
-     }
-}</code></pre><p>定义测试类,从spring容器中获取bean对象</p>
-<pre><code>package com.cy.test;
-import org.junit.Assert;
-import org.junit.Test;
-import com.cy.spring.beans.DefaultCache;
-public class TestCache extends TestBase {
-    @Test
-    public void testDefaultCahce() {
-        DefaultCache cache01=
-        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
-        Assert.assertNotEquals(null, cache01);
-        DefaultCache cache02=
-        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
-        Assert.assertNotEquals(null, cache02);
-        System.out.println(cache01==cache02);
-    }
-}</code></pre><h3 id="1-2-4-Spring项目课堂练习分析及实现"><a href="#1-2-4-Spring项目课堂练习分析及实现" class="headerlink" title="1.2.4.Spring项目课堂练习分析及实现"></a>1.2.4.Spring项目课堂练习分析及实现</h3><p>1.整合第三方连接池DRUID.<br>1)步骤分析:<br>step01:添加依赖(数据库驱动依赖,连接池依赖)<br>step02:对druid连接池进行配置<br>step03:对连接池进行单元测试.<br>2)关键代码实现</p>
-<p>添加mysql依赖</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;mysql&lt;/groupId&gt;
-    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-    &lt;version&gt;8.0.17&lt;/version&gt;
- &lt;/dependency&gt;</code></pre><p>添加Druid依赖</p>
-<pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-  &lt;artifactId&gt;druid&lt;/artifactId&gt;
-  &lt;version&gt;1.1.19&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>定义数据源配置类</p>
-<pre><code>package com.cy.spring.beans;
-import javax.sql.DataSource;
-@Configuration
-public class DataSourceConfig {
-      @Bean(value=&quot;druid&quot;,initMethod=&quot;init&quot;,destroyMethod=&quot;close&quot;)
-      public DataSource newDruid() {
-         // System.out.println(&quot;newDruid()&quot;);
-          DruidDataSource ds=new DruidDataSource();
-          //ds.setDriverClassName(&quot;com.mysql.cj.jdbc.Driver&quot;);
-          ds.setUrl(&quot;jdbc:mysql:///test?serverTimezone=GMT&quot;);
-          ds.setUsername(&quot;root&quot;);
-          ds.setPassword(&quot;root&quot;);
-          ds.setMaxWait(10000);
-          //....
-          return ds;
-      }      
-}</code></pre><p>创建单元测试类</p>
-<pre><code>package com.cy.test;
-import javax.sql.DataSource;
-import org.junit.Assert;
-import org.junit.Test;
-import com.zaxxer.hikari.HikariDataSource;
-public class TestDataSource extends TestBase{
-    @Test
-    public void testDruidDataSource()throws Exception {
-        DataSource ds=
-        ctx.getBean(&quot;druid&quot;,DataSource.class);
-        Assert.assertNotEquals(null, ds);
-        System.out.println(ds.getConnection());
-    }
-}</code></pre><h1 id="2-整合第三方连接池HiKariCP连接池-扩展"><a href="#2-整合第三方连接池HiKariCP连接池-扩展" class="headerlink" title="2.整合第三方连接池HiKariCP连接池(扩展)."></a>2.整合第三方连接池HiKariCP连接池(扩展).</h1><h2 id="1-3-SPRING-IOC-应用原理进阶分析"><a href="#1-3-SPRING-IOC-应用原理进阶分析" class="headerlink" title="1.3.SPRING IOC 应用原理进阶分析"></a>1.3.SPRING IOC 应用原理进阶分析</h2><h3 id="1-3-1-Spring-IOC设计思想分析"><a href="#1-3-1-Spring-IOC设计思想分析" class="headerlink" title="1.3.1.Spring IOC设计思想分析"></a>1.3.1.Spring IOC设计思想分析</h3><p>IOC 是一种设计思想，称之为控制反转。基于这种思想实现对象创建，对象的科学管理以及应用时的解耦(借助DI机制实现)。Spring框架核心就是基于这种机制进行了完美实现。<br>说明：<br>1)控制反转探讨的是什么？谁控制谁的问题（spring控制对象的创建管理）<br>2)生活中的IOC的实现？(例如股票操盘手,父母包办婚姻）</p>
-<h3 id="1-3-2-Spring-Bean-工厂的初始化"><a href="#1-3-2-Spring-Bean-工厂的初始化" class="headerlink" title="1.3.2.Spring Bean 工厂的初始化"></a>1.3.2.Spring Bean 工厂的初始化</h3><p>基于xml方式实现Spring中Bean工厂的初始化.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-630cb3fbad434155b03166a0ec10b184.png" alt="image.png"><br>说明:Spring 中的Bean工厂会基于Bean对象描述,创建bean的实例,并可以有选择性的对实例对象进行管理(例如单例作用域的对象).</p>
-<h3 id="1-3-3-Spring-中的两大map对象分析"><a href="#1-3-3-Spring-中的两大map对象分析" class="headerlink" title="1.3.3.Spring 中的两大map对象分析"></a>1.3.3.Spring 中的两大map对象分析</h3><p>1.如何理解Spring中的两大map对象(存储对象的两个容器)？<br>1）一个map用于存储bean的配置信息(工厂的原材料)<br>2）一个map用于存储bean的实例信息(工厂中的成品对象)</p>
-<p>基于xml配置文件实现:</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-c49b3bb717964a3189411cc5c0387a3f.png" alt="image.png"></h2><p>基于注解配置实现:</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-1e18b43a520043d681eea9e4a79a5f7e.png" alt="image.png"></h2><h3 id="1-3-4-Spring-中两大bean对象分析-了解"><a href="#1-3-4-Spring-中两大bean对象分析-了解" class="headerlink" title="1.3.4.Spring 中两大bean对象分析(了解)"></a>1.3.4.Spring 中两大bean对象分析(了解)</h3><p>Bean对象创建<br>1)未实现FactoryBean接口(直接构造方法);<br>2)实现FactoryBean接口（调用FactoryBean对象的getObject方法）</p>
-<hr>
-<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-5bdbf2e837434d1eabb4a2ddc7c838e2.png" alt="image.png"></h2><p>说明：一般在创建一些相对复杂的工厂对象时，通常会写一个工厂bean对象，<br>然后基于工厂bean对象创建具体的工厂对象，例如SqlSessionFactoryBean,<br>ShiroFilterFactoryBean，ProxyFactoryBean等。</p>
-<h3 id="1-3-5-Spring-中两大bean对象描述方式"><a href="#1-3-5-Spring-中两大bean对象描述方式" class="headerlink" title="1.3.5.Spring 中两大bean对象描述方式"></a>1.3.5.Spring 中两大bean对象描述方式</h3><p>Bean 对象的描述<br>1)xml方式 (例如<bean id=”factory” class=”com.beans.Factory”>)<br>2)annotation方式（@Service,@Controller，@Configuration，@Bean，..）</p>
-<p>Spring 中用于描述这是一个Bean对象的相关注解如下:</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-ec7bdf52e7324e209438f176a87a0527.png" alt="image.png"><br>说明:无论使用如上图中的哪个注解对Bean进行描述,对Spring而言都认为是一样的Bean.</p>
-<h2 id="1-1-Spring-依赖注入实践增强"><a href="#1-1-Spring-依赖注入实践增强" class="headerlink" title="1.1.Spring 依赖注入实践增强"></a>1.1.Spring 依赖注入实践增强</h2><h3 id="1-1-1-Spring-中Bean对象依赖注入分析-重点"><a href="#1-1-1-Spring-中Bean对象依赖注入分析-重点" class="headerlink" title="1.1.1.Spring 中Bean对象依赖注入分析(重点)"></a>1.1.1.Spring 中Bean对象依赖注入分析(重点)</h3><p>依赖注入(DI)是一种设计思想,简单点就是对象通过set或构造方法直接为对象属性赋值,在Spring框架中为这种注入基于反射技术提供一种自动实现方式.例如:</p>
-<p>IOC 依赖注入在项目中的应用实现：</p>
-<hr>
-<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-8effc442fbba466fbdf7b27016a7bab9.png" alt="image.png"></h2><p>实际项目中为了解耦和,对象之间通常会通过接口进行通讯,也就是<br>说对象要耦合与接口,例如2</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-aa073ba90cc446a3ab1018da3c585284.png" alt="image.png"></p>
-<p>个人认为：IOC的核心是对象生命周期管理(资源管理)以及<br>依赖注入（资源协同）；</p>
-<h3 id="1-1-2-Spring-中Bean对象依赖注入实践"><a href="#1-1-2-Spring-中Bean对象依赖注入实践" class="headerlink" title="1.1.2.Spring 中Bean对象依赖注入实践"></a>1.1.2.Spring 中Bean对象依赖注入实践</h3><p>在1.2小节基础上,基于如下设计,进行代码实践分析及实现。</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-31a98667ce2d4cd89c0896f59d297459.png" alt="image.png"></p>
-<p>核心步骤分析：<br>Step01:创建Cache接口以及对应的实现DefaultCache<br>Step02:创建SearchService接口以及对应的实现类。<br>Step03:将DefaultCache对象注入给DefaultSearchService。<br>Step03:创建SynchronizedCache测试@Autowired注解。</p>
-<p>关键代码分析及实现：</p>
-<p>Cache接口定义</p>
-<pre><code>public interface Cache {
-
-}</code></pre><p>DefaultCache类定义</p>
-<pre><code>@Lazy
-@Component
-public class DefaultCache implements Cache{
-    public DefaultCache() {
-        System.out.println(&quot;DefaultCache()&quot;);
-    }
-}</code></pre><p>SynchronizedCache定义</p>
-<pre><code>@Component
-public class SynchronizedCache implements Cache {
-
-}</code></pre><p>SearchService接口定义</p>
-<pre><code>public interface SearchService {
-
-}</code></pre><p>SearchService实现类定义</p>
-<pre><code>@Service
-public class DefaultSearchService implements SearchService {
-    /**@Autowired 可以修饰属性，set方法，构造方法等
-     * 默认按照属性类型，方法参数类型为对象属性注入值,
-     * 假如相同类型的对象有多个，还会按属性名或方法参
-     * 数名等进行查找。
-     * @Qualifier 配合@Autowired，用于指定要注入的对
-     * 象的名字。
-     */
-    @Autowired
-    @Qualifier(&quot;defaultCache&quot;)
-    private Cache cache;
-    @Override
-    public  String toString() {
-        return &quot;DefaultSearchService [cache=&quot; + cache + &quot;]&quot;;
-    }
-}</code></pre><p>测试实现</p>
-<pre><code>public class TestSearchService extends TestBase {
-    @Test
-    public void testSearchService() {
-        DefaultSearchService ds=
-        ctx.getBean(&quot;defaultSearchService&quot;,
-                DefaultSearchService.class);
-        System.out.println(ds);
-    }
-}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2501,7 +2245,7 @@ public class DefaultSearchService implements SearchService {
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="Zpeng" />
           <p class="site-author-name" itemprop="name">Zpeng</p>
            
@@ -2513,14 +2257,32 @@ public class DefaultSearchService implements SearchService {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">34</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -2568,13 +2330,13 @@ public class DefaultSearchService implements SearchService {
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
-    NexT.Muse
+    NexT.Gemini
   </a>
 </div>
 
@@ -2654,6 +2416,13 @@ public class DefaultSearchService implements SearchService {
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
@@ -2669,25 +2438,37 @@ public class DefaultSearchService implements SearchService {
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"your-duoshuo-shortname"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
-	
 
 
 
 
-
-  
-
-
-
-
-
-  
 
 
 
