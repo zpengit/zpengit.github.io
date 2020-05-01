@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Dubbo</title>
+    <url>/2020/05/01/Dubbo/</url>
+    <content><![CDATA[<h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
+<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
+<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
+<p>层级关系与对应的协议.</p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
+<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
+<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
+<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
+<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
+<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
+<hr>
+<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
+<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
+<p>1.6.4    轮循算法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Dubbo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chrome 插件推荐</title>
     <url>/2020/05/01/Chrome%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<h2 id="Chrome-插件推荐"><a href="#Chrome-插件推荐" class="headerlink" title="Chrome 插件推荐"></a>Chrome 插件推荐</h2><p>&emsp;&emsp;不知不觉我的chrome浏览器装了如此之多的插件，以前都没注意过，现在就简单介绍几个给大家，说明，不建议大家安装太多插件，因为会占用太多内存。&emsp;<br>&emsp;&emsp;作为一名开发人员，浏览器是我们平时用到的最多的工具之一，信很多人都在使用 Chrome 浏览器，其流畅的浏览体验得到了不少用户的偏爱，但流畅只是一方面， Chrome 最大的优势还是其支持众多强大好用的扩展程序,以下都是我正在使用或用过的，个人认为比较实用的，排名不分先后。</p>
@@ -62,47 +103,6 @@
       <tags>
         <tag>Chrome</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dubbo</title>
-    <url>/2020/05/01/Dubbo/</url>
-    <content><![CDATA[<h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
-<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
-<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
-<p>层级关系与对应的协议.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
-<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
-<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
-<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
-<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
-<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
-<hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
-<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-
-<p>1.6.4    轮循算法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Dubbo</tag>
       </tags>
   </entry>
   <entry>
@@ -782,6 +782,222 @@ public void test02(){
 ]]></content>
   </entry>
   <entry>
+    <title>SPRING框架MVC模块进阶</title>
+    <url>/2020/04/30/SPRING%E6%A1%86%E6%9E%B6MVC%E6%A8%A1%E5%9D%97%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<h1 id="2-SPRING-框架MVC模块进阶"><a href="#2-SPRING-框架MVC模块进阶" class="headerlink" title="2.SPRING 框架MVC模块进阶"></a>2.SPRING 框架MVC模块进阶</h1><h2 id="2-1-Spring-MVC-设计思想"><a href="#2-1-Spring-MVC-设计思想" class="headerlink" title="2.1.Spring MVC 设计思想"></a>2.1.Spring MVC 设计思想</h2><h3 id="2-1-1-Spring-MVC-设计思想分析"><a href="#2-1-1-Spring-MVC-设计思想分析" class="headerlink" title="2.1.1.Spring MVC 设计思想分析"></a>2.1.1.Spring MVC 设计思想分析</h3><p>MVC是一种分层架构设计思想，目的是基于对象职责上的不同，进行分层设计，实现各司其职，各尽所能，以提高代码的可维护性，可扩展性。<br>1)生活中的MVC:正规饭店(菜单,服务员,厨师)<br>2)程序中的MVC:(html,jsp)/servlet/(service,dao))</p>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-7a786784d3ca41f4946261f296b671bd.png" alt="image.png"></h2><p>SPRING MVC是Spring 框架中的一个WEB模块, 是基于MVC设思想的一种完美实现。</p>
+<h3 id="2-1-2-Spring-MVC-核心对象及流程分析"><a href="#2-1-2-Spring-MVC-核心对象及流程分析" class="headerlink" title="2.1.2.Spring MVC 核心对象及流程分析"></a>2.1.2.Spring MVC 核心对象及流程分析</h3><p>Spring MVC 处理流程及其核心组件对象构成，如下图所示：</p>
+<hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-349c5b35210b4a4b9bb0991a02d335bc.png" alt="image.png"></h2><p>FAQ：说说spring MVC中的核心组件？<br>1)DipatcherServlet:前端控制器(web服务器启动时加载)<br>2)HandlerMapping:注册中心(负责存储url到后端控制器的映射)<br>3)HandlerInterceptor:拦截器(请求到handler之间的拦截)<br>4)Handler:后端处理器(又称之为Controller)<br>5)ViewResolver:视图解析器(负责是视图页面进行解析)</p>
+<h2 id="2-2-Spring-MVC-快速实践"><a href="#2-2-Spring-MVC-快速实践" class="headerlink" title="2.2.Spring MVC 快速实践"></a>2.2.Spring MVC 快速实践</h2><h3 id="2-2-1-xml方式配置实现-脱离文档"><a href="#2-2-1-xml方式配置实现-脱离文档" class="headerlink" title="2.2.1.xml方式配置实现(脱离文档)"></a>2.2.1.xml方式配置实现(脱离文档)</h3><p>1.创建maven项目</p>
+<p>1)项目名称: CGB-SPRINGMVC-01<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
+<p>2.配置并初始化项目环境</p>
+<p>1)生成web.xml(配置spring mvc 前端控制器)<br>2)设置项目的运行时环境(选择tomcat,提供servlet支持)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置文件并进行配置:spring-configs.xml<br>7)web.xml中配置spring mvc前端控制器(DispatcherServlet)<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
+<p>说明:如上配置可参考后面内容中的关键代码分享.</p>
+<p>3.Spring MVC基础业务实现 </p>
+<p>1)定义Controller类<br>a)包名:com.cy.pj.search.controller<br>b)类名:SearchController</p>
+<p>代码如下:</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/search/&quot;)
+public class SearchController {
+}</code></pre><p>其中:@RequestMapping修饰类时用于定义请求路径</p>
+<p>2)添加Controller方法<br>方法1:此方法用于向客户端返回一个页面</p>
+<pre><code>@RequestMapping(&quot;doSearchUI&quot;)
+public String doSearchUI() {
+return &quot;search&quot;;
+}</code></pre><p>其中:对于返回值search需要在/WEB-INF/pages/目录下有对应的<br>search.html页面.</p>
+<p>方法2:此方法用于向客户端返回一个json格式的字符串</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"doSearch"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doSearch</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,Object&gt; map=<span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">		map.put(<span class="string">"state"</span>, <span class="number">1</span>);</span><br><span class="line">		map.put(<span class="string">"message"</span>,<span class="string">"hello everyone"</span>);</span><br><span class="line">		<span class="keyword">return</span> map;<span class="comment">//&#123;"state":1,"message":"hello everyone"&#125;</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中:<br>a)@ResponseBody修饰方法时,Spring MVC可以将方法的返回值以指定格式进行进行输出,例如JSON格式字符串.<br>b)doSearch方法进行测试时,需要在项目中添加如下依赖:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.9.9.3&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>3)部署并启动服务测试.</p>
+<p>4.关键代码分享:</p>
+<p>spring-configs.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;
+
+    &lt;context:component-scan base-package=&quot;com.cy.controller&quot;/&gt;
+    &lt;!-- Enable MVC Configuration:启用默认bean对象(注解驱动)  --&gt;
+    &lt;mvc:annotation-driven/&gt;
+    &lt;!-- 启用 DefaultServletHttpRequestHandler对静态进行处理 --&gt;
+    &lt;mvc:default-servlet-handler/&gt;
+    &lt;!-- 配置视图解析器(ViewResolver)对象 --&gt;
+    &lt;bean id=&quot;viewResolver&quot;  class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+       &lt;!-- Set DI (默认找对象中的set方法)--&gt;
+       &lt;property name=&quot;Prefix&quot; value=&quot;/WEB-INF/pages/&quot;/&gt;
+       &lt;property name=&quot;Suffix&quot; value=&quot;.html&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre><p>Web.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; version=&quot;2.5&quot;&gt;
+  &lt;display-name&gt;CGB-SPRINGMVC-01&lt;/display-name&gt;
+  &lt;!-- 配置前端控制器 --&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:spring-configs.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;!-- tomcat 启动时则初始化servlet,数字越小优先级越高 --&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+     &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
+     &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre><p>SearchController</p>
+<pre><code>package com.cy.pj.search.controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+@Controller 
+@RequestMapping(&quot;/search/&quot;) 
+public class SearchController {
+    @RequestMapping(&quot;doSearchUI&quot;)
+    public String doSearchUI() {
+        return &quot;search&quot;;
+    }///WEB-INF/pages/search.html
+
+    @RequestMapping(&quot;doSearch&quot;)
+    @ResponseBody
+    public Object doSearch(String key) {
+        Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
+        map.put(&quot;state&quot;, 1);
+        map.put(&quot;message&quot;,&quot;hello everyone&quot;);
+        return map;//{&quot;state&quot;:1,&quot;message&quot;:&quot;hello everyone&quot;}
+    }
+}</code></pre><h3 id="2-2-2-注解方式配置实现（脱离文档）"><a href="#2-2-2-注解方式配置实现（脱离文档）" class="headerlink" title="2.2.2.注解方式配置实现（脱离文档）"></a>2.2.2.注解方式配置实现（脱离文档）</h3><p>Tomcat 启动加载方式:</p>
+<hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-20db542cf104453c8a8451787821bda0.png" alt="image.png"></h2><p>1.创建maven项目</p>
+<p>1)项目名称: CGB-SPRINGMVC-02<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
+<p>2.配置并初始化项目环境(重点对xml方式进行重构)</p>
+<p>1)配置maven war包插件(忽略web.xml)<br>2)设置项目的运行时环境(选择tomcat)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置类:SpringWebConfig类<br>7)创建WebInitializer类配置spring mvc(例如前端控制器)。<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
+<p>3.Spring MVC基础业务实现 (参考xml方式业务代码实现)</p>
+<p>4.Spring mvc 注解方式应用分析:</p>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-de958697c6d948dda4e45ae287c18496.png" alt="image.png"></h2><p>其中META-INF目录可在sping-web.jar中进行查看.</p>
+<p>关键代码分析:</p>
+<p>SpringWebConfig类</p>
+<pre><code>@Configuration 
+@ComponentScan(&quot;com.cy.pj.search.controller&quot;)
+@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
+public class SpringWebConfig implements WebMvcConfigurer{
+    //&lt;mvc:default-servlet-handler/&gt;
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+    @Override
+    public void configureViewResolvers(
+        ViewResolverRegistry registry) {
+        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
+    }
+}</code></pre><p>WebInitializer类</p>
+<pre><code>public class WebInitializer extends 
+AbstractAnnotationConfigDispatcherServletInitializer {
+
+    //Service,Repository
+    @Override
+    protected Class&lt;?&gt;[] getRootConfigClasses() {
+        System.out.println(&quot;getRootConfigClasses()&quot;);
+        return null;
+    }
+    //View,Controller
+    @Override
+    protected Class&lt;?&gt;[] getServletConfigClasses() {
+        System.out.println(&quot;getServletConfigClasses()&quot;);
+        return new Class[] {SpringWebConfig.class};
+    }
+    @Override
+    protected String[] getServletMappings() {
+        System.out.println(&quot;getServletMappings()&quot;);
+        return new String[] {&quot;/&quot;};
+    }
+}</code></pre><h2 id="2-3-Spring-MVC-请求响应处理增强分析"><a href="#2-3-Spring-MVC-请求响应处理增强分析" class="headerlink" title="2.3.Spring MVC 请求响应处理增强分析"></a>2.3.Spring MVC 请求响应处理增强分析</h2><p>所有MVC框架的重点都在请求和响应数据的处理上。</p>
+<h3 id="2-3-1-请求处理增强分析及实现-重点"><a href="#2-3-1-请求处理增强分析及实现-重点" class="headerlink" title="2.3.1.请求处理增强分析及实现(重点)"></a>2.3.1.请求处理增强分析及实现(重点)</h3><p>Spring MVC请求处理主要从如下几个方面进行考虑：<br>1)请求路径(普通方式，rest方式) ：404<br>2)请求方式(Get请求，Post请求,…):405<br>3)请求参数(直接量，POJO对象，MAP对象):400</p>
+<p>代码分析如下：</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/request/&quot;)
+public class RequestHandleController {
+     //===请求url定义 
+      //普通URL定义实现(多个url可以对应同一个资源)
+      @RequestMapping(value={&quot;doHandleUrl&quot;,&quot;doWelcomeUI&quot;})
+      public String doHandleUrl() {
+         return &quot;welcome&quot;; 
+      }
+      //REST风格的URL，其url格式为{a}/{b}/{c}
+      //假如希望方法参数获取url中{}表达式内部的值
+      //可以使用@PathVariable对参数进行修饰
+      @RequestMapping(&quot;{module}/{page}&quot;)
+      public String doMoudleUrl(
+              @PathVariable String module,
+              @PathVariable String page) {
+         return module+&quot;/&quot;+page;
+      }
+      //===请求方式定义
+      //@RequestMapping(value=&quot;type&quot;,method=RequestMethod.GET)
+      @GetMapping(&quot;type&quot;)
+      //@PostMapping(&quot;type&quot;)
+      @ResponseBody
+      public String doRequestType() {
+          return &quot;request type&quot;;
+      }
+      //=====请求参数处理======
+      @GetMapping(&quot;param&quot;)
+      @ResponseBody
+      public String doRequestParam(
+             RequestWrapper rw,//pojo
+             @RequestParam(required=false) String msg,
+             @DateTimeFormat(pattern=&quot;yyyy/MM/dd&quot;)Date begin) {
+          return &quot;request parameter handle msg=&quot;+msg+&quot;,begin=&quot;+begin+&quot;,rw=&quot;+rw.toString();
+      }
+}</code></pre><h3 id="2-3-2-响应处理增强分析实现（重点）"><a href="#2-3-2-响应处理增强分析实现（重点）" class="headerlink" title="2.3.2.响应处理增强分析实现（重点）"></a>2.3.2.响应处理增强分析实现（重点）</h3><p>Spring MVC响应处理主要从如下几个方面进行考虑：<br>1）响应方式(转发forward，重定向redirect)<br>2）响应数据封装(ModelAndView,Model,Map,Pojo)<br>3）响应数据转换（将对象序列化为JSON格式字符串）</p>
+<p>代码分析如下：</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/resp/&quot;)
+public class ResponseHandleController {
+     @RequestMapping(&quot;doResponseUI&quot;)
+     public String doResponseUI() {
+         return &quot;response&quot;;
+     }
+     @RequestMapping(&quot;type&quot;)
+     public String doResponseType() {
+         //转发(客户端请求一次)
+         return &quot;forward:doResponseUI&quot;;//address
+         //重定向(客户端两次请求)
+         //return &quot;redirect:doResponseUI&quot;;//address
+     }
+
+     @RequestMapping(&quot;doDataConvert&quot;)
+     @ResponseBody
+     public String doDataConvert()throws Exception {
+         Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
+         map.put(&quot;id&quot;, 100);
+         map.put(&quot;msg&quot;, &quot;hello jackson&quot;);
+         //借助jackson中的API将对象转换json格式的字符串
+         ObjectMapper om=new ObjectMapper();
+         return om.writeValueAsString(map);
+     }
+}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
+  </entry>
+  <entry>
     <title>SPRING框架核心进阶</title>
     <url>/2020/04/30/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[<h1 id="1-SPRING-框架核心进阶"><a href="#1-SPRING-框架核心进阶" class="headerlink" title="1.SPRING 框架核心进阶"></a>1.SPRING 框架核心进阶</h1><h2 id="1-1-SPRING-框架架构分析"><a href="#1-1-SPRING-框架架构分析" class="headerlink" title="1.1.SPRING 框架架构分析"></a>1.1.SPRING 框架架构分析</h2><h3 id="1-1-1-Spring-框架应用架构"><a href="#1-1-1-Spring-框架应用架构" class="headerlink" title="1.1.1.Spring 框架应用架构"></a>1.1.1.Spring 框架应用架构</h3><hr>
@@ -999,234 +1215,6 @@ public class DefaultSearchService implements SearchService {
         System.out.println(ds);
     }
 }</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
-  </entry>
-  <entry>
-    <title>SPRING框架MVC模块进阶</title>
-    <url>/2020/04/30/SPRING%E6%A1%86%E6%9E%B6MVC%E6%A8%A1%E5%9D%97%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[<h1 id="2-SPRING-框架MVC模块进阶"><a href="#2-SPRING-框架MVC模块进阶" class="headerlink" title="2.SPRING 框架MVC模块进阶"></a>2.SPRING 框架MVC模块进阶</h1><h2 id="2-1-Spring-MVC-设计思想"><a href="#2-1-Spring-MVC-设计思想" class="headerlink" title="2.1.Spring MVC 设计思想"></a>2.1.Spring MVC 设计思想</h2><h3 id="2-1-1-Spring-MVC-设计思想分析"><a href="#2-1-1-Spring-MVC-设计思想分析" class="headerlink" title="2.1.1.Spring MVC 设计思想分析"></a>2.1.1.Spring MVC 设计思想分析</h3><p>MVC是一种分层架构设计思想，目的是基于对象职责上的不同，进行分层设计，实现各司其职，各尽所能，以提高代码的可维护性，可扩展性。<br>1)生活中的MVC:正规饭店(菜单,服务员,厨师)<br>2)程序中的MVC:(html,jsp)/servlet/(service,dao))</p>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-7a786784d3ca41f4946261f296b671bd.png" alt="image.png"></h2><p>SPRING MVC是Spring 框架中的一个WEB模块, 是基于MVC设思想的一种完美实现。</p>
-<h3 id="2-1-2-Spring-MVC-核心对象及流程分析"><a href="#2-1-2-Spring-MVC-核心对象及流程分析" class="headerlink" title="2.1.2.Spring MVC 核心对象及流程分析"></a>2.1.2.Spring MVC 核心对象及流程分析</h3><p>Spring MVC 处理流程及其核心组件对象构成，如下图所示：</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-349c5b35210b4a4b9bb0991a02d335bc.png" alt="image.png"></h2><p>FAQ：说说spring MVC中的核心组件？<br>1)DipatcherServlet:前端控制器(web服务器启动时加载)<br>2)HandlerMapping:注册中心(负责存储url到后端控制器的映射)<br>3)HandlerInterceptor:拦截器(请求到handler之间的拦截)<br>4)Handler:后端处理器(又称之为Controller)<br>5)ViewResolver:视图解析器(负责是视图页面进行解析)</p>
-<h2 id="2-2-Spring-MVC-快速实践"><a href="#2-2-Spring-MVC-快速实践" class="headerlink" title="2.2.Spring MVC 快速实践"></a>2.2.Spring MVC 快速实践</h2><h3 id="2-2-1-xml方式配置实现-脱离文档"><a href="#2-2-1-xml方式配置实现-脱离文档" class="headerlink" title="2.2.1.xml方式配置实现(脱离文档)"></a>2.2.1.xml方式配置实现(脱离文档)</h3><p>1.创建maven项目</p>
-<p>1)项目名称: CGB-SPRINGMVC-01<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
-<p>2.配置并初始化项目环境</p>
-<p>1)生成web.xml(配置spring mvc 前端控制器)<br>2)设置项目的运行时环境(选择tomcat,提供servlet支持)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置文件并进行配置:spring-configs.xml<br>7)web.xml中配置spring mvc前端控制器(DispatcherServlet)<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
-<p>说明:如上配置可参考后面内容中的关键代码分享.</p>
-<p>3.Spring MVC基础业务实现 </p>
-<p>1)定义Controller类<br>a)包名:com.cy.pj.search.controller<br>b)类名:SearchController</p>
-<p>代码如下:</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/search/&quot;)
-public class SearchController {
-}</code></pre><p>其中:@RequestMapping修饰类时用于定义请求路径</p>
-<p>2)添加Controller方法<br>方法1:此方法用于向客户端返回一个页面</p>
-<pre><code>@RequestMapping(&quot;doSearchUI&quot;)
-public String doSearchUI() {
-return &quot;search&quot;;
-}</code></pre><p>其中:对于返回值search需要在/WEB-INF/pages/目录下有对应的<br>search.html页面.</p>
-<p>方法2:此方法用于向客户端返回一个json格式的字符串</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"doSearch"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doSearch</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,Object&gt; map=<span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">		map.put(<span class="string">"state"</span>, <span class="number">1</span>);</span><br><span class="line">		map.put(<span class="string">"message"</span>,<span class="string">"hello everyone"</span>);</span><br><span class="line">		<span class="keyword">return</span> map;<span class="comment">//&#123;"state":1,"message":"hello everyone"&#125;</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中:<br>a)@ResponseBody修饰方法时,Spring MVC可以将方法的返回值以指定格式进行进行输出,例如JSON格式字符串.<br>b)doSearch方法进行测试时,需要在项目中添加如下依赖:</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
-    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-    &lt;version&gt;2.9.9.3&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>3)部署并启动服务测试.</p>
-<p>4.关键代码分享:</p>
-<p>spring-configs.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-    xsi:schemaLocation=&quot;
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;
-
-    &lt;context:component-scan base-package=&quot;com.cy.controller&quot;/&gt;
-    &lt;!-- Enable MVC Configuration:启用默认bean对象(注解驱动)  --&gt;
-    &lt;mvc:annotation-driven/&gt;
-    &lt;!-- 启用 DefaultServletHttpRequestHandler对静态进行处理 --&gt;
-    &lt;mvc:default-servlet-handler/&gt;
-    &lt;!-- 配置视图解析器(ViewResolver)对象 --&gt;
-    &lt;bean id=&quot;viewResolver&quot;  class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-       &lt;!-- Set DI (默认找对象中的set方法)--&gt;
-       &lt;property name=&quot;Prefix&quot; value=&quot;/WEB-INF/pages/&quot;/&gt;
-       &lt;property name=&quot;Suffix&quot; value=&quot;.html&quot;/&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;</code></pre><p>Web.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; version=&quot;2.5&quot;&gt;
-  &lt;display-name&gt;CGB-SPRINGMVC-01&lt;/display-name&gt;
-  &lt;!-- 配置前端控制器 --&gt;
-  &lt;servlet&gt;
-    &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-        &lt;param-value&gt;classpath:spring-configs.xml&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;!-- tomcat 启动时则初始化servlet,数字越小优先级越高 --&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-  &lt;/servlet&gt;
-  &lt;servlet-mapping&gt;
-     &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
-     &lt;url-pattern&gt;/&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre><p>SearchController</p>
-<pre><code>package com.cy.pj.search.controller;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-@Controller 
-@RequestMapping(&quot;/search/&quot;) 
-public class SearchController {
-    @RequestMapping(&quot;doSearchUI&quot;)
-    public String doSearchUI() {
-        return &quot;search&quot;;
-    }///WEB-INF/pages/search.html
-
-    @RequestMapping(&quot;doSearch&quot;)
-    @ResponseBody
-    public Object doSearch(String key) {
-        Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
-        map.put(&quot;state&quot;, 1);
-        map.put(&quot;message&quot;,&quot;hello everyone&quot;);
-        return map;//{&quot;state&quot;:1,&quot;message&quot;:&quot;hello everyone&quot;}
-    }
-}</code></pre><h3 id="2-2-2-注解方式配置实现（脱离文档）"><a href="#2-2-2-注解方式配置实现（脱离文档）" class="headerlink" title="2.2.2.注解方式配置实现（脱离文档）"></a>2.2.2.注解方式配置实现（脱离文档）</h3><p>Tomcat 启动加载方式:</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-20db542cf104453c8a8451787821bda0.png" alt="image.png"></h2><p>1.创建maven项目</p>
-<p>1)项目名称: CGB-SPRINGMVC-02<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
-<p>2.配置并初始化项目环境(重点对xml方式进行重构)</p>
-<p>1)配置maven war包插件(忽略web.xml)<br>2)设置项目的运行时环境(选择tomcat)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置类:SpringWebConfig类<br>7)创建WebInitializer类配置spring mvc(例如前端控制器)。<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
-<p>3.Spring MVC基础业务实现 (参考xml方式业务代码实现)</p>
-<p>4.Spring mvc 注解方式应用分析:</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-de958697c6d948dda4e45ae287c18496.png" alt="image.png"></h2><p>其中META-INF目录可在sping-web.jar中进行查看.</p>
-<p>关键代码分析:</p>
-<p>SpringWebConfig类</p>
-<pre><code>@Configuration 
-@ComponentScan(&quot;com.cy.pj.search.controller&quot;)
-@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
-public class SpringWebConfig implements WebMvcConfigurer{
-    //&lt;mvc:default-servlet-handler/&gt;
-    @Override
-    public void configureDefaultServletHandling(
-            DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
-    @Override
-    public void configureViewResolvers(
-        ViewResolverRegistry registry) {
-        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
-    }
-}</code></pre><p>WebInitializer类</p>
-<pre><code>public class WebInitializer extends 
-AbstractAnnotationConfigDispatcherServletInitializer {
-
-    //Service,Repository
-    @Override
-    protected Class&lt;?&gt;[] getRootConfigClasses() {
-        System.out.println(&quot;getRootConfigClasses()&quot;);
-        return null;
-    }
-    //View,Controller
-    @Override
-    protected Class&lt;?&gt;[] getServletConfigClasses() {
-        System.out.println(&quot;getServletConfigClasses()&quot;);
-        return new Class[] {SpringWebConfig.class};
-    }
-    @Override
-    protected String[] getServletMappings() {
-        System.out.println(&quot;getServletMappings()&quot;);
-        return new String[] {&quot;/&quot;};
-    }
-}</code></pre><h2 id="2-3-Spring-MVC-请求响应处理增强分析"><a href="#2-3-Spring-MVC-请求响应处理增强分析" class="headerlink" title="2.3.Spring MVC 请求响应处理增强分析"></a>2.3.Spring MVC 请求响应处理增强分析</h2><p>所有MVC框架的重点都在请求和响应数据的处理上。</p>
-<h3 id="2-3-1-请求处理增强分析及实现-重点"><a href="#2-3-1-请求处理增强分析及实现-重点" class="headerlink" title="2.3.1.请求处理增强分析及实现(重点)"></a>2.3.1.请求处理增强分析及实现(重点)</h3><p>Spring MVC请求处理主要从如下几个方面进行考虑：<br>1)请求路径(普通方式，rest方式) ：404<br>2)请求方式(Get请求，Post请求,…):405<br>3)请求参数(直接量，POJO对象，MAP对象):400</p>
-<p>代码分析如下：</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/request/&quot;)
-public class RequestHandleController {
-     //===请求url定义 
-      //普通URL定义实现(多个url可以对应同一个资源)
-      @RequestMapping(value={&quot;doHandleUrl&quot;,&quot;doWelcomeUI&quot;})
-      public String doHandleUrl() {
-         return &quot;welcome&quot;; 
-      }
-      //REST风格的URL，其url格式为{a}/{b}/{c}
-      //假如希望方法参数获取url中{}表达式内部的值
-      //可以使用@PathVariable对参数进行修饰
-      @RequestMapping(&quot;{module}/{page}&quot;)
-      public String doMoudleUrl(
-              @PathVariable String module,
-              @PathVariable String page) {
-         return module+&quot;/&quot;+page;
-      }
-      //===请求方式定义
-      //@RequestMapping(value=&quot;type&quot;,method=RequestMethod.GET)
-      @GetMapping(&quot;type&quot;)
-      //@PostMapping(&quot;type&quot;)
-      @ResponseBody
-      public String doRequestType() {
-          return &quot;request type&quot;;
-      }
-      //=====请求参数处理======
-      @GetMapping(&quot;param&quot;)
-      @ResponseBody
-      public String doRequestParam(
-             RequestWrapper rw,//pojo
-             @RequestParam(required=false) String msg,
-             @DateTimeFormat(pattern=&quot;yyyy/MM/dd&quot;)Date begin) {
-          return &quot;request parameter handle msg=&quot;+msg+&quot;,begin=&quot;+begin+&quot;,rw=&quot;+rw.toString();
-      }
-}</code></pre><h3 id="2-3-2-响应处理增强分析实现（重点）"><a href="#2-3-2-响应处理增强分析实现（重点）" class="headerlink" title="2.3.2.响应处理增强分析实现（重点）"></a>2.3.2.响应处理增强分析实现（重点）</h3><p>Spring MVC响应处理主要从如下几个方面进行考虑：<br>1）响应方式(转发forward，重定向redirect)<br>2）响应数据封装(ModelAndView,Model,Map,Pojo)<br>3）响应数据转换（将对象序列化为JSON格式字符串）</p>
-<p>代码分析如下：</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/resp/&quot;)
-public class ResponseHandleController {
-     @RequestMapping(&quot;doResponseUI&quot;)
-     public String doResponseUI() {
-         return &quot;response&quot;;
-     }
-     @RequestMapping(&quot;type&quot;)
-     public String doResponseType() {
-         //转发(客户端请求一次)
-         return &quot;forward:doResponseUI&quot;;//address
-         //重定向(客户端两次请求)
-         //return &quot;redirect:doResponseUI&quot;;//address
-     }
-
-     @RequestMapping(&quot;doDataConvert&quot;)
-     @ResponseBody
-     public String doDataConvert()throws Exception {
-         Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
-         map.put(&quot;id&quot;, 100);
-         map.put(&quot;msg&quot;, &quot;hello jackson&quot;);
-         //借助jackson中的API将对象转换json格式的字符串
-         ObjectMapper om=new ObjectMapper();
-         return om.writeValueAsString(map);
-     }
-}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
-  </entry>
-  <entry>
-    <title>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</title>
-    <url>/2020/04/30/SpringCloud%E3%80%81RabbitMQ%E3%80%81Solr%E3%80%81Docker%E3%80%81Kubernetes/</url>
-    <content><![CDATA[<h1 id="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"><a href="#SpringCloud、RabbitMQ、Solr、Docker、Kubernetes" class="headerlink" title="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"></a>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</h1><p><a href="https://blog.csdn.net/weixin_38305440/article/details/102775484" target="_blank" rel="noopener" title="Spring Cloud入门操作手册(Greenwich)">Spring Cloud入门操作手册(Greenwich)</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810522" target="_blank" rel="noopener" title="RabbitMQ">RabbitMQ</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810509" target="_blank" rel="noopener" title="Lucene Solr 811">Lucene Solr 811</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810532" target="_blank" rel="noopener" title="Docker">Docker</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810541" target="_blank" rel="noopener" title="Docker案例">Docker案例</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810548" target="_blank" rel="noopener" title="Kubernetes">Kubernetes</a></p>
-<p>老师的笔记，收藏备用。2019-12-05 10:20:47 星期四 &euro;</p>
-]]></content>
   </entry>
   <entry>
     <title>SSM框架综合案例实现</title>
@@ -1479,6 +1467,18 @@ public class GoodsController {
 }</code></pre><p>2.6.项目部署及运行分析<br>项目部署到tomcat,然后启动进行访问测试.</p>
 <p><a href="http://localhost/CGB-SSM-01/goods/doFindGoods" target="_blank" rel="noopener">http://localhost/CGB-SSM-01/goods/doFindGoods</a></p>
 <h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
+  </entry>
+  <entry>
+    <title>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</title>
+    <url>/2020/04/30/SpringCloud%E3%80%81RabbitMQ%E3%80%81Solr%E3%80%81Docker%E3%80%81Kubernetes/</url>
+    <content><![CDATA[<h1 id="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"><a href="#SpringCloud、RabbitMQ、Solr、Docker、Kubernetes" class="headerlink" title="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"></a>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</h1><p><a href="https://blog.csdn.net/weixin_38305440/article/details/102775484" target="_blank" rel="noopener" title="Spring Cloud入门操作手册(Greenwich)">Spring Cloud入门操作手册(Greenwich)</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810522" target="_blank" rel="noopener" title="RabbitMQ">RabbitMQ</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810509" target="_blank" rel="noopener" title="Lucene Solr 811">Lucene Solr 811</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810532" target="_blank" rel="noopener" title="Docker">Docker</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810541" target="_blank" rel="noopener" title="Docker案例">Docker案例</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810548" target="_blank" rel="noopener" title="Kubernetes">Kubernetes</a></p>
+<p>老师的笔记，收藏备用。2019-12-05 10:20:47 星期四 &euro;</p>
+]]></content>
   </entry>
   <entry>
     <title>Sql语句</title>
@@ -1818,6 +1818,100 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
+    <title>github仓库-CS-Notes</title>
+    <url>/2020/04/30/github%E4%BB%93%E5%BA%93-CS-Notes/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">&nbsp;算法&nbsp;</th>
+<th align="center">操作系统</th>
+<th align="center">&nbsp;网络&nbsp;</th>
+<th align="center">面向对象</th>
+<th align="center">&nbsp;&nbsp;数据库&nbsp;&nbsp;</th>
+<th align="center">&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;</th>
+<th align="center">系统设计</th>
+<th align="center">&nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&nbsp;</th>
+<th align="center">编码实践</th>
+<th align="center">&nbsp;&nbsp;&nbsp;后记&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="#pencil2-算法">:pencil2:</a></td>
+<td align="center"><a href="#computer-操作系统">:computer:</a></td>
+<td align="center"><a href="#cloud-网络">:cloud:</a></td>
+<td align="center"><a href="#art-面向对象">:art:</a></td>
+<td align="center"><a href="#floppy_disk-数据库">:floppy_disk:</a></td>
+<td align="center"><a href="#coffee-java">:coffee:</a></td>
+<td align="center"><a href="#bulb-系统设计">:bulb:</a></td>
+<td align="center"><a href="#wrench-工具">:wrench:</a></td>
+<td align="center"><a href="#watermelon-编码实践">:watermelon:</a></td>
+<td align="center"><a href="#memo-后记">:memo:</a></td>
+</tr>
+</tbody></table>
+<br>
+
+<div align="center">
+    <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/githubio/LogoMakr_0zpEzN.png" width="200px">
+</div>
+
+
+
+<br>
+
+<h2 id="pencil2-算法"><a href="#pencil2-算法" class="headerlink" title=":pencil2: 算法"></a>:pencil2: 算法</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md" target="_blank" rel="noopener">剑指 Offer 题解</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20题解%20-%20目录.md" target="_blank" rel="noopener">Leetcode 题解</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/算法%20-%20目录.md" target="_blank" rel="noopener">算法</a></li>
+<li><a href="https://www.nowcoder.com/contestRoom?from=cyc_github" target="_blank" rel="noopener">笔试面试题库</a></li>
+</ul>
+<h2 id="computer-操作系统"><a href="#computer-操作系统" class="headerlink" title=":computer: 操作系统"></a>:computer: 操作系统</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统%20-%20目录.md" target="_blank" rel="noopener">计算机操作系统</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md" target="_blank" rel="noopener">Linux</a></li>
+</ul>
+<h2 id="cloud-网络"><a href="#cloud-网络" class="headerlink" title=":cloud: 网络"></a>:cloud: 网络</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络%20-%20目录.md" target="_blank" rel="noopener">计算机网络</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md" target="_blank" rel="noopener">HTTP</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md" target="_blank" rel="noopener">Socket</a></li>
+</ul>
+<h2 id="art-面向对象"><a href="#art-面向对象" class="headerlink" title=":art: 面向对象"></a>:art: 面向对象</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/设计模式%20-%20目录.md" target="_blank" rel="noopener">设计模式</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/面向对象思想.md" target="_blank" rel="noopener">面向对象思想</a></li>
+</ul>
+<h2 id="floppy-disk-数据库"><a href="#floppy-disk-数据库" class="headerlink" title=":floppy_disk: 数据库"></a>:floppy_disk: 数据库</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/数据库系统原理.md" target="_blank" rel="noopener">数据库系统原理</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/SQL.md" target="_blank" rel="noopener">SQL</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode-Database%20题解.md" target="_blank" rel="noopener">Leetcode-Database 题解</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md" target="_blank" rel="noopener">MySQL</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Redis.md" target="_blank" rel="noopener">Redis</a></li>
+</ul>
+<h2 id="coffee-Java"><a href="#coffee-Java" class="headerlink" title=":coffee: Java"></a>:coffee: Java</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20基础.md" target="_blank" rel="noopener">Java 基础</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20容器.md" target="_blank" rel="noopener">Java 容器</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20并发.md" target="_blank" rel="noopener">Java 并发</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20虚拟机.md" target="_blank" rel="noopener">Java 虚拟机</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md" target="_blank" rel="noopener">Java I/O</a></li>
+</ul>
+<h2 id="bulb-系统设计"><a href="#bulb-系统设计" class="headerlink" title=":bulb: 系统设计"></a>:bulb: 系统设计</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/系统设计基础.md" target="_blank" rel="noopener">系统设计基础</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/分布式.md" target="_blank" rel="noopener">分布式</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/集群.md" target="_blank" rel="noopener">集群</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/攻击技术.md" target="_blank" rel="noopener">攻击技术</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/缓存.md" target="_blank" rel="noopener">缓存</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/消息队列.md" target="_blank" rel="noopener">消息队列</a></li>
+</ul>
+<h2 id="wrench-工具"><a href="#wrench-工具" class="headerlink" title=":wrench: 工具"></a>:wrench: 工具</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Git.md" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Docker.md" target="_blank" rel="noopener">Docker</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/构建工具.md" target="_blank" rel="noopener">构建工具</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/正则表达式.md" target="_blank" rel="noopener">正则表达式</a></li>
+</ul>
+<h2 id="watermelon-编码实践"><a href="#watermelon-编码实践" class="headerlink" title=":watermelon: 编码实践"></a>:watermelon: 编码实践</h2><ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码可读性.md" target="_blank" rel="noopener">代码可读性</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码风格规范.md" target="_blank" rel="noopener">代码风格规范</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>github仓库--JavaGuide</title>
     <url>/2020/04/30/github%E4%BB%93%E5%BA%93--JavaGuide/</url>
     <content><![CDATA[<p>传送门—–<a href="https://github.com/zhangpengpeng69/JavaGuide" target="_blank" rel="noopener">java基础知识</a></p>
@@ -2019,141 +2113,6 @@ order by... -- 根据指定的列进行排序
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>]]></content>
   </entry>
   <entry>
-    <title>github仓库-CS-Notes</title>
-    <url>/2020/04/30/github%E4%BB%93%E5%BA%93-CS-Notes/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th align="center">&nbsp;算法&nbsp;</th>
-<th align="center">操作系统</th>
-<th align="center">&nbsp;网络&nbsp;</th>
-<th align="center">面向对象</th>
-<th align="center">&nbsp;&nbsp;数据库&nbsp;&nbsp;</th>
-<th align="center">&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;</th>
-<th align="center">系统设计</th>
-<th align="center">&nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&nbsp;</th>
-<th align="center">编码实践</th>
-<th align="center">&nbsp;&nbsp;&nbsp;后记&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a href="#pencil2-算法">:pencil2:</a></td>
-<td align="center"><a href="#computer-操作系统">:computer:</a></td>
-<td align="center"><a href="#cloud-网络">:cloud:</a></td>
-<td align="center"><a href="#art-面向对象">:art:</a></td>
-<td align="center"><a href="#floppy_disk-数据库">:floppy_disk:</a></td>
-<td align="center"><a href="#coffee-java">:coffee:</a></td>
-<td align="center"><a href="#bulb-系统设计">:bulb:</a></td>
-<td align="center"><a href="#wrench-工具">:wrench:</a></td>
-<td align="center"><a href="#watermelon-编码实践">:watermelon:</a></td>
-<td align="center"><a href="#memo-后记">:memo:</a></td>
-</tr>
-</tbody></table>
-<br>
-
-<div align="center">
-    <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/githubio/LogoMakr_0zpEzN.png" width="200px">
-</div>
-
-
-
-<br>
-
-<h2 id="pencil2-算法"><a href="#pencil2-算法" class="headerlink" title=":pencil2: 算法"></a>:pencil2: 算法</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md" target="_blank" rel="noopener">剑指 Offer 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20题解%20-%20目录.md" target="_blank" rel="noopener">Leetcode 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/算法%20-%20目录.md" target="_blank" rel="noopener">算法</a></li>
-<li><a href="https://www.nowcoder.com/contestRoom?from=cyc_github" target="_blank" rel="noopener">笔试面试题库</a></li>
-</ul>
-<h2 id="computer-操作系统"><a href="#computer-操作系统" class="headerlink" title=":computer: 操作系统"></a>:computer: 操作系统</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统%20-%20目录.md" target="_blank" rel="noopener">计算机操作系统</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md" target="_blank" rel="noopener">Linux</a></li>
-</ul>
-<h2 id="cloud-网络"><a href="#cloud-网络" class="headerlink" title=":cloud: 网络"></a>:cloud: 网络</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络%20-%20目录.md" target="_blank" rel="noopener">计算机网络</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md" target="_blank" rel="noopener">HTTP</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md" target="_blank" rel="noopener">Socket</a></li>
-</ul>
-<h2 id="art-面向对象"><a href="#art-面向对象" class="headerlink" title=":art: 面向对象"></a>:art: 面向对象</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/设计模式%20-%20目录.md" target="_blank" rel="noopener">设计模式</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/面向对象思想.md" target="_blank" rel="noopener">面向对象思想</a></li>
-</ul>
-<h2 id="floppy-disk-数据库"><a href="#floppy-disk-数据库" class="headerlink" title=":floppy_disk: 数据库"></a>:floppy_disk: 数据库</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/数据库系统原理.md" target="_blank" rel="noopener">数据库系统原理</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/SQL.md" target="_blank" rel="noopener">SQL</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode-Database%20题解.md" target="_blank" rel="noopener">Leetcode-Database 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md" target="_blank" rel="noopener">MySQL</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Redis.md" target="_blank" rel="noopener">Redis</a></li>
-</ul>
-<h2 id="coffee-Java"><a href="#coffee-Java" class="headerlink" title=":coffee: Java"></a>:coffee: Java</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20基础.md" target="_blank" rel="noopener">Java 基础</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20容器.md" target="_blank" rel="noopener">Java 容器</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20并发.md" target="_blank" rel="noopener">Java 并发</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20虚拟机.md" target="_blank" rel="noopener">Java 虚拟机</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md" target="_blank" rel="noopener">Java I/O</a></li>
-</ul>
-<h2 id="bulb-系统设计"><a href="#bulb-系统设计" class="headerlink" title=":bulb: 系统设计"></a>:bulb: 系统设计</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/系统设计基础.md" target="_blank" rel="noopener">系统设计基础</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/分布式.md" target="_blank" rel="noopener">分布式</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/集群.md" target="_blank" rel="noopener">集群</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/攻击技术.md" target="_blank" rel="noopener">攻击技术</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/缓存.md" target="_blank" rel="noopener">缓存</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/消息队列.md" target="_blank" rel="noopener">消息队列</a></li>
-</ul>
-<h2 id="wrench-工具"><a href="#wrench-工具" class="headerlink" title=":wrench: 工具"></a>:wrench: 工具</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Git.md" target="_blank" rel="noopener">Git</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Docker.md" target="_blank" rel="noopener">Docker</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/构建工具.md" target="_blank" rel="noopener">构建工具</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/正则表达式.md" target="_blank" rel="noopener">正则表达式</a></li>
-</ul>
-<h2 id="watermelon-编码实践"><a href="#watermelon-编码实践" class="headerlink" title=":watermelon: 编码实践"></a>:watermelon: 编码实践</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码可读性.md" target="_blank" rel="noopener">代码可读性</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码风格规范.md" target="_blank" rel="noopener">代码风格规范</a></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Dubbo</title>
-    <url>/2020/05/01/github%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</url>
-    <content><![CDATA[<p>用github部署静态网页其实很简单还不用动服务器，记录一次静态网页的部署。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在网站设计中，纯粹HTML（标准通用标记语言下的一个应用）格式的网页通常被称为“静态网页”，静态网页是标准的HTML文件，它的文件扩展名是.htm、.html，可以包含文本、图像、声音、FLASH动画、客户端脚本和ActiveX控件及JAVA小程序等。静态网页是网站建设的基础，早期的网站一般都是由静态网页制作的。静态网页是相对于动态网页而言，是指没有后台数据库、不含程序和不可交互的网页。静态网页相对更新起来比较麻烦，适用于一般更新较少的展示型网站。容易误解的是静态页面都是htm这类页面，实际上静态也不是完全静态，他也可以出现各种动态的效果，如GIF格式的动画、FLASH、滚动字幕等。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>前提：<br>了解html、css、js等前端知识。(可以自己编写或修改页面)<br>会使用github（代码仓库）<br>了解git基本语法（上传代码到github）</p>
-</blockquote>
-<ol>
-<li><p>从网上下载了一份简历模板（当然也可以自己编写）。<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-87a51cc72224409698800143465ac714.png" alt="image.png"></p>
-</li>
-<li><p>github新建仓库<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-0b38993db9f343a799bf38973188206c.png" alt="image.png"></p>
-</li>
-<li><p>用git上传<br>git init<br>git add .<br>git commit -m ‘jianli’<br>git push 地址 master<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-44721c1cfb274534b2a0e94a9ba7d5b4.png" alt="image.png"></p>
-</li>
-<li><p>进入仓库，找到settings-GitHub Pages-none<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-6e81bf0c5a1f486fa22d689fed5225bf.png" alt="image.png"><br><img src="https://www.zhangpeng.fun/upload/2020/04/image-ea1492ed6bf84126a4666449bcd9bbaa.png" alt="image.png"></p>
-</li>
-<li><p>点击后找到网址<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-44e2afd932b0435d8bcb998b11fbff20.png" alt="image.png"></p>
-</li>
-<li><p>访问<br>记得加上自己的文件路径<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-dbef78dac157480d9836e5d0d3d78b6f.png" alt="image.png"></p>
-</li>
-<li><p>成功哈哈。</p>
-<h2 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h2><blockquote>
-<p>前提：<br>有阿里云账号（我用的阿里云）<br>拥有一个自己的域名且已备案</p>
-</blockquote>
-</li>
-</ol>
-<p>1.打开cmd窗口ping自己的github仓库网址如 例如：ping zhangpengpeng69.github.io<br>得到 ip地址<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-953c4f242ef941a4af0174fe388d6910.png" alt="image.png"></p>
-<p>2.阿里云域名解析<br>将自己的域名指向刚刚的ip<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-0d54e92a0f2a4f4a93141b2c3e8df433.png" alt="image.png"></p>
-<p>3.仓库新建文件CNAME<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-bc2369b7a69d4dc68e8d8f87165635dd.png" alt="image.png"></p>
-<p>4.写入域名保存<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-2840890a9d5744728cb053f9f07e76e3.png" alt="image.png"></p>
-<p>或者：在此处添加域名，会自动生成一个CNAME文件<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-a22c0299269f4531b9aacd8704228d65.png" alt="image.png"></p>
-<p>5.访问即可<br><a href="http://www.zhangpeng.plus/jianli1/index.html" target="_blank" rel="noopener">http://www.zhangpeng.plus/jianli1/index.html</a><br>我又修改了下我的仓库目录结构，所以多了个jianli1<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-80faf2a1580848369856bd0593d4adae.png" alt="image.png"><br>成功！</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/04/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -2242,8 +2201,8 @@ order by... -- 根据指定的列进行排序
         <category>分享</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -2291,6 +2250,69 @@ order by... -- 根据指定的列进行排序
 <p>意义：只生成包含column列所对应的元素的参数的toString方法，即在生成toString方法时只包含column参数；；</p>
 <p>@ToString(of={“column1”,”column2”})<br>意义：只生成包含多个column列所对应的元素的参数的toString方法，其中间用英文状态下的逗号进行分割，即在生成toString方法时只包含多个column参数；<br>@Accessors(chain=true)<br>链式加载</p>
 <h3 id="可能问题"><a href="#可能问题" class="headerlink" title="可能问题"></a>可能问题</h3><p><img src="http://www.zhangpeng.fun/upload/2020/3/image-e3803a1ea7cd48f79d857b2a00fbe985.png" alt="image.png"><br>sts安装lombok后重启时，如报以上错误，是没有找到jdk的安装路径<br>解决：<br>    在SpringToolSuite4.ini中加入如下代码：<br><img src="http://www.zhangpeng.fun/upload/2020/3/image-7000f78eee3a4955ba436dcf5597926a.png" alt="image.png">    </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Dubbo</title>
+    <url>/2020/05/01/github%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</url>
+    <content><![CDATA[<p>用github部署静态网页其实很简单还不用动服务器，记录一次静态网页的部署。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在网站设计中，纯粹HTML（标准通用标记语言下的一个应用）格式的网页通常被称为“静态网页”，静态网页是标准的HTML文件，它的文件扩展名是.htm、.html，可以包含文本、图像、声音、FLASH动画、客户端脚本和ActiveX控件及JAVA小程序等。静态网页是网站建设的基础，早期的网站一般都是由静态网页制作的。静态网页是相对于动态网页而言，是指没有后台数据库、不含程序和不可交互的网页。静态网页相对更新起来比较麻烦，适用于一般更新较少的展示型网站。容易误解的是静态页面都是htm这类页面，实际上静态也不是完全静态，他也可以出现各种动态的效果，如GIF格式的动画、FLASH、滚动字幕等。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>前提：<br>了解html、css、js等前端知识。(可以自己编写或修改页面)<br>会使用github（代码仓库）<br>了解git基本语法（上传代码到github）</p>
+</blockquote>
+<ol>
+<li><p>从网上下载了一份简历模板（当然也可以自己编写）。<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-87a51cc72224409698800143465ac714.png" alt="image.png"></p>
+</li>
+<li><p>github新建仓库<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-0b38993db9f343a799bf38973188206c.png" alt="image.png"></p>
+</li>
+<li><p>用git上传<br>git init<br>git add .<br>git commit -m ‘jianli’<br>git push 地址 master<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-44721c1cfb274534b2a0e94a9ba7d5b4.png" alt="image.png"></p>
+</li>
+<li><p>进入仓库，找到settings-GitHub Pages-none<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-6e81bf0c5a1f486fa22d689fed5225bf.png" alt="image.png"><br><img src="https://www.zhangpeng.fun/upload/2020/04/image-ea1492ed6bf84126a4666449bcd9bbaa.png" alt="image.png"></p>
+</li>
+<li><p>点击后找到网址<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-44e2afd932b0435d8bcb998b11fbff20.png" alt="image.png"></p>
+</li>
+<li><p>访问<br>记得加上自己的文件路径<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-dbef78dac157480d9836e5d0d3d78b6f.png" alt="image.png"></p>
+</li>
+<li><p>成功哈哈。</p>
+<h2 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h2><blockquote>
+<p>前提：<br>有阿里云账号（我用的阿里云）<br>拥有一个自己的域名且已备案</p>
+</blockquote>
+</li>
+</ol>
+<p>1.打开cmd窗口ping自己的github仓库网址如 例如：ping zhangpengpeng69.github.io<br>得到 ip地址<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-953c4f242ef941a4af0174fe388d6910.png" alt="image.png"></p>
+<p>2.阿里云域名解析<br>将自己的域名指向刚刚的ip<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-0d54e92a0f2a4f4a93141b2c3e8df433.png" alt="image.png"></p>
+<p>3.仓库新建文件CNAME<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-bc2369b7a69d4dc68e8d8f87165635dd.png" alt="image.png"></p>
+<p>4.写入域名保存<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-2840890a9d5744728cb053f9f07e76e3.png" alt="image.png"></p>
+<p>或者：在此处添加域名，会自动生成一个CNAME文件<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-a22c0299269f4531b9aacd8704228d65.png" alt="image.png"></p>
+<p>5.访问即可<br><a href="http://www.zhangpeng.plus/jianli1/index.html" target="_blank" rel="noopener">http://www.zhangpeng.plus/jianli1/index.html</a><br>我又修改了下我的仓库目录结构，所以多了个jianli1<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-80faf2a1580848369856bd0593d4adae.png" alt="image.png"><br>成功！</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wlop画的画真的超级好看呀</title>
+    <url>/2020/04/30/wlop%E7%94%BB%E7%9A%84%E7%94%BB%E7%9C%9F%E7%9A%84%E8%B6%85%E7%BA%A7%E5%A5%BD%E7%9C%8B%E5%91%80/</url>
+    <content><![CDATA[<h2 id="WLOP"><a href="#WLOP" class="headerlink" title="WLOP"></a>WLOP</h2><p>&emsp;&emsp;个人非常的喜欢收集各种类型的图片，没事的时候拿出来看看，感觉非常的舒心。对于wlop这个人不怎么了解，但是他的画是真的好看呀！<br/><br>&emsp;&emsp;抽出时间用pr做了一个视频，放到了B站上。</p>
+<iframe id="spkj" src="https://player.bilibili.com/player.html?aid=455247425&bvid=BV1i5411t7oY&cid=175655266&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100%> </iframe>
+<script type="text/javascript">  
+document.getElementById("spkj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
+</script>
+
+
+<iframe id="spkjj" src="https://player.bilibili.com/player.html?aid=967734713&bvid=BV1Up4y1C7gQ&cid=175813580&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100%> </iframe>
+<script type="text/javascript">  
+document.getElementById("spkjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
+</script>
+
+
+
+
+<h2 id="artstation"><a href="#artstation" class="headerlink" title="artstation"></a>artstation</h2><p>&emsp;&emsp;最早是在artstation（<a href="https://www.artstation.com/" target="_blank" rel="noopener">https://www.artstation.com/</a>）上看到的他的画，非常喜欢，便收集来做壁纸了，哈哈。这个网站需要翻墙才能进去，里面的大神非常的多，虽然我不是从事这个行业，但是非常的喜欢。<br/><br>有这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/jwhs_W2kQP3%201567733352j-won-han-234231221222-8480818490c74f6f991b84a53ed487f1.jpg" alt="jwhs_W2kQP3 1567733352j-won-han-234231221222"><br/><br>这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/tohad_qAgNm2%201585776214sylvain-sarrailh-yoshiexotic-1343f59c8ff64ca298d2fa1c2b433e48.jpg" alt="tohad_qAgNm2 1585776214sylvain-sarrailh-yoshiexotic"><br/><br>或者是这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/syy1983_bambxd%201555770386sui-yangyang-dragon3-40cc726b2ba44e2f8c9b62c225ec4fa6.jpg" alt="syy1983_bambxd 1555770386sui-yangyang-dragon3"><br/><br>各种各样的，真的是佩服这些人的想象力！</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>artstation这么多图片，想下载怎么办，答案,豆皮图片下载器，批量下载哈哈。<br>首先打开想要下载的某个人的主页，复制地址<br><img src="https://www.zhangpeng.fun/upload/2020/04/Snipaste_2020-04-12_01-01-05-701fed33e1a8439ba544ecab0b7a1c04.jpg" alt="Snipaste_20200412_010105.jpg"><br>打开豆皮图片下载器，填入地址，选择输出文件夹。开始下载。<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-7df1fd173d194de7b12ff5f887f47310.png" alt="image.png"><br>这样这个人的所有作品都会下载下来了。</p>
 ]]></content>
   </entry>
   <entry>
@@ -2347,28 +2369,6 @@ order by... -- 根据指定的列进行排序
 ]]></content>
   </entry>
   <entry>
-    <title>wlop画的画真的超级好看呀</title>
-    <url>/2020/04/30/wlop%E7%94%BB%E7%9A%84%E7%94%BB%E7%9C%9F%E7%9A%84%E8%B6%85%E7%BA%A7%E5%A5%BD%E7%9C%8B%E5%91%80/</url>
-    <content><![CDATA[<h2 id="WLOP"><a href="#WLOP" class="headerlink" title="WLOP"></a>WLOP</h2><p>&emsp;&emsp;个人非常的喜欢收集各种类型的图片，没事的时候拿出来看看，感觉非常的舒心。对于wlop这个人不怎么了解，但是他的画是真的好看呀！<br/><br>&emsp;&emsp;抽出时间用pr做了一个视频，放到了B站上。</p>
-<iframe id="spkj" src="https://player.bilibili.com/player.html?aid=455247425&bvid=BV1i5411t7oY&cid=175655266&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100%> </iframe>
-<script type="text/javascript">  
-document.getElementById("spkj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
-</script>
-
-
-<iframe id="spkjj" src="https://player.bilibili.com/player.html?aid=967734713&bvid=BV1Up4y1C7gQ&cid=175813580&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100%> </iframe>
-<script type="text/javascript">  
-document.getElementById("spkjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
-</script>
-
-
-
-
-<h2 id="artstation"><a href="#artstation" class="headerlink" title="artstation"></a>artstation</h2><p>&emsp;&emsp;最早是在artstation（<a href="https://www.artstation.com/" target="_blank" rel="noopener">https://www.artstation.com/</a>）上看到的他的画，非常喜欢，便收集来做壁纸了，哈哈。这个网站需要翻墙才能进去，里面的大神非常的多，虽然我不是从事这个行业，但是非常的喜欢。<br/><br>有这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/jwhs_W2kQP3%201567733352j-won-han-234231221222-8480818490c74f6f991b84a53ed487f1.jpg" alt="jwhs_W2kQP3 1567733352j-won-han-234231221222"><br/><br>这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/tohad_qAgNm2%201585776214sylvain-sarrailh-yoshiexotic-1343f59c8ff64ca298d2fa1c2b433e48.jpg" alt="tohad_qAgNm2 1585776214sylvain-sarrailh-yoshiexotic"><br/><br>或者是这种的<br><img src="https://www.zhangpeng.fun/upload/2020/04/syy1983_bambxd%201555770386sui-yangyang-dragon3-40cc726b2ba44e2f8c9b62c225ec4fa6.jpg" alt="syy1983_bambxd 1555770386sui-yangyang-dragon3"><br/><br>各种各样的，真的是佩服这些人的想象力！</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>artstation这么多图片，想下载怎么办，答案,豆皮图片下载器，批量下载哈哈。<br>首先打开想要下载的某个人的主页，复制地址<br><img src="https://www.zhangpeng.fun/upload/2020/04/Snipaste_2020-04-12_01-01-05-701fed33e1a8439ba544ecab0b7a1c04.jpg" alt="Snipaste_20200412_010105.jpg"><br>打开豆皮图片下载器，填入地址，选择输出文件夹。开始下载。<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-7df1fd173d194de7b12ff5f887f47310.png" alt="image.png"><br>这样这个人的所有作品都会下载下来了。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>关于我</title>
     <url>/2020/04/30/%E5%85%B3%E4%BA%8E%E6%88%91/</url>
     <content><![CDATA[<h3 id="1-订阅："><a href="#1-订阅：" class="headerlink" title="1.订阅："></a>1.订阅：</h3><p>网站：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a></p>
@@ -2387,6 +2387,16 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
 <p><img src="https://www.zhangpeng.fun/upload/2020/04/image-d0b96c5b99304fda9bc3fb49ed8b33d2.png" alt="image.png"><br/><br>Github：<a href="https://github.com/zhangpengpeng69" target="_blank" rel="noopener">https://github.com/zhangpengpeng69</a><br/><br>博客：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br>Github博客：<a href="https://github.com/zhangpengpeng69/ZPeng-s-Blog" target="_blank" rel="noopener">https://github.com/zhangpengpeng69/ZPeng-s-Blog</a><br/></p>
 <h3 id="3-本博客："><a href="#3-本博客：" class="headerlink" title="3.本博客："></a>3.本博客：</h3><p>Halo：<a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a>  –是一款现代化的个人独立博客系统<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-6500355f16f0478cb6659923e204170d.png" alt="image.png"><br>社区：<a href="https://bbs.halo.run/" target="_blank" rel="noopener">https://bbs.halo.run/</a><br/><br>官网：<a href="https://halo.run/" target="_blank" rel="noopener">https://halo.run/</a></p>
 <h3 id="4-留言："><a href="#4-留言：" class="headerlink" title="4.留言："></a>4.留言：</h3><p>在下方留言加友链&gt;&gt;&gt;&gt;&gt;&gt;</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于本站</title>
+    <url>/2020/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</url>
+    <content><![CDATA[<h1 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h1><blockquote>
+<p>1.本网站2019年12月上线;<br/><br> 2 访问网址: <a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br> 3.本站为个人博客网站,由本人个人维护,仅为学习所用;<br/><br> 4.网站源码并不是完全由本人开发,取自github开源项目;<br/><br> 5.本站所有文章并非全部个人原创,由本人整理发布,如有错误，请谅解;<br/><br> 6.博客中转载文章会写明来源，如果有异议，请及时联系我处理;<br/><br> 6.本网站部署在阿里云服务器,配置不高,有时加载会慢一些;<br/><br> 7.希望多多评论呦!<br/></p>
+</blockquote>
+<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢:"></a>感谢:</h3><p><a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a></p>
+<p><a href="http://www.tedu.cn/" target="_blank" rel="noopener">http://www.tedu.cn/</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -2424,65 +2434,6 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
 
 <p><a href="https://www.cnblogs.com/tianliang94/p/10458888.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianliang94/p/10458888.html</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>关于本站</title>
-    <url>/2020/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</url>
-    <content><![CDATA[<h1 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h1><blockquote>
-<p>1.本网站2019年12月上线;<br/><br> 2 访问网址: <a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br> 3.本站为个人博客网站,由本人个人维护,仅为学习所用;<br/><br> 4.网站源码并不是完全由本人开发,取自github开源项目;<br/><br> 5.本站所有文章并非全部个人原创,由本人整理发布,如有错误，请谅解;<br/><br> 6.博客中转载文章会写明来源，如果有异议，请及时联系我处理;<br/><br> 6.本网站部署在阿里云服务器,配置不高,有时加载会慢一些;<br/><br> 7.希望多多评论呦!<br/></p>
-</blockquote>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢:"></a>感谢:</h3><p><a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a></p>
-<p><a href="http://www.tedu.cn/" target="_blank" rel="noopener">http://www.tedu.cn/</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>分布式锁</title>
-    <url>/2020/04/30/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</url>
-    <content><![CDATA[<h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><h2 id="1-什么是分布式锁？"><a href="#1-什么是分布式锁？" class="headerlink" title="1.什么是分布式锁？"></a>1.什么是分布式锁？</h2><p>&emsp;&emsp;分布式锁是控制分布式系统之间同步访问共享资源的一种方式。在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，在这种情况下，便需要使用到分布式锁。<br/><br>&emsp;&emsp;在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，这个时候，便需要使用到分布式锁。</p>
-<h2 id="2-为什么要使用分布式锁"><a href="#2-为什么要使用分布式锁" class="headerlink" title="2.为什么要使用分布式锁"></a>2.为什么要使用分布式锁</h2><p><img src="http://www.zhangpeng.fun/upload/20191210_18202437.png" alt=""></p>
-<ul>
-<li>成员变量 A 存在 JVM1、JVM2、JVM3 三个 JVM 内存中<br/></li>
-<li>成员变量 A 同时都会在 JVM 分配一块内存，三个请求发过来同时对这个变量操作，显然结果是不对的<br/></li>
-<li>不是同时发过来，三个请求分别操作三个不同 JVM 内存区域的数据，变量 A 之间不存在共享，也不具有可见性，处理的结果也是不对的<br/><br>注：该成员变量 A 是一个有状态的对象<br/><br>&emsp;&emsp;如果我们业务中确实存在这个场景的话，我们就需要一种方法解决这个问题，这就是分布式锁要解决的问题<br/></li>
-</ul>
-<p>分布式锁的具体实现方案有如下三种：</p>
-<ol>
-<li>基于数据库实现；</li>
-<li>基于缓存（Redis等）实现；</li>
-<li>基于Zookeeper实现；</li>
-</ol>
-<h2 id="3-基于数据库实现"><a href="#3-基于数据库实现" class="headerlink" title="3.基于数据库实现"></a>3.基于数据库实现</h2><ul>
-<li><p>锁设计:数据库中的表有主键,主键不能重复,如果插入一个重复的主键.,则数据库必然报错.</p>
-</li>
-<li><p>数据库加锁: 向主键添加一个固定值 1;</p>
-</li>
-<li><p>数据库解锁: 从表中删除主键固定值1;</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt.lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Condition;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.mapper.MysqlMapper;</span><br><span class="line"><span class="meta">@Service</span>(<span class="string">"mysqlLock"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MysqlLock</span> <span class="keyword">implements</span> <span class="title">Lock</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> MysqlMapper mapper;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//表示尝试加锁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			mapper.insert();  <span class="comment">//向数据库中插入记录 定值</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;	 <span class="comment">//加锁失败</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;		 <span class="comment">//加锁成功!!!</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//表示加锁机制</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(tryLock()) &#123;</span><br><span class="line">			<span class="comment">//表示加锁成功</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">100</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		lock();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		mapper.delete();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lockInterruptibly</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">(<span class="keyword">long</span> time, TimeUnit unit)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Condition <span class="title">newCondition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">MysqlLockTest</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="meta">@Qualifier</span>(<span class="string">"mysqlLock"</span>)</span><br><span class="line">	<span class="keyword">private</span> Lock lock;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">window</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					lock.lock();</span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(Thread.currentThread().getName()+<span class="string">"卖出第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						num--;</span><br><span class="line">						Thread.sleep(<span class="number">100</span>);</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">					lock.unlock();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable window = <span class="keyword">new</span> window();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-基于redis实现"><a href="#4-基于redis实现" class="headerlink" title="4.基于redis实现"></a>4.基于redis实现</h2><p>Redis锁的设计理念:</p>
-<p><img src="http://www.zhangpeng.fun/upload/20191210_18290981.png" alt=""></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt.lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Condition;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.mapper.MysqlMapper;</span><br><span class="line"><span class="keyword">import</span> com.jt.stream.LuaStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisCluster;</span><br><span class="line"><span class="meta">@Component</span>(<span class="string">"redisLock"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisLock</span> <span class="keyword">implements</span> <span class="title">Lock</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> JedisCluster jedisCluster;</span><br><span class="line">	<span class="keyword">private</span> ThreadLocal&lt;String&gt; thread = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String key = <span class="string">"JT_LOCK"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//表示尝试加锁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			String value = UUID.randomUUID().toString();</span><br><span class="line">			String result = jedisCluster.set(key, value, <span class="string">"NX"</span>, <span class="string">"PX"</span>, <span class="number">800</span>);</span><br><span class="line">			<span class="keyword">if</span>(result.equalsIgnoreCase(<span class="string">"ok"</span>)) &#123;</span><br><span class="line">				thread.set(value);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;	<span class="comment">//加锁成功!!!</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;		<span class="comment">//加锁失败</span></span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;			<span class="comment">//加锁失败</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//表示加锁机制</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(tryLock()) &#123;</span><br><span class="line">			<span class="comment">//表示加锁成功</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">10</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		lock();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String	uuid = thread.get();</span><br><span class="line">		<span class="comment">//所以使用lua脚本实现.保证数据的原子性操作</span></span><br><span class="line">		String script = LuaStream.getLuaFileString();</span><br><span class="line">		jedisCluster.eval(script, Arrays.asList(key), Arrays.asList(uuid));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lockInterruptibly</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">(<span class="keyword">long</span> time, TimeUnit unit)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Condition <span class="title">newCondition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>lua脚本</p>
-<pre><code>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
-    return redis.call(&quot;del&quot;,KEYS[1])
-else
-    return 0
-end</code></pre><p>测试类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.thread.ThreadPool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisCluster;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedislLockTest</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">5000</span>; <span class="comment">//模拟5000张火车票</span></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="meta">@Qualifier</span>(<span class="string">"redisLock"</span>)</span><br><span class="line">	<span class="keyword">private</span> Lock lock;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> JedisCluster jedisCluster;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">window</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				lock.lock(); <span class="comment">//加锁</span></span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(Thread.currentThread().getName()+<span class="string">"售出第"</span>+(<span class="number">5001</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						String ticket = jedisCluster.hget(<span class="string">"windows"</span>,Thread.currentThread().getName());</span><br><span class="line">						jedisCluster.hset(<span class="string">"windows"</span>,Thread.currentThread().getName(), ticket+<span class="string">","</span>+(<span class="number">5001</span>-num));</span><br><span class="line">						num--;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">				lock.unlock(); <span class="comment">//解锁</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable window = <span class="keyword">new</span> window();</span><br><span class="line">		<span class="comment">//定义线程池 初始化10个线程</span></span><br><span class="line">		List&lt;Thread&gt; pools = ThreadPool.initPool(window,<span class="number">6</span>);</span><br><span class="line">		<span class="keyword">for</span> (Thread thread : pools) &#123;</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-其他锁例子"><a href="#5-其他锁例子" class="headerlink" title="5.其他锁例子"></a>5.其他锁例子</h2><p>lock</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//定义lock锁</span></span><br><span class="line">	<span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				lock.lock();	<span class="comment">//为线程加锁</span></span><br><span class="line">				<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">					num--;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						Thread.sleep(<span class="number">50</span>);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">				&#125;</span><br><span class="line">				lock.unlock();	<span class="comment">//为线程减锁</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>synchronized</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SyncTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						num--;</span><br><span class="line">						<span class="keyword">try</span> &#123;</span><br><span class="line">							Thread.sleep(<span class="number">50</span>);</span><br><span class="line">						&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">							e.printStackTrace();</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>thread</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicketTest</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">					num--;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						Thread.sleep(<span class="number">500</span>);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//模拟三个线程同时售卖100张车票</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>喜欢收集图片的小伙伴点进来（artstation+pixiv）</title>
@@ -2569,6 +2520,55 @@ end</code></pre><p>测试类</p>
 ]]></content>
   </entry>
   <entry>
+    <title>分布式锁</title>
+    <url>/2020/04/30/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</url>
+    <content><![CDATA[<h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><h2 id="1-什么是分布式锁？"><a href="#1-什么是分布式锁？" class="headerlink" title="1.什么是分布式锁？"></a>1.什么是分布式锁？</h2><p>&emsp;&emsp;分布式锁是控制分布式系统之间同步访问共享资源的一种方式。在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，在这种情况下，便需要使用到分布式锁。<br/><br>&emsp;&emsp;在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，这个时候，便需要使用到分布式锁。</p>
+<h2 id="2-为什么要使用分布式锁"><a href="#2-为什么要使用分布式锁" class="headerlink" title="2.为什么要使用分布式锁"></a>2.为什么要使用分布式锁</h2><p><img src="http://www.zhangpeng.fun/upload/20191210_18202437.png" alt=""></p>
+<ul>
+<li>成员变量 A 存在 JVM1、JVM2、JVM3 三个 JVM 内存中<br/></li>
+<li>成员变量 A 同时都会在 JVM 分配一块内存，三个请求发过来同时对这个变量操作，显然结果是不对的<br/></li>
+<li>不是同时发过来，三个请求分别操作三个不同 JVM 内存区域的数据，变量 A 之间不存在共享，也不具有可见性，处理的结果也是不对的<br/><br>注：该成员变量 A 是一个有状态的对象<br/><br>&emsp;&emsp;如果我们业务中确实存在这个场景的话，我们就需要一种方法解决这个问题，这就是分布式锁要解决的问题<br/></li>
+</ul>
+<p>分布式锁的具体实现方案有如下三种：</p>
+<ol>
+<li>基于数据库实现；</li>
+<li>基于缓存（Redis等）实现；</li>
+<li>基于Zookeeper实现；</li>
+</ol>
+<h2 id="3-基于数据库实现"><a href="#3-基于数据库实现" class="headerlink" title="3.基于数据库实现"></a>3.基于数据库实现</h2><ul>
+<li><p>锁设计:数据库中的表有主键,主键不能重复,如果插入一个重复的主键.,则数据库必然报错.</p>
+</li>
+<li><p>数据库加锁: 向主键添加一个固定值 1;</p>
+</li>
+<li><p>数据库解锁: 从表中删除主键固定值1;</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt.lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Condition;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.mapper.MysqlMapper;</span><br><span class="line"><span class="meta">@Service</span>(<span class="string">"mysqlLock"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MysqlLock</span> <span class="keyword">implements</span> <span class="title">Lock</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> MysqlMapper mapper;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//表示尝试加锁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			mapper.insert();  <span class="comment">//向数据库中插入记录 定值</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;	 <span class="comment">//加锁失败</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;		 <span class="comment">//加锁成功!!!</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//表示加锁机制</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(tryLock()) &#123;</span><br><span class="line">			<span class="comment">//表示加锁成功</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">100</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		lock();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		mapper.delete();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lockInterruptibly</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">(<span class="keyword">long</span> time, TimeUnit unit)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Condition <span class="title">newCondition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">MysqlLockTest</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="meta">@Qualifier</span>(<span class="string">"mysqlLock"</span>)</span><br><span class="line">	<span class="keyword">private</span> Lock lock;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">window</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					lock.lock();</span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(Thread.currentThread().getName()+<span class="string">"卖出第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						num--;</span><br><span class="line">						Thread.sleep(<span class="number">100</span>);</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">					lock.unlock();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable window = <span class="keyword">new</span> window();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(window, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-基于redis实现"><a href="#4-基于redis实现" class="headerlink" title="4.基于redis实现"></a>4.基于redis实现</h2><p>Redis锁的设计理念:</p>
+<p><img src="http://www.zhangpeng.fun/upload/20191210_18290981.png" alt=""></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt.lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Condition;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.mapper.MysqlMapper;</span><br><span class="line"><span class="keyword">import</span> com.jt.stream.LuaStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisCluster;</span><br><span class="line"><span class="meta">@Component</span>(<span class="string">"redisLock"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisLock</span> <span class="keyword">implements</span> <span class="title">Lock</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> JedisCluster jedisCluster;</span><br><span class="line">	<span class="keyword">private</span> ThreadLocal&lt;String&gt; thread = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String key = <span class="string">"JT_LOCK"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//表示尝试加锁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			String value = UUID.randomUUID().toString();</span><br><span class="line">			String result = jedisCluster.set(key, value, <span class="string">"NX"</span>, <span class="string">"PX"</span>, <span class="number">800</span>);</span><br><span class="line">			<span class="keyword">if</span>(result.equalsIgnoreCase(<span class="string">"ok"</span>)) &#123;</span><br><span class="line">				thread.set(value);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;	<span class="comment">//加锁成功!!!</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;		<span class="comment">//加锁失败</span></span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;			<span class="comment">//加锁失败</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//表示加锁机制</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(tryLock()) &#123;</span><br><span class="line">			<span class="comment">//表示加锁成功</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">10</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		lock();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String	uuid = thread.get();</span><br><span class="line">		<span class="comment">//所以使用lua脚本实现.保证数据的原子性操作</span></span><br><span class="line">		String script = LuaStream.getLuaFileString();</span><br><span class="line">		jedisCluster.eval(script, Arrays.asList(key), Arrays.asList(uuid));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lockInterruptibly</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">(<span class="keyword">long</span> time, TimeUnit unit)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Condition <span class="title">newCondition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>lua脚本</p>
+<pre><code>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
+    return redis.call(&quot;del&quot;,KEYS[1])
+else
+    return 0
+end</code></pre><p>测试类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.jt.thread.ThreadPool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisCluster;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedislLockTest</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">5000</span>; <span class="comment">//模拟5000张火车票</span></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="meta">@Qualifier</span>(<span class="string">"redisLock"</span>)</span><br><span class="line">	<span class="keyword">private</span> Lock lock;</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> JedisCluster jedisCluster;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">window</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				lock.lock(); <span class="comment">//加锁</span></span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(Thread.currentThread().getName()+<span class="string">"售出第"</span>+(<span class="number">5001</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						String ticket = jedisCluster.hget(<span class="string">"windows"</span>,Thread.currentThread().getName());</span><br><span class="line">						jedisCluster.hset(<span class="string">"windows"</span>,Thread.currentThread().getName(), ticket+<span class="string">","</span>+(<span class="number">5001</span>-num));</span><br><span class="line">						num--;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">				lock.unlock(); <span class="comment">//解锁</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable window = <span class="keyword">new</span> window();</span><br><span class="line">		<span class="comment">//定义线程池 初始化10个线程</span></span><br><span class="line">		List&lt;Thread&gt; pools = ThreadPool.initPool(window,<span class="number">6</span>);</span><br><span class="line">		<span class="keyword">for</span> (Thread thread : pools) &#123;</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-其他锁例子"><a href="#5-其他锁例子" class="headerlink" title="5.其他锁例子"></a>5.其他锁例子</h2><p>lock</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//定义lock锁</span></span><br><span class="line">	<span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				lock.lock();	<span class="comment">//为线程加锁</span></span><br><span class="line">				<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">					num--;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						Thread.sleep(<span class="number">50</span>);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">				&#125;</span><br><span class="line">				lock.unlock();	<span class="comment">//为线程减锁</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>synchronized</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SyncTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">					<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">						System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">						num--;</span><br><span class="line">						<span class="keyword">try</span> &#123;</span><br><span class="line">							Thread.sleep(<span class="number">50</span>);</span><br><span class="line">						&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">							e.printStackTrace();</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>thread</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟窗口卖票业务</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicketTest</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Windows</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="comment">//定义线程卖票操作</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(num&gt;<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(<span class="string">"恭喜"</span>+Thread.currentThread().getName()+<span class="string">"售出得第"</span>+(<span class="number">101</span>-num)+<span class="string">"张票"</span>);</span><br><span class="line">					num--;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						Thread.sleep(<span class="number">500</span>);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//跳出循环</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//模拟三个线程同时售卖100张车票</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Runnable runnable = <span class="keyword">new</span> Windows();</span><br><span class="line">		Thread thread1 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口A"</span>);</span><br><span class="line">		Thread thread2 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口B"</span>);</span><br><span class="line">		Thread thread3 = <span class="keyword">new</span> Thread(runnable, <span class="string">"窗口C"</span>);</span><br><span class="line">		thread1.start();</span><br><span class="line">		thread2.start();</span><br><span class="line">		thread3.start();</span><br><span class="line">		<span class="keyword">for</span>(;;); <span class="comment">//防止线程提前结束</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>小工具</title>
     <url>/2020/04/30/%E5%B0%8F%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<p><a href="https://lovelive.tools/" target="_blank" rel="noopener">https://lovelive.tools/</a></p>
@@ -2577,6 +2577,22 @@ end</code></pre><p>测试类</p>
 <script type="text/javascript">  
 document.getElementById("jjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
 </script>]]></content>
+  </entry>
+  <entry>
+    <title>愿逝者安息，让全站黑白！</title>
+    <url>/2020/04/30/%E6%84%BF%E9%80%9D%E8%80%85%E5%AE%89%E6%81%AF%EF%BC%8C%E8%AE%A9%E5%85%A8%E7%AB%99%E9%BB%91%E7%99%BD%EF%BC%81/</url>
+    <content><![CDATA[<h3 id="愿逝者安息，愿生者奋发，愿祖国昌盛！"><a href="#愿逝者安息，愿生者奋发，愿祖国昌盛！" class="headerlink" title="愿逝者安息，愿生者奋发，愿祖国昌盛！"></a>愿逝者安息，愿生者奋发，愿祖国昌盛！</h3><p>&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车、舰船鸣笛，防空警报鸣响。<br><img src="https://www.zhangpeng.fun/upload/2020/04/5e873b96a3107bb6f533a554-b7dea45003c4466c829c6a40dca52589.jpeg" alt="5e873b96a3107bb6f533a554"></p>
+<p>今天是2020年4月4日，全国将举行哀悼活动，为表达敬意与尊重，应将网站设置为灰度。<br>愿逝者安息，愿生者奋发，愿祖国昌盛！</p>
+<p>例如：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-1dc913a7557043338ce1d3edad11b5de.png" alt="image.png"></p>
+<p>实现：<br>下面三种方式任选一种都可以，只需要放入html的head标签中即可实现。<br>（1）方式一</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">html&#123;</span><br><span class="line">     filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale&#x3D;1);-webkit-filter:saturate(0)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>（2）方式二</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&gt;*&#123;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);</span><br><span class="line">    -webkit-filter: grayscale(1);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>（3）方式三</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">html &#123; </span><br><span class="line">      -webkit-filter: grayscale(100%); </span><br><span class="line">      -moz-filter: grayscale(100%); </span><br><span class="line">      -ms-filter: grayscale(100%); </span><br><span class="line">      -o-filter: grayscale(100%); </span><br><span class="line">      filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);  </span><br><span class="line">      _filter:none; </span><br><span class="line"> &#125; </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-bcb9c3c4d39a4e3080235c1451d67765.png" alt="image.png"><br>赶紧行动起来吧！</p>
+<p>来源：<a href="https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA</a></p>
+]]></content>
   </entry>
   <entry>
     <title>我的java之路总结</title>
@@ -2653,22 +2669,6 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 ]]></content>
   </entry>
   <entry>
-    <title>愿逝者安息，让全站黑白！</title>
-    <url>/2020/04/30/%E6%84%BF%E9%80%9D%E8%80%85%E5%AE%89%E6%81%AF%EF%BC%8C%E8%AE%A9%E5%85%A8%E7%AB%99%E9%BB%91%E7%99%BD%EF%BC%81/</url>
-    <content><![CDATA[<h3 id="愿逝者安息，愿生者奋发，愿祖国昌盛！"><a href="#愿逝者安息，愿生者奋发，愿祖国昌盛！" class="headerlink" title="愿逝者安息，愿生者奋发，愿祖国昌盛！"></a>愿逝者安息，愿生者奋发，愿祖国昌盛！</h3><p>&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车、舰船鸣笛，防空警报鸣响。<br><img src="https://www.zhangpeng.fun/upload/2020/04/5e873b96a3107bb6f533a554-b7dea45003c4466c829c6a40dca52589.jpeg" alt="5e873b96a3107bb6f533a554"></p>
-<p>今天是2020年4月4日，全国将举行哀悼活动，为表达敬意与尊重，应将网站设置为灰度。<br>愿逝者安息，愿生者奋发，愿祖国昌盛！</p>
-<p>例如：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-1dc913a7557043338ce1d3edad11b5de.png" alt="image.png"></p>
-<p>实现：<br>下面三种方式任选一种都可以，只需要放入html的head标签中即可实现。<br>（1）方式一</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">html&#123;</span><br><span class="line">     filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale&#x3D;1);-webkit-filter:saturate(0)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（2）方式二</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&gt;*&#123;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);</span><br><span class="line">    -webkit-filter: grayscale(1);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（3）方式三</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">html &#123; </span><br><span class="line">      -webkit-filter: grayscale(100%); </span><br><span class="line">      -moz-filter: grayscale(100%); </span><br><span class="line">      -ms-filter: grayscale(100%); </span><br><span class="line">      -o-filter: grayscale(100%); </span><br><span class="line">      filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);  </span><br><span class="line">      _filter:none; </span><br><span class="line"> &#125; </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-bcb9c3c4d39a4e3080235c1451d67765.png" alt="image.png"><br>赶紧行动起来吧！</p>
-<p>来源：<a href="https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>数据结构</title>
     <url>/2020/04/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>  数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</p>
@@ -2682,18 +2682,6 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 <h3 id="堆-Heap"><a href="#堆-Heap" class="headerlink" title="堆(Heap)"></a>堆(Heap)</h3><p>  堆是一种特殊的树形数据结构，一般讨论的堆都是二叉堆。堆的特点是根结点的值是所有结点中最小的或者最大的，并且根结点的两个子树也是一个堆结构。 [5] </p>
 <h3 id="散列表-Hash"><a href="#散列表-Hash" class="headerlink" title="散列表(Hash)"></a>散列表(Hash)</h3><p>  散列表源自于散列函数(Hash function)，其思想是如果在结构中存在关键字和T相等的记录，那么必定在F(T)的存储位置可以找到该记录，这样就可以不用进行比较操作而直接取得所查记录。 [5]</p>
 <h2 id="1-2常用算法编辑"><a href="#1-2常用算法编辑" class="headerlink" title="1.2常用算法编辑"></a>1.2常用算法编辑</h2><p>  数据结构研究的内容：就是如何按一定的逻辑结构，把数据组织起来，并选择适当的存储表示方法把逻辑结构组织好的数据存储到计算机的存储器里。研究的目的是为了更有效的处理数据，提高数据运算效率。数据的运算是定义在数据的逻辑结构上，但运算的具体实现要在存储结构上进行。一般有以下几种常用运算：<br><br/><br>(1)检索。检索就是在数据结构里查找满足一定条件的节点。一般是给定一个某字段的值，找具有该字段值的节点。<br><br/><br>(2)插入。往数据结构中增加新的节点。<br><br/><br>(3)删除。把指定的结点从数据结构中去掉。<br><br/><br>(4)更新。改变指定节点的一个或多个字段的值。<br><br/><br>(5)排序。把节点按某种指定的顺序重新排列。例如递增或递减。<br><br/></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>本博客微信小程序正式上线</title>
-    <url>/2020/04/30/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</url>
-    <content><![CDATA[<h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p>
-<h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p>
-<p>欢迎大家来看看哟！</p>
-<h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p>
-<p><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p>
-<h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p>
-<h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -2714,6 +2702,18 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 <h3 id="Java开发常用"><a href="#Java开发常用" class="headerlink" title="Java开发常用"></a>Java开发常用</h3><p>   eclipse<br>   sts<br>   idea<br>   postman<br>   everedit<br>   navicat<br>   filezilla<br>   Xshell<br>   HBuilder<br>   git<br>   switchhosts<br>   mysql<br>   oracle<br>   powerdesigner<br>   MarkdownPad 2<br>   vmware<br>   等。。。。。。</p>
 <h3 id="我的桌面"><a href="#我的桌面" class="headerlink" title="我的桌面"></a>我的桌面</h3><p><img src="http://www.zhangpeng.fun/upload/2020/3/Snipaste_2020-03-27_02-21-40-fdff0aa862484eef8ae028177afcd42c.png" alt="Snipaste_2020-03-27_02-21-40"></p>
 <p>????????</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>本博客微信小程序正式上线</title>
+    <url>/2020/04/30/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</url>
+    <content><![CDATA[<h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p>
+<h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p>
+<p>欢迎大家来看看哟！</p>
+<h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p>
+<p><img src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p>
+<h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p>
+<h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -2873,23 +2873,6 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 ]]></content>
   </entry>
   <entry>
-    <title>面试题目项目</title>
-    <url>/2020/04/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="面试题目-项目"><a href="#面试题目-项目" class="headerlink" title="面试题目 项目"></a>面试题目 项目</h1><h2 id="什么是Redis？"><a href="#什么是Redis？" class="headerlink" title="什么是Redis？"></a>什么是Redis？</h2><p>   Redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。<br/><br>   Redis 是一个高性能的key-value数据库。 redis的出现，很大程度补偿了memcached这类key/value存储的不足，在部分场合可以对关系数据库起到很好的补充作用。它提供了Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang等客户端，使用很方便。<br/><br>   Redis支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得Redis可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。同步对读取操作的可扩展性和数据冗余很有帮助。<br/><br>   可以充当缓存、队列等作用。</p>
-<h2 id="2-Redis两种持久化的方式的比较。"><a href="#2-Redis两种持久化的方式的比较。" class="headerlink" title="2 Redis两种持久化的方式的比较。"></a>2 Redis两种持久化的方式的比较。</h2><p>答：Redis的持久化方式有两种，AOF和RDB。<br/><br>   RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.<br/><br>   AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大。<br/><br>两种区别就是，一个是持续的用日志记录写操作，crash（崩溃）后利用日志恢复；一个是平时写操作的时候不触发写，只有手动提交save命令，或者是shutdown关闭命令时，才触发备份操作。<br/><br>选择的标准，就是看系统是愿意牺牲一些性能，换取更高的缓存一致性（aof），还是愿意写操作频繁的时候，不启用备份来换取更高的性能，待手动   运行save的时候，再做备份（rdb）。rdb这个就更有些 最终一致性（eventually consistent）的意思了。<br/></p>
-<h2 id="3、说说Redis哈希槽的概念？"><a href="#3、说说Redis哈希槽的概念？" class="headerlink" title="3、说说Redis哈希槽的概念？"></a>3、说说Redis哈希槽的概念？</h2><p>   Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
-<h2 id="4、Redis集群最大节点个数是多少？"><a href="#4、Redis集群最大节点个数是多少？" class="headerlink" title="4、Redis集群最大节点个数是多少？"></a>4、Redis集群最大节点个数是多少？</h2><p>16384个</p>
-<h2 id="5、Redis中的管道有什么用？"><a href="#5、Redis中的管道有什么用？" class="headerlink" title="5、Redis中的管道有什么用？"></a>5、Redis中的管道有什么用？</h2><p>   一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。<br/><br>   这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
-<h2 id="6、怎么理解Redis事务？"><a href="#6、怎么理解Redis事务？" class="headerlink" title="6、怎么理解Redis事务？"></a>6、怎么理解Redis事务？</h2><p>   事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。<br/><br>   事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
-<h2 id="7、Redis事务相关的命令有哪几个？"><a href="#7、Redis事务相关的命令有哪几个？" class="headerlink" title="7、Redis事务相关的命令有哪几个？"></a>7、Redis事务相关的命令有哪几个？</h2><p>MULTI、EXEC、DISCARD、WATCH</p>
-<h2 id="8、Redis如何做内存优化？"><a href="#8、Redis如何做内存优化？" class="headerlink" title="8、Redis如何做内存优化？"></a>8、Redis如何做内存优化？</h2><p>   尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
-<h2 id="9-什么是RPC？"><a href="#9-什么是RPC？" class="headerlink" title="9 什么是RPC？"></a>9 什么是RPC？</h2><p>   答案：RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
-<h2 id="10-HttpClient与JSONP区别？"><a href="#10-HttpClient与JSONP区别？" class="headerlink" title="10 HttpClient与JSONP区别？"></a>10 HttpClient与JSONP区别？</h2><p>1发送请求的位置不同.<br/><br>   JSONP:浏览器解析js发出的请求<br/><br>   HttpClient:是业务层java模拟发出Http请求<br/><br>2返回值的格式不同<br/><br>   JSONP:返回数据时必须要有回调函数.<br/><br>   HttpClient:直接返回JSON数据即可.<br/><br>3代码的层级不同<br/><br>   JSONP:代码层级一般3层<br/><br/><br>   HttpClient:一般5层.<br/></p>
-<p><img src="http://182.92.171.224/upload/20191124_15010765.png" alt=""></p>
-<h2 id="11-什么是nginx？"><a href="#11-什么是nginx？" class="headerlink" title="11 什么是nginx？"></a>11 什么是nginx？</h2><p>   答：Nginx (engine x) 是一个高性能的HTTP和反向代理服务。<br/><br>   反向代理方式是指以代理服务器来接收Interrnet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br/><br>   当一个代理服务器能够代理外部网络上的主机，访问内部网络时，这种代理服务的方式称为反向代理服务，当做服务器的替身，这样，代理服务器就在安全数据库和可能的恶意攻击之间提供了又一道屏障。<br/><br>   防火墙通路只允许代理服务器有权进行访问。<br/><br>   可以使用多个代理服务器来处理对一个高用量内容服务器的请求，这样做的好处是内容服务器可以处理更高的负载，并且比其独自工作时更有效率。<br/><br>   配置文件主要由四部分组成：main(全区设置)，server(主机配置)，upstream(负载均衡服务器设置)，和location(URL匹配特定位置设置)。<br/><br>   有1全局变量2事件配置3 http参数4虚拟主机基本设置5 Nignx状态监控6反向代理7负载均衡8 URL重写9 IP限制<br/><br>   主要了解虚拟主机配置，反向代理，负载均衡，url重新<br/></p>
-]]></content>
-  </entry>
-  <entry>
     <title>面试题目web</title>
     <url>/2020/04/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AEweb/</url>
     <content><![CDATA[<h1 id="第二阶段面试题"><a href="#第二阶段面试题" class="headerlink" title="第二阶段面试题"></a>第二阶段面试题</h1><h2 id="1-1-描述Servlet调用过程？"><a href="#1-1-描述Servlet调用过程？" class="headerlink" title="1.1.描述Servlet调用过程？"></a>1.1.描述Servlet调用过程？</h2><p>答案：<br/><br>（1）在浏览器输入地址，浏览器先去查找hosts文件，将主机名翻译为ip地址，如果找不到就再去查询dns服务器将主机名翻译成ip地址。<br/><br>（2）浏览器根据ip地址和端口号访问服务器，组织http请求信息发送给服务器。<br/><br>（3）服务器收到请求后首先根据Host请求头判断当前访问的是哪台虚拟主机。<br/><br>（4）服务器根据http请求头中的请求URI判断当前访问的是哪个web应用。<br/><br>（5）服务器根据http请求头中的请求URI判断当前访问的是web应用中的哪个web资源。<br/><br>（6）检查web应用的web.xml文件，如果根据路径找到具体的servlet处理类的全路径名交给该servlet处理,如果找不到就交给缺省servlet处理。<br/><br>（7）这个过程中浏览器只知道自己发出来http请求，不久就收到了http响应，浏览器不知道也不关心服务器内部是如何处理的。浏览器和服务器之间的关系是非常单纯的，只有HTTP协议。<br/><br>（8）解析请求、封装RequestResponse对象、创建Servlet、调用Service方法都是服务器自动进行的，开发人员只需要写好Servlet配置进容器中即可，无需操心具体的底层实现。<br/></p>
@@ -2999,6 +2982,23 @@ Public void releasConnection(Connection conn){
 <p>自动刷新不仅可以实现一段时间之后自动跳转到另一个页面，还可以实现一段时间之后自动刷新本页面。Servlet中通过HttpServletResponse对象设置Header属性实现自动刷新例如：<br/><br>Response.setHeader(“Refresh”,”1000;URL=<a href="http://localhost:8080/servlet/example.htm&quot;" target="_blank" rel="noopener">http://localhost:8080/servlet/example.htm&quot;</a>);<br/><br>其中1000为时间，单位为毫秒。URL指定就是要跳转的页面（如果设置自己的路径，就会实现没过一秒自动刷新本页面一次）<br/></p>
 <h2 id="1-49-BS和CS的区别？"><a href="#1-49-BS和CS的区别？" class="headerlink" title="1.49.BS和CS的区别？"></a>1.49.BS和CS的区别？</h2><p>答案:<br/><br>1.C/S用户固定，并且处于相同区域，要求拥有相同的操作系统。B/S要有操作系统和浏览器就行。与操作系统平台无关。<br/><br>2.C/S客户端的计算机电脑配置要求较高。B/S客户端的计算机电脑配置要求较低。<br/><br>3.C/S每一个客户端都必须安装和配置软件,客户端不必安装，使用浏览器访问，易推广。B/S最大的优点就是可以在任何地方进行操作而不用安装任何专门的软件。<br/><br>4.C/S每一个客户端都要升级程序。可以采用自动升级。BS客户端不必安装及维护。<br/><br>5.C/S一般面向相对固定的用户群，程序更加注重流程，它可以对权限进行多层次校验，提供了更安全的存取模式，对信息安全的控制能力很强。一般高度机密的信息系统采用C/S结构适宜。<br/></p>
 <h2 id="1-50-事务有哪些特性"><a href="#1-50-事务有哪些特性" class="headerlink" title="1.50.事务有哪些特性"></a>1.50.事务有哪些特性</h2><p>事务的特性:ACID<br/><br>A - 原子性 Atomic<br/><br>   数据操作的最小单元是事务，而不是SQL语句 <br/><br/><br>C - 一致性 Consistency<br/><br>转账前 a+b = 100<br/><br>转帐后 a+b = 100<br/><br/><br>I - 隔离性 Isolation<br/><br>一个事物进行中时，另一事物不能操作数据<br/><br>D - 持久性 Durancy<br/><br>事务没有提交之前，数据操作只保存在日志文件中<br/><br>提交事务之后，数据持久生效<br/></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>面试题目项目</title>
+    <url>/2020/04/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="面试题目-项目"><a href="#面试题目-项目" class="headerlink" title="面试题目 项目"></a>面试题目 项目</h1><h2 id="什么是Redis？"><a href="#什么是Redis？" class="headerlink" title="什么是Redis？"></a>什么是Redis？</h2><p>   Redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。<br/><br>   Redis 是一个高性能的key-value数据库。 redis的出现，很大程度补偿了memcached这类key/value存储的不足，在部分场合可以对关系数据库起到很好的补充作用。它提供了Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang等客户端，使用很方便。<br/><br>   Redis支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得Redis可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。同步对读取操作的可扩展性和数据冗余很有帮助。<br/><br>   可以充当缓存、队列等作用。</p>
+<h2 id="2-Redis两种持久化的方式的比较。"><a href="#2-Redis两种持久化的方式的比较。" class="headerlink" title="2 Redis两种持久化的方式的比较。"></a>2 Redis两种持久化的方式的比较。</h2><p>答：Redis的持久化方式有两种，AOF和RDB。<br/><br>   RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.<br/><br>   AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大。<br/><br>两种区别就是，一个是持续的用日志记录写操作，crash（崩溃）后利用日志恢复；一个是平时写操作的时候不触发写，只有手动提交save命令，或者是shutdown关闭命令时，才触发备份操作。<br/><br>选择的标准，就是看系统是愿意牺牲一些性能，换取更高的缓存一致性（aof），还是愿意写操作频繁的时候，不启用备份来换取更高的性能，待手动   运行save的时候，再做备份（rdb）。rdb这个就更有些 最终一致性（eventually consistent）的意思了。<br/></p>
+<h2 id="3、说说Redis哈希槽的概念？"><a href="#3、说说Redis哈希槽的概念？" class="headerlink" title="3、说说Redis哈希槽的概念？"></a>3、说说Redis哈希槽的概念？</h2><p>   Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
+<h2 id="4、Redis集群最大节点个数是多少？"><a href="#4、Redis集群最大节点个数是多少？" class="headerlink" title="4、Redis集群最大节点个数是多少？"></a>4、Redis集群最大节点个数是多少？</h2><p>16384个</p>
+<h2 id="5、Redis中的管道有什么用？"><a href="#5、Redis中的管道有什么用？" class="headerlink" title="5、Redis中的管道有什么用？"></a>5、Redis中的管道有什么用？</h2><p>   一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。<br/><br>   这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
+<h2 id="6、怎么理解Redis事务？"><a href="#6、怎么理解Redis事务？" class="headerlink" title="6、怎么理解Redis事务？"></a>6、怎么理解Redis事务？</h2><p>   事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。<br/><br>   事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
+<h2 id="7、Redis事务相关的命令有哪几个？"><a href="#7、Redis事务相关的命令有哪几个？" class="headerlink" title="7、Redis事务相关的命令有哪几个？"></a>7、Redis事务相关的命令有哪几个？</h2><p>MULTI、EXEC、DISCARD、WATCH</p>
+<h2 id="8、Redis如何做内存优化？"><a href="#8、Redis如何做内存优化？" class="headerlink" title="8、Redis如何做内存优化？"></a>8、Redis如何做内存优化？</h2><p>   尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
+<h2 id="9-什么是RPC？"><a href="#9-什么是RPC？" class="headerlink" title="9 什么是RPC？"></a>9 什么是RPC？</h2><p>   答案：RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+<h2 id="10-HttpClient与JSONP区别？"><a href="#10-HttpClient与JSONP区别？" class="headerlink" title="10 HttpClient与JSONP区别？"></a>10 HttpClient与JSONP区别？</h2><p>1发送请求的位置不同.<br/><br>   JSONP:浏览器解析js发出的请求<br/><br>   HttpClient:是业务层java模拟发出Http请求<br/><br>2返回值的格式不同<br/><br>   JSONP:返回数据时必须要有回调函数.<br/><br>   HttpClient:直接返回JSON数据即可.<br/><br>3代码的层级不同<br/><br>   JSONP:代码层级一般3层<br/><br/><br>   HttpClient:一般5层.<br/></p>
+<p><img src="http://182.92.171.224/upload/20191124_15010765.png" alt=""></p>
+<h2 id="11-什么是nginx？"><a href="#11-什么是nginx？" class="headerlink" title="11 什么是nginx？"></a>11 什么是nginx？</h2><p>   答：Nginx (engine x) 是一个高性能的HTTP和反向代理服务。<br/><br>   反向代理方式是指以代理服务器来接收Interrnet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br/><br>   当一个代理服务器能够代理外部网络上的主机，访问内部网络时，这种代理服务的方式称为反向代理服务，当做服务器的替身，这样，代理服务器就在安全数据库和可能的恶意攻击之间提供了又一道屏障。<br/><br>   防火墙通路只允许代理服务器有权进行访问。<br/><br>   可以使用多个代理服务器来处理对一个高用量内容服务器的请求，这样做的好处是内容服务器可以处理更高的负载，并且比其独自工作时更有效率。<br/><br>   配置文件主要由四部分组成：main(全区设置)，server(主机配置)，upstream(负载均衡服务器设置)，和location(URL匹配特定位置设置)。<br/><br>   有1全局变量2事件配置3 http参数4虚拟主机基本设置5 Nignx状态监控6反向代理7负载均衡8 URL重写9 IP限制<br/><br>   主要了解虚拟主机配置，反向代理，负载均衡，url重新<br/></p>
 ]]></content>
   </entry>
 </search>
