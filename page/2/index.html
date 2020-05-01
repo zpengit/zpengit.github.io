@@ -166,6 +166,10 @@
  ">
     <div class="headband"></div>
 
+<a href="https://github.com/zhangpengpeng69" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -382,327 +386,21 @@
       
         
           
-            <hr>
-<p>一、创建建数据库、创建建数据表、查看数据库、查看数据表</p>
-<hr>
-<p>– 01.查看mysql服务器中所有数据库</p>
-<pre><code>show databases;</code></pre><p>– 02.进入某一数据库（进入数据库后，才能操作库中的表和表记录）</p>
-<pre><code>use test;</code></pre><p>– 查看已进入的库</p>
-<pre><code>select database();</code></pre><p>– 03.查看当前数据库中的所有表</p>
-<pre><code>show tables;</code></pre><p>– 04.删除mydb1库</p>
-<pre><code>-- 语法：drop database 库名;
-drop database  mydb1;
--- 思考：当删除的表不存在时，如何避免错误产生?
-drop database if exists mydb1;</code></pre><p>– 05.重新创建mydb1库，指定编码为utf8</p>
-<pre><code>-- 语法：create database 库名 charset 编码;
-create database mydb1 charset utf8;
-
--- 如果不存在则创建mydb1;
-create database mydb1 if not exists charset utf8; </code></pre><p>– 06.查看建库时的语句（并验证数据库库使用的编码）</p>
-<pre><code>-- 语法：show create database 库名;
-show create database mydb1;</code></pre><p>– 07.进入mydb1库，删除stu学生表(如果存在)</p>
-<pre><code>-- 语法：drop table 表名;
-use mydb1
-drop table stu;
-drop table if exists stu;</code></pre><p>– 08.创建stu学生表（编号[数值类型]、姓名、性别、出生年月、考试成绩[浮点型]）</p>
-<pre><code>/* 建表的语法：
-create table 表名(
-    列名 数据类型,
-    列名 数据类型,
-    ...
-); */</code></pre><hr>
-<pre><code>create table if not exists stu(
-    id int primary key auto_increment,
-    name varchar(20),
-    genger varchar(10),
-    birthday date,
-    score double
-);</code></pre><p>– 09.查看stu学生表结构</p>
-<pre><code>show create table stu;
-desc stu;</code></pre><hr>
-<p>二、新增、修改、删除表记录 <strong><strong>**</strong></strong></p>
-<hr>
-<p>– 10.往学生表(stu)中插入记录(数据)</p>
-<pre><code>-- 插入记录：insert into 表名(列1，列2，列3...) values(值1，值2，值3...);
-insert into stu(id,name,genger,birthday,score)     values(null,&apos;赵伟成&apos;,&apos;女&apos;,&apos;2018-3-9&apos;,33);
-
-insert into stu values(null,&apos;赵伟成&apos;,&apos;女&apos;,&apos;2018-3-9&apos;,33);
-insert into stu values(null,&apos;张三&apos;,&apos;男&apos;,&apos;2018-3-9&apos;,11);
-insert into stu values(null,&apos;卫程&apos;,&apos;女&apos;,&apos;2022-1-11&apos;,55);
-/* 提示：
- 设置编码：set names gbk;
- 查看MySQL数据库使用的编码：show variables like &apos;char%&apos;;
- mysql --default-character-set=gbk -uroot -proot */</code></pre><p>– 11.查询stu表所有学生的信息</p>
-<pre><code>select * from stu;
-select id,name from stu;</code></pre><p>– 12.修改stu表中所有学生的成绩，加10分特长分</p>
-<pre><code>-- 修改语法: update 表名 set 列=值,列=值,列=值...;
-update stu set score=score+10;</code></pre><p>– 13.修改stu表中王海涛的成绩，将成绩改为88分。\c取消当前语句的执行</p>
-<pre><code>update stu set score=88
-where name = &apos;卫程&apos;;
-
-/* 提示：where子句用于对记录进行筛选过滤，
-   保留符合条件的记录，将不符合条件的记录剔除。*/</code></pre><p>– 14.删除stu表中所有的记录</p>
-<pre><code>-- 删除记录语法: delete from 表名 [where条件] 
-delete from stu;
-
--- 仅删除符合条件的
-delete from stu where id= 1;</code></pre><hr>
-<p>三、基础查询、where子句查询</p>
-<hr>
-<p>– 准备数据： 以下练习将使用db10库中的表及表记录，请先进入db10数据库!!!<br>– 准备数据： 以下练习将使用db10库中的表及表记录，请先进入db10数据库!!!</p>
-<p>– <strong>****</strong> 基础查询 <strong>****</strong><br>– 15.查询emp表中的所有员工，显示姓名，薪资，奖金</p>
-<pre><code>use db10;
-select name,sal,bonus  
-from emp;</code></pre><p>– 16.查询emp表中的所有员工，显示所有列</p>
-<pre><code>select * from emp;
-/* 使用 *（星号）的缺点：把不必要的列也查询出来了，而且效率不如直接指定列名 */</code></pre><p>– 17.查询emp表中的所有部门和职位</p>
-<pre><code>select dept,job 
-from emp;
-
-/* 思考：如果查询的结果中，存在大量重复的记录，如何剔除重复记录，只保留一条？ */
-
--- distinct 用于剔除重复的记录
-select distinct dept,job from emp;</code></pre><p>– <strong>****</strong> WHERE子句查询 <strong>****</strong><br>– 18.查询emp表中薪资大于3000的所有员工，显示员工姓名、薪资</p>
-<pre><code>select name,sal from emp
-where sal&gt;3000;</code></pre><p>– 19.查询emp表中总薪资(薪资+奖金)大于3500的所有员工，显示员工姓名、总薪资</p>
-<pre><code>select name,sal+ifnull(bonus,0) from emp
-where sal+ifnull(bonus,0)&gt;3500;
--- ifnull(列, 值)函数: 判断指定的列是否包含null值, 如果有null值, 用第二个值替换null值</code></pre><p>select name,sal+ifnull(bonus,0) from emp</p>
-<pre><code>where sal+ifnull(bonus,0)&gt;3500;
--- 注意查看上面查询结果中的表头，如何将表头中的 sal+bonus 修改为 &quot;总薪资&quot;，as可省略</code></pre><p>select name  姓名,sal+ifnull(bonus,0) as 总薪资 from emp</p>
-<pre><code>where sal+ifnull(bonus,0)&gt;3500;
-
--- 试一试：where中能使用定义好的别名吗?
-不能</code></pre><p>– 20.查询emp表中薪资在3000和4500之间的员工，显示员工姓名和薪资</p>
-<pre><code>select name,sal from emp
-where sal&gt;=3000&amp;&amp;sal&lt;=4500;
--- 提示: between...and... 在...之间
-select name,sal from emp
-where sal between 3200 and 4500;</code></pre><p>– 21.查询emp表中薪资为 1400、1600、1800的员工，显示员工姓名和薪资<br>select name,sal</p>
-<pre><code>from emp
-where sal=1400 or sal=1600 or sal=1800;
--- 或者
-select name,sal
-from emp
-where sal in(1400,1600,1800);</code></pre><p>– 22.查询薪资不为1400、1600、1800的员工</p>
-<pre><code>select name,sal
-from emp
-where not (sal=1400 or sal=1600 or sal=1800);
--- 或者
-select name,sal
-from emp
-where sal!=1400 and sal!=1600 and sal!=1800;
--- 或者
-select name,sal
-from emp
-where sal not in(1400,1600,1800);</code></pre><p>– 23.查询emp表中薪资大于4000和薪资小于2000的员工，显示员工姓名、薪资。</p>
-<pre><code>select name,sal
-from emp
-where sal&gt;4000 or sal&lt;2000;</code></pre><p>– 24.查询emp表中薪资大于3000并且奖金小于600的员工，显示员工姓名、薪资、奖金。</p>
-<pre><code>select name,sal,bonus
-from emp
-where sal&gt;3000 and bonus&lt;600;
--- 处理null值
-select name,sal,bonus
-from emp
-where sal&gt;3000 and ifnull(bonus,0)&lt;600;
--- 处理null值</code></pre><p>– 25.查询没有部门的员工（即部门列为null值）</p>
-<pre><code>select * from emp
-where dept is null;
--- 思考：如何查询有部门的员工（即部门列不为null值）
-select * from emp
-where dept is not null;
--- 思考：如何查询有部门的员工（即部门列不为null值）</code></pre><p>– <strong>****</strong> Like模糊查询 <strong>****</strong><br>– 26.查询emp表中姓名中以”刘”开头的员工，显示员工姓名。</p>
-<pre><code>select name from emp
-where name like&apos;刘%&apos;;
-
-/* like进行模糊查询，&quot;%&quot; 表示通配，表示0或多个字符。
-&quot;_&quot;表示一个任意的字符 */
-select name from emp
-where name like&apos;刘_&apos;;</code></pre><p>– 27.查询emp表中姓名中包含”涛”员工，显示员工姓名。\</p>
-<pre><code>select name from emp
-where name like&apos;%涛%&apos;;</code></pre><p>– 28.查询emp表中姓名以”刘”开头并且姓名为2个字的员工，显示员工姓名。</p>
-<pre><code>select name from emp
-where name like&apos;刘_&apos;;</code></pre><hr>
-<p>– 三、分组查询、聚合函数、排序查询</p>
-<hr>
-<p>– 29.对emp表按照部门对员工进行分组，查看分组后效果</p>
-<pre><code>/* 分组的语法: 
-select 查询的列 from 表名 group by 列名
-根据指定的列进行分组 */
-select * from emp 
-group by dept;</code></pre><p>– 30.对emp表按照职位进行分组, 并统计每个职位的人数, 显示职位和对应人数</p>
-<pre><code>select count(id) 人数,job 职位 
-from emp 
-group by job;</code></pre><p>– 31.对emp表按照部门进行分组, 求每个部门的最高薪资(不包含奖金)，显示部门名称和最高薪资 max() min(),</p>
-<pre><code>select dept 部门,max(sal) 最高薪资
-from emp
-group by dept;</code></pre><p>– 32.统计emp表中薪资大于3000的员工个数（- count(column)统计某列的行数）</p>
-<pre><code>select count(*) from emp
-where sal&gt;3000;</code></pre><p>– 33.统计emp表中所有员工的薪资总和(不包含奖金)（- sum(column)对某列的值求和）</p>
-<pre><code>select sum(sal) from emp ;</code></pre><p>– 34.统计emp表员工的平均薪资(不包含奖金)（- avg(column)对某列的值求平均值）</p>
-<pre><code>select avg(sal) from emp ;</code></pre><p>– 35.查询emp表中所有在1993和1995年之间出生的员工，显示姓名、出生日期。</p>
-<pre><code>select name,birthday 
-from emp
-where birthday between &apos;1993-01-01&apos; and &apos;1995-12-31&apos;;
-
--- 或者 year(),month(),day(),
-select name,birthday 
-from emp
-where year(birthday) between 1993 and 1995;</code></pre><p>– 36.查询本月过生日的所有员工</p>
-<pre><code>select * from emp
-where month(curdate())= month(birthday);
-/* 
-curdate() 获取当前日期 年月日
-select curdate();
-curtime() 获取当前时间 时分秒
-select curtime();
-sysdate() 获取当前日期+时间 年月日 时分秒 
-select sysdate();
-select now();
-*/</code></pre><hr>
-<p>– <strong><strong><strong>****</strong></strong></strong> 排序查询 <strong><strong><strong>***</strong></strong></strong></p>
-<hr>
-<pre><code>/* order by 排序的列 asc 升序(从低到高)
-order by 排序的列 desc 降序(从高到低)
-默认就是升序，所以asc可以省略不写 */</code></pre><p>– 37.对emp表中所有员工的薪资进行升序(从低到高)排序，显示员工姓名、薪资。</p>
-<pre><code>select name,sal from emp
-order by sal;</code></pre><p>– 38.对emp表中所有员工奖金进行降序(从高到低)排序，显示员工姓名、奖金。</p>
-<pre><code>select name,bonus from emp
-order by bonus desc;</code></pre><hr>
-<p>– <strong><strong><strong>****</strong></strong></strong> 分页查询 <strong><strong><strong>***</strong></strong></strong></p>
-<hr>
-<pre><code>/* 在mysql中，通过limit进行分页查询：
-limit (页码-1)*每页显示记录数, 每页显示记录数 */</code></pre><p>– 39.查询emp表中的所有记录，分页显示：每页显示3条记录，返回第 1 页。</p>
-<pre><code>select * from emp
-limit 0,3;
-select * from emp
-limit 6,3;</code></pre><p>– 40.查询emp表中的所有记录，分页显示：每页显示3条记录，返回第 2 页。</p>
-<pre><code>select * from emp
-limit 3,3;
-
-select * from emp
-limit 9,3;</code></pre><hr>
-<p>– 三、外键</p>
-<hr>
-<p>– 准备数据： 以下练习将使用db20库中的表及表记录，请先进入db20数据库!!!<br>– 准备数据： 以下练习将使用db20库中的表及表记录，请先进入db20数据库!!!<br>– 41.尝试删除dept表中的某一个部门</p>
-<pre><code>/* 上面的部门删除成功后，员工表里的某些员工就没有了对应的部门,
-这种我们称之为数据的完整性被破坏了,
-为了避免这种情况，可以在删除之前，查看将要删除的部门下是否还有员工存在，如果有就不要删除;
-或者，让数据库帮我们去维护这样的对应关系，也就是当将要被删除的部门下如果还有员工，
-就阻止删除操作，让数据库帮我们维护这样的对应关系，就需要指定外键。*/</code></pre><p>– 42.重新创建db20中的dept和emp表，在创建时，指定emp表中的dept_id列为外键，即这一列要严格参考dept表中的id列, 再次尝试删除dept表中的某一个部门，查看是否能删除成功</p>
-<hr>
-<p>– 四、关联查询、外连接查询</p>
-<hr>
-<p>– 准备数据： 以下练习将使用db30库中的表及表记录，请先进入db30数据库!!!<br>– 准备数据： 以下练习将使用db30库中的表及表记录，请先进入db30数据库!!!</p>
-<p>– 43.查询部门和部门对应的员工信息</p>
-<pre><code>select * from emp,dept
-where dept.id = emp.dept_id;
---
-select * from dept inner join emp
-on dept.id = emp.dept_id;</code></pre><p>– 44.查询所有部门和部门下的员工，如果部门下没有员工，员工显示为null</p>
-<pre><code>select * from dept left join emp
-on dept.id = emp.dept_id;</code></pre><p>– 45.查询部门和所有员工，如果员工没有所属部门，部门显示为null</p>
-<pre><code>select * from dept right join emp
-on dept.id = emp.dept_id;</code></pre><hr>
-<p>– 五、子查询、多表查询</p>
-<hr>
-<p>– 准备数据：以下练习将使用db40库中的表及表记录，请先进入db40数据库!!!<br>– 准备数据：以下练习将使用db40库中的表及表记录，请先进入db40数据库!!!</p>
-<p>– 46.列出薪资比’王海涛’薪资高的所有员工，显示姓名、薪资</p>
-<pre><code>select name,sal from emp
-where sal&gt;(
-select sal from emp
-where name= &apos;王海涛&apos;
-);</code></pre><p>– 47.列出与’刘沛霞’从事相同职位的所有员工，显示姓名、职位。</p>
-<pre><code>select name,job from emp
-where job = (
-select job from emp
-where name = &apos;刘沛霞&apos;
-);</code></pre><p>– 48.列出薪资比’大数据部’部门(已知部门编号为30)所有员工薪资都高的员工信息，显示员工姓名、薪资和部门名称。</p>
-<pre><code>select emp.name,sal,dept.name 
-from emp,dept
-where emp.dept_id = dept.id and sal&gt;(
-    select max(sal) from emp,dept
-    where dept_id = 30 and emp.dept_id = dept.id
-);
-
-select emp.name,sal,dept.name 
-from emp left join dept
-on emp.dept_id = dept.id and 
-where sal&gt;(
-    select max(sal) from emp
-    where dept_id = 30 
-);</code></pre><p>– 49.列出在’培优部’任职的员工，假定不知道’培优部’的部门编号， 显示部门名称，员工名称。</p>
-<pre><code>-- 关联查询两张表
--- 求出在培优部的员工
-select dept.name,emp.name 
-from emp,dept
-where emp.dept_id = dept.id and 
-   dept.name = &apos;培优部&apos;;</code></pre><p>– 50.(自查询)列出所有员工及其直接上级，显示员工姓名、上级编号，上级姓名</p>
-<pre><code>select e1.name,e2.topid,e2.name 
-from emp as e1,emp e2
-where e1.topid = e2.id;</code></pre><p>– 51.列出最低薪资大于1500的各种职位，显示职位和该职位最低薪资</p>
-<pre><code>select job, min(sal)
-from emp
-group by job
-having min(sal)&gt;1500;</code></pre><p>– 52.列出在每个部门就职的员工数量、平均工资。显示部门编号、员工数量，平均薪资。</p>
-<pre><code>select dept_id,count(*),avg(sal)
-from emp
-group by dept_id;</code></pre><p>– 53.查出至少有一个员工的部门。显示部门编号、部门名称、部门位置、部门人数。</p>
-<pre><code>-- 关联查询两张表(dept, emp)
--- 替换要显示的列和统计部门人数
-select dept.id,dept.name,dept.loc,count(*)
-from emp,dept
-where emp.dept_id = dept.id 
-group by dept.name;</code></pre><p>– 54.列出受雇日期早于直接上级的所有员工的编号、姓名、部门名称。</p>
-<pre><code>/* 
-列: e1.id, e1.name, d.name
-表:    emp e1: 员工表
-    emp e2: 上级表
-    dept d: 部门表
-关联条件: e1.topid=e2.id
-        e1.dept_id=d.id
-        e1.hdate&lt;e2.hdate  */
-select e1.id, e1.name, d.name
-from emp e1,emp e2,dept d
-where e1.topid=e2.id and e1.dept_id=d.id
-    and e1.hdate&lt;e2.hdate;</code></pre><p>– 55.列出每个部门薪资最高的员工信息，显示部门编号、员工姓名、薪资</p>
-<pre><code>-- 查询emp表中所有员工的部门编号、姓名、薪资
--- 查询emp表中每个部门的最高薪资，显示部门编号、最高薪资
--- 第二次查询的结果作为一张临时表和第一次查询进行关联查询
-
-select emp.dept_id, t1.ms,emp.name
-from emp,(
-    select dept_id, max(sal) ms 
-    from emp 
-    group by dept_id) t1
-where emp.dept_id = t1.dept_id and t1.ms=emp.sal;</code></pre><p>======================================<br>补充1、笛卡尔积查询：</p>
-<pre><code>笛卡尔积查询：如果同时查询两张表，左边表有m条数据，右边表有n条数据，那么笛卡尔积查询是结果就是 m*n 条记录。这就是笛卡尔积查询。例如： 
-select * from dept,emp;
-上面的查询中包含大量错误的数据, 一般不使用这种查询。
-
-如果只想保留正确的记录，可以通过where条件进行筛选，将符合条件的保留下来，不符合条件的自然就会被剔除，例如：
-select * from dept,emp
-where dept.id=emp.dept_id;</code></pre><p>补充2、左外连接和右外连接查询：</p>
-<pre><code>(1) 左外连接查询：是将左边表中所有数据都查询出来, 如果在右边表中没有对应的记录, 右边表显示为null即可。
-(2) 右外连接查询：是将右边表中所有数据都查询出来, 如果在左边表中没有对应的记录, 左边表显示为null即可。</code></pre><p>补充3、where和having都用于筛选过滤，但是： </p>
-<pre><code>(1) where用于在分组之前进行筛选, having用于在分组之后进行筛选
-(2) 并且where中不能使用列别名, having中可以使用别名
-(3) where子句中不能使用列别名(可以使用表别名), 因为where子句比select先执行!!</code></pre><p>补充4、SQL语句的书写顺序和执行顺序:<br>  SQL语句的书写顺序：</p>
-<pre><code>select...
-from...
-where...
-group by...
-order by...
-...</code></pre><p>  SQL语句的执行顺序：</p>
-<pre><code>from... -- 确定要查询的是哪张表 (定义表别名)
-where... -- 从整张表的数据中进行筛选过滤
-select... -- 确定要显示哪些列 (定义列别名)
-group by... -- 根据指定的列进行分组
-order by... -- 根据指定的列进行排序
-...</code></pre><p>======================================</p>
-
           
+一、创建建数据库、创建建数据表、查看数据库、查看数据表
+
+– 01.查看mysql服务器中所有数据库
+show databases;– 02.进入某一数据库（进入数据库后，才能操作库中的表和表记录）
+use test;– 查看已进入的库
+select database();– 03.查看当前数据库
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/Sql%E8%AF%AD%E5%8F%A5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -830,19 +528,15 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <h3 id="愿逝者安息，愿生者奋发，愿祖国昌盛！"><a href="#愿逝者安息，愿生者奋发，愿祖国昌盛！" class="headerlink" title="愿逝者安息，愿生者奋发，愿祖国昌盛！"></a>愿逝者安息，愿生者奋发，愿祖国昌盛！</h3><p>&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车、舰船鸣笛，防空警报鸣响。<br><img src="https://www.zhangpeng.fun/upload/2020/04/5e873b96a3107bb6f533a554-b7dea45003c4466c829c6a40dca52589.jpeg" alt="5e873b96a3107bb6f533a554"></p>
-<p>今天是2020年4月4日，全国将举行哀悼活动，为表达敬意与尊重，应将网站设置为灰度。<br>愿逝者安息，愿生者奋发，愿祖国昌盛！</p>
-<p>例如：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-1dc913a7557043338ce1d3edad11b5de.png" alt="image.png"></p>
-<p>实现：<br>下面三种方式任选一种都可以，只需要放入html的head标签中即可实现。<br>（1）方式一</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">html&#123;</span><br><span class="line">     filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale&#x3D;1);-webkit-filter:saturate(0)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（2）方式二</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&gt;*&#123;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);</span><br><span class="line">    -webkit-filter: grayscale(1);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（3）方式三</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">html &#123; </span><br><span class="line">      -webkit-filter: grayscale(100%); </span><br><span class="line">      -moz-filter: grayscale(100%); </span><br><span class="line">      -ms-filter: grayscale(100%); </span><br><span class="line">      -o-filter: grayscale(100%); </span><br><span class="line">      filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);  </span><br><span class="line">      _filter:none; </span><br><span class="line"> &#125; </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-bcb9c3c4d39a4e3080235c1451d67765.png" alt="image.png"><br>赶紧行动起来吧！</p>
-<p>来源：<a href="https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA</a></p>
-
-          
+          愿逝者安息，愿生者奋发，愿祖国昌盛！&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/%E6%84%BF%E9%80%9D%E8%80%85%E5%AE%89%E6%81%AF%EF%BC%8C%E8%AE%A9%E5%85%A8%E7%AB%99%E9%BB%91%E7%99%BD%EF%BC%81/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -970,56 +664,16 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <p>突然感觉three.js挺有意思的，简单入门了一下three.js，但是并没有打算深入学习。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>&emsp;&emsp;three.js是JavaScript编写的WebGL第三方库。提供了非常多的3D显示功能。<br>&emsp;&emsp;Three.js 是一款运行在浏览器中的 3D 引擎，你可以用它创建各种三维场景，包括了摄影机、光影、材质等各种对象。你可以在它的主页上看到许多精彩的演示。不过，这款引擎还处在比较不成熟的开发阶段，其不够丰富的 API 以及匮乏的文档增加了初学者的学习难度（尤其是文档的匮乏）three.js的代码托管在github上面。<br><img src="https://www.zhangpeng.fun/upload/2020/04/image-1481693e51244af7af24d3ec2ace6dfb.png" alt="image.png"><br>官网：<a href="https://threejs.org/" target="_blank" rel="noopener">https://threejs.org/</a></p>
-<p>Github：<a href="https://github.com/mrdoob/three.js/" target="_blank" rel="noopener">https://github.com/mrdoob/three.js/</a></p>
-<p>目录结构：<br>Build目录：包含两个文件，three.js 和three.min.js 。这是three.js最终被引用的文件。一个已经压缩，一个没有压缩的js文件。</p>
-<p>Docs目录：这里是three.js的帮助文档，里面是各个函数的api，可惜并没有详细的解释。试图用这些文档来学会three.js是不可能的。</p>
-<p>Editor目录：一个类似3D-max的简单编辑程序，它能创建一些三维物体。</p>
-<p>Examples目录：一些很有趣的例子demo，可惜没有文档介绍。对图像学理解不深入的同学，学习成本非常高。</p>
-<p>Src目录：源代码目录，里面是所有源代码。</p>
-<p>Test目录：一些测试代码，基本没用。</p>
-<p>Utils目录：存放一些脚本，python文件的工具目录。例如将3D-Max格式的模型转换为three.js特有的json模型。</p>
-<p>.gitignore文件：git工具的过滤规则文件，没有用。</p>
-<p>CONTRIBUTING.md文件：一个怎么报bug，怎么获得帮助的说明文档。</p>
-<p>LICENSE文件：版权信息。</p>
-<p>README.md文件：介绍three.js的一个文件，里面还包含了各个版本的更新内容列表。</p>
-<h2 id="入门程序"><a href="#入门程序" class="headerlink" title="入门程序"></a>入门程序</h2><ol>
-<li><p>下载three.js</p>
-</li>
-<li><p>导入three.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;js&#x2F;three.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>三大组件<br>在Three.js中，要渲染物体到网页中，我们需要3个组建：场景（scene）、相机（camera）和渲染器（renderer）。有了这三样东西，才能将物体渲染到网页中去。<br>创建这三要素的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var scene &#x3D; new THREE.Scene();	&#x2F;&#x2F; 场景</span><br><span class="line">var camera &#x3D; new THREE.PerspectiveCamera(75, window.innerWidth&#x2F;window.innerHeight, 0.1, 1000);&#x2F;&#x2F; 透视相机</span><br><span class="line">var renderer &#x3D; new THREE.WebGLRenderer();	&#x2F;&#x2F; 渲染器</span><br><span class="line">renderer.setSize(window.innerWidth, window.innerHeight);	&#x2F;&#x2F; 设置渲染器的大小为窗口的内宽度，也就是内容区的宽度</span><br><span class="line">document.body.appendChild(renderer.domElement);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p>在Threejs中场景就只有一种，用THREE.Scene来表示，要构件一个场景也很简单，只要new一个对象就可以了，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var scene &#x3D; new THREE.Scene();</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>相机<br>另一个组建是相机，相机决定了场景中那个角度的景色会显示出来。相机就像人的眼睛一样，人站在不同位置，抬头或者低头都能够看到不同的景色。</li>
-</ol>
-<p>场景只有一种，但是相机却又很多种。和现实中一样，不同的相机确定了呈相的各个方面。比如有的相机适合人像，有的相机适合风景，专业的摄影师根据实际用途不一样，选择不同的相机。对程序员来说，只要设置不同的相机参数，就能够让相机产生不一样的效果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var camera &#x3D; new THREE.PerspectiveCamera(75, window.innerWidth&#x2F;window.innerHeight, 0.1, 1000);</span><br></pre></td></tr></table></figure>
-<p>5.渲染器<br>最后一步就是设置渲染器，渲染器决定了渲染的结果应该画在页面的什么元素上面，并且以怎样的方式来绘制。这里我们定义了一个WebRenderer渲染器，代码如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var renderer &#x3D; new THREE.WebGLRenderer();</span><br><span class="line">renderer.setSize(window.innerWidth, window.innerHeight);</span><br><span class="line">document.body.appendChild(renderer.domElement);</span><br></pre></td></tr></table></figure>
-
-<p>6.渲染<br>渲染应该使用渲染器，结合相机和场景来得到结果画面。实现这个功能的函数是</p>
-<p>renderer.render(scene, camera);</p>
-<p>渲染函数的原型如下：</p>
-<p>render( scene, camera, renderTarget, forceClear )</p>
-<p>各个参数的意义是：</p>
-<p>scene：前面定义的场景</p>
-<p>camera：前面定义的相机</p>
-<p>renderTarget：渲染的目标，默认是渲染到前面定义的render变量中</p>
-<p>forceClear：每次绘制之前都将画布的内容给清除，即使自动清除标志autoClear为false，也会清除。</p>
-<p>7.完整代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;canvas &#123; width: 100%; height: 100% &#125;&lt;&#x2F;style&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;three.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var scene &#x3D; new THREE.Scene();</span><br><span class="line">        </span><br><span class="line">        var camera &#x3D; new THREE.PerspectiveCamera(75, window.innerWidth&#x2F;window.innerHeight, 0.1, 1000);</span><br><span class="line">        </span><br><span class="line">        var renderer &#x3D; new THREE.WebGLRenderer();</span><br><span class="line">        </span><br><span class="line">        renderer.setSize(window.innerWidth, window.innerHeight);</span><br><span class="line">        </span><br><span class="line">        document.body.appendChild(renderer.domElement);</span><br><span class="line">        var geometry &#x3D; new THREE.CubeGeometry(1,1,1);</span><br><span class="line">        var material &#x3D; new THREE.MeshBasicMaterial(&#123;color: 0x00ff00&#125;);</span><br><span class="line">        var cube &#x3D; new THREE.Mesh(geometry, material); scene.add(cube);</span><br><span class="line">        camera.position.z &#x3D; 5;</span><br><span class="line">        function render() &#123;</span><br><span class="line">            requestAnimationFrame(render);</span><br><span class="line">            cube.rotation.x +&#x3D; 0.1;</span><br><span class="line">            cube.rotation.y +&#x3D; 0.1;</span><br><span class="line">            renderer.render(scene, camera);</span><br><span class="line">        &#125;</span><br><span class="line">        render();</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>官网全部示例：<a href="https://threejs.org/examples/#webgl_animation_cloth" target="_blank" rel="noopener">https://threejs.org/examples/#webgl_animation_cloth</a></p>
-
-          
+          突然感觉three.js挺有意思的，简单入门了一下three.js，但是并没有打算深入学习。
+介绍&emsp;&emsp;three.js是JavaScript编写的WebGL第三方库。提供了非常多的3D显示功能。&emsp;&emsp;Three.js 是一款运行在浏览器中的 3D 引擎，你可以用
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/%E5%85%A5%E9%97%A8three.js/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1147,204 +801,44 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <p>传送门—–<a href="https://github.com/zhangpengpeng69/JavaGuide" target="_blank" rel="noopener">java基础知识</a></p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#java">Java</a><ul>
-<li><a href="#基础">基础</a></li>
-<li><a href="#容器">容器</a></li>
-<li><a href="#并发">并发</a></li>
-<li><a href="#jvm">JVM</a></li>
-<li><a href="#io">I/O</a></li>
-<li><a href="#java-8">Java 8</a></li>
-<li><a href="#编程规范">编程规范</a></li>
-</ul>
-</li>
-<li><a href="#网络">网络</a></li>
-<li><a href="#操作系统">操作系统</a><ul>
-<li><a href="#linux相关">Linux相关</a></li>
-</ul>
-</li>
-<li><a href="#数据结构与算法">数据结构与算法</a><ul>
-<li><a href="#数据结构">数据结构</a></li>
-<li><a href="#算法">算法</a></li>
-</ul>
-</li>
-<li><a href="#数据库">数据库</a><ul>
-<li><a href="#mysql">MySQL</a></li>
-<li><a href="#redis">Redis</a></li>
-</ul>
-</li>
-<li><a href="#系统设计">系统设计</a><ul>
-<li><a href="#设计模式">设计模式(工厂模式、单例模式 … )</a></li>
-<li><a href="#常用框架">常用框架(Spring、Zookeeper … )</a></li>
-<li><a href="#数据通信">数据通信(消息队列、Dubbo … )</a></li>
-<li><a href="#网站架构">网站架构</a></li>
-</ul>
-</li>
-<li><a href="#面试指南">面试指南</a><ul>
-<li><a href="#备战面试">备战面试</a></li>
-<li><a href="#常见面试题总结">常见面试题总结</a></li>
-<li><a href="#面经">面经</a></li>
-</ul>
-</li>
-<li><a href="#工具">工具</a><ul>
-<li><a href="#git">Git</a></li>
-<li><a href="#Docker">Docker</a></li>
-</ul>
-</li>
-<li><a href="#资源">资源</a><ul>
-<li><a href="#书单">书单</a></li>
-<li><a href="#Github榜单">Github榜单</a></li>
-</ul>
-</li>
-<li><a href="#待办">待办</a></li>
-<li><a href="#说明">说明</a></li>
-</ul>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
-<li><a href="docs/java/Java基础知识.md">Java 基础知识回顾</a></li>
-<li><a href="docs/java/Java疑难点.md">Java 基础知识疑难点/易错点</a></li>
-<li><a href="docs/java/Java程序设计题.md">一些重要的Java程序设计题</a></li>
-<li><a href="docs/java/J2EE基础知识.md">J2EE 基础知识回顾</a></li>
-</ul>
-<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
-<li><a href="docs/java/collection/Java集合框架常见面试题.md">Java容器常见面试题/知识点总结</a></li>
-<li><a href="docs/java/collection/ArrayList.md">ArrayList 源码学习</a>  </li>
-<li><a href="docs/java/collection/LinkedList.md">LinkedList 源码学习</a>   </li>
-<li><a href="docs/java/collection/HashMap.md">HashMap(JDK1.8)源码学习</a>  </li>
-</ul>
-<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ul>
-<li><a href="docs/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md">Java 并发基础常见面试题总结</a></li>
-<li><a href="docs/java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md">Java 并发进阶常见面试题总结</a></li>
-<li><a href="docs/java/Multithread/并发容器总结.md">并发容器总结</a></li>
-<li><a href="docs/essential-content-for-interview/面试必备之乐观锁与悲观锁.md">乐观锁与悲观锁</a></li>
-<li><a href="docs/java/Multithread/Atomic.md">JUC 中的 Atomic 原子类总结</a></li>
-<li><a href="docs/java/Multithread/AQS.md">AQS 原理以及 AQS 同步组件总结</a></li>
-</ul>
-<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><ul>
-<li><a href="docs/java/jvm/Java内存区域.md">一 Java内存区域</a></li>
-<li><a href="docs/java/jvm/JVM垃圾回收.md">二 JVM垃圾回收</a></li>
-<li><a href="docs/java/jvm/JDK监控和故障处理工具总结.md">三 JDK 监控和故障处理工具</a></li>
-<li><a href="docs/java/jvm/类文件结构.md">四 类文件结构</a></li>
-<li><a href="docs/java/jvm/类加载过程.md">五 类加载过程</a></li>
-<li><a href="docs/java/jvm/类加载器.md">六 类加载器</a></li>
-</ul>
-<h3 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h3><ul>
-<li><a href="docs/java/BIO-NIO-AIO.md">BIO,NIO,AIO 总结 </a></li>
-<li><a href="docs/java/Java%20IO与NIO.md">Java IO 与 NIO系列文章</a></li>
-</ul>
-<h3 id="Java-8"><a href="#Java-8" class="headerlink" title="Java 8"></a>Java 8</h3><ul>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8Tutorial.md">Java 8 新特性总结</a></li>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8教程推荐.md">Java 8 学习资源推荐</a></li>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8foreach指南.md">Java8 forEach 指南</a></li>
-</ul>
-<h3 id="编程规范"><a href="#编程规范" class="headerlink" title="编程规范"></a>编程规范</h3><ul>
-<li><a href="docs/java/Java编程规范.md">Java 编程规范</a></li>
-</ul>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
-<li><a href="docs/network/计算机网络.md">计算机网络常见面试题</a></li>
-<li><a href="docs/network/干货：计算机网络知识总结.md">计算机网络基础知识总结</a></li>
-<li><a href="docs/network/HTTPS中的TLS.md">HTTPS中的TLS</a></li>
-</ul>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h3><ul>
-<li><a href="docs/operating-system/后端程序员必备的Linux基础知识.md">后端程序员必备的 Linux 基础知识</a>  </li>
-<li><a href="docs/operating-system/Shell.md">Shell 编程入门</a> </li>
-</ul>
-<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul>
-<li><a href="docs/dataStructures-algorithms/数据结构.md">数据结构知识学习与面试</a></li>
-</ul>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul>
-<li><a href="docs/dataStructures-algorithms/算法学习资源推荐.md">算法学习资源推荐</a>  </li>
-<li><a href="docs/dataStructures-algorithms/几道常见的子符串算法题.md">几道常见的字符串算法题总结 </a></li>
-<li><a href="docs/dataStructures-algorithms/几道常见的链表算法题.md">几道常见的链表算法题总结 </a>   </li>
-<li><a href="docs/dataStructures-algorithms/剑指offer部分编程题.md">剑指offer部分编程题</a></li>
-<li><a href="docs/dataStructures-algorithms/公司真题.md">公司真题</a></li>
-<li><a href="docs/dataStructures-algorithms/Backtracking-NQueens.md">回溯算法经典案例之N皇后问题</a></li>
-</ul>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
-<li><a href="docs/database/MySQL.md">MySQL 学习与面试</a></li>
-<li><a href="docs/database/一千行MySQL命令.md">一千行MySQL学习笔记</a></li>
-<li><a href="docs/database/MySQL高性能优化规范建议.md">MySQL高性能优化规范建议</a></li>
-<li><a href="docs/database/MySQL%20Index.md">数据库索引总结</a></li>
-<li><a href="docs/database/事务隔离级别(图文详解).md">事务隔离级别(图文详解)</a></li>
-<li><a href="docs/database/一条sql语句在mysql中如何执行的.md">一条SQL语句在MySQL中如何执行的</a></li>
-</ul>
-<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
-<li><a href="docs/database/Redis/Redis.md">Redis 总结</a></li>
-<li><a href="docs/database/Redis/Redlock分布式锁.md">Redlock分布式锁</a></li>
-<li><a href="docs/database/Redis/如何做可靠的分布式锁，Redlock真的可行么.md">如何做可靠的分布式锁，Redlock真的可行么</a></li>
-</ul>
-<h2 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h2><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
-<li><a href="docs/system-design/设计模式.md">设计模式系列文章</a></li>
-</ul>
-<h3 id="常用框架"><a href="#常用框架" class="headerlink" title="常用框架"></a>常用框架</h3><h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><ul>
-<li><a href="docs/system-design/framework/spring/Spring.md">Spring 学习与面试</a></li>
-<li><a href="docs/system-design/framework/spring/SpringInterviewQuestions.md">Spring 常见问题总结</a></li>
-<li><a href="docs/system-design/framework/spring/SpringBean.md">Spring中bean的作用域与生命周期</a></li>
-<li><a href="docs/system-design/framework/spring/SpringMVC-Principle.md">SpringMVC 工作原理详解</a></li>
-<li><a href="docs/system-design/framework/spring/Spring-Design-Patterns.md">Spring中都用到了那些设计模式?</a></li>
-<li><a href="https://github.com/Snailclimb/springboot-guide" target="_blank" rel="noopener">SpringBoot 使用指南</a></li>
-<li><a href="https://github.com/Snailclimb/spring-security-jwt-guide" target="_blank" rel="noopener">Spring Security with JWT</a></li>
-</ul>
-<h4 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h4><ul>
-<li><a href="docs/system-design/framework/ZooKeeper.md">ZooKeeper 相关概念总结</a></li>
-<li><a href="docs/system-design/framework/ZooKeeper数据模型和常见命令.md">ZooKeeper 数据模型和常见命令</a></li>
-</ul>
-<h3 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h3><ul>
-<li><a href="docs/system-design/data-communication/summary.md">数据通信(RESTful、RPC、消息队列)相关知识点总结</a></li>
-<li><a href="docs/system-design/data-communication/dubbo.md">Dubbo 总结：关于 Dubbo 的重要知识点</a></li>
-<li><a href="docs/system-design/data-communication/message-queue.md">消息队列总结</a></li>
-<li><a href="docs/system-design/data-communication/rabbitmq.md">RabbitMQ 入门</a></li>
-<li><a href="docs/system-design/data-communication/RocketMQ-Questions.md">RocketMQ的几个简单问题与答案</a></li>
-<li><a href="docs/system-design/data-communication/Kafka系统设计开篇-面试看这篇就够了.md">Kafka系统设计开篇-面试看这篇就够了</a></li>
-</ul>
-<h3 id="网站架构"><a href="#网站架构" class="headerlink" title="网站架构"></a>网站架构</h3><ul>
-<li><a href="docs/system-design/website-architecture/分布式.md">一文读懂分布式应该学什么</a></li>
-<li><a href="docs/system-design/website-architecture/8%20张图读懂大型网站技术架构.md">8 张图读懂大型网站技术架构</a></li>
-<li><a href="docs/system-design/website-architecture/【面试精选】关于大型网站系统架构你不得不懂的10个问题.md">【面试精选】关于大型网站系统架构你不得不懂的10个问题</a></li>
-</ul>
-<h2 id="面试指南"><a href="#面试指南" class="headerlink" title="面试指南"></a>面试指南</h2><h3 id="备战面试"><a href="#备战面试" class="headerlink" title="备战面试"></a>备战面试</h3><ul>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/程序员的简历之道.md">【备战面试1】程序员的简历就该这样写</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/interviewPrepare.md">【备战面试2】初出茅庐的程序员该如何准备面试？</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaProgrammerNeedKnow.md">【备战面试3】7个大部分程序员在面试前很关心的问题</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaInterviewLibrary.md">【备战面试4】Github上开源的Java面试/学习相关的仓库推荐</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/如果面试官问你“你有什么问题问我吗？”时，你该如何回答.md">【备战面试5】如果面试官问你“你有什么问题问我吗？”时，你该如何回答</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/美团面试常见问题总结.md">【备战面试6】美团面试常见问题总结（附详解答案）</a></li>
-</ul>
-<h3 id="常见面试题总结"><a href="#常见面试题总结" class="headerlink" title="常见面试题总结"></a>常见面试题总结</h3><ul>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第一周（2018-8-7）.md">第一周（2018-8-7）</a> (为什么 Java 中只有值传递、==与equals、 hashCode与equals)</li>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第二周(2018-8-13).md">第二周（2018-8-13）</a>(String和StringBuffer、StringBuilder的区别是什么？String为什么是不可变的？、什么是反射机制？反射机制的应用场景有哪些？……)</li>
-<li><a href="docs/java/collection/Java集合框架常见面试题.md">第三周（2018-08-22）</a> （Arraylist 与 LinkedList 异同、ArrayList 与 Vector 区别、HashMap的底层实现、HashMap 和 Hashtable 的区别、HashMap 的长度为什么是2的幂次方、HashSet 和 HashMap 区别、ConcurrentHashMap 和 Hashtable 的区别、ConcurrentHashMap线程安全的具体实现方式/底层具体实现、集合框架底层数据结构总结）</li>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第四周(2018-8-30).md">第四周(2018-8-30).md</a> （主要内容是几道面试常问的多线程基础题。）</li>
-</ul>
-<h3 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h3><ul>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/5面阿里,终获offer.md">5面阿里,终获offer(2018年秋招)</a></li>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/蚂蚁金服实习生面经总结(已拿口头offer).md">蚂蚁金服2019实习生面经总结(已拿口头offer)</a></li>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/2019alipay-pinduoduo-toutiao.md">2019年蚂蚁金服、头条、拼多多的面试总结</a></li>
-</ul>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
-<li><a href="docs/tools/Git.md">Git入门</a></li>
-</ul>
-<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><ul>
-<li><a href="docs/tools/Docker.md">Docker 入门</a></li>
-<li><a href="docs/tools/Docker-Image.md">一文搞懂 Docker 镜像的常用操作！</a></li>
-</ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h3><ul>
-<li><a href="docs/data/java-recommended-books.md">Java程序员必备书单</a></li>
-</ul>
-<h3 id="实战项目推荐"><a href="#实战项目推荐" class="headerlink" title="实战项目推荐"></a>实战项目推荐</h3><ul>
-<li><a href="https://github.com/YunaiV/onemall" target="_blank" rel="noopener">onemall</a> : mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba 。</li>
-</ul>
-<h3 id="Github-历史榜单"><a href="#Github-历史榜单" class="headerlink" title="Github 历史榜单"></a>Github 历史榜单</h3><ul>
-<li><a href="docs/github-trending/JavaGithubTrending.md">Java 项目月榜单</a></li>
-</ul>
-<hr>
-<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
-<li><input disabled="" type="checkbox"> Java 多线程类别知识重构(—正在进行中—)</li>
-<li><input disabled="" type="checkbox"> Netty 总结(—正在进行中—)</li>
-<li><input disabled="" type="checkbox"> 数据结构总结重构(—正在进行中—)</li>
-</ul>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>
-          
+          传送门—–java基础知识
+目录
+Java
+基础
+容器
+并发
+JVM
+I/O
+Java 8
+编程规范
+
+
+网络
+操作系统
+Linux相关
+
+
+数据结构与算法
+数据结构
+算法
+
+
+数据库
+MySQL
+Redis
+
+
+系统设计
+设计模式(工厂模式、单例模式 … )
+常用框架(Spring、Zookeep
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/github%E4%BB%93%E5%BA%93--JavaGuide/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1472,97 +966,25 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <table>
-<thead>
-<tr>
-<th align="center">&nbsp;算法&nbsp;</th>
-<th align="center">操作系统</th>
-<th align="center">&nbsp;网络&nbsp;</th>
-<th align="center">面向对象</th>
-<th align="center">&nbsp;&nbsp;数据库&nbsp;&nbsp;</th>
-<th align="center">&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;</th>
-<th align="center">系统设计</th>
-<th align="center">&nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&nbsp;</th>
-<th align="center">编码实践</th>
-<th align="center">&nbsp;&nbsp;&nbsp;后记&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a href="#pencil2-算法">:pencil2:</a></td>
-<td align="center"><a href="#computer-操作系统">:computer:</a></td>
-<td align="center"><a href="#cloud-网络">:cloud:</a></td>
-<td align="center"><a href="#art-面向对象">:art:</a></td>
-<td align="center"><a href="#floppy_disk-数据库">:floppy_disk:</a></td>
-<td align="center"><a href="#coffee-java">:coffee:</a></td>
-<td align="center"><a href="#bulb-系统设计">:bulb:</a></td>
-<td align="center"><a href="#wrench-工具">:wrench:</a></td>
-<td align="center"><a href="#watermelon-编码实践">:watermelon:</a></td>
-<td align="center"><a href="#memo-后记">:memo:</a></td>
-</tr>
-</tbody></table>
-<br>
-
-<div align="center">
-    <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/githubio/LogoMakr_0zpEzN.png" width="200px">
-</div>
-
-
-
-<br>
-
-<h2 id="pencil2-算法"><a href="#pencil2-算法" class="headerlink" title=":pencil2: 算法"></a>:pencil2: 算法</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md" target="_blank" rel="noopener">剑指 Offer 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20题解%20-%20目录.md" target="_blank" rel="noopener">Leetcode 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/算法%20-%20目录.md" target="_blank" rel="noopener">算法</a></li>
-<li><a href="https://www.nowcoder.com/contestRoom?from=cyc_github" target="_blank" rel="noopener">笔试面试题库</a></li>
-</ul>
-<h2 id="computer-操作系统"><a href="#computer-操作系统" class="headerlink" title=":computer: 操作系统"></a>:computer: 操作系统</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统%20-%20目录.md" target="_blank" rel="noopener">计算机操作系统</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md" target="_blank" rel="noopener">Linux</a></li>
-</ul>
-<h2 id="cloud-网络"><a href="#cloud-网络" class="headerlink" title=":cloud: 网络"></a>:cloud: 网络</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络%20-%20目录.md" target="_blank" rel="noopener">计算机网络</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md" target="_blank" rel="noopener">HTTP</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md" target="_blank" rel="noopener">Socket</a></li>
-</ul>
-<h2 id="art-面向对象"><a href="#art-面向对象" class="headerlink" title=":art: 面向对象"></a>:art: 面向对象</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/设计模式%20-%20目录.md" target="_blank" rel="noopener">设计模式</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/面向对象思想.md" target="_blank" rel="noopener">面向对象思想</a></li>
-</ul>
-<h2 id="floppy-disk-数据库"><a href="#floppy-disk-数据库" class="headerlink" title=":floppy_disk: 数据库"></a>:floppy_disk: 数据库</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/数据库系统原理.md" target="_blank" rel="noopener">数据库系统原理</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/SQL.md" target="_blank" rel="noopener">SQL</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode-Database%20题解.md" target="_blank" rel="noopener">Leetcode-Database 题解</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md" target="_blank" rel="noopener">MySQL</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Redis.md" target="_blank" rel="noopener">Redis</a></li>
-</ul>
-<h2 id="coffee-Java"><a href="#coffee-Java" class="headerlink" title=":coffee: Java"></a>:coffee: Java</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20基础.md" target="_blank" rel="noopener">Java 基础</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20容器.md" target="_blank" rel="noopener">Java 容器</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20并发.md" target="_blank" rel="noopener">Java 并发</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20虚拟机.md" target="_blank" rel="noopener">Java 虚拟机</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md" target="_blank" rel="noopener">Java I/O</a></li>
-</ul>
-<h2 id="bulb-系统设计"><a href="#bulb-系统设计" class="headerlink" title=":bulb: 系统设计"></a>:bulb: 系统设计</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/系统设计基础.md" target="_blank" rel="noopener">系统设计基础</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/分布式.md" target="_blank" rel="noopener">分布式</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/集群.md" target="_blank" rel="noopener">集群</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/攻击技术.md" target="_blank" rel="noopener">攻击技术</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/缓存.md" target="_blank" rel="noopener">缓存</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/消息队列.md" target="_blank" rel="noopener">消息队列</a></li>
-</ul>
-<h2 id="wrench-工具"><a href="#wrench-工具" class="headerlink" title=":wrench: 工具"></a>:wrench: 工具</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Git.md" target="_blank" rel="noopener">Git</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Docker.md" target="_blank" rel="noopener">Docker</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/构建工具.md" target="_blank" rel="noopener">构建工具</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/正则表达式.md" target="_blank" rel="noopener">正则表达式</a></li>
-</ul>
-<h2 id="watermelon-编码实践"><a href="#watermelon-编码实践" class="headerlink" title=":watermelon: 编码实践"></a>:watermelon: 编码实践</h2><ul>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码可读性.md" target="_blank" rel="noopener">代码可读性</a></li>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/代码风格规范.md" target="_blank" rel="noopener">代码风格规范</a></li>
-</ul>
-
           
+
+
+&nbsp;算法&nbsp;
+操作系统
+&nbsp;网络&nbsp;
+面向对象
+&nbsp;&nbsp;数据库&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;
+系统设计
+&nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/github%E4%BB%93%E5%BA%93-CS-Notes/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1690,20 +1112,15 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <h1 id="面试题目-项目"><a href="#面试题目-项目" class="headerlink" title="面试题目 项目"></a>面试题目 项目</h1><h2 id="什么是Redis？"><a href="#什么是Redis？" class="headerlink" title="什么是Redis？"></a>什么是Redis？</h2><p>   Redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。<br/><br>   Redis 是一个高性能的key-value数据库。 redis的出现，很大程度补偿了memcached这类key/value存储的不足，在部分场合可以对关系数据库起到很好的补充作用。它提供了Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang等客户端，使用很方便。<br/><br>   Redis支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得Redis可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。同步对读取操作的可扩展性和数据冗余很有帮助。<br/><br>   可以充当缓存、队列等作用。</p>
-<h2 id="2-Redis两种持久化的方式的比较。"><a href="#2-Redis两种持久化的方式的比较。" class="headerlink" title="2 Redis两种持久化的方式的比较。"></a>2 Redis两种持久化的方式的比较。</h2><p>答：Redis的持久化方式有两种，AOF和RDB。<br/><br>   RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.<br/><br>   AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大。<br/><br>两种区别就是，一个是持续的用日志记录写操作，crash（崩溃）后利用日志恢复；一个是平时写操作的时候不触发写，只有手动提交save命令，或者是shutdown关闭命令时，才触发备份操作。<br/><br>选择的标准，就是看系统是愿意牺牲一些性能，换取更高的缓存一致性（aof），还是愿意写操作频繁的时候，不启用备份来换取更高的性能，待手动   运行save的时候，再做备份（rdb）。rdb这个就更有些 最终一致性（eventually consistent）的意思了。<br/></p>
-<h2 id="3、说说Redis哈希槽的概念？"><a href="#3、说说Redis哈希槽的概念？" class="headerlink" title="3、说说Redis哈希槽的概念？"></a>3、说说Redis哈希槽的概念？</h2><p>   Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
-<h2 id="4、Redis集群最大节点个数是多少？"><a href="#4、Redis集群最大节点个数是多少？" class="headerlink" title="4、Redis集群最大节点个数是多少？"></a>4、Redis集群最大节点个数是多少？</h2><p>16384个</p>
-<h2 id="5、Redis中的管道有什么用？"><a href="#5、Redis中的管道有什么用？" class="headerlink" title="5、Redis中的管道有什么用？"></a>5、Redis中的管道有什么用？</h2><p>   一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。<br/><br>   这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
-<h2 id="6、怎么理解Redis事务？"><a href="#6、怎么理解Redis事务？" class="headerlink" title="6、怎么理解Redis事务？"></a>6、怎么理解Redis事务？</h2><p>   事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。<br/><br>   事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
-<h2 id="7、Redis事务相关的命令有哪几个？"><a href="#7、Redis事务相关的命令有哪几个？" class="headerlink" title="7、Redis事务相关的命令有哪几个？"></a>7、Redis事务相关的命令有哪几个？</h2><p>MULTI、EXEC、DISCARD、WATCH</p>
-<h2 id="8、Redis如何做内存优化？"><a href="#8、Redis如何做内存优化？" class="headerlink" title="8、Redis如何做内存优化？"></a>8、Redis如何做内存优化？</h2><p>   尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
-<h2 id="9-什么是RPC？"><a href="#9-什么是RPC？" class="headerlink" title="9 什么是RPC？"></a>9 什么是RPC？</h2><p>   答案：RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
-<h2 id="10-HttpClient与JSONP区别？"><a href="#10-HttpClient与JSONP区别？" class="headerlink" title="10 HttpClient与JSONP区别？"></a>10 HttpClient与JSONP区别？</h2><p>1发送请求的位置不同.<br/><br>   JSONP:浏览器解析js发出的请求<br/><br>   HttpClient:是业务层java模拟发出Http请求<br/><br>2返回值的格式不同<br/><br>   JSONP:返回数据时必须要有回调函数.<br/><br>   HttpClient:直接返回JSON数据即可.<br/><br>3代码的层级不同<br/><br>   JSONP:代码层级一般3层<br/><br/><br>   HttpClient:一般5层.<br/></p>
-<p><img src="http://182.92.171.224/upload/20191124_15010765.png" alt=""></p>
-<h2 id="11-什么是nginx？"><a href="#11-什么是nginx？" class="headerlink" title="11 什么是nginx？"></a>11 什么是nginx？</h2><p>   答：Nginx (engine x) 是一个高性能的HTTP和反向代理服务。<br/><br>   反向代理方式是指以代理服务器来接收Interrnet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br/><br>   当一个代理服务器能够代理外部网络上的主机，访问内部网络时，这种代理服务的方式称为反向代理服务，当做服务器的替身，这样，代理服务器就在安全数据库和可能的恶意攻击之间提供了又一道屏障。<br/><br>   防火墙通路只允许代理服务器有权进行访问。<br/><br>   可以使用多个代理服务器来处理对一个高用量内容服务器的请求，这样做的好处是内容服务器可以处理更高的负载，并且比其独自工作时更有效率。<br/><br>   配置文件主要由四部分组成：main(全区设置)，server(主机配置)，upstream(负载均衡服务器设置)，和location(URL匹配特定位置设置)。<br/><br>   有1全局变量2事件配置3 http参数4虚拟主机基本设置5 Nignx状态监控6反向代理7负载均衡8 URL重写9 IP限制<br/><br>   主要了解虚拟主机配置，反向代理，负载均衡，url重新<br/></p>
-
-          
+          面试题目 项目什么是Redis？   Redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E9%A1%B9%E7%9B%AE/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1831,115 +1248,15 @@ order by... -- 根据指定的列进行排序
       
         
           
-            <h1 id="第二阶段面试题"><a href="#第二阶段面试题" class="headerlink" title="第二阶段面试题"></a>第二阶段面试题</h1><h2 id="1-1-描述Servlet调用过程？"><a href="#1-1-描述Servlet调用过程？" class="headerlink" title="1.1.描述Servlet调用过程？"></a>1.1.描述Servlet调用过程？</h2><p>答案：<br/><br>（1）在浏览器输入地址，浏览器先去查找hosts文件，将主机名翻译为ip地址，如果找不到就再去查询dns服务器将主机名翻译成ip地址。<br/><br>（2）浏览器根据ip地址和端口号访问服务器，组织http请求信息发送给服务器。<br/><br>（3）服务器收到请求后首先根据Host请求头判断当前访问的是哪台虚拟主机。<br/><br>（4）服务器根据http请求头中的请求URI判断当前访问的是哪个web应用。<br/><br>（5）服务器根据http请求头中的请求URI判断当前访问的是web应用中的哪个web资源。<br/><br>（6）检查web应用的web.xml文件，如果根据路径找到具体的servlet处理类的全路径名交给该servlet处理,如果找不到就交给缺省servlet处理。<br/><br>（7）这个过程中浏览器只知道自己发出来http请求，不久就收到了http响应，浏览器不知道也不关心服务器内部是如何处理的。浏览器和服务器之间的关系是非常单纯的，只有HTTP协议。<br/><br>（8）解析请求、封装RequestResponse对象、创建Servlet、调用Service方法都是服务器自动进行的，开发人员只需要写好Servlet配置进容器中即可，无需操心具体的底层实现。<br/></p>
-<h2 id="1-2-简述Servlet生命周期？"><a href="#1-2-简述Servlet生命周期？" class="headerlink" title="1.2.简述Servlet生命周期？"></a>1.2.简述Servlet生命周期？</h2><p>答案：<br/><br>（1）Servlet第一次被访问到时创建对象，创建出来后立即执行init方法执行初始化的操作。<br/><br>（2）从此以后该对象一直驻留在内存中为后续的对这个Servlet的请求进行服务。<br/><br>（3）直到服务器关闭或web应用移除出容器时，随着web应用的销毁Servlet对象销毁掉，在销毁之前调用destory方法执行善后工作。<br/><br>（4）在存活期间，每次对Servlet 的调用都会导致Service方法的执行。<br/></p>
-<h2 id="1-3-什么是http协议？"><a href="#1-3-什么是http协议？" class="headerlink" title="1.3.什么是http协议？"></a>1.3.什么是http协议？</h2><p>答案：<br/></p>
-<p>HTTP协议就是一套基于tcp/ip协议的应用层协议 。简单来说，就是一个基于应用层的通信规范，双方要进行通信，大家都要遵守一个规范，这个规范就是HTTP协议。它规定了客户端（通常是浏览器）和服务器之间的通信方式。<br/></p>
-<h2 id="1-4-HTTP协议工作原理？"><a href="#1-4-HTTP协议工作原理？" class="headerlink" title="1.4.HTTP协议工作原理？"></a>1.4.HTTP协议工作原理？</h2><p>答案：<br/></p>
-<p>HTTP协议基于请求响应模型。<br/><br>一次请求对应一次响应。<br/><br>首先客户端发送一个请求(request)给服务器，服务器在接收到这个请求后将生成一个响应(response)返回给客户端。<br/></p>
-<h2 id="1-5-HTTP协议的特点是什么"><a href="#1-5-HTTP协议的特点是什么" class="headerlink" title="1.5.HTTP协议的特点是什么 ?"></a>1.5.HTTP协议的特点是什么 ?</h2><p>答案：<br/></p>
-<p>（1）它是一个无状态的协议，服务器端在处理相应请求后不会保留任何客户端的信息，每次请求都是独立的<br/><br>（2）客户端与服务器端的每一次数据交互，都要经过一次请求/响应的过程。<br/><br>（3）服务器端无法识别能够出发客户端请求的方法。<br/><br>（4）一个典型的HTTP请求分为 一个请求行 若干请求头 一个空行 实体内容。<br/></p>
-<h2 id="1-6-get和post请求的区别？"><a href="#1-6-get和post请求的区别？" class="headerlink" title="1.6.get和post请求的区别？"></a>1.6.get和post请求的区别？</h2><p>答案：<br/></p>
-<p>（1）get请求用来从服务器上获得资源，而post是用来向服务器提交数据；<br/><br>（2）get将表单中数据按照name=value的形式，添加到action 所指向的URL 后面，并且两者使用”?”连接，而各个变量之间使用”&amp;”连接；post是将表单中的数据放在HTTP协议的请求头或消息体中，传递到action所指向URL；<br/><br>（3）get传输的数据要受到URL长度限制（1024字节）；而post可以传输大量的数据， POST数据是没有限制的，上传文件通常要使用post方式；<br/><br>（4）使用get时参数会显示在地址栏上，如果这些数据不是敏感数据，那么可以使用get；对于敏感数据还是应用使用post；<br/><br>（5）get使用MIME类型application/x-www-form-urlencoded的URL编码（也叫百分号编码）文本的格式传递参数，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是”%20”。<br/><br>（6）Jsp页面中的FORM标签里的method属性为get时调用doGet()，为post时调用doPost()。<br/></p>
-<h2 id="1-7-请求乱码产生的原因？"><a href="#1-7-请求乱码产生的原因？" class="headerlink" title="1.7.请求乱码产生的原因？"></a>1.7.请求乱码产生的原因？</h2><p>答案：<br/></p>
-<p>浏览器用什么码表来打开表单页面就用什么编码来发送数据。当前我们的注册页面指定了用utf-8来打开。这就决定了浏览器是用utf-8打开的页面，浏览器在提交表单时是用utf-8编码的。而tomcat默认情况下会使用iso8859-1来进行解码。我们知道全世界的码表都兼容iso8859-1，所以英文处理是没有问题的。但是iso8859-1中并没有中文，iso8859-1对于无法处理的字节都使用?替代，所以我们看到的都是？。<br/></p>
-<h2 id="1-8-如何来处理get请求产生的乱码"><a href="#1-8-如何来处理get请求产生的乱码" class="headerlink" title="1.8.如何来处理get请求产生的乱码?"></a>1.8.如何来处理get请求产生的乱码?</h2><p>答案：<br/></p>
-<p>由于客户端发送时使用的是utf-8编码而服务器用iso8859-1解码造成了乱码，虽然字符已经乱掉了，但底层的字节仍然是正确的，我们只要将乱码字符getBytes(“iso8859-1”)转换为字节，就是正确的字节，再将这些字节new String(bytes，“utf-8”)按照正确的码表编码，就可以转换回正确的字符了。从而解决了乱码。</p>
-<h2 id="1-9-Request生命周期"><a href="#1-9-Request生命周期" class="headerlink" title="1.9.Request生命周期"></a>1.9.Request生命周期</h2><p>答案：<br/></p>
-<p>request对象的生命周期是针对一个客户端(一个浏览器应用程序)的一次请求，当请求完毕之后，request里边的内容也将被释放，一个请求开始时创建，请求结束后销毁。</p>
-<h2 id="1-10-如何处理响应乱码？"><a href="#1-10-如何处理响应乱码？" class="headerlink" title="1.10.如何处理响应乱码？"></a>1.10.如何处理响应乱码？</h2><p>答案：</p>
-<p>通过response.setHeader(“Content-Type”, “text/html;charset=utf-8”)方法，通知服务器发送数据时的码表；通过response.setCharacterEncoding(“utf-8”)方法，通知浏览器解析时使用的码表。两码相同就不会有乱码了。<br>response提供了setContentType(“text/html;charset=UTF-8”)快捷方法，在它的底层，会同时做上面两件事，所以可以一行代码解决response产生的乱码问题。</p>
-<h2 id="1-11-简述ServletContext生命周期？"><a href="#1-11-简述ServletContext生命周期？" class="headerlink" title="1.11.简述ServletContext生命周期？"></a>1.11.简述ServletContext生命周期？</h2><p>答案：<br/></p>
-<p>ServletContext对象代表当前web应用。当服务器启动时，服务器在启动时会依次加载web应用，每一个web应用加载完成后都会创建一个ServletContext对象唯一代表该web应用，这个对象一直存活，直到web应用移除出容器或服务器关闭时，随着应用销毁，ServletContext对象跟着销毁。</p>
-<h2 id="1-12-转发与重定向的比较？"><a href="#1-12-转发与重定向的比较？" class="headerlink" title="1.12.转发与重定向的比较？"></a>1.12.转发与重定向的比较？</h2><p>答案：<br/></p>
-<p>转发是服务器内部资源跳转,重定向是通过302+Location实现浏览器跳转访问。<br/><br>转发一次请求一次响应,重定向两次请求两次响应。<br/><br>转发地址栏不发生变化,重定向地址栏会发生变化。<br/><br>转发之前和转发之后request是一个,重定向之前和之后不是一个request。<br/></p>
-<h2 id="1-13-Session生命周期？"><a href="#1-13-Session生命周期？" class="headerlink" title="1.13.Session生命周期？"></a>1.13.Session生命周期？</h2><p>答案：<br/></p>
-<p>当程序第一次调用到request.getSession()代码时,服务器明确的知道了需要用到session了,此时创建session。<br/><br>如果session超过30分钟(可以在web.xml中配置的)没人使用,服务器认为这个session超时了,销毁session。<br/><br>明确的调用session.invalidate(),session立即销毁。<br/><br>服务器被非正常关闭或web应用被移除出容器,此时随着web应用的销毁session销毁.如果是正常关闭,session会被钝化.当下次服务器正常启动时,没有超时的session还会被活化回来。<br/></p>
-<h2 id="1-14-session的原理？"><a href="#1-14-session的原理？" class="headerlink" title="1.14.session的原理？"></a>1.14.session的原理？</h2><p>答案：<br/></p>
-<p>session的原理：在服务器第一次调用request.getSession()方法的时候，会在内存中创建一个session对象，此对象具有一个独一无二的id值，此id值将会以cookie（JSESSIONID）的形式发送给浏览器，浏览器以后每次访问都会带着此cookie，服务器就利用此cookie区分浏览器找到对应的session空间。</p>
-<h2 id="1-15-cookie与session的区别"><a href="#1-15-cookie与session的区别" class="headerlink" title="1.15.cookie与session的区别"></a>1.15.cookie与session的区别</h2><p>答案：<br/></p>
-<p>cookie数据存放在客户的浏览器上，session数据放在服务器上<br/><br>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗，考虑到安全应当使用session<br/><br>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用COOKIE<br/></p>
-<h2 id="1-16-JSP和Servlet是什么关系？"><a href="#1-16-JSP和Servlet是什么关系？" class="headerlink" title="1.16.JSP和Servlet是什么关系？"></a>1.16.JSP和Servlet是什么关系？</h2><p>答案：<br/></p>
-<p>其实这个问题在上面已经阐述过了，Servlet是一个特殊的Java程序，它运行于服务器的JVM中，能够依靠服务器的支持向浏览器提供显示内容。JSP本质上是Servlet的一种简易形式，JSP会被服务器处理成一个类似于Servlet的Java程序，可以简化页面内容的生成。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。有人说，Servlet就是在Java中写HTML，而JSP就是在HTML中写Java代码，当然这个说法是很片面且不够准确的。JSP侧重于视图，Servlet更侧重于控制逻辑，在MVC架构模式中，JSP JSP有哪些内置对象？作用分别是什么？<br/><br>JSP有9个内置对象：<br/></p>
-<ul>
-<li>request：封装客户端的请求，其中包含来自GET或POST请求的参数；<br/></li>
-<li>response：封装服务器对客户端的响应；<br/></li>
-<li>pageContext：通过该对象可以获取其他对象；<br/></li>
-<li>session：封装用户会话的对象；<br/></li>
-<li>application：封装服务器运行环境的对象；<br/></li>
-<li>out：输出服务器响应的输出流对象；<br/></li>
-<li>config：Web应用的配置对象；<br/></li>
-<li>page：JSP页面本身（相当于Java程序中的this）；<br/></li>
-<li>exception：封装页H    面抛出异常的对象。<br/><h2 id="1-17-JSP的九大隐式对象是哪九个"><a href="#1-17-JSP的九大隐式对象是哪九个" class="headerlink" title="1.17.JSP的九大隐式对象是哪九个"></a>1.17.JSP的九大隐式对象是哪九个</h2>答案：<br/><br>1：request: 请求对象 在javax.servlet.ServletRequest  作用域为Request来自客服端的请求，如：FORM表单中填写的信息，常用的方法有getParameter，getParamterName   和getParamterValue通过表用获取请求对象中包含的参数值。<br/><br>2:response表示客服端的响应。<br/><br>3：pageContext对象为页面的上下文对象，代表当请运行页面的一些属性。<br/><br>4：session：对象代码服务器与客服端所建立的会话，比如在写购物，客服轨迹跟踪，<br/><br>session”是建立在cookie的基础之上的。常用方法有getId,getValues等。<br>5：application对象负责提供应用程序在服务端运行时的一些全局信息，方法有getMimeType等。<br/><br>6：out：与response不同，通过out对象发送的内容是浏览器需要的显示内容，还可以直接想客服端编写一个有程序动态生成的HTML的文件。<br/><br>7：page：page里的变量没法从index.jsp传递到test.jsp。只要页面跳转了，就不见了。<br/><br>8： exception：他是一个列外的对象，当页面发生了列外，就会会创建该对象。<br/><br>9：config：是在servlet初始化Servlet的时候，JSP引擎向他传递信息用的，此消息包括Servlet初始化时所需要的参数。<br/><h2 id="1-18-如何防止SQL注入攻击呢？"><a href="#1-18-如何防止SQL注入攻击呢？" class="headerlink" title="1.18.如何防止SQL注入攻击呢？"></a>1.18.如何防止SQL注入攻击呢？</h2>答案：<br/></li>
-</ul>
-<p>SQL注入：就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意）的SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。<br/><br>防止的方法：<br/><br>（1）永远不要信任用户的输入，要对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和双”-“进行转换等。<br/><br>（2）永远不要使用动态拼装SQL，可以使用参数化的SQL或者直接使用存储过程进行数据查询存取。<br/><br>（3）永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接。<br/><br>（4）不要把机密信息明文存放，请加密或者hash掉密码和敏感的信息。<br/><br>（5）应用的异常信息应该给出尽可能少的提示，最好使用自定义的错误信息对原始错误信息进行包装，把异常信息存放在独立的表中。<br/></p>
-<h2 id="1-19-Mysql数据库优化"><a href="#1-19-Mysql数据库优化" class="headerlink" title="1.19.Mysql数据库优化"></a>1.19.Mysql数据库优化</h2><p>答案：<br/></p>
-<p>(1)查询时，能不用* 就不用，尽量写全字段名。<br/><br>(2)索引不是越多越好，每个表控制在6个索引以内。范围where条件的情况下，索引不起作用，比如where value&lt;100 <br/><br>(3)大部分情况连接效率远大于子查询，但是有例外。当你对连接查询的效率都感到不能接受的时候可以试试用子查询，虽然大部分情况下你会更失望，但总有碰到惊喜的时候不是么…<br/><br>(4)多用explain 和 profile分析查询语句<br/><br>(5)有时候可以1条大的SQL可以分成几个小SQL顺序执行，分了吧，速度会快很多。<br/><br>(6)每隔一段时间用alter table table_name engine=innodb;优化表<br/><br>(7)连接时注意:小表 jion 大表的原则<br/><br>(8)学会用explain 和 profile判断是什么原因使你的SQL慢<br/><br>(9)查看慢查询日志，找出执行时间长的SQL进行优化<br/><br>(10)尽量避免使用order by<br/><br>(11)因为where子句后面的条件是执行顺序是从右到左，所以尽量把能过滤掉大部分数据的条件放在最后<br/></p>
-<h2 id="1-20-Filter-的作用是什么？"><a href="#1-20-Filter-的作用是什么？" class="headerlink" title="1.20.Filter 的作用是什么？"></a>1.20.Filter 的作用是什么？</h2><p>答案：<br/></p>
-<p>init为初始化方法，在Filter对象被创建出来时，Servlet容器会调用该方法对filter进行初始化。<br/><br>destory为销毁的方法，在过滤器对象被销毁之前，服务器会调用这个方法执行善后工作。 <br/><br>doFilter为过滤器中最核心的方法，对访问的请求和响应进行拦截，当过滤器拦截到对资源的访问时，服务器会自动调用该方法执行过滤代码。 我们只需要在这个方法中设计过滤器的逻辑代码即可。<br/></p>
-<h2 id="1-21-Filter的生命周期？"><a href="#1-21-Filter的生命周期？" class="headerlink" title="1.21.Filter的生命周期？"></a>1.21.Filter的生命周期？</h2><p>答案：<br/></p>
-<p>当服务器启动,web应用加载后,立即创建出这个web应用中的所有过滤器对象,创建出来后立即调用过滤器的init方法执行初始化操作.从此这些过滤器对象驻留在内存中为后续的拦截进行服务.每当拦截到资源时,都会导致dofilter方法执行.最终直到服务器关闭或web应用移除出容器时,随着web应用的销毁,过滤器对象销毁,销毁之前调用destory方法执行善后工作。</p>
-<h2 id="1-22-什么是数据库连接池及其工作原理"><a href="#1-22-什么是数据库连接池及其工作原理" class="headerlink" title="1.22.什么是数据库连接池及其工作原理"></a>1.22.什么是数据库连接池及其工作原理</h2><p>答案：<br/><br>对于共享资源，有一个很著名的设计模式：资源池（resource pool）。该模式正是为了解决资源的频繁分配﹑释放所造成的问题。为解决上述问题，可以采用数据库连接池技术。数据库连接池的基本思想就是为数据库连接建立一个“缓冲池”。预先在缓冲池中放入一定数量的连接，当需要建立数据库连接时，只需从“缓冲池”中取出一个，使用完毕之后再放回去。我们可以通过设定连接池最大连接数来防止系统无尽的与数据库连接。更为重要的是我们可以通过连接池的管理机制监视数据库的连接的数量﹑使用情况，为系统开发﹑测试及性能调整提供依据。</p>
-<h2 id="1-23-如何自己实现一个数据库连接池"><a href="#1-23-如何自己实现一个数据库连接池" class="headerlink" title="1.23.如何自己实现一个数据库连接池"></a>1.23.如何自己实现一个数据库连接池</h2><p>答案：<br/><br>思路如下：<br/><br>1：利用class实现DataSource接口<br/><br>2：在class的构造器一次性创建指定的链接将链接保存LinkedList中<br/><br>3：实现getConnection从LinkedList返回一个链接<br/><br>4：提供将链接放回方法<br/></p>
-<pre><code>Public class MyDataSource inplements DataSource{
-   Private LinkedList&lt;Connection&gt; dataSource=new LinkedList&lt;&gt;();
-   Public MyDataSource(){
-   For( int a=0;a&lt;1000;a++){
-    Try{
-   DriverManager.registerDriver(new SQLServerDriver());
-    Connection con=DriverManager.getConnection(“jdbc:sqlserver://localhost:1443;DatabaseName=liming”,”root”,”liming”
-}catch(Exception e){
-
-}
-
-}
-Public Connection getConnetion(){
-   Final Connection conn=dataSource.removeFirst();
-}
-Public void releasConnection(Connection conn){
-    dataSource.add(conn);
-}
-}
-}</code></pre><h2 id="1-24-http和https的区别？"><a href="#1-24-http和https的区别？" class="headerlink" title="1.24. http和https的区别？"></a>1.24. http和https的区别？</h2><p>答案：<br/><br>HTTP协议传输的数据都是未加密的，也就是明文的，因此使用HTTP协议传输隐私信息非常不安全，为了保证这些隐私数据能加密传输，于是网景公司设计了SSL（Secure Sockets Layer）协议用于对HTTP协议传输的数据进行加密，从而就诞生了HTTPS。简单来说，HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全。</p>
-<h2 id="1-25-Servlet的单例问题"><a href="#1-25-Servlet的单例问题" class="headerlink" title="1.25.Servlet的单例问题"></a>1.25.Servlet的单例问题</h2><p>答案：<br/><br>Servlet是一个供其他java程序调用的类，它不能独立运行，针对客户端的多次请求，通常状况下，Servlet只会创建一个Servlet实例对象，一旦创建它就会驻留在内存中，为后续的请求提供服务，直至退出web应用为止，也就是当我们关闭了浏览器之后我们的Servlet就终止了。<br/><br>当Servlet第一次访问的时候，就被加载到内存中，以后该实例对各个请求服务，没次情况会调用一次service方法。<br/><br>这样会出现什么问题：因为Servlet是单例的，所以会出现线程安全问题<br/></p>
-<h2 id="1-26-””-和-null的区别"><a href="#1-26-””-和-null的区别" class="headerlink" title="1.26.”” 和 null的区别"></a>1.26.”” 和 null的区别</h2><p>答案：<br/><br>如果说str是null，那么内存根本没创建字符串对像，并由str引用。不能调用object的方法。<br/><br>        如果说str是空串，那么确实存在一个由str引用的字符串对像，只不过这个字符串的值是””。长度为0；<br/><br>        在获取请求参数的时候为什么要这样判断呢？<br/></p>
-<pre><code>if(null==str || &quot;&quot;.equals(str)){
-    return &quot;不合法参数&quot;；
-}</code></pre><p>如果我们在表单中什么都不填 接收到的字符串就是null;<br/><br>如果我们在表单中填“”，接受到的字符串是“”，但是存入数据库后，查询出来的就是null；<br/></p>
-<h2 id="1-27-Servlet的多线程同步问题"><a href="#1-27-Servlet的多线程同步问题" class="headerlink" title="1.27.Servlet的多线程同步问题"></a>1.27.Servlet的多线程同步问题</h2><p>答案：<br/><br>　　Servlet本身是单实例的，这样当有多个用户同时访问某个Servlet时，会访问该唯一的Servlet实例中的成员变量，如果对成员变量进行写入操作，那就会导致Servlet的多线程问题，即数据不一致。<br/><br>1.解决Servlet多线程同步问题的最好方式：去除实例变量，使用局部变量。<br/><br>不使用成员变量，而使用局部变量，因为局部变量在每个线程中都有各自的实例。所以对Servlet来说，如果要对某个变量做写入操作，一定不要使用成员变量，而要使用局部变量。<br/><br>2.使用同步代码块<br/><br>　　synchronized{}<br/><br>3.Servlet实现javax.serlvet.SingleThreadModel，Servlet2.4中已经废弃了该接口，此时Servlet容器将保证Servlet实例以单线程方式运行，也就是说，同一时刻，只会有一个线程执行Servlet的service()方法。<br/></p>
-<h2 id="1-28-request-getParameter-和request-getAttribute-的区别？"><a href="#1-28-request-getParameter-和request-getAttribute-的区别？" class="headerlink" title="1.28.request.getParameter()和request.getAttribute()的区别？"></a>1.28.request.getParameter()和request.getAttribute()的区别？</h2><p>答案：<br/></p>
-<p>a、request.getParameter()获取的类型是String；<br/><br/><br>    request.getAttribute()获取的类型是Object<br/><br>b、request.getPrameter()获取的是POST/GET传递的参数值和URL中的参数；<br/><br>     request.getAttribute()获取的是对象容器中的数据值/对象<br/><br>c、request.setAttribute()和request.getAttribute()可以发送、接收对象；<br/><br>    request.getParamter()只能接收字符串，官方不开放request.setParamter()（也就是没有这个方法）<br/><br>    setAttribute()和getAttribute()的传参原理：<br/><br>    setAttribute()是应用服务器把这个对象放在该页面所对应的一块内存中去，当你的页面服务器重定向到另外一个页面时，<br/><br>    应用服务器会把这块内存拷贝到另一个页面所对应的那块内存中。这个就可以通过getAttribute()获取到相应的参数值或者对象。<br/></p>
-<h2 id="1-29-JSP中动态include和静态include的区别？"><a href="#1-29-JSP中动态include和静态include的区别？" class="headerlink" title="1.29.JSP中动态include和静态include的区别？"></a>1.29.JSP中动态include和静态include的区别？</h2><p>答案：<br/><br> a、静态include：语法：&lt;%@ include file=”文件名” %&gt;，相当于复制，编辑时将对应的文件包含进来，当内容变化时，不会再一次对其编译，不易维护。<br/><br> b、动态include：语法：&lt;jsp:include page=”文件名”&gt;,能够自动检查被包含文件，当客户端对JSP文件进行请求时，会重新将对应的文件包含进来，进行实时的更新。<br/></p>
-<h2 id="1-30-详细描述MVC。"><a href="#1-30-详细描述MVC。" class="headerlink" title="1.30. 详细描述MVC。"></a>1.30. 详细描述MVC。</h2><p>答案：<br/><br>基于java的web应用系统采用MVC设计模型，即用Model（模型）、View（视图）和Controller（控制）分离设计，这是目前web应用服务系统的主流设置方向。<br/><br>      Model：处理业务逻辑的模块。<br/><br>      View：负责页面显示，显示Model的处理结果给用户，主要实现数据到页面的转换过程。<br/><br>      Controller：负责每个请求的分发，把Form数据传递给Model进行处理，处理完成后，把处理结果返回给相应的View显示给用户。<br/></p>
-<h2 id="1-31-EL表达式的功能，为什么要用EL表达式？（Expression-Language）"><a href="#1-31-EL表达式的功能，为什么要用EL表达式？（Expression-Language）" class="headerlink" title="1.31.EL表达式的功能，为什么要用EL表达式？（Expression Language）"></a>1.31.EL表达式的功能，为什么要用EL表达式？（Expression Language）</h2><p>答案：<br/><br>功能：<br/><br>a、从四个域对象中取出数据数据显示。<br/><br>b、取出请求参数数据显示。<br/><br>原因：<br/><br>在页面中用jsp脚本和jsp表达式来获取数据显示比较麻烦<br/><br>a、需要判断<br/><br>b、可能需要强转<br/></p>
-<h2 id="1-32-如何防止表单重复提交？"><a href="#1-32-如何防止表单重复提交？" class="headerlink" title="1.32.如何防止表单重复提交？"></a>1.32.如何防止表单重复提交？</h2><p>答案：<br/><br>使用session技术：<br/><br>a、在regist.jsp页面中生成一个为一个随机值，将其保存到session中，同时将其保存为表单的隐藏域的值。<br/><br>b、在处理注册的请求时，获取session中的值，获取请求参数的值，比较两者是否相同，如果相同说明不是重复提交，请求通过同时删除session中保存的的值，如果不相同则是重复提交，不能通过。<br/></p>
-<h2 id="1-33-什么是web容器？"><a href="#1-33-什么是web容器？" class="headerlink" title="1.33.什么是web容器？"></a>1.33.什么是web容器？</h2><p>答案：<br/><br>给处于其中的应用程序组件（JSP、Servlet）提供一个环境，是JSP、Servlet直接跟容器中的变量交互，不必关注其他系统问题。<br/><br>主要有web服务器来实现。例如：tomcat、weblogic、sphere、JBoss等。该容器提供的接口严格遵守J2EE规范中的web application标准。<br/><br>我们把遵守以上标准的web服务器叫做J2EE的web容器。<br/></p>
-<h2 id="1-34-J2EE常用的设计模式？说明工厂模式。"><a href="#1-34-J2EE常用的设计模式？说明工厂模式。" class="headerlink" title="1.34.J2EE常用的设计模式？说明工厂模式。"></a>1.34.J2EE常用的设计模式？说明工厂模式。</h2><p>答案：<br/><br>Java中一共有23中设计模式：<br/><br>Factory（工厂模式）、Builder（建造模式）、Factory Method（工厂方法模式）、ProtoType（原始模型模式）、Singleton（单例模式）、<br>Facade（门面模式）、Adapter（适配器模式）、Bridge（桥梁模式）、Composite（合成模式）、Decorator（装饰模式）、<br>FlyWeight（享元模式）、Proxy（代理模式）、Command（命令模式）、Interpreter（解释器模式）、Visitor（访问者模式）、<br>Iterator（迭代子模式）、Mediator（调停者模式）、Memento（备忘录模式）、Observer（观察者模式）、State（状态模式）、<br>Strategy（策略模式）、Template Method（模板方法模式）、Chain Of Responsibility（责任链模式）、<br/><br>工厂模式：工厂模式是一种经常被使用到的模式，根据工厂模式实现的类可以根据提供的数据生成一组类中某个类的实例，通常一组类中有一个公共的抽象父类并且实现了相同的方法，但是这些方法针对不同的数据进行了不同的操作。首先需要定义一个基类，该类的子类通过不同的方法实现了基类中的方法。然后定义一个工厂类，工厂类可以根据条件生成不同的子类实例。当得到子类的实例后，开发人员可以调用基类中的方法而不必考虑到底返回的是哪一个子类的实例。</p>
-<h2 id="1-35-什么是事务？"><a href="#1-35-什么是事务？" class="headerlink" title="1.35.什么是事务？"></a>1.35.什么是事务？</h2><p>答案：<br/>v<br>事务时作为一个逻辑单元执行的一系列操作，一个逻辑工作单元必须有四个属性，称为ACID（原子性、一致性、隔离性和持久性）属性，<br>只有这样才能成为一个事务：<br/><br>原子性：事务必须是原子工作单元，对于其数据修改，要么全都执行，要么全都不执行。<br/><br>一致性：事务在完成时，必须使所有的数据保持一致的状态。在相关数据库中，所有规则都必须应用于事务的修改，以保持所有数据的完整性。事务结束时，所有的内部数据结构（如B树索引或双向链表）都必须是正确的。<br/><br>隔离性：由并发事务所做的修改必须与任何其他并发事务所做的修改隔离。事务查看数据时数据所处的状态，要么是另一并发事务修改它之前<br/><br>的状态，要么是另一并发事务修改它之后的状态，事务不会查看中间状态的数据。这称为可串行性，因为它能够重新装载起始数据，并且重播一系列事务，以使数据结束时的状态与原始事务执行的状态相同。<br/><br>持久性：事务完成后，它对于系统的影响是永久性的。该修改即使出现系统故障也将一直保持。<br/></p>
-<h2 id="1-36-数据库有几种隔离级别"><a href="#1-36-数据库有几种隔离级别" class="headerlink" title="1.36.数据库有几种隔离级别?"></a>1.36.数据库有几种隔离级别?</h2><p>答案：<br/><br>1、Serializable (串行化)：可避免脏读、不可重复读、幻读的发生<br/><br>2、Repeatable read (可重复读)：可避免脏读、不可重复读的发生。<br/><br>3、Read committed (读已提交)：可避免脏读的发生。<br/><br>4、Read uncommitted (读未提交)：最低级别，任何情况都无法保证<br/></p>
-<h2 id="1-37-简述web-xml的作用"><a href="#1-37-简述web-xml的作用" class="headerlink" title="1.37.简述web.xml的作用"></a>1.37.简述web.xml的作用</h2><p>答案：<br/></p>
-<p>属于部署描述符，在整个JAVA中只要是容器都会存在部署描述符，此部署描述符可以控制整个WEB中各个组件的运行状态，也可以配置整个窗口的状态</p>
-<h2 id="1-38-sql优化：（索引、范式）"><a href="#1-38-sql优化：（索引、范式）" class="headerlink" title="1.38.sql优化：（索引、范式）"></a>1.38.sql优化：（索引、范式）</h2><p>答案：<br/><br>三范式：<br/><br>   第一范式（确保每列保持原子性）最基本范式。数据库表中所有字段值都是不可分解的原子值，就满足了第一范式。<br/><br>第二范式（确保表中的每列都和主键相关）在第一范式上更近一层。确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关，也就是说一个表中只能保存一种数据，不可以吧多种数据保存在一张表中。<br/><br>第三范式：确保每列都和主键列直接相关，不是间接相关。<br/><br>索引：<br/><br>    避免对索引字段进行计算、避免索引在字段上使用not、&lt;&gt;、！=、避免在索引上使用IS NULL和NOT NULL、避免在索引列上出现数据类型转换、避免索引字段使用函数、避免建立索引的列出现空值</p>
-<h2 id="1-39-Ajax原理"><a href="#1-39-Ajax原理" class="headerlink" title="1.39.Ajax原理"></a>1.39.Ajax原理</h2><p>答案：<br/></p>
-<p>Ajax的工作原理相当于在用户和服务器之间加了—个中间层,使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证和数据处理等都交给Ajax引擎自己来做, 只有确定需要从服务器读取新数据时再由Ajax引擎代为向服务器提交请求。<br/><br>    Ajax其核心只有JavaScript、XMLHTTPRequest和DOM，在旧的交互方式中,由用户触发一个HTTP请求到服务器,服务器对其进行处理后再返回一个新的HTHL页到客户端, 每当服务器处理客户端提交的请求时,客户都只能空闲等待,并且哪怕只是一次很小的交互、只需从服务器端得到很简单的一个数据,都要返回一个完整的HTML页,而用户每次都要浪费时间和带宽去重新读取整个页面。而使用Ajax后用户从感觉上几乎所有的操作都会很快响应没有页面重载（白屏）的等待。<br/></p>
-<h2 id="1-40-JDBC的原理"><a href="#1-40-JDBC的原理" class="headerlink" title="1.40.JDBC的原理"></a>1.40.JDBC的原理</h2><p>答案：<br/></p>
-<h2 id="1-41-SQL注入攻击"><a href="#1-41-SQL注入攻击" class="headerlink" title="1.41.SQL注入攻击"></a>1.41.SQL注入攻击</h2><p>答案：<br/><br>SQL注入是一种将SQL代码添加到输入参数中，传递到服务器解析并执行的一种攻击手法。<br/><br>SQL注入攻击是输入参数未经过滤，然后直接拼接到SQL语句当中解析，执行达到预想之外的一种行为，称之为SQL注入攻击。<br/></p>
-<h2 id="1-42-如何防止SQL注入攻击"><a href="#1-42-如何防止SQL注入攻击" class="headerlink" title="1.42.如何防止SQL注入攻击"></a>1.42.如何防止SQL注入攻击</h2><p>答案：<br/><br>利用新对象PreparedStatement对象完成，先将SQL骨架发送给数据库服务器，然后再将参数单独发给服务器，并将参数中的关键字当做一个普通字符串来处理，进而起到防止SQL注入的问题</p>
-<h2 id="1-43-对连接池的理解"><a href="#1-43-对连接池的理解" class="headerlink" title="1.43.对连接池的理解"></a>1.43.对连接池的理解</h2><p>答案：<br/><br>用来提高程序的效率，创建一个容器，容器中存放已经获取到了的数据库连接对象，对外提供获取连接和还回连接的方法，外界需要时就从容器中获取，用完就还回容器中。</p>
-<h2 id="1-44-HTML和xml的区别？"><a href="#1-44-HTML和xml的区别？" class="headerlink" title="1.44.HTML和xml的区别？"></a>1.44.HTML和xml的区别？</h2><p>答案：<br/><br>XML是可扩展标记语言，而HTML超文本标记语言。不同之处：<br/><br>1、语法有所不同。XML语法比较严谨而HTML语法比较松散。<br/><br>2、用途不同。XML主要用于数据格式化存储而HTML主要用于网页的编辑。<br/></p>
-<h2 id="1-45-在JS中-和-的区别？"><a href="#1-45-在JS中-和-的区别？" class="headerlink" title="1.45.在JS中==和===的区别？"></a>1.45.在JS中==和===的区别？</h2><p>答案：<br/><br>简单来说： == 代表相同， ===代表严格相同, 为啥这么说呢， <br/><br>这么理解： 当进行双等号比较时候： 先检查两个操作数数据类型，如果相同， 则进行===比较， 如果不同， 则愿意为你进行一次类型转换， 转换成相同类型后再进行比较， 而===比较时， 如果类型不同，直接就是false.</p>
-<h2 id="1-46-SQL优化"><a href="#1-46-SQL优化" class="headerlink" title="1.46.SQL优化"></a>1.46.SQL优化</h2><p>答案：<br/><br>1.SELECT子句中避免使用‘*’<br/><br>2.SQL语句用大写的<br/><br>3.用IN来替换OR<br/><br>4.查询语句中不要使用 *<br/><br>5.尽量减少子查询，使用关联查询（left join,right join,inner  join）替代<br/><br>6.减少使用IN或者NOT IN ,使用exists，not exists或者关联查询语句替代<br/><br>7.or 的查询尽量用 union或者union all 代替<br/><br>8.合理的增加冗余的字段（减少表的联接查询）<br/><br>9.增加中间表进行优化（这个主要是在统计报表的场景，<br/></p>
-<h2 id="1-47-Tomcat配置-部署优化"><a href="#1-47-Tomcat配置-部署优化" class="headerlink" title="1.47.Tomcat配置,部署优化"></a>1.47.Tomcat配置,部署优化</h2><p>答案：<br/></p>
-<ol>
-<li>内存优化:Tomcat依赖于JVM,可以配置JVM的内存配置<br/></li>
-<li>最大连接数配置(并发能力)<br/><br>通常搭配Nginx提升Tomcat的并发性能<br/></li>
-</ol>
-<h2 id="1-48-自动刷新-定时刷新"><a href="#1-48-自动刷新-定时刷新" class="headerlink" title="1.48.自动刷新,定时刷新"></a>1.48.自动刷新,定时刷新</h2><p>答案：<br/></p>
-<p>自动刷新不仅可以实现一段时间之后自动跳转到另一个页面，还可以实现一段时间之后自动刷新本页面。Servlet中通过HttpServletResponse对象设置Header属性实现自动刷新例如：<br/><br>Response.setHeader(“Refresh”,”1000;URL=<a href="http://localhost:8080/servlet/example.htm&quot;" target="_blank" rel="noopener">http://localhost:8080/servlet/example.htm&quot;</a>);<br/><br>其中1000为时间，单位为毫秒。URL指定就是要跳转的页面（如果设置自己的路径，就会实现没过一秒自动刷新本页面一次）<br/></p>
-<h2 id="1-49-BS和CS的区别？"><a href="#1-49-BS和CS的区别？" class="headerlink" title="1.49.BS和CS的区别？"></a>1.49.BS和CS的区别？</h2><p>答案:<br/><br>1.C/S用户固定，并且处于相同区域，要求拥有相同的操作系统。B/S要有操作系统和浏览器就行。与操作系统平台无关。<br/><br>2.C/S客户端的计算机电脑配置要求较高。B/S客户端的计算机电脑配置要求较低。<br/><br>3.C/S每一个客户端都必须安装和配置软件,客户端不必安装，使用浏览器访问，易推广。B/S最大的优点就是可以在任何地方进行操作而不用安装任何专门的软件。<br/><br>4.C/S每一个客户端都要升级程序。可以采用自动升级。BS客户端不必安装及维护。<br/><br>5.C/S一般面向相对固定的用户群，程序更加注重流程，它可以对权限进行多层次校验，提供了更安全的存取模式，对信息安全的控制能力很强。一般高度机密的信息系统采用C/S结构适宜。<br/></p>
-<h2 id="1-50-事务有哪些特性"><a href="#1-50-事务有哪些特性" class="headerlink" title="1.50.事务有哪些特性"></a>1.50.事务有哪些特性</h2><p>事务的特性:ACID<br/><br>A - 原子性 Atomic<br/><br>   数据操作的最小单元是事务，而不是SQL语句 <br/><br/><br>C - 一致性 Consistency<br/><br>转账前 a+b = 100<br/><br>转帐后 a+b = 100<br/><br/><br>I - 隔离性 Isolation<br/><br>一个事物进行中时，另一事物不能操作数据<br/><br>D - 持久性 Durancy<br/><br>事务没有提交之前，数据操作只保存在日志文件中<br/><br>提交事务之后，数据持久生效<br/></p>
-
-          
+          第二阶段面试题1.1.描述Servlet调用过程？答案：（1）在浏览器输入地址，浏览器先去查找hosts文件，将主机名翻译为ip地址，如果找不到就再去查询dns服务器将主机名翻译成ip地址。（2）浏览器根据ip地址和端口号访问服务器，组织http请求信息发送给服务器。（3）服务器收到请求后首先根据H
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AEweb/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2067,18 +1384,15 @@ Public void releasConnection(Connection conn){
       
         
           
-            <h1 id="java基础面试题"><a href="#java基础面试题" class="headerlink" title="java基础面试题"></a>java基础面试题</h1><h2 id="1、面向对象都有哪些特性以及你对这些特性的理解-？"><a href="#1、面向对象都有哪些特性以及你对这些特性的理解-？" class="headerlink" title="1、面向对象都有哪些特性以及你对这些特性的理解 ？"></a>1、面向对象都有哪些特性以及你对这些特性的理解 ？</h2><p>答：面向对象的三大特征：1.继承  2.封装 3.多态性<br/><br>  （1）继承：就是保留父类的属性，开扩新的东西。通过子类可以实现继承，子类继承父类的所有状态和行为，同时添加自身的状态和行为。<br/><br>  （2）封装：就是类的私有化。将代码及处理数据绑定在一起的一种编程机制，该机制保证程序和数据不受外部干扰。<br/><br>  （3）多态：是允许将父对象设置成为和一个和多个它的子对象相等的技术。包括重载和重写。重载为编译时多态，重写是运行时多态。<br/></p>
-<h2 id="2、什么是自动装箱和拆箱？"><a href="#2、什么是自动装箱和拆箱？" class="headerlink" title="2、什么是自动装箱和拆箱？"></a>2、什么是自动装箱和拆箱？</h2><p>  答：自动装箱就是Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。因为这里的装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。<br/><br>  原始类型byte,short,char,int,long,float,double和boolean对应的封装类为Byte,Short,Character,Integer,Long,Float,Double,Boolean。自动装箱和拆箱从Java 1.5开始引入，目的是将原始类型值转自动地转换成对应的对象。自动装箱与拆箱的机制可以让我们在Java的变量赋值或者是方法调用等情况下使用原始类型或者对象类型更加简单直接。<br/></p>
-<h2 id="3、什么是-java-序列化，如何实现-java-序列化？"><a href="#3、什么是-java-序列化，如何实现-java-序列化？" class="headerlink" title="3、什么是 java 序列化，如何实现 java 序列化？"></a>3、什么是 java 序列化，如何实现 java 序列化？</h2><p>  答：序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发的问题。<br/><br>  序 列 化 的 实 现 ： 将 需 要 被 序 列 化 的 类 实 现 Serializable 接 口 ， 该 接 口 没 有 需 要 实 现 的 方 法 ，implements Serializable 只是为了标注该对象是可被序列化的，然后使用一个输出流(如： FileOutputStream)来构造一个 ObjectOutputStream(对象流)对象，接着，使用 ObjectOutputStream 对象的 writeObject(Object obj)方法就可以将参数为 obj 的对象写出(即保存其状态)，要恢复的话则用输入流。<br/></p>
-<h2 id="4、char-型变量中能不能存储一个中文汉字，为什么？"><a href="#4、char-型变量中能不能存储一个中文汉字，为什么？" class="headerlink" title="4、char 型变量中能不能存储一个中文汉字，为什么？"></a>4、char 型变量中能不能存储一个中文汉字，为什么？</h2><p>  答：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。</p>
-<h2 id="5、List-和-Map、-Set-的区别？"><a href="#5、List-和-Map、-Set-的区别？" class="headerlink" title="5、List 和 Map、 Set 的区别？"></a>5、List 和 Map、 Set 的区别？</h2><p>  答：List 和 Set 是存储单列数据的集合， Map 是存储键和值这样的双列数据的集合； List 中存储的数据是有顺序，并且允许重复； Map 中存储的数据是没有顺序的，其键是不能重复的，它的值是可以有重复的， Set 中存储的数据是无序的，且不允许有重复，但元素在集合中的位置由元素的 hashcode 决定，位置是固定的（Set 集合根据 hashcode 来进行数据的存储，所以位置是固定的，但是位置不是用户可以控制的，所以对于用户来说 set 中的元素还是无序的） 。</p>
-<h2 id="6、HashMap-和-HashTable-有什么区别"><a href="#6、HashMap-和-HashTable-有什么区别" class="headerlink" title="6、HashMap 和 HashTable 有什么区别?"></a>6、HashMap 和 HashTable 有什么区别?</h2><p>  HashMap 是线程不安全的,HashMap 是一个接口,是 Map 的一个子接口,是将键映射到值得对象,不允许键值重复允许空键和空值;由于非线程安全,HashMap 的效率要较 HashTable 的效率高一些.HashTable 是线程安全的一个集合,不允许 null 值作为一个 key 值或者 Value 值;HashTable 是 sychronize,多个线程访问时不需要自己为它的方法实现同步,而 HashMap 在被多个线程访问的时候需要自己为它的方法实现同步。</p>
-<h2 id="7、谈谈-JVM-的内存结构和内存分配？"><a href="#7、谈谈-JVM-的内存结构和内存分配？" class="headerlink" title="7、谈谈 JVM 的内存结构和内存分配？"></a>7、谈谈 JVM 的内存结构和内存分配？</h2><p>a)Java 内存模型 <br/><br>    Java 虚拟机将其管辖的内存大致分三个逻辑部分：方法区(Method Area)、 Java 栈和 Java 堆。<br/><br>  1、方法区是静态分配的，编译器将变量绑定在某个存储位置上，而且这些绑定不会在运行时改变。常数池，源代码中的命名常量、 String 常量和 static 变量保存在方法区。<br/><br>  2、 Java Stack 是一个逻辑概念，特点是后进先出。一个栈的空间可能是连续的，也可能是不连续的。最典型的 Stack 应用是方法的调用， Java 虚拟机每调用一次方法就创建一个方法帧（frame），退出该方法则对应的 方法帧被弹出(pop)。栈中存储的数据也是运行时确定的。<br/><br>  3、 Java 堆分配(heap allocation)意味着以随意的顺序，在运行时进行存储空间分配和收回的内存管理模型。堆中存储的数据常常是大小、数量和生命期在编译时无法确定的。 Java 对象的内存总是在 heap 中分配。<br/><br>    b) java 内存分配<br/><br>  1、基础数据类型直接在栈空间分配;<br/><br>  2、方法的形式参数，直接在栈空间分配，当方法调用完成后从栈空间回收;<br/><br>  3、引用数据类型，需要用 new 来创建，既在栈空间分配一个地址空间，又在堆空间分配对象的类变量;<br/><br>  4、方法的引用参数，在栈空间分配一个地址空间，并指向堆空间的对象区，当方法调用完后从栈空间回收;<br/><br>  5、局部变量 new 出来时，在栈空间和堆空间中分配空间，当局部变量生命周期结束后，栈空间立刻被回收，堆空间区域等待 GC 回收;<br/><br>  6、方法调用时传入的实际参数，先在栈空间分配，在方法调用完成后从栈空间释放;<br/><br>  7、字符串常量在 DATA 区域分配 ， this 在堆空间分配;<br/><br>  8、数组既在栈空间分配数组名称， 又在堆空间分配数组实际的大小。<br/></p>
-<h2 id="8、wait-与sleep-的区别"><a href="#8、wait-与sleep-的区别" class="headerlink" title="8、wait()与sleep()的区别"></a>8、wait()与sleep()的区别</h2><p>a)sleep()来自Thread类，和wait()来自Object类.调用sleep()方法的过程中，线程不会释放对象锁。而 调用 wait 方法线程会释放对象锁。<br/><br>  b)sleep()睡眠后不出让系统资源，wait让其他线程可以占用CPU。<br/><br>  c)sleep(milliseconds)需要指定一个睡眠时间，时间一到会自动唤醒.而wait()需要配合notify()或者notifyAll()使用。<br/></p>
-<h2 id="9、说说你对-Java-中反射的理解-？"><a href="#9、说说你对-Java-中反射的理解-？" class="headerlink" title="9、说说你对 Java 中反射的理解 ？"></a>9、说说你对 Java 中反射的理解 ？</h2><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
-<h2 id="10、写出常见的5个RuntimeException"><a href="#10、写出常见的5个RuntimeException" class="headerlink" title="10、写出常见的5个RuntimeException"></a>10、写出常见的5个RuntimeException</h2><p>     (1)java.lang.NullPointerException空指针异常，出现原因：调用了未经初始化的对性爱那个或者不存在的对象。<br/><br>       (2)ClassNoFoundException 指定类找不到，出现原因：类的名称和路径加载错误，通常是试图通过字符串来加载某个类时可能引发异常。<br/><br>       (3)NumberFormatException字符串转换为数字异常，出现原因：字符串数据中包含非数字型字符。<br/><br>       (4)IndexOutOfBoundsException数组下标越界异常<br/><br>       (5)IllegalArgumentException 方法传递参数错误<br/><br>       (6)ClassCastException数据类型转换异常<br/><br>       (7)NoClassDefFoundExcetion 未找到类定义错误<br/><br>       (8)SQLException SQL异常<br/><br>       (9)InstantiationException实例化异常<br/><br>       (10)NoSuchMethodExceptioin 方法不存在异常<br/></p>
-
-          
+          java基础面试题1、面向对象都有哪些特性以及你对这些特性的理解 ？答：面向对象的三大特征：1.继承  2.封装 3.多态性  （1）继承：就是保留父类的属性，开扩新的东西。通过子类可以实现继承，子类继承父类的所有状态和行为，同时添加自身的状态和行为。  （2）封装：就是类的私有化。将代码及处理数据
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2206,14 +1520,16 @@ Public void releasConnection(Connection conn){
       
         
           
-            <h3 id="1-JavaGuide"><a href="#1-JavaGuide" class="headerlink" title="1.JavaGuide"></a>1.JavaGuide</h3><p>•Github地址： <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a> 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
-<h3 id="2-CS-Notes"><a href="#2-CS-Notes" class="headerlink" title="2.CS-Notes"></a>2.CS-Notes</h3><p>•Github 地址：<a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a> [2]•Star: 68.3k•介绍: 技术面试必备基础知识、Leetcode 题解、后端面试、Java 面试、春招、秋招、操作系统、计算机网络、系统设计。</p>
-<h3 id="3-advanced-java"><a href="#3-advanced-java" class="headerlink" title="3.advanced-java"></a>3.advanced-java</h3><p>•Github地址：<a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">https://github.com/doocs/advanced-java</a> [3]•star: 23.4k•介绍: 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。</p>
-<h3 id="4-JCSprout"><a href="#4-JCSprout" class="headerlink" title="4.JCSprout"></a>4.JCSprout</h3><p>•Github地址：<a href="https://github.com/crossoverJie/JCSprout" target="_blank" rel="noopener">https://github.com/crossoverJie/JCSprout</a> [4]•star: 21.2k•介绍: Java Core Sprout：处于萌芽阶段的 Java 核心知识库。</p>
-<h3 id="5-technology-talk"><a href="#5-technology-talk" class="headerlink" title="5.technology-talk"></a>5.technology-talk</h3><p>•Github地址： <a href="https://github.com/aalansehaiyang/technology-talk[5]•star" target="_blank" rel="noopener">https://github.com/aalansehaiyang/technology-talk[5]•star</a>: 6.1k•介绍: 汇总java生态圈常用技术框架、开源中间件，系统架构、项目管理、经典架构案例、数据库、常用三方库、线上运维等知识。</p>
-<h3 id="6-Linux-Tutorial"><a href="#6-Linux-Tutorial" class="headerlink" title="6.Linux-Tutorial"></a>6.Linux-Tutorial</h3><p>后端（尤其是Java）程序员的 Linux 学习仓库-Linux-Tutorial：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="noopener">https://github.com/judasn/Linux-Tutorial</a> ( Star:4.6k)</p>
-
-          
+          1.JavaGuide•Github地址： https://github.com/Snailclimb/JavaGuide 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。
+2.CS-Notes•Github 地址：https://github.c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/Github%E4%B8%8A%E9%82%A3%E4%BA%9BJava%E9%9D%A2%E8%AF%95%E3%80%81%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2341,13 +1657,20 @@ Public void releasConnection(Connection conn){
       
         
           
-            <p><a href="https://lovelive.tools/" target="_blank" rel="noopener">https://lovelive.tools/</a></p>
-<iframe id="jjj"  src="https://lovelive.tools/" width="100%" height="700px"   frameborder="0"  name="我的博客"     scrolling="auto">   
-</iframe>
-<script type="text/javascript">  
+          https://lovelive.tools/
+   
+
+  
 document.getElementById("jjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
-</script>
+
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/30/%E5%B0%8F%E5%B7%A5%E5%85%B7/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2465,12 +1788,58 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangpengpeng69" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhangpeng.fun/" target="_blank" title="Myblog">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Myblog
+                    
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhangpeng.fun/" title="Myblog" target="_blank">Myblog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhangpeng.fun/" title="myblog" target="_blank">myblog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhangpeng.fun/" title="blog" target="_blank">blog</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -2549,6 +1918,8 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
   
 
 
+  
+
 
 
 
@@ -2576,6 +1947,9 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
