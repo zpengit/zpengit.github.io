@@ -1,1371 +1,149 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Redis集群实现 | ZpengBlog</title><meta name="description" content="1Redis集群实现1.1Redis集群1.1.1为什么要搭建集群通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需"><meta name="keywords" content="redis"><meta name="author" content="Zpeng"><meta name="copyright" content="Zpeng"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://www.zhangpeng.fun/upload/2019/12/timg-747430f3d93543edb6bdfefcd6550b1b.jfif"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Redis集群实现"><meta name="twitter:description" content="1Redis集群实现1.1Redis集群1.1.1为什么要搭建集群通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需"><meta name="twitter:image" content="http://yoursite.com/images/avatar.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Redis集群实现"><meta property="og:url" content="http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/"><meta property="og:site_name" content="ZpengBlog"><meta property="og:description" content="1Redis集群实现1.1Redis集群1.1.1为什么要搭建集群通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需"><meta property="og:image" content="http://yoursite.com/images/avatar.jpg"><meta property="article:published_time" content="2020-03-26T08:00:47.000Z"><meta property="article:modified_time" content="2020-05-01T18:18:54.257Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = 'false'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
 
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
 
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/"><link rel="prev" title="Zookeeper" href="http://yoursite.com/2020/03/27/Zookeeper/"><link rel="next" title="Redis 命令" href="http://yoursite.com/2020/03/25/Redis%E5%91%BD%E4%BB%A4/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: {"languages":{"author":"Author: Zpeng","link":"Link: ","source":"Source: ZpengBlog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"Press","message_next":"to bookmark this page"},"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
   
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="redis," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="1Redis集群实现1.1Redis集群1.1.1为什么要搭建集群通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Redis集群实现">
-<meta property="og:url" content="http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/index.html">
-<meta property="og:site_name" content="ZpengBlog">
-<meta property="og:description" content="1Redis集群实现1.1Redis集群1.1.1为什么要搭建集群通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-7b1b777c1e06475da5a6741fdb816604.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-4a784a85961c4a0186bc3b4192a731f9.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-3fda490b94bc4d34b03a2a214944513d.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-d1d236f080d640788e199ce2131b79e8.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-c1e1ab0bbc1e4216b4c5d7a173c3dbb6.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-59bb9452f2d14b559d9a2b6c089f27a4.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-05a18d27f9b04f2391a6e742bd14847c.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-461db8171ae445f794977741b89ec090.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-17ac0c2902c04c4184d49be6f315809c.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-db4a3c20823f4d5daeedb313218988ad.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-ae735b01dbc44e3b931d947629e4b7ae.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-07dbc580650e4250b0b5992e0456a178.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-6378e9a704f04028a8c1664eb0228790.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-cbea1e4f601a4063b57924a19cfad16f.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-0453014e3d0a47319482723cce0c4b0f.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-5cd699f4926e4fb1b4e982c410bfd4dd.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-66518edf874c42d9af403b2108112c72.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-79b6603ee64a4e238a6d6b6027dd7e28.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-242074965c474745a343c3ec40c73620.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-1b78823638cc4399958e31d00b0b0878.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-72a8ed71a5fe4cf5a16091adbd480192.png">
-<meta property="og:image" content="http://www.zhangpeng.fun/upload/2019/12/image-c21369e67623451ab967a2ff79eb4a9b.png">
-<meta property="article:published_time" content="2020-03-26T08:00:47.000Z">
-<meta property="article:modified_time" content="2020-05-01T18:18:54.257Z">
-<meta property="article:author" content="Zpeng">
-<meta property="article:tag" content="redis">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2020/03/26/Redis集群实现/"/>
-
-
-
-
-
-  <title>Redis集群实现 | ZpengBlog</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-<a href="https://github.com/zhangpengpeng69" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">ZpengBlog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Java</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-plane"></i> <br />
-            
-            友链
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-photo">
-          <a href="/photo/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
-            
-            相册
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zpeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZpengBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Redis集群实现</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T16:00:47+08:00">
-                2020-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">后端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="1Redis集群实现"><a href="#1Redis集群实现" class="headerlink" title="1Redis集群实现"></a>1Redis集群实现</h1><h2 id="1-1Redis集群"><a href="#1-1Redis集群" class="headerlink" title="1.1Redis集群"></a>1.1Redis集群</h2><h3 id="1-1-1为什么要搭建集群"><a href="#1-1-1为什么要搭建集群" class="headerlink" title="1.1.1为什么要搭建集群"></a>1.1.1为什么要搭建集群</h3><p>通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。<br>Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。<br>由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需要搭建redis集群.采用合理的机制,保证用户的正常的访问需求.<br>采用redis集群,可以保证数据分散存储,同时保证数据存储的一致性.并且在内部实现高可用的机制.实现了服务故障的自动迁移.</p>
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="ZpengBlog" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://www.zhangpeng.fun/upload/2019/12/timg-747430f3d93543edb6bdfefcd6550b1b.jfif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">41</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">35</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fa fa-photo"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1Redis集群实现"><span class="toc-number">1.</span> <span class="toc-text">1Redis集群实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1Redis集群"><span class="toc-number">1.1.</span> <span class="toc-text">1.1Redis集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1为什么要搭建集群"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1为什么要搭建集群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2集群搭建计划"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2集群搭建计划</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2集群搭建"><span class="toc-number">1.2.</span> <span class="toc-text">1.2集群搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1准备集群文件夹"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1准备集群文件夹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.3.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2复制配置文件"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.2.2复制配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3编辑配置文件"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.2.3编辑配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">1.4.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number">1.5.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-3"><span class="toc-number">1.6.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-4"><span class="toc-number">1.7.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-5"><span class="toc-number">1.8.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-6"><span class="toc-number">1.9.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-7"><span class="toc-number">1.10.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-8"><span class="toc-number">1.11.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-9"><span class="toc-number">1.12.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-10"><span class="toc-number">1.13.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-11"><span class="toc-number">1.14.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4复制修改后的配置文件"><span class="toc-number">1.14.1.</span> <span class="toc-text">1.2.4复制修改后的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5批量修改"><span class="toc-number">1.14.2.</span> <span class="toc-text">1.2.5批量修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-12"><span class="toc-number">1.15.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-6通过脚本编辑启动-关闭指令"><span class="toc-number">1.15.1.</span> <span class="toc-text">1.2.6通过脚本编辑启动&#x2F;关闭指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-13"><span class="toc-number">1.16.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-14"><span class="toc-number">1.17.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-15"><span class="toc-number">1.18.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-7创建redis集群"><span class="toc-number">1.18.1.</span> <span class="toc-text">1.2.7创建redis集群</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-16"><span class="toc-number">1.19.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-8Redis集群高可用测试"><span class="toc-number">1.19.1.</span> <span class="toc-text">1.2.8Redis集群高可用测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-17"><span class="toc-number">1.20.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3Redis集群原理"><span class="toc-number">1.21.</span> <span class="toc-text">1.3Redis集群原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1Redis集群高可用推选原理"><span class="toc-number">1.21.1.</span> <span class="toc-text">1.3.1Redis集群高可用推选原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-18"><span class="toc-number">1.22.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2Redis集群宕机条件"><span class="toc-number">1.22.1.</span> <span class="toc-text">1.3.2Redis集群宕机条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-19"><span class="toc-number">1.23.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3Redis-hash槽存储数据原理"><span class="toc-number">1.23.1.</span> <span class="toc-text">1.3.3Redis hash槽存储数据原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-20"><span class="toc-number">1.24.</span> <span class="toc-text"></span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><div class="post-bg" id="nav" style="background-image: url(/images/avatar.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">ZpengBlog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fa fa-photo"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Redis集群实现</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-03-26 16:00:47"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2020-03-26</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-05-02 02:18:54"><i class="fa fa-history" aria-hidden="true"></i> Updated 2020-05-02</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>Word count:</span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>Reading time: 4 min</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="1Redis集群实现"><a href="#1Redis集群实现" class="headerlink" title="1Redis集群实现"></a>1Redis集群实现</h1><h2 id="1-1Redis集群"><a href="#1-1Redis集群" class="headerlink" title="1.1Redis集群"></a>1.1Redis集群</h2><h3 id="1-1-1为什么要搭建集群"><a href="#1-1-1为什么要搭建集群" class="headerlink" title="1.1.1为什么要搭建集群"></a>1.1.1为什么要搭建集群</h3><p>通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。<br>Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。<br>由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需要搭建redis集群.采用合理的机制,保证用户的正常的访问需求.<br>采用redis集群,可以保证数据分散存储,同时保证数据存储的一致性.并且在内部实现高可用的机制.实现了服务故障的自动迁移.</p>
 <h3 id="1-1-2集群搭建计划"><a href="#1-1-2集群搭建计划" class="headerlink" title="1.1.2集群搭建计划"></a>1.1.2集群搭建计划</h3><p>主从划分:<br>3台主机 3台从机共6台  端口划分7000-7005</p>
 <h2 id="1-2集群搭建"><a href="#1-2集群搭建" class="headerlink" title="1.2集群搭建"></a>1.2集群搭建</h2><h3 id="1-2-1准备集群文件夹"><a href="#1-2-1准备集群文件夹" class="headerlink" title="1.2.1准备集群文件夹"></a>1.2.1准备集群文件夹</h3><p>1.准备集群文件夹<br>Mkdir cluster<br>2.在cluster文件夹中分别创建7000-7005文件夹</p>
 <hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png" alt="image.png"></h2><h3 id="1-2-2复制配置文件"><a href="#1-2-2复制配置文件" class="headerlink" title="1.2.2复制配置文件"></a>1.2.2复制配置文件</h3><p>说明:<br>将redis根目录中的redis.conf文件复制到cluster/7000/ 并以原名保存<br>cp redis.conf cluster/7000/</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png" alt="image.png"></h2><h3 id="1-2-2复制配置文件"><a href="#1-2-2复制配置文件" class="headerlink" title="1.2.2复制配置文件"></a>1.2.2复制配置文件</h3><p>说明:<br>将redis根目录中的redis.conf文件复制到cluster/7000/ 并以原名保存<br>cp redis.conf cluster/7000/</p>
 <h3 id="1-2-3编辑配置文件"><a href="#1-2-3编辑配置文件" class="headerlink" title="1.2.3编辑配置文件"></a>1.2.3编辑配置文件</h3><p>1.注释本地绑定IP地址</p>
 <hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-7b1b777c1e06475da5a6741fdb816604.png" alt="image.png"></h2><p>2.关闭保护模式</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7b1b777c1e06475da5a6741fdb816604.png" alt="image.png"></h2><p>2.关闭保护模式</p>
 <hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-4a784a85961c4a0186bc3b4192a731f9.png" alt="image.png"></h2><p>3.修改端口号</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-4a784a85961c4a0186bc3b4192a731f9.png" alt="image.png"></h2><p>3.修改端口号</p>
 <hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-3fda490b94bc4d34b03a2a214944513d.png" alt="image.png"></h2><p>4.启动后台启动</p>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-3fda490b94bc4d34b03a2a214944513d.png" alt="image.png"></h2><p>4.启动后台启动</p>
 <hr>
-<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-d1d236f080d640788e199ce2131b79e8.png" alt="image.png"></h2><p>5.修改pid文件</p>
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-d1d236f080d640788e199ce2131b79e8.png" alt="image.png"></h2><p>5.修改pid文件</p>
 <hr>
-<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-c1e1ab0bbc1e4216b4c5d7a173c3dbb6.png" alt="image.png"></h2><p>6.修改持久化文件路径</p>
+<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c1e1ab0bbc1e4216b4c5d7a173c3dbb6.png" alt="image.png"></h2><p>6.修改持久化文件路径</p>
 <hr>
-<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-59bb9452f2d14b559d9a2b6c089f27a4.png" alt="image.png"></h2><p>7.设定内存优化策略</p>
+<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-59bb9452f2d14b559d9a2b6c089f27a4.png" alt="image.png"></h2><p>7.设定内存优化策略</p>
 <hr>
-<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-05a18d27f9b04f2391a6e742bd14847c.png" alt="image.png"></h2><p>8.关闭AOF模式</p>
+<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-05a18d27f9b04f2391a6e742bd14847c.png" alt="image.png"></h2><p>8.关闭AOF模式</p>
 <hr>
-<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-461db8171ae445f794977741b89ec090.png" alt="image.png"></h2><p>9.开启集群配置</p>
+<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-461db8171ae445f794977741b89ec090.png" alt="image.png"></h2><p>9.开启集群配置</p>
 <hr>
-<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-17ac0c2902c04c4184d49be6f315809c.png" alt="image.png"></h2><p>10.开启集群配置文件</p>
+<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-17ac0c2902c04c4184d49be6f315809c.png" alt="image.png"></h2><p>10.开启集群配置文件</p>
 <hr>
-<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-db4a3c20823f4d5daeedb313218988ad.png" alt="image.png"></h2><p>11.修改集群超时时间</p>
+<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-db4a3c20823f4d5daeedb313218988ad.png" alt="image.png"></h2><p>11.修改集群超时时间</p>
 <hr>
-<h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-ae735b01dbc44e3b931d947629e4b7ae.png" alt="image.png"></h2><h3 id="1-2-4复制修改后的配置文件"><a href="#1-2-4复制修改后的配置文件" class="headerlink" title="1.2.4复制修改后的配置文件"></a>1.2.4复制修改后的配置文件</h3><p>说明:将7000文件夹下的redis.conf文件分别复制到7001-7005中</p>
+<h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae735b01dbc44e3b931d947629e4b7ae.png" alt="image.png"></h2><h3 id="1-2-4复制修改后的配置文件"><a href="#1-2-4复制修改后的配置文件" class="headerlink" title="1.2.4复制修改后的配置文件"></a>1.2.4复制修改后的配置文件</h3><p>说明:将7000文件夹下的redis.conf文件分别复制到7001-7005中</p>
 <pre><code>[root@localhost cluster]# cp 7000/redis.conf  7001/
 [root@localhost cluster]# cp 7000/redis.conf  7002/
 [root@localhost cluster]# cp 7000/redis.conf  7003/
 [root@localhost cluster]# cp 7000/redis.conf  7004/
 [root@localhost cluster]# cp 7000/redis.conf  7005/</code></pre><h3 id="1-2-5批量修改"><a href="#1-2-5批量修改" class="headerlink" title="1.2.5批量修改"></a>1.2.5批量修改</h3><p>说明:分别将7001-7005文件中的7000改为对应的端口号的名称,<br>修改时注意方向键的使用</p>
 <hr>
-<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-07dbc580650e4250b0b5992e0456a178.png" alt="image.png"></h2><h3 id="1-2-6通过脚本编辑启动-关闭指令"><a href="#1-2-6通过脚本编辑启动-关闭指令" class="headerlink" title="1.2.6通过脚本编辑启动/关闭指令"></a>1.2.6通过脚本编辑启动/关闭指令</h3><p>1.创建启动脚本  vim start.sh</p>
+<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-07dbc580650e4250b0b5992e0456a178.png" alt="image.png"></h2><h3 id="1-2-6通过脚本编辑启动-关闭指令"><a href="#1-2-6通过脚本编辑启动-关闭指令" class="headerlink" title="1.2.6通过脚本编辑启动/关闭指令"></a>1.2.6通过脚本编辑启动/关闭指令</h3><p>1.创建启动脚本  vim start.sh</p>
 <hr>
-<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-6378e9a704f04028a8c1664eb0228790.png" alt="image.png"></h2><p>2.编辑关闭的脚本    vim  shutdown.sh</p>
+<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6378e9a704f04028a8c1664eb0228790.png" alt="image.png"></h2><p>2.编辑关闭的脚本    vim  shutdown.sh</p>
 <hr>
-<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-cbea1e4f601a4063b57924a19cfad16f.png" alt="image.png"></h2><p>3.启动redis节点<br>sh start.sh<br>4.检查redis节点启动是否正常</p>
+<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-cbea1e4f601a4063b57924a19cfad16f.png" alt="image.png"></h2><p>3.启动redis节点<br>sh start.sh<br>4.检查redis节点启动是否正常</p>
 <hr>
-<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-0453014e3d0a47319482723cce0c4b0f.png" alt="image.png"></h2><h3 id="1-2-7创建redis集群"><a href="#1-2-7创建redis集群" class="headerlink" title="1.2.7创建redis集群"></a>1.2.7创建redis集群</h3><p>#5.0版本执行 使用C语言内部管理集群<br>    redis-cli –cluster create –cluster-replicas 1 192.168.35.130:7000 192.168.35.130:7001 192.168.35.130:7002 192.168.35.130:7003 192.168.35.130:7004 192.168.35.130:7005</p>
+<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0453014e3d0a47319482723cce0c4b0f.png" alt="image.png"></h2><h3 id="1-2-7创建redis集群"><a href="#1-2-7创建redis集群" class="headerlink" title="1.2.7创建redis集群"></a>1.2.7创建redis集群</h3><p>#5.0版本执行 使用C语言内部管理集群<br>    redis-cli –cluster create –cluster-replicas 1 192.168.35.130:7000 192.168.35.130:7001 192.168.35.130:7002 192.168.35.130:7003 192.168.35.130:7004 192.168.35.130:7005</p>
 <hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-5cd699f4926e4fb1b4e982c410bfd4dd.png" alt="image.png"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-5cd699f4926e4fb1b4e982c410bfd4dd.png" alt="image.png"></p>
 <hr>
-<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-66518edf874c42d9af403b2108112c72.png" alt="image.png"></h2><h3 id="1-2-8Redis集群高可用测试"><a href="#1-2-8Redis集群高可用测试" class="headerlink" title="1.2.8Redis集群高可用测试"></a>1.2.8Redis集群高可用测试</h3><p>1.关闭redis主机.检查是否自动实现故障迁移.<br>2.再次启动关闭的主机.检查是否能够实现自动的挂载.<br>一般情况下 能够实现主从挂载<br>个别情况: 宕机后的节点重启,可能挂载到其他主节点中(7001-7002) 正确的</p>
+<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-66518edf874c42d9af403b2108112c72.png" alt="image.png"></h2><h3 id="1-2-8Redis集群高可用测试"><a href="#1-2-8Redis集群高可用测试" class="headerlink" title="1.2.8Redis集群高可用测试"></a>1.2.8Redis集群高可用测试</h3><p>1.关闭redis主机.检查是否自动实现故障迁移.<br>2.再次启动关闭的主机.检查是否能够实现自动的挂载.<br>一般情况下 能够实现主从挂载<br>个别情况: 宕机后的节点重启,可能挂载到其他主节点中(7001-7002) 正确的</p>
 <hr>
-<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-79b6603ee64a4e238a6d6b6027dd7e28.png" alt="image.png"></h2><h2 id="1-3Redis集群原理"><a href="#1-3Redis集群原理" class="headerlink" title="1.3Redis集群原理"></a>1.3Redis集群原理</h2><h3 id="1-3-1Redis集群高可用推选原理"><a href="#1-3-1Redis集群高可用推选原理" class="headerlink" title="1.3.1Redis集群高可用推选原理"></a>1.3.1Redis集群高可用推选原理</h3><p>如图-24所示</p>
+<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-79b6603ee64a4e238a6d6b6027dd7e28.png" alt="image.png"></h2><h2 id="1-3Redis集群原理"><a href="#1-3Redis集群原理" class="headerlink" title="1.3Redis集群原理"></a>1.3Redis集群原理</h2><h3 id="1-3-1Redis集群高可用推选原理"><a href="#1-3-1Redis集群高可用推选原理" class="headerlink" title="1.3.1Redis集群高可用推选原理"></a>1.3.1Redis集群高可用推选原理</h3><p>如图-24所示</p>
 <hr>
-<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-242074965c474745a343c3ec40c73620.png" alt="image.png"></h2><p>图- 24<br>原理说明:<br>Redis的所有节点都会保存当前redis集群中的全部主从状态信息.并且每个节点都能够相互通信.当一个节点发生宕机现象.则集群中的其他节点通过PING-PONG检测机制检查Redis节点是否宕机.当有半数以上的节点认为宕机.则认为主节点宕机.同时由Redis剩余的主节点进入选举机制.投票选举链接宕机的主节点的从机.实现故障迁移.</p>
+<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-242074965c474745a343c3ec40c73620.png" alt="image.png"></h2><p>图- 24<br>原理说明:<br>Redis的所有节点都会保存当前redis集群中的全部主从状态信息.并且每个节点都能够相互通信.当一个节点发生宕机现象.则集群中的其他节点通过PING-PONG检测机制检查Redis节点是否宕机.当有半数以上的节点认为宕机.则认为主节点宕机.同时由Redis剩余的主节点进入选举机制.投票选举链接宕机的主节点的从机.实现故障迁移.</p>
 <h3 id="1-3-2Redis集群宕机条件"><a href="#1-3-2Redis集群宕机条件" class="headerlink" title="1.3.2Redis集群宕机条件"></a>1.3.2Redis集群宕机条件</h3><p>特点:集群中如果主机宕机,那么从机可以继续提供服务,<br>当主机中没有从机时,则向其它主机借用多余的从机.继续提供服务.如果主机宕机时没有从机可用,则集群崩溃.<br>答案:9个redis节点,节点宕机5-7次时集群才崩溃.<br>如图-25所示:</p>
 <hr>
-<h2 id="-19"><a href="#-19" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-1b78823638cc4399958e31d00b0b0878.png" alt="image.png"></h2><p>图- 25</p>
+<h2 id="-19"><a href="#-19" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-1b78823638cc4399958e31d00b0b0878.png" alt="image.png"></h2><p>图- 25</p>
 <h3 id="1-3-3Redis-hash槽存储数据原理"><a href="#1-3-3Redis-hash槽存储数据原理" class="headerlink" title="1.3.3Redis hash槽存储数据原理"></a>1.3.3Redis hash槽存储数据原理</h3><p>说明: RedisCluster采用此分区，所有的键根据哈希函数(CRC16[key]&amp;16383)映射到0－16384槽内，共16384个槽位，每个节点维护部分槽及槽所映射的键值数据.根据主节点的个数,均衡划分区间.<br> 算法:哈希函数: Hash()=CRC16[key]&amp;16384按位与<br>如图-26所示</p>
 <hr>
-<h2 id="-20"><a href="#-20" class="headerlink" title=""></a><img src="http://www.zhangpeng.fun/upload/2019/12/image-72a8ed71a5fe4cf5a16091adbd480192.png" alt="image.png"></h2><p>图- 26</p>
+<h2 id="-20"><a href="#-20" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-72a8ed71a5fe4cf5a16091adbd480192.png" alt="image.png"></h2><p>图- 26</p>
 <p>当向redis集群中插入数据时,首先将key进行计算.之后将计算结果匹配到具体的某一个槽的区间内,之后再将数据set到管理该槽的节点中.<br>如图-27所示</p>
 <hr>
-<p><img src="http://www.zhangpeng.fun/upload/2019/12/image-c21369e67623451ab967a2ff79eb4a9b.png" alt="image.png"><br>图- 27</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c21369e67623451ab967a2ff79eb4a9b.png" alt="image.png"><br>图- 27</p>
 <p>效率高:<br>            分片效率高:  发生在服务器中   redis只负责存取<br>            Redis集群:  发生在redis内部 效率低</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="https://www.zhangpeng.fun/upload/2019/12/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98-d0ea2396aad94ee494ee35fb0d181818.png" alt="Zpeng WeChat Pay"/>
-        <p>WeChat Pay</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="https://www.zhangpeng.fun/upload/2019/12/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98-9d1152a5c88d4f279eb570659f8ee922.jpg" alt="Zpeng Alipay"/>
-        <p>Alipay</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> redis</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/03/25/Redis%E5%91%BD%E4%BB%A4/" rel="next" title="Redis 命令">
-                <i class="fa fa-chevron-left"></i> Redis 命令
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/27/Zookeeper/" rel="prev" title="Zookeeper">
-                Zookeeper <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80OTkzNS8yNjQyNg=="></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Zpeng" />
-          <p class="site-author-name" itemprop="name">Zpeng</p>
-           
-              <p class="site-description motion-element" itemprop="description">Spare Blog</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">41</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/zhangpengpeng69" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                    
-                      GitHub
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhangpeng.fun/" target="_blank" title="Myblog">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                    
-                      Myblog
-                    
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-link"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.zhangpeng.fun/" title="Myblog" target="_blank">Myblog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.zhangpeng.fun/" title="myblog" target="_blank">myblog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.zhangpeng.fun/" title="blog" target="_blank">blog</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1Redis集群实现"><span class="nav-number">1.</span> <span class="nav-text">1Redis集群实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1Redis集群"><span class="nav-number">1.1.</span> <span class="nav-text">1.1Redis集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1为什么要搭建集群"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1为什么要搭建集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2集群搭建计划"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2集群搭建计划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2集群搭建"><span class="nav-number">1.2.</span> <span class="nav-text">1.2集群搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1准备集群文件夹"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1准备集群文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2复制配置文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.2.2复制配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3编辑配置文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.2.3编辑配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">1.4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2"><span class="nav-number">1.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-3"><span class="nav-number">1.6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-4"><span class="nav-number">1.7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-5"><span class="nav-number">1.8.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-6"><span class="nav-number">1.9.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-7"><span class="nav-number">1.10.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-8"><span class="nav-number">1.11.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-9"><span class="nav-number">1.12.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-10"><span class="nav-number">1.13.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-11"><span class="nav-number">1.14.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4复制修改后的配置文件"><span class="nav-number">1.14.1.</span> <span class="nav-text">1.2.4复制修改后的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-5批量修改"><span class="nav-number">1.14.2.</span> <span class="nav-text">1.2.5批量修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-12"><span class="nav-number">1.15.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-6通过脚本编辑启动-关闭指令"><span class="nav-number">1.15.1.</span> <span class="nav-text">1.2.6通过脚本编辑启动&#x2F;关闭指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-13"><span class="nav-number">1.16.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-14"><span class="nav-number">1.17.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-15"><span class="nav-number">1.18.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-7创建redis集群"><span class="nav-number">1.18.1.</span> <span class="nav-text">1.2.7创建redis集群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-16"><span class="nav-number">1.19.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-8Redis集群高可用测试"><span class="nav-number">1.19.1.</span> <span class="nav-text">1.2.8Redis集群高可用测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-17"><span class="nav-number">1.20.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3Redis集群原理"><span class="nav-number">1.21.</span> <span class="nav-text">1.3Redis集群原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1Redis集群高可用推选原理"><span class="nav-number">1.21.1.</span> <span class="nav-text">1.3.1Redis集群高可用推选原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-18"><span class="nav-number">1.22.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2Redis集群宕机条件"><span class="nav-number">1.22.1.</span> <span class="nav-text">1.3.2Redis集群宕机条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-19"><span class="nav-number">1.23.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3Redis-hash槽存储数据原理"><span class="nav-number">1.23.1.</span> <span class="nav-text">1.3.3Redis hash槽存储数据原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-20"><span class="nav-number">1.24.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Zpeng</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
-    NexT.Gemini
-  </a>
-</div>
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      本站访客数 <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人次
-    </span>
-  
-
-  
-    <span class="site-pv">
-      本站总访问量 <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Zpeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/">http://yoursite.com/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/redis/">redis</a></div><div class="post_share"><div class="social-share" data-image="/images/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="https://www.zhangpeng.fun/upload/2019/12/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98-d0ea2396aad94ee494ee35fb0d181818.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="https://www.zhangpeng.fun/upload/2019/12/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98-9d1152a5c88d4f279eb570659f8ee922.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/27/Zookeeper/"><img class="prev_cover" data-src="/images/avatar.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Zookeeper</div></div></a></div><div class="next-post pull_right"><a href="/2020/03/25/Redis%E5%91%BD%E4%BB%A4/"><img class="next_cover" data-src="/images/avatar.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Redis 命令</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/03/25/Redis命令/" title="Redis 命令"><img class="relatedPosts_cover" data-src="/images/avatar.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-25</div><div class="relatedPosts_title">Redis 命令</div></div></a></div><div class="relatedPosts_item"><a href="/2020/03/24/Redis/" title="Redis"><img class="relatedPosts_cover" data-src="/images/avatar.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-24</div><div class="relatedPosts_title">Redis</div></div></a></div></div><div class="clear_both"></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Zpeng</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://zpengit.github.io/" target="_blank" rel="noopener">blog</a>!</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="Read Mode"></i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="Table of Contents" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script></body></html>
