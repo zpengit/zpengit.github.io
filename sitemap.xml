@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zpengit.github.io/2020/05/05/java-jdk%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEjdk/</loc>
+    <loc>https://zpengit.github.io/photo/index.html</loc>
     
-    <lastmod>2020-05-05T14:47:17.317Z</lastmod>
+    <lastmod>2020-05-05T18:59:11.794Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zpengit.github.io/photo/index.html</loc>
+    <loc>https://zpengit.github.io/links/index.html</loc>
     
-    <lastmod>2020-05-05T13:50:44.163Z</lastmod>
+    <lastmod>2020-05-05T18:56:03.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zpengit.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-05-05T18:55:47.894Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zpengit.github.io/2020/05/05/java-jdk%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEjdk/</loc>
+    
+    <lastmod>2020-05-05T14:47:17.317Z</lastmod>
     
   </url>
   
@@ -26,20 +40,6 @@
     <loc>https://zpengit.github.io/about/index.html</loc>
     
     <lastmod>2020-05-05T13:34:15.610Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zpengit.github.io/links/index.html</loc>
-    
-    <lastmod>2020-05-05T13:31:32.172Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zpengit.github.io/categories/index.html</loc>
-    
-    <lastmod>2020-05-05T13:26:20.121Z</lastmod>
     
   </url>
   
