@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Dubbo</title>
+    <url>/2020/03/28/Dubbo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
+<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
+<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
+<p>层级关系与对应的协议.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
+<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
+<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
+<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
+<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
+<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
+<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
+<p>1.6.4    轮循算法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Dubbo</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chrome 插件推荐</title>
     <url>/2020/04/15/Chrome%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Chrome-插件推荐"><a href="#Chrome-插件推荐" class="headerlink" title="Chrome 插件推荐"></a>Chrome 插件推荐</h2><p>&emsp;&emsp;不知不觉我的chrome浏览器装了如此之多的插件，以前都没注意过，现在就简单介绍几个给大家，说明，不建议大家安装太多插件，因为会占用太多内存。&emsp;<br>&emsp;&emsp;作为一名开发人员，浏览器是我们平时用到的最多的工具之一，信很多人都在使用 Chrome 浏览器，其流畅的浏览体验得到了不少用户的偏爱，但流畅只是一方面， Chrome 最大的优势还是其支持众多强大好用的扩展程序,以下都是我正在使用或用过的，个人认为比较实用的，排名不分先后。</p>
@@ -65,95 +107,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Dubbo</title>
-    <url>/2020/03/28/Dubbo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
-<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
-<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
-<p>层级关系与对应的协议.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
-<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
-<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
-<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
-<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
-<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
-<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-
-<p>1.6.4    轮循算法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Dubbo</tag>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx相关知识</title>
-    <url>/2020/04/16/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1-nginx-介绍"><a href="#1-nginx-介绍" class="headerlink" title="1.nginx 介绍"></a>1.nginx 介绍</h2><p>Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。</p>
-<h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><p>安装nginx</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure>
-
-<p>让nginx随系统启动而启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure>
-<p>/etc/nginx</p>
-<h2 id="3-nginx-负载均衡"><a href="#3-nginx-负载均衡" class="headerlink" title="3.nginx 负载均衡"></a>3.nginx 负载均衡</h2><p>Nginx通过反向代理可以实现服务的负载均衡，避免了服务器单节点故障，把请求按照一定的策略转发到不同的服务器上，达到负载的效果。<br>1、轮询<br>将请求按顺序轮流地分配到后端服务器上，它均衡地对待后端的每一台服务器，而不关心服务器实际的连接数和当前的系统负载。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">    upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.103:8080;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.104:8080;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ……略</span><br><span class="line"></span><br><span class="line">   server &#123;</span><br><span class="line"></span><br><span class="line">        listen 80;</span><br><span class="line"></span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">        ……略</span><br><span class="line"></span><br><span class="line">        location &#x2F;webautotest&#x2F; &#123;</span><br><span class="line"></span><br><span class="line">            proxy_buffering off;</span><br><span class="line"></span><br><span class="line">            proxy_pass http:&#x2F;&#x2F;myapp1;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2、加权轮询<br>不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。</p>
-<p>给配置高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">       server srv1.example.com weight&#x3D;3;</span><br><span class="line"></span><br><span class="line">       server srv2.example.com;</span><br><span class="line"></span><br><span class="line">       server srv3.example.com;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、ip_hash（源地址哈希法）<br>根据获取客户端的IP地址，通过哈希函数计算得到一个数值，用该数值对服务器列表的大小进行取模运算，得到的结果便是客户端要访问服务器的序号。</p>
-<p>采用源地址哈希法进行负载均衡，同一IP地址的客户端，当后端服务器列表不变时，它每次都会映射到同一台后端服务器进行访问。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">    ip_hash;</span><br><span class="line"></span><br><span class="line">    server srv1.example.com;</span><br><span class="line"></span><br><span class="line">    server srv2.example.com;</span><br><span class="line"></span><br><span class="line">    server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、least_conn（最小连接数法）<br>由于后端服务器的配置不尽相同，对于请求的处理有快有慢，最小连接数法根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前的请求，尽可能地提高后端服务的利用效率，将负责合理地分流到每一台服务器。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        least_conn;</span><br><span class="line"></span><br><span class="line">        server srv1.example.com;</span><br><span class="line"></span><br><span class="line">        server srv2.example.com;</span><br><span class="line"></span><br><span class="line">        server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5、随机</p>
-<h2 id="4-nginx-反向代理"><a href="#4-nginx-反向代理" class="headerlink" title="4.nginx 反向代理"></a>4.nginx 反向代理</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim Nginx.conf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	# 监听80端口，一般不用改</span><br><span class="line">    listen 80;</span><br><span class="line">	# 将这里的example换成自己的域名</span><br><span class="line">    server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_set_header HOST $host;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		# 这里的http后面的url就是你访问你上方的域名代理的地址</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>重启</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-<h2 id="5-配置SSL证书"><a href="#5-配置SSL证书" class="headerlink" title="5.配置SSL证书"></a>5.配置SSL证书</h2><p>1.下载证书上传<br>在阿里云购买免费版本的SSL证书后，下载SSL证书到本地，选择Nginx版本。<br>下载的证书共有两个文件，分别是：</p>
-<p>xxxxxxxx.pem<br>xxxxxxxx.key</p>
-<p>在服务上/root路径下新建ssl文件夹，并将下载到本地的证书文件上传至该文件夹。</p>
-<p>可使用rz命令或者Xftp来上传,也可以使用filezilla上传。<br>2.配置<br>在/etc/nginx/conf.d/路径下新建文件nginx.conf</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 443 ssl;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">ssl_certificate &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.pem;</span><br><span class="line">ssl_certificate_key &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.key;</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">location &#x2F; &#123;</span><br><span class="line">proxy_buffer_size 128k;</span><br><span class="line">proxy_buffers 32 32k;</span><br><span class="line">proxy_busy_buffers_size 128k;</span><br><span class="line">proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">rewrite ^(.*)$ https:&#x2F;&#x2F;host1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将其中的 yuzho.cn, <a href="http://www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。" target="_blank" rel="noopener">www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。</a><br>3.重新加载nginx<br>使用nginx -t命令来检查语法错误，使用nginx -s reload命令来重新加载nginx。<br>如nginx -t正确，而nginx -s reload命令出现错误提示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx: [error] invalid PID number &quot;&quot; in &quot;&#x2F;run&#x2F;nginx.pid&quot;</span><br></pre></td></tr></table></figure>
-<p>执行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -c &#x2F;etc&#x2F;nginx&#x2F;nginx.conf</span><br><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
-<p>引用 <a href="https://www.cnblogs.com/liulun/p/11518252.html" target="_blank" rel="noopener">https://www.cnblogs.com/liulun/p/11518252.html</a></p>
-<h2 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h2><p>Nginx中文文档 ：      <a href="https://www.nginx.cn/doc/" target="_blank" rel="noopener">https://www.nginx.cn/doc/</a><br>官网 ： <a href="https://www.nginx.com/" target="_blank" rel="noopener">https://www.nginx.com/</a></p>
+    <title>Github上那些Java面试、学习相关仓库</title>
+    <url>/2020/04/13/Github%E4%B8%8A%E9%82%A3%E4%BA%9BJava%E9%9D%A2%E8%AF%95%E3%80%81%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-JavaGuide"><a href="#1-JavaGuide" class="headerlink" title="1.JavaGuide"></a>1.JavaGuide</h3><p>•Github地址： <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a> 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
+<h3 id="2-CS-Notes"><a href="#2-CS-Notes" class="headerlink" title="2.CS-Notes"></a>2.CS-Notes</h3><p>•Github 地址：<a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a> [2]•Star: 68.3k•介绍: 技术面试必备基础知识、Leetcode 题解、后端面试、Java 面试、春招、秋招、操作系统、计算机网络、系统设计。</p>
+<h3 id="3-advanced-java"><a href="#3-advanced-java" class="headerlink" title="3.advanced-java"></a>3.advanced-java</h3><p>•Github地址：<a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">https://github.com/doocs/advanced-java</a> [3]•star: 23.4k•介绍: 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。</p>
+<h3 id="4-JCSprout"><a href="#4-JCSprout" class="headerlink" title="4.JCSprout"></a>4.JCSprout</h3><p>•Github地址：<a href="https://github.com/crossoverJie/JCSprout" target="_blank" rel="noopener">https://github.com/crossoverJie/JCSprout</a> [4]•star: 21.2k•介绍: Java Core Sprout：处于萌芽阶段的 Java 核心知识库。</p>
+<h3 id="5-technology-talk"><a href="#5-technology-talk" class="headerlink" title="5.technology-talk"></a>5.technology-talk</h3><p>•Github地址： <a href="https://github.com/aalansehaiyang/technology-talk[5]•star" target="_blank" rel="noopener">https://github.com/aalansehaiyang/technology-talk[5]•star</a>: 6.1k•介绍: 汇总java生态圈常用技术框架、开源中间件，系统架构、项目管理、经典架构案例、数据库、常用三方库、线上运维等知识。</p>
+<h3 id="6-Linux-Tutorial"><a href="#6-Linux-Tutorial" class="headerlink" title="6.Linux-Tutorial"></a>6.Linux-Tutorial</h3><p>后端（尤其是Java）程序员的 Linux 学习仓库-Linux-Tutorial：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="noopener">https://github.com/judasn/Linux-Tutorial</a> ( Star:4.6k)</p>
 ]]></content>
       <categories>
-        <category>工具</category>
+        <category>面试题</category>
       </categories>
       <tags>
-        <tag>nginx</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -346,6 +313,126 @@ int getRowCount();</code></pre><p>第三步：在TestGoodsDao02测试类中添�
       </tags>
   </entry>
   <entry>
+    <title>Nginx相关知识</title>
+    <url>/2020/04/16/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1-nginx-介绍"><a href="#1-nginx-介绍" class="headerlink" title="1.nginx 介绍"></a>1.nginx 介绍</h2><p>Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。</p>
+<h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><p>安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure>
+
+<p>让nginx随系统启动而启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure>
+<p>/etc/nginx</p>
+<h2 id="3-nginx-负载均衡"><a href="#3-nginx-负载均衡" class="headerlink" title="3.nginx 负载均衡"></a>3.nginx 负载均衡</h2><p>Nginx通过反向代理可以实现服务的负载均衡，避免了服务器单节点故障，把请求按照一定的策略转发到不同的服务器上，达到负载的效果。<br>1、轮询<br>将请求按顺序轮流地分配到后端服务器上，它均衡地对待后端的每一台服务器，而不关心服务器实际的连接数和当前的系统负载。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">    upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.103:8080;</span><br><span class="line"></span><br><span class="line">        server 192.168.1.104:8080;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ……略</span><br><span class="line"></span><br><span class="line">   server &#123;</span><br><span class="line"></span><br><span class="line">        listen 80;</span><br><span class="line"></span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">        ……略</span><br><span class="line"></span><br><span class="line">        location &#x2F;webautotest&#x2F; &#123;</span><br><span class="line"></span><br><span class="line">            proxy_buffering off;</span><br><span class="line"></span><br><span class="line">            proxy_pass http:&#x2F;&#x2F;myapp1;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、加权轮询<br>不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。</p>
+<p>给配置高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">       server srv1.example.com weight&#x3D;3;</span><br><span class="line"></span><br><span class="line">       server srv2.example.com;</span><br><span class="line"></span><br><span class="line">       server srv3.example.com;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、ip_hash（源地址哈希法）<br>根据获取客户端的IP地址，通过哈希函数计算得到一个数值，用该数值对服务器列表的大小进行取模运算，得到的结果便是客户端要访问服务器的序号。</p>
+<p>采用源地址哈希法进行负载均衡，同一IP地址的客户端，当后端服务器列表不变时，它每次都会映射到同一台后端服务器进行访问。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">    ip_hash;</span><br><span class="line"></span><br><span class="line">    server srv1.example.com;</span><br><span class="line"></span><br><span class="line">    server srv2.example.com;</span><br><span class="line"></span><br><span class="line">    server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、least_conn（最小连接数法）<br>由于后端服务器的配置不尽相同，对于请求的处理有快有慢，最小连接数法根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前的请求，尽可能地提高后端服务的利用效率，将负责合理地分流到每一台服务器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">upstream myapp1 &#123;</span><br><span class="line"></span><br><span class="line">        least_conn;</span><br><span class="line"></span><br><span class="line">        server srv1.example.com;</span><br><span class="line"></span><br><span class="line">        server srv2.example.com;</span><br><span class="line"></span><br><span class="line">        server srv3.example.com;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、随机</p>
+<h2 id="4-nginx-反向代理"><a href="#4-nginx-反向代理" class="headerlink" title="4.nginx 反向代理"></a>4.nginx 反向代理</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim Nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	# 监听80端口，一般不用改</span><br><span class="line">    listen 80;</span><br><span class="line">	# 将这里的example换成自己的域名</span><br><span class="line">    server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_set_header HOST $host;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		# 这里的http后面的url就是你访问你上方的域名代理的地址</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重启</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+<h2 id="5-配置SSL证书"><a href="#5-配置SSL证书" class="headerlink" title="5.配置SSL证书"></a>5.配置SSL证书</h2><p>1.下载证书上传<br>在阿里云购买免费版本的SSL证书后，下载SSL证书到本地，选择Nginx版本。<br>下载的证书共有两个文件，分别是：</p>
+<p>xxxxxxxx.pem<br>xxxxxxxx.key</p>
+<p>在服务上/root路径下新建ssl文件夹，并将下载到本地的证书文件上传至该文件夹。</p>
+<p>可使用rz命令或者Xftp来上传,也可以使用filezilla上传。<br>2.配置<br>在/etc/nginx/conf.d/路径下新建文件nginx.conf</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 443 ssl;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">ssl_certificate &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.pem;</span><br><span class="line">ssl_certificate_key &#x2F;root&#x2F;ssl&#x2F;xxxxxxxx.key;</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">location &#x2F; &#123;</span><br><span class="line">proxy_buffer_size 128k;</span><br><span class="line">proxy_buffers 32 32k;</span><br><span class="line">proxy_busy_buffers_size 128k;</span><br><span class="line">proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yuzho.cn www.yuzho.cn;</span><br><span class="line">rewrite ^(.*)$ https:&#x2F;&#x2F;host1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将其中的 yuzho.cn, <a href="http://www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。" target="_blank" rel="noopener">www.yuzho.cn换成你自己的域名；/root/ssl/xxxxxxxx.pem，/root/ssl/xxxxxxxx.key换成你自己在上一步中所上传的证书的绝对路径；将8090换成你所需要代理的端口。</a><br>3.重新加载nginx<br>使用nginx -t命令来检查语法错误，使用nginx -s reload命令来重新加载nginx。<br>如nginx -t正确，而nginx -s reload命令出现错误提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx: [error] invalid PID number &quot;&quot; in &quot;&#x2F;run&#x2F;nginx.pid&quot;</span><br></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -c &#x2F;etc&#x2F;nginx&#x2F;nginx.conf</span><br><span class="line">sudo nginx -s reload</span><br></pre></td></tr></table></figure>
+<p>引用 <a href="https://www.cnblogs.com/liulun/p/11518252.html" target="_blank" rel="noopener">https://www.cnblogs.com/liulun/p/11518252.html</a></p>
+<h2 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h2><p>Nginx中文文档 ：      <a href="https://www.nginx.cn/doc/" target="_blank" rel="noopener">https://www.nginx.cn/doc/</a><br>官网 ： <a href="https://www.nginx.com/" target="_blank" rel="noopener">https://www.nginx.com/</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis集群实现</title>
+    <url>/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1Redis集群实现"><a href="#1Redis集群实现" class="headerlink" title="1Redis集群实现"></a>1Redis集群实现</h1><h2 id="1-1Redis集群"><a href="#1-1Redis集群" class="headerlink" title="1.1Redis集群"></a>1.1Redis集群</h2><h3 id="1-1-1为什么要搭建集群"><a href="#1-1-1为什么要搭建集群" class="headerlink" title="1.1.1为什么要搭建集群"></a>1.1.1为什么要搭建集群</h3><p>通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。<br>Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。<br>由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需要搭建redis集群.采用合理的机制,保证用户的正常的访问需求.<br>采用redis集群,可以保证数据分散存储,同时保证数据存储的一致性.并且在内部实现高可用的机制.实现了服务故障的自动迁移.</p>
+<h3 id="1-1-2集群搭建计划"><a href="#1-1-2集群搭建计划" class="headerlink" title="1.1.2集群搭建计划"></a>1.1.2集群搭建计划</h3><p>主从划分:<br>3台主机 3台从机共6台  端口划分7000-7005</p>
+<h2 id="1-2集群搭建"><a href="#1-2集群搭建" class="headerlink" title="1.2集群搭建"></a>1.2集群搭建</h2><h3 id="1-2-1准备集群文件夹"><a href="#1-2-1准备集群文件夹" class="headerlink" title="1.2.1准备集群文件夹"></a>1.2.1准备集群文件夹</h3><p>1.准备集群文件夹<br>Mkdir cluster<br>2.在cluster文件夹中分别创建7000-7005文件夹</p>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png" alt="image.png"></h2><h3 id="1-2-2复制配置文件"><a href="#1-2-2复制配置文件" class="headerlink" title="1.2.2复制配置文件"></a>1.2.2复制配置文件</h3><p>说明:<br>将redis根目录中的redis.conf文件复制到cluster/7000/ 并以原名保存<br>cp redis.conf cluster/7000/</p>
+<h3 id="1-2-3编辑配置文件"><a href="#1-2-3编辑配置文件" class="headerlink" title="1.2.3编辑配置文件"></a>1.2.3编辑配置文件</h3><p>1.注释本地绑定IP地址</p>
+<hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7b1b777c1e06475da5a6741fdb816604.png" alt="image.png"></h2><p>2.关闭保护模式</p>
+<hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-4a784a85961c4a0186bc3b4192a731f9.png" alt="image.png"></h2><p>3.修改端口号</p>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-3fda490b94bc4d34b03a2a214944513d.png" alt="image.png"></h2><p>4.启动后台启动</p>
+<hr>
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-d1d236f080d640788e199ce2131b79e8.png" alt="image.png"></h2><p>5.修改pid文件</p>
+<hr>
+<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c1e1ab0bbc1e4216b4c5d7a173c3dbb6.png" alt="image.png"></h2><p>6.修改持久化文件路径</p>
+<hr>
+<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-59bb9452f2d14b559d9a2b6c089f27a4.png" alt="image.png"></h2><p>7.设定内存优化策略</p>
+<hr>
+<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-05a18d27f9b04f2391a6e742bd14847c.png" alt="image.png"></h2><p>8.关闭AOF模式</p>
+<hr>
+<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-461db8171ae445f794977741b89ec090.png" alt="image.png"></h2><p>9.开启集群配置</p>
+<hr>
+<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-17ac0c2902c04c4184d49be6f315809c.png" alt="image.png"></h2><p>10.开启集群配置文件</p>
+<hr>
+<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-db4a3c20823f4d5daeedb313218988ad.png" alt="image.png"></h2><p>11.修改集群超时时间</p>
+<hr>
+<h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae735b01dbc44e3b931d947629e4b7ae.png" alt="image.png"></h2><h3 id="1-2-4复制修改后的配置文件"><a href="#1-2-4复制修改后的配置文件" class="headerlink" title="1.2.4复制修改后的配置文件"></a>1.2.4复制修改后的配置文件</h3><p>说明:将7000文件夹下的redis.conf文件分别复制到7001-7005中</p>
+<pre><code>[root@localhost cluster]# cp 7000/redis.conf  7001/
+[root@localhost cluster]# cp 7000/redis.conf  7002/
+[root@localhost cluster]# cp 7000/redis.conf  7003/
+[root@localhost cluster]# cp 7000/redis.conf  7004/
+[root@localhost cluster]# cp 7000/redis.conf  7005/</code></pre><h3 id="1-2-5批量修改"><a href="#1-2-5批量修改" class="headerlink" title="1.2.5批量修改"></a>1.2.5批量修改</h3><p>说明:分别将7001-7005文件中的7000改为对应的端口号的名称,<br>修改时注意方向键的使用</p>
+<hr>
+<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-07dbc580650e4250b0b5992e0456a178.png" alt="image.png"></h2><h3 id="1-2-6通过脚本编辑启动-关闭指令"><a href="#1-2-6通过脚本编辑启动-关闭指令" class="headerlink" title="1.2.6通过脚本编辑启动/关闭指令"></a>1.2.6通过脚本编辑启动/关闭指令</h3><p>1.创建启动脚本  vim start.sh</p>
+<hr>
+<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6378e9a704f04028a8c1664eb0228790.png" alt="image.png"></h2><p>2.编辑关闭的脚本    vim  shutdown.sh</p>
+<hr>
+<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-cbea1e4f601a4063b57924a19cfad16f.png" alt="image.png"></h2><p>3.启动redis节点<br>sh start.sh<br>4.检查redis节点启动是否正常</p>
+<hr>
+<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0453014e3d0a47319482723cce0c4b0f.png" alt="image.png"></h2><h3 id="1-2-7创建redis集群"><a href="#1-2-7创建redis集群" class="headerlink" title="1.2.7创建redis集群"></a>1.2.7创建redis集群</h3><p>#5.0版本执行 使用C语言内部管理集群<br>    redis-cli –cluster create –cluster-replicas 1 192.168.35.130:7000 192.168.35.130:7001 192.168.35.130:7002 192.168.35.130:7003 192.168.35.130:7004 192.168.35.130:7005</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-5cd699f4926e4fb1b4e982c410bfd4dd.png" alt="image.png"></p>
+<hr>
+<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-66518edf874c42d9af403b2108112c72.png" alt="image.png"></h2><h3 id="1-2-8Redis集群高可用测试"><a href="#1-2-8Redis集群高可用测试" class="headerlink" title="1.2.8Redis集群高可用测试"></a>1.2.8Redis集群高可用测试</h3><p>1.关闭redis主机.检查是否自动实现故障迁移.<br>2.再次启动关闭的主机.检查是否能够实现自动的挂载.<br>一般情况下 能够实现主从挂载<br>个别情况: 宕机后的节点重启,可能挂载到其他主节点中(7001-7002) 正确的</p>
+<hr>
+<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-79b6603ee64a4e238a6d6b6027dd7e28.png" alt="image.png"></h2><h2 id="1-3Redis集群原理"><a href="#1-3Redis集群原理" class="headerlink" title="1.3Redis集群原理"></a>1.3Redis集群原理</h2><h3 id="1-3-1Redis集群高可用推选原理"><a href="#1-3-1Redis集群高可用推选原理" class="headerlink" title="1.3.1Redis集群高可用推选原理"></a>1.3.1Redis集群高可用推选原理</h3><p>如图-24所示</p>
+<hr>
+<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-242074965c474745a343c3ec40c73620.png" alt="image.png"></h2><p>图- 24<br>原理说明:<br>Redis的所有节点都会保存当前redis集群中的全部主从状态信息.并且每个节点都能够相互通信.当一个节点发生宕机现象.则集群中的其他节点通过PING-PONG检测机制检查Redis节点是否宕机.当有半数以上的节点认为宕机.则认为主节点宕机.同时由Redis剩余的主节点进入选举机制.投票选举链接宕机的主节点的从机.实现故障迁移.</p>
+<h3 id="1-3-2Redis集群宕机条件"><a href="#1-3-2Redis集群宕机条件" class="headerlink" title="1.3.2Redis集群宕机条件"></a>1.3.2Redis集群宕机条件</h3><p>特点:集群中如果主机宕机,那么从机可以继续提供服务,<br>当主机中没有从机时,则向其它主机借用多余的从机.继续提供服务.如果主机宕机时没有从机可用,则集群崩溃.<br>答案:9个redis节点,节点宕机5-7次时集群才崩溃.<br>如图-25所示:</p>
+<hr>
+<h2 id="-19"><a href="#-19" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-1b78823638cc4399958e31d00b0b0878.png" alt="image.png"></h2><p>图- 25</p>
+<h3 id="1-3-3Redis-hash槽存储数据原理"><a href="#1-3-3Redis-hash槽存储数据原理" class="headerlink" title="1.3.3Redis hash槽存储数据原理"></a>1.3.3Redis hash槽存储数据原理</h3><p>说明: RedisCluster采用此分区，所有的键根据哈希函数(CRC16[key]&amp;16383)映射到0－16384槽内，共16384个槽位，每个节点维护部分槽及槽所映射的键值数据.根据主节点的个数,均衡划分区间.<br> 算法:哈希函数: Hash()=CRC16[key]&amp;16384按位与<br>如图-26所示</p>
+<hr>
+<h2 id="-20"><a href="#-20" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-72a8ed71a5fe4cf5a16091adbd480192.png" alt="image.png"></h2><p>图- 26</p>
+<p>当向redis集群中插入数据时,首先将key进行计算.之后将计算结果匹配到具体的某一个槽的区间内,之后再将数据set到管理该槽的节点中.<br>如图-27所示</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c21369e67623451ab967a2ff79eb4a9b.png" alt="image.png"><br>图- 27</p>
+<p>效率高:<br>            分片效率高:  发生在服务器中   redis只负责存取<br>            Redis集群:  发生在redis内部 效率低</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis</title>
     <url>/2020/03/24/Redis/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="1、什么是Redis？"><a href="#1、什么是Redis？" class="headerlink" title="1、什么是Redis？"></a>1、什么是Redis？</h2><p>Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据flush到硬盘上进行保存。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。 Redis的出色之处不仅仅是性能，Redis最大的魅力是支持保存多种数据结构，此外单个value的最大限制是1GB，不像 memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能，比方说用他的List来做FIFO双向链表，实现一个轻量级的高性 能消息队列服务，用他的Set可以做高性能的tag系统等等。另外Redis也可以对存入的Key-Value设置expire时间，因此也可以被当作一 个功能加强版的memcached来用。 Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</p>
@@ -448,93 +535,6 @@ int getRowCount();</code></pre><p>第三步：在TestGoodsDao02测试类中添�
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github上那些Java面试、学习相关仓库</title>
-    <url>/2020/04/13/Github%E4%B8%8A%E9%82%A3%E4%BA%9BJava%E9%9D%A2%E8%AF%95%E3%80%81%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-JavaGuide"><a href="#1-JavaGuide" class="headerlink" title="1.JavaGuide"></a>1.JavaGuide</h3><p>•Github地址： <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a> 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
-<h3 id="2-CS-Notes"><a href="#2-CS-Notes" class="headerlink" title="2.CS-Notes"></a>2.CS-Notes</h3><p>•Github 地址：<a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a> [2]•Star: 68.3k•介绍: 技术面试必备基础知识、Leetcode 题解、后端面试、Java 面试、春招、秋招、操作系统、计算机网络、系统设计。</p>
-<h3 id="3-advanced-java"><a href="#3-advanced-java" class="headerlink" title="3.advanced-java"></a>3.advanced-java</h3><p>•Github地址：<a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">https://github.com/doocs/advanced-java</a> [3]•star: 23.4k•介绍: 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。</p>
-<h3 id="4-JCSprout"><a href="#4-JCSprout" class="headerlink" title="4.JCSprout"></a>4.JCSprout</h3><p>•Github地址：<a href="https://github.com/crossoverJie/JCSprout" target="_blank" rel="noopener">https://github.com/crossoverJie/JCSprout</a> [4]•star: 21.2k•介绍: Java Core Sprout：处于萌芽阶段的 Java 核心知识库。</p>
-<h3 id="5-technology-talk"><a href="#5-technology-talk" class="headerlink" title="5.technology-talk"></a>5.technology-talk</h3><p>•Github地址： <a href="https://github.com/aalansehaiyang/technology-talk[5]•star" target="_blank" rel="noopener">https://github.com/aalansehaiyang/technology-talk[5]•star</a>: 6.1k•介绍: 汇总java生态圈常用技术框架、开源中间件，系统架构、项目管理、经典架构案例、数据库、常用三方库、线上运维等知识。</p>
-<h3 id="6-Linux-Tutorial"><a href="#6-Linux-Tutorial" class="headerlink" title="6.Linux-Tutorial"></a>6.Linux-Tutorial</h3><p>后端（尤其是Java）程序员的 Linux 学习仓库-Linux-Tutorial：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="noopener">https://github.com/judasn/Linux-Tutorial</a> ( Star:4.6k)</p>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis集群实现</title>
-    <url>/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1Redis集群实现"><a href="#1Redis集群实现" class="headerlink" title="1Redis集群实现"></a>1Redis集群实现</h1><h2 id="1-1Redis集群"><a href="#1-1Redis集群" class="headerlink" title="1.1Redis集群"></a>1.1Redis集群</h2><h3 id="1-1-1为什么要搭建集群"><a href="#1-1-1为什么要搭建集群" class="headerlink" title="1.1.1为什么要搭建集群"></a>1.1.1为什么要搭建集群</h3><p>通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。<br>Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。<br>由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需要搭建redis集群.采用合理的机制,保证用户的正常的访问需求.<br>采用redis集群,可以保证数据分散存储,同时保证数据存储的一致性.并且在内部实现高可用的机制.实现了服务故障的自动迁移.</p>
-<h3 id="1-1-2集群搭建计划"><a href="#1-1-2集群搭建计划" class="headerlink" title="1.1.2集群搭建计划"></a>1.1.2集群搭建计划</h3><p>主从划分:<br>3台主机 3台从机共6台  端口划分7000-7005</p>
-<h2 id="1-2集群搭建"><a href="#1-2集群搭建" class="headerlink" title="1.2集群搭建"></a>1.2集群搭建</h2><h3 id="1-2-1准备集群文件夹"><a href="#1-2-1准备集群文件夹" class="headerlink" title="1.2.1准备集群文件夹"></a>1.2.1准备集群文件夹</h3><p>1.准备集群文件夹<br>Mkdir cluster<br>2.在cluster文件夹中分别创建7000-7005文件夹</p>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-834d3a15932b4aa5b957be3c7fa90c74.png" alt="image.png"></h2><h3 id="1-2-2复制配置文件"><a href="#1-2-2复制配置文件" class="headerlink" title="1.2.2复制配置文件"></a>1.2.2复制配置文件</h3><p>说明:<br>将redis根目录中的redis.conf文件复制到cluster/7000/ 并以原名保存<br>cp redis.conf cluster/7000/</p>
-<h3 id="1-2-3编辑配置文件"><a href="#1-2-3编辑配置文件" class="headerlink" title="1.2.3编辑配置文件"></a>1.2.3编辑配置文件</h3><p>1.注释本地绑定IP地址</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7b1b777c1e06475da5a6741fdb816604.png" alt="image.png"></h2><p>2.关闭保护模式</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-4a784a85961c4a0186bc3b4192a731f9.png" alt="image.png"></h2><p>3.修改端口号</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-3fda490b94bc4d34b03a2a214944513d.png" alt="image.png"></h2><p>4.启动后台启动</p>
-<hr>
-<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-d1d236f080d640788e199ce2131b79e8.png" alt="image.png"></h2><p>5.修改pid文件</p>
-<hr>
-<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c1e1ab0bbc1e4216b4c5d7a173c3dbb6.png" alt="image.png"></h2><p>6.修改持久化文件路径</p>
-<hr>
-<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-59bb9452f2d14b559d9a2b6c089f27a4.png" alt="image.png"></h2><p>7.设定内存优化策略</p>
-<hr>
-<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-05a18d27f9b04f2391a6e742bd14847c.png" alt="image.png"></h2><p>8.关闭AOF模式</p>
-<hr>
-<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-461db8171ae445f794977741b89ec090.png" alt="image.png"></h2><p>9.开启集群配置</p>
-<hr>
-<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-17ac0c2902c04c4184d49be6f315809c.png" alt="image.png"></h2><p>10.开启集群配置文件</p>
-<hr>
-<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-db4a3c20823f4d5daeedb313218988ad.png" alt="image.png"></h2><p>11.修改集群超时时间</p>
-<hr>
-<h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae735b01dbc44e3b931d947629e4b7ae.png" alt="image.png"></h2><h3 id="1-2-4复制修改后的配置文件"><a href="#1-2-4复制修改后的配置文件" class="headerlink" title="1.2.4复制修改后的配置文件"></a>1.2.4复制修改后的配置文件</h3><p>说明:将7000文件夹下的redis.conf文件分别复制到7001-7005中</p>
-<pre><code>[root@localhost cluster]# cp 7000/redis.conf  7001/
-[root@localhost cluster]# cp 7000/redis.conf  7002/
-[root@localhost cluster]# cp 7000/redis.conf  7003/
-[root@localhost cluster]# cp 7000/redis.conf  7004/
-[root@localhost cluster]# cp 7000/redis.conf  7005/</code></pre><h3 id="1-2-5批量修改"><a href="#1-2-5批量修改" class="headerlink" title="1.2.5批量修改"></a>1.2.5批量修改</h3><p>说明:分别将7001-7005文件中的7000改为对应的端口号的名称,<br>修改时注意方向键的使用</p>
-<hr>
-<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-07dbc580650e4250b0b5992e0456a178.png" alt="image.png"></h2><h3 id="1-2-6通过脚本编辑启动-关闭指令"><a href="#1-2-6通过脚本编辑启动-关闭指令" class="headerlink" title="1.2.6通过脚本编辑启动/关闭指令"></a>1.2.6通过脚本编辑启动/关闭指令</h3><p>1.创建启动脚本  vim start.sh</p>
-<hr>
-<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6378e9a704f04028a8c1664eb0228790.png" alt="image.png"></h2><p>2.编辑关闭的脚本    vim  shutdown.sh</p>
-<hr>
-<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-cbea1e4f601a4063b57924a19cfad16f.png" alt="image.png"></h2><p>3.启动redis节点<br>sh start.sh<br>4.检查redis节点启动是否正常</p>
-<hr>
-<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0453014e3d0a47319482723cce0c4b0f.png" alt="image.png"></h2><h3 id="1-2-7创建redis集群"><a href="#1-2-7创建redis集群" class="headerlink" title="1.2.7创建redis集群"></a>1.2.7创建redis集群</h3><p>#5.0版本执行 使用C语言内部管理集群<br>    redis-cli –cluster create –cluster-replicas 1 192.168.35.130:7000 192.168.35.130:7001 192.168.35.130:7002 192.168.35.130:7003 192.168.35.130:7004 192.168.35.130:7005</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-5cd699f4926e4fb1b4e982c410bfd4dd.png" alt="image.png"></p>
-<hr>
-<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-66518edf874c42d9af403b2108112c72.png" alt="image.png"></h2><h3 id="1-2-8Redis集群高可用测试"><a href="#1-2-8Redis集群高可用测试" class="headerlink" title="1.2.8Redis集群高可用测试"></a>1.2.8Redis集群高可用测试</h3><p>1.关闭redis主机.检查是否自动实现故障迁移.<br>2.再次启动关闭的主机.检查是否能够实现自动的挂载.<br>一般情况下 能够实现主从挂载<br>个别情况: 宕机后的节点重启,可能挂载到其他主节点中(7001-7002) 正确的</p>
-<hr>
-<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-79b6603ee64a4e238a6d6b6027dd7e28.png" alt="image.png"></h2><h2 id="1-3Redis集群原理"><a href="#1-3Redis集群原理" class="headerlink" title="1.3Redis集群原理"></a>1.3Redis集群原理</h2><h3 id="1-3-1Redis集群高可用推选原理"><a href="#1-3-1Redis集群高可用推选原理" class="headerlink" title="1.3.1Redis集群高可用推选原理"></a>1.3.1Redis集群高可用推选原理</h3><p>如图-24所示</p>
-<hr>
-<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-242074965c474745a343c3ec40c73620.png" alt="image.png"></h2><p>图- 24<br>原理说明:<br>Redis的所有节点都会保存当前redis集群中的全部主从状态信息.并且每个节点都能够相互通信.当一个节点发生宕机现象.则集群中的其他节点通过PING-PONG检测机制检查Redis节点是否宕机.当有半数以上的节点认为宕机.则认为主节点宕机.同时由Redis剩余的主节点进入选举机制.投票选举链接宕机的主节点的从机.实现故障迁移.</p>
-<h3 id="1-3-2Redis集群宕机条件"><a href="#1-3-2Redis集群宕机条件" class="headerlink" title="1.3.2Redis集群宕机条件"></a>1.3.2Redis集群宕机条件</h3><p>特点:集群中如果主机宕机,那么从机可以继续提供服务,<br>当主机中没有从机时,则向其它主机借用多余的从机.继续提供服务.如果主机宕机时没有从机可用,则集群崩溃.<br>答案:9个redis节点,节点宕机5-7次时集群才崩溃.<br>如图-25所示:</p>
-<hr>
-<h2 id="-19"><a href="#-19" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-1b78823638cc4399958e31d00b0b0878.png" alt="image.png"></h2><p>图- 25</p>
-<h3 id="1-3-3Redis-hash槽存储数据原理"><a href="#1-3-3Redis-hash槽存储数据原理" class="headerlink" title="1.3.3Redis hash槽存储数据原理"></a>1.3.3Redis hash槽存储数据原理</h3><p>说明: RedisCluster采用此分区，所有的键根据哈希函数(CRC16[key]&amp;16383)映射到0－16384槽内，共16384个槽位，每个节点维护部分槽及槽所映射的键值数据.根据主节点的个数,均衡划分区间.<br> 算法:哈希函数: Hash()=CRC16[key]&amp;16384按位与<br>如图-26所示</p>
-<hr>
-<h2 id="-20"><a href="#-20" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-72a8ed71a5fe4cf5a16091adbd480192.png" alt="image.png"></h2><p>图- 26</p>
-<p>当向redis集群中插入数据时,首先将key进行计算.之后将计算结果匹配到具体的某一个槽的区间内,之后再将数据set到管理该槽的节点中.<br>如图-27所示</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c21369e67623451ab967a2ff79eb4a9b.png" alt="image.png"><br>图- 27</p>
-<p>效率高:<br>            分片效率高:  发生在服务器中   redis只负责存取<br>            Redis集群:  发生在redis内部 效率低</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
         <tag>redis</tag>
       </tags>
   </entry>
@@ -886,6 +886,228 @@ public void test02(){
       </tags>
   </entry>
   <entry>
+    <title>SPRING 框架MVC模块进阶</title>
+    <url>/2020/03/22/SPRING%E6%A1%86%E6%9E%B6MVC%E6%A8%A1%E5%9D%97%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="2-SPRING-框架MVC模块进阶"><a href="#2-SPRING-框架MVC模块进阶" class="headerlink" title="2.SPRING 框架MVC模块进阶"></a>2.SPRING 框架MVC模块进阶</h1><h2 id="2-1-Spring-MVC-设计思想"><a href="#2-1-Spring-MVC-设计思想" class="headerlink" title="2.1.Spring MVC 设计思想"></a>2.1.Spring MVC 设计思想</h2><h3 id="2-1-1-Spring-MVC-设计思想分析"><a href="#2-1-1-Spring-MVC-设计思想分析" class="headerlink" title="2.1.1.Spring MVC 设计思想分析"></a>2.1.1.Spring MVC 设计思想分析</h3><p>MVC是一种分层架构设计思想，目的是基于对象职责上的不同，进行分层设计，实现各司其职，各尽所能，以提高代码的可维护性，可扩展性。<br>1)生活中的MVC:正规饭店(菜单,服务员,厨师)<br>2)程序中的MVC:(html,jsp)/servlet/(service,dao))</p>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7a786784d3ca41f4946261f296b671bd.png" alt="image.png"></h2><p>SPRING MVC是Spring 框架中的一个WEB模块, 是基于MVC设思想的一种完美实现。</p>
+<h3 id="2-1-2-Spring-MVC-核心对象及流程分析"><a href="#2-1-2-Spring-MVC-核心对象及流程分析" class="headerlink" title="2.1.2.Spring MVC 核心对象及流程分析"></a>2.1.2.Spring MVC 核心对象及流程分析</h3><p>Spring MVC 处理流程及其核心组件对象构成，如下图所示：</p>
+<hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-349c5b35210b4a4b9bb0991a02d335bc.png" alt="image.png"></h2><p>FAQ：说说spring MVC中的核心组件？<br>1)DipatcherServlet:前端控制器(web服务器启动时加载)<br>2)HandlerMapping:注册中心(负责存储url到后端控制器的映射)<br>3)HandlerInterceptor:拦截器(请求到handler之间的拦截)<br>4)Handler:后端处理器(又称之为Controller)<br>5)ViewResolver:视图解析器(负责是视图页面进行解析)</p>
+<h2 id="2-2-Spring-MVC-快速实践"><a href="#2-2-Spring-MVC-快速实践" class="headerlink" title="2.2.Spring MVC 快速实践"></a>2.2.Spring MVC 快速实践</h2><h3 id="2-2-1-xml方式配置实现-脱离文档"><a href="#2-2-1-xml方式配置实现-脱离文档" class="headerlink" title="2.2.1.xml方式配置实现(脱离文档)"></a>2.2.1.xml方式配置实现(脱离文档)</h3><p>1.创建maven项目</p>
+<p>1)项目名称: CGB-SPRINGMVC-01<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
+<p>2.配置并初始化项目环境</p>
+<p>1)生成web.xml(配置spring mvc 前端控制器)<br>2)设置项目的运行时环境(选择tomcat,提供servlet支持)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置文件并进行配置:spring-configs.xml<br>7)web.xml中配置spring mvc前端控制器(DispatcherServlet)<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
+<p>说明:如上配置可参考后面内容中的关键代码分享.</p>
+<p>3.Spring MVC基础业务实现 </p>
+<p>1)定义Controller类<br>a)包名:com.cy.pj.search.controller<br>b)类名:SearchController</p>
+<p>代码如下:</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/search/&quot;)
+public class SearchController {
+}</code></pre><p>其中:@RequestMapping修饰类时用于定义请求路径</p>
+<p>2)添加Controller方法<br>方法1:此方法用于向客户端返回一个页面</p>
+<pre><code>@RequestMapping(&quot;doSearchUI&quot;)
+public String doSearchUI() {
+return &quot;search&quot;;
+}</code></pre><p>其中:对于返回值search需要在/WEB-INF/pages/目录下有对应的<br>search.html页面.</p>
+<p>方法2:此方法用于向客户端返回一个json格式的字符串</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"doSearch"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doSearch</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,Object&gt; map=<span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">		map.put(<span class="string">"state"</span>, <span class="number">1</span>);</span><br><span class="line">		map.put(<span class="string">"message"</span>,<span class="string">"hello everyone"</span>);</span><br><span class="line">		<span class="keyword">return</span> map;<span class="comment">//&#123;"state":1,"message":"hello everyone"&#125;</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中:<br>a)@ResponseBody修饰方法时,Spring MVC可以将方法的返回值以指定格式进行进行输出,例如JSON格式字符串.<br>b)doSearch方法进行测试时,需要在项目中添加如下依赖:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.9.9.3&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>3)部署并启动服务测试.</p>
+<p>4.关键代码分享:</p>
+<p>spring-configs.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;
+
+    &lt;context:component-scan base-package=&quot;com.cy.controller&quot;/&gt;
+    &lt;!-- Enable MVC Configuration:启用默认bean对象(注解驱动)  --&gt;
+    &lt;mvc:annotation-driven/&gt;
+    &lt;!-- 启用 DefaultServletHttpRequestHandler对静态进行处理 --&gt;
+    &lt;mvc:default-servlet-handler/&gt;
+    &lt;!-- 配置视图解析器(ViewResolver)对象 --&gt;
+    &lt;bean id=&quot;viewResolver&quot;  class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+       &lt;!-- Set DI (默认找对象中的set方法)--&gt;
+       &lt;property name=&quot;Prefix&quot; value=&quot;/WEB-INF/pages/&quot;/&gt;
+       &lt;property name=&quot;Suffix&quot; value=&quot;.html&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre><p>Web.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; version=&quot;2.5&quot;&gt;
+  &lt;display-name&gt;CGB-SPRINGMVC-01&lt;/display-name&gt;
+  &lt;!-- 配置前端控制器 --&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:spring-configs.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;!-- tomcat 启动时则初始化servlet,数字越小优先级越高 --&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+     &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
+     &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre><p>SearchController</p>
+<pre><code>package com.cy.pj.search.controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+@Controller 
+@RequestMapping(&quot;/search/&quot;) 
+public class SearchController {
+    @RequestMapping(&quot;doSearchUI&quot;)
+    public String doSearchUI() {
+        return &quot;search&quot;;
+    }///WEB-INF/pages/search.html
+
+    @RequestMapping(&quot;doSearch&quot;)
+    @ResponseBody
+    public Object doSearch(String key) {
+        Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
+        map.put(&quot;state&quot;, 1);
+        map.put(&quot;message&quot;,&quot;hello everyone&quot;);
+        return map;//{&quot;state&quot;:1,&quot;message&quot;:&quot;hello everyone&quot;}
+    }
+}</code></pre><h3 id="2-2-2-注解方式配置实现（脱离文档）"><a href="#2-2-2-注解方式配置实现（脱离文档）" class="headerlink" title="2.2.2.注解方式配置实现（脱离文档）"></a>2.2.2.注解方式配置实现（脱离文档）</h3><p>Tomcat 启动加载方式:</p>
+<hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-20db542cf104453c8a8451787821bda0.png" alt="image.png"></h2><p>1.创建maven项目</p>
+<p>1)项目名称: CGB-SPRINGMVC-02<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
+<p>2.配置并初始化项目环境(重点对xml方式进行重构)</p>
+<p>1)配置maven war包插件(忽略web.xml)<br>2)设置项目的运行时环境(选择tomcat)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置类:SpringWebConfig类<br>7)创建WebInitializer类配置spring mvc(例如前端控制器)。<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
+<p>3.Spring MVC基础业务实现 (参考xml方式业务代码实现)</p>
+<p>4.Spring mvc 注解方式应用分析:</p>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-de958697c6d948dda4e45ae287c18496.png" alt="image.png"></h2><p>其中META-INF目录可在sping-web.jar中进行查看.</p>
+<p>关键代码分析:</p>
+<p>SpringWebConfig类</p>
+<pre><code>@Configuration 
+@ComponentScan(&quot;com.cy.pj.search.controller&quot;)
+@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
+public class SpringWebConfig implements WebMvcConfigurer{
+    //&lt;mvc:default-servlet-handler/&gt;
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+    @Override
+    public void configureViewResolvers(
+        ViewResolverRegistry registry) {
+        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
+    }
+}</code></pre><p>WebInitializer类</p>
+<pre><code>public class WebInitializer extends 
+AbstractAnnotationConfigDispatcherServletInitializer {
+
+    //Service,Repository
+    @Override
+    protected Class&lt;?&gt;[] getRootConfigClasses() {
+        System.out.println(&quot;getRootConfigClasses()&quot;);
+        return null;
+    }
+    //View,Controller
+    @Override
+    protected Class&lt;?&gt;[] getServletConfigClasses() {
+        System.out.println(&quot;getServletConfigClasses()&quot;);
+        return new Class[] {SpringWebConfig.class};
+    }
+    @Override
+    protected String[] getServletMappings() {
+        System.out.println(&quot;getServletMappings()&quot;);
+        return new String[] {&quot;/&quot;};
+    }
+}</code></pre><h2 id="2-3-Spring-MVC-请求响应处理增强分析"><a href="#2-3-Spring-MVC-请求响应处理增强分析" class="headerlink" title="2.3.Spring MVC 请求响应处理增强分析"></a>2.3.Spring MVC 请求响应处理增强分析</h2><p>所有MVC框架的重点都在请求和响应数据的处理上。</p>
+<h3 id="2-3-1-请求处理增强分析及实现-重点"><a href="#2-3-1-请求处理增强分析及实现-重点" class="headerlink" title="2.3.1.请求处理增强分析及实现(重点)"></a>2.3.1.请求处理增强分析及实现(重点)</h3><p>Spring MVC请求处理主要从如下几个方面进行考虑：<br>1)请求路径(普通方式，rest方式) ：404<br>2)请求方式(Get请求，Post请求,…):405<br>3)请求参数(直接量，POJO对象，MAP对象):400</p>
+<p>代码分析如下：</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/request/&quot;)
+public class RequestHandleController {
+     //===请求url定义 
+      //普通URL定义实现(多个url可以对应同一个资源)
+      @RequestMapping(value={&quot;doHandleUrl&quot;,&quot;doWelcomeUI&quot;})
+      public String doHandleUrl() {
+         return &quot;welcome&quot;; 
+      }
+      //REST风格的URL，其url格式为{a}/{b}/{c}
+      //假如希望方法参数获取url中{}表达式内部的值
+      //可以使用@PathVariable对参数进行修饰
+      @RequestMapping(&quot;{module}/{page}&quot;)
+      public String doMoudleUrl(
+              @PathVariable String module,
+              @PathVariable String page) {
+         return module+&quot;/&quot;+page;
+      }
+      //===请求方式定义
+      //@RequestMapping(value=&quot;type&quot;,method=RequestMethod.GET)
+      @GetMapping(&quot;type&quot;)
+      //@PostMapping(&quot;type&quot;)
+      @ResponseBody
+      public String doRequestType() {
+          return &quot;request type&quot;;
+      }
+      //=====请求参数处理======
+      @GetMapping(&quot;param&quot;)
+      @ResponseBody
+      public String doRequestParam(
+             RequestWrapper rw,//pojo
+             @RequestParam(required=false) String msg,
+             @DateTimeFormat(pattern=&quot;yyyy/MM/dd&quot;)Date begin) {
+          return &quot;request parameter handle msg=&quot;+msg+&quot;,begin=&quot;+begin+&quot;,rw=&quot;+rw.toString();
+      }
+}</code></pre><h3 id="2-3-2-响应处理增强分析实现（重点）"><a href="#2-3-2-响应处理增强分析实现（重点）" class="headerlink" title="2.3.2.响应处理增强分析实现（重点）"></a>2.3.2.响应处理增强分析实现（重点）</h3><p>Spring MVC响应处理主要从如下几个方面进行考虑：<br>1）响应方式(转发forward，重定向redirect)<br>2）响应数据封装(ModelAndView,Model,Map,Pojo)<br>3）响应数据转换（将对象序列化为JSON格式字符串）</p>
+<p>代码分析如下：</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/resp/&quot;)
+public class ResponseHandleController {
+     @RequestMapping(&quot;doResponseUI&quot;)
+     public String doResponseUI() {
+         return &quot;response&quot;;
+     }
+     @RequestMapping(&quot;type&quot;)
+     public String doResponseType() {
+         //转发(客户端请求一次)
+         return &quot;forward:doResponseUI&quot;;//address
+         //重定向(客户端两次请求)
+         //return &quot;redirect:doResponseUI&quot;;//address
+     }
+
+     @RequestMapping(&quot;doDataConvert&quot;)
+     @ResponseBody
+     public String doDataConvert()throws Exception {
+         Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
+         map.put(&quot;id&quot;, 100);
+         map.put(&quot;msg&quot;, &quot;hello jackson&quot;);
+         //借助jackson中的API将对象转换json格式的字符串
+         ObjectMapper om=new ObjectMapper();
+         return om.writeValueAsString(map);
+     }
+}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SPRING 框架核心进阶</title>
     <url>/2020/03/21/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-SPRING-框架核心进阶"><a href="#1-SPRING-框架核心进阶" class="headerlink" title="1.SPRING 框架核心进阶"></a>1.SPRING 框架核心进阶</h1><h2 id="1-1-SPRING-框架架构分析"><a href="#1-1-SPRING-框架架构分析" class="headerlink" title="1.1.SPRING 框架架构分析"></a>1.1.SPRING 框架架构分析</h2><h3 id="1-1-1-Spring-框架应用架构"><a href="#1-1-1-Spring-框架应用架构" class="headerlink" title="1.1.1.Spring 框架应用架构"></a>1.1.1.Spring 框架应用架构</h3><hr>
@@ -1102,228 +1324,6 @@ public class DefaultSearchService implements SearchService {
                 DefaultSearchService.class);
         System.out.println(ds);
     }
-}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SPRING 框架MVC模块进阶</title>
-    <url>/2020/03/22/SPRING%E6%A1%86%E6%9E%B6MVC%E6%A8%A1%E5%9D%97%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="2-SPRING-框架MVC模块进阶"><a href="#2-SPRING-框架MVC模块进阶" class="headerlink" title="2.SPRING 框架MVC模块进阶"></a>2.SPRING 框架MVC模块进阶</h1><h2 id="2-1-Spring-MVC-设计思想"><a href="#2-1-Spring-MVC-设计思想" class="headerlink" title="2.1.Spring MVC 设计思想"></a>2.1.Spring MVC 设计思想</h2><h3 id="2-1-1-Spring-MVC-设计思想分析"><a href="#2-1-1-Spring-MVC-设计思想分析" class="headerlink" title="2.1.1.Spring MVC 设计思想分析"></a>2.1.1.Spring MVC 设计思想分析</h3><p>MVC是一种分层架构设计思想，目的是基于对象职责上的不同，进行分层设计，实现各司其职，各尽所能，以提高代码的可维护性，可扩展性。<br>1)生活中的MVC:正规饭店(菜单,服务员,厨师)<br>2)程序中的MVC:(html,jsp)/servlet/(service,dao))</p>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7a786784d3ca41f4946261f296b671bd.png" alt="image.png"></h2><p>SPRING MVC是Spring 框架中的一个WEB模块, 是基于MVC设思想的一种完美实现。</p>
-<h3 id="2-1-2-Spring-MVC-核心对象及流程分析"><a href="#2-1-2-Spring-MVC-核心对象及流程分析" class="headerlink" title="2.1.2.Spring MVC 核心对象及流程分析"></a>2.1.2.Spring MVC 核心对象及流程分析</h3><p>Spring MVC 处理流程及其核心组件对象构成，如下图所示：</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-349c5b35210b4a4b9bb0991a02d335bc.png" alt="image.png"></h2><p>FAQ：说说spring MVC中的核心组件？<br>1)DipatcherServlet:前端控制器(web服务器启动时加载)<br>2)HandlerMapping:注册中心(负责存储url到后端控制器的映射)<br>3)HandlerInterceptor:拦截器(请求到handler之间的拦截)<br>4)Handler:后端处理器(又称之为Controller)<br>5)ViewResolver:视图解析器(负责是视图页面进行解析)</p>
-<h2 id="2-2-Spring-MVC-快速实践"><a href="#2-2-Spring-MVC-快速实践" class="headerlink" title="2.2.Spring MVC 快速实践"></a>2.2.Spring MVC 快速实践</h2><h3 id="2-2-1-xml方式配置实现-脱离文档"><a href="#2-2-1-xml方式配置实现-脱离文档" class="headerlink" title="2.2.1.xml方式配置实现(脱离文档)"></a>2.2.1.xml方式配置实现(脱离文档)</h3><p>1.创建maven项目</p>
-<p>1)项目名称: CGB-SPRINGMVC-01<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
-<p>2.配置并初始化项目环境</p>
-<p>1)生成web.xml(配置spring mvc 前端控制器)<br>2)设置项目的运行时环境(选择tomcat,提供servlet支持)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置文件并进行配置:spring-configs.xml<br>7)web.xml中配置spring mvc前端控制器(DispatcherServlet)<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
-<p>说明:如上配置可参考后面内容中的关键代码分享.</p>
-<p>3.Spring MVC基础业务实现 </p>
-<p>1)定义Controller类<br>a)包名:com.cy.pj.search.controller<br>b)类名:SearchController</p>
-<p>代码如下:</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/search/&quot;)
-public class SearchController {
-}</code></pre><p>其中:@RequestMapping修饰类时用于定义请求路径</p>
-<p>2)添加Controller方法<br>方法1:此方法用于向客户端返回一个页面</p>
-<pre><code>@RequestMapping(&quot;doSearchUI&quot;)
-public String doSearchUI() {
-return &quot;search&quot;;
-}</code></pre><p>其中:对于返回值search需要在/WEB-INF/pages/目录下有对应的<br>search.html页面.</p>
-<p>方法2:此方法用于向客户端返回一个json格式的字符串</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"doSearch"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doSearch</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">		Map&lt;String,Object&gt; map=<span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">		map.put(<span class="string">"state"</span>, <span class="number">1</span>);</span><br><span class="line">		map.put(<span class="string">"message"</span>,<span class="string">"hello everyone"</span>);</span><br><span class="line">		<span class="keyword">return</span> map;<span class="comment">//&#123;"state":1,"message":"hello everyone"&#125;</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中:<br>a)@ResponseBody修饰方法时,Spring MVC可以将方法的返回值以指定格式进行进行输出,例如JSON格式字符串.<br>b)doSearch方法进行测试时,需要在项目中添加如下依赖:</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
-    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-    &lt;version&gt;2.9.9.3&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>3)部署并启动服务测试.</p>
-<p>4.关键代码分享:</p>
-<p>spring-configs.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-    xsi:schemaLocation=&quot;
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;
-
-    &lt;context:component-scan base-package=&quot;com.cy.controller&quot;/&gt;
-    &lt;!-- Enable MVC Configuration:启用默认bean对象(注解驱动)  --&gt;
-    &lt;mvc:annotation-driven/&gt;
-    &lt;!-- 启用 DefaultServletHttpRequestHandler对静态进行处理 --&gt;
-    &lt;mvc:default-servlet-handler/&gt;
-    &lt;!-- 配置视图解析器(ViewResolver)对象 --&gt;
-    &lt;bean id=&quot;viewResolver&quot;  class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-       &lt;!-- Set DI (默认找对象中的set方法)--&gt;
-       &lt;property name=&quot;Prefix&quot; value=&quot;/WEB-INF/pages/&quot;/&gt;
-       &lt;property name=&quot;Suffix&quot; value=&quot;.html&quot;/&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;</code></pre><p>Web.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; version=&quot;2.5&quot;&gt;
-  &lt;display-name&gt;CGB-SPRINGMVC-01&lt;/display-name&gt;
-  &lt;!-- 配置前端控制器 --&gt;
-  &lt;servlet&gt;
-    &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-        &lt;param-value&gt;classpath:spring-configs.xml&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;!-- tomcat 启动时则初始化servlet,数字越小优先级越高 --&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-  &lt;/servlet&gt;
-  &lt;servlet-mapping&gt;
-     &lt;servlet-name&gt;frontController&lt;/servlet-name&gt;
-     &lt;url-pattern&gt;/&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre><p>SearchController</p>
-<pre><code>package com.cy.pj.search.controller;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-@Controller 
-@RequestMapping(&quot;/search/&quot;) 
-public class SearchController {
-    @RequestMapping(&quot;doSearchUI&quot;)
-    public String doSearchUI() {
-        return &quot;search&quot;;
-    }///WEB-INF/pages/search.html
-
-    @RequestMapping(&quot;doSearch&quot;)
-    @ResponseBody
-    public Object doSearch(String key) {
-        Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
-        map.put(&quot;state&quot;, 1);
-        map.put(&quot;message&quot;,&quot;hello everyone&quot;);
-        return map;//{&quot;state&quot;:1,&quot;message&quot;:&quot;hello everyone&quot;}
-    }
-}</code></pre><h3 id="2-2-2-注解方式配置实现（脱离文档）"><a href="#2-2-2-注解方式配置实现（脱离文档）" class="headerlink" title="2.2.2.注解方式配置实现（脱离文档）"></a>2.2.2.注解方式配置实现（脱离文档）</h3><p>Tomcat 启动加载方式:</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-20db542cf104453c8a8451787821bda0.png" alt="image.png"></h2><p>1.创建maven项目</p>
-<p>1)项目名称: CGB-SPRINGMVC-02<br>2)组id: com.cy<br>3)打包方式: war包方式</p>
-<p>2.配置并初始化项目环境(重点对xml方式进行重构)</p>
-<p>1)配置maven war包插件(忽略web.xml)<br>2)设置项目的运行时环境(选择tomcat)<br>3)设置项目编码方式 utf-8<br>4)设置统一编译环境 JDK8<br>5)添加项目依赖:spring-webmvc<br>6)添加spring mvc配置类:SpringWebConfig类<br>7)创建WebInitializer类配置spring mvc(例如前端控制器)。<br>8)部署项目,启动tomcat测试 (假如tomcat正常启动,则没问题)</p>
-<p>3.Spring MVC基础业务实现 (参考xml方式业务代码实现)</p>
-<p>4.Spring mvc 注解方式应用分析:</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-de958697c6d948dda4e45ae287c18496.png" alt="image.png"></h2><p>其中META-INF目录可在sping-web.jar中进行查看.</p>
-<p>关键代码分析:</p>
-<p>SpringWebConfig类</p>
-<pre><code>@Configuration 
-@ComponentScan(&quot;com.cy.pj.search.controller&quot;)
-@EnableWebMvc //&lt;mvc:annotation-driven/&gt;
-public class SpringWebConfig implements WebMvcConfigurer{
-    //&lt;mvc:default-servlet-handler/&gt;
-    @Override
-    public void configureDefaultServletHandling(
-            DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
-    @Override
-    public void configureViewResolvers(
-        ViewResolverRegistry registry) {
-        registry.jsp(&quot;/WEB-INF/pages/&quot;,&quot;.html&quot;);
-    }
-}</code></pre><p>WebInitializer类</p>
-<pre><code>public class WebInitializer extends 
-AbstractAnnotationConfigDispatcherServletInitializer {
-
-    //Service,Repository
-    @Override
-    protected Class&lt;?&gt;[] getRootConfigClasses() {
-        System.out.println(&quot;getRootConfigClasses()&quot;);
-        return null;
-    }
-    //View,Controller
-    @Override
-    protected Class&lt;?&gt;[] getServletConfigClasses() {
-        System.out.println(&quot;getServletConfigClasses()&quot;);
-        return new Class[] {SpringWebConfig.class};
-    }
-    @Override
-    protected String[] getServletMappings() {
-        System.out.println(&quot;getServletMappings()&quot;);
-        return new String[] {&quot;/&quot;};
-    }
-}</code></pre><h2 id="2-3-Spring-MVC-请求响应处理增强分析"><a href="#2-3-Spring-MVC-请求响应处理增强分析" class="headerlink" title="2.3.Spring MVC 请求响应处理增强分析"></a>2.3.Spring MVC 请求响应处理增强分析</h2><p>所有MVC框架的重点都在请求和响应数据的处理上。</p>
-<h3 id="2-3-1-请求处理增强分析及实现-重点"><a href="#2-3-1-请求处理增强分析及实现-重点" class="headerlink" title="2.3.1.请求处理增强分析及实现(重点)"></a>2.3.1.请求处理增强分析及实现(重点)</h3><p>Spring MVC请求处理主要从如下几个方面进行考虑：<br>1)请求路径(普通方式，rest方式) ：404<br>2)请求方式(Get请求，Post请求,…):405<br>3)请求参数(直接量，POJO对象，MAP对象):400</p>
-<p>代码分析如下：</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/request/&quot;)
-public class RequestHandleController {
-     //===请求url定义 
-      //普通URL定义实现(多个url可以对应同一个资源)
-      @RequestMapping(value={&quot;doHandleUrl&quot;,&quot;doWelcomeUI&quot;})
-      public String doHandleUrl() {
-         return &quot;welcome&quot;; 
-      }
-      //REST风格的URL，其url格式为{a}/{b}/{c}
-      //假如希望方法参数获取url中{}表达式内部的值
-      //可以使用@PathVariable对参数进行修饰
-      @RequestMapping(&quot;{module}/{page}&quot;)
-      public String doMoudleUrl(
-              @PathVariable String module,
-              @PathVariable String page) {
-         return module+&quot;/&quot;+page;
-      }
-      //===请求方式定义
-      //@RequestMapping(value=&quot;type&quot;,method=RequestMethod.GET)
-      @GetMapping(&quot;type&quot;)
-      //@PostMapping(&quot;type&quot;)
-      @ResponseBody
-      public String doRequestType() {
-          return &quot;request type&quot;;
-      }
-      //=====请求参数处理======
-      @GetMapping(&quot;param&quot;)
-      @ResponseBody
-      public String doRequestParam(
-             RequestWrapper rw,//pojo
-             @RequestParam(required=false) String msg,
-             @DateTimeFormat(pattern=&quot;yyyy/MM/dd&quot;)Date begin) {
-          return &quot;request parameter handle msg=&quot;+msg+&quot;,begin=&quot;+begin+&quot;,rw=&quot;+rw.toString();
-      }
-}</code></pre><h3 id="2-3-2-响应处理增强分析实现（重点）"><a href="#2-3-2-响应处理增强分析实现（重点）" class="headerlink" title="2.3.2.响应处理增强分析实现（重点）"></a>2.3.2.响应处理增强分析实现（重点）</h3><p>Spring MVC响应处理主要从如下几个方面进行考虑：<br>1）响应方式(转发forward，重定向redirect)<br>2）响应数据封装(ModelAndView,Model,Map,Pojo)<br>3）响应数据转换（将对象序列化为JSON格式字符串）</p>
-<p>代码分析如下：</p>
-<pre><code>@Controller
-@RequestMapping(&quot;/resp/&quot;)
-public class ResponseHandleController {
-     @RequestMapping(&quot;doResponseUI&quot;)
-     public String doResponseUI() {
-         return &quot;response&quot;;
-     }
-     @RequestMapping(&quot;type&quot;)
-     public String doResponseType() {
-         //转发(客户端请求一次)
-         return &quot;forward:doResponseUI&quot;;//address
-         //重定向(客户端两次请求)
-         //return &quot;redirect:doResponseUI&quot;;//address
-     }
-
-     @RequestMapping(&quot;doDataConvert&quot;)
-     @ResponseBody
-     public String doDataConvert()throws Exception {
-         Map&lt;String,Object&gt; map=new HashMap&lt;String,Object&gt;();
-         map.put(&quot;id&quot;, 100);
-         map.put(&quot;msg&quot;, &quot;hello jackson&quot;);
-         //借助jackson中的API将对象转换json格式的字符串
-         ObjectMapper om=new ObjectMapper();
-         return om.writeValueAsString(map);
-     }
 }</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
       <categories>
         <category>后端</category>
@@ -1613,210 +1613,64 @@ public class GoodsController {
       </tags>
   </entry>
   <entry>
-    <title>github仓库--JavaGuide</title>
-    <url>/2020/04/12/github%E4%BB%93%E5%BA%93--JavaGuide/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>传送门—–<a href="https://github.com/zhangpengpeng69/JavaGuide" target="_blank" rel="noopener">java基础知识</a></p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#java">Java</a><ul>
-<li><a href="#基础">基础</a></li>
-<li><a href="#容器">容器</a></li>
-<li><a href="#并发">并发</a></li>
-<li><a href="#jvm">JVM</a></li>
-<li><a href="#io">I/O</a></li>
-<li><a href="#java-8">Java 8</a></li>
-<li><a href="#编程规范">编程规范</a></li>
-</ul>
-</li>
-<li><a href="#网络">网络</a></li>
-<li><a href="#操作系统">操作系统</a><ul>
-<li><a href="#linux相关">Linux相关</a></li>
-</ul>
-</li>
-<li><a href="#数据结构与算法">数据结构与算法</a><ul>
-<li><a href="#数据结构">数据结构</a></li>
-<li><a href="#算法">算法</a></li>
-</ul>
-</li>
-<li><a href="#数据库">数据库</a><ul>
-<li><a href="#mysql">MySQL</a></li>
-<li><a href="#redis">Redis</a></li>
-</ul>
-</li>
-<li><a href="#系统设计">系统设计</a><ul>
-<li><a href="#设计模式">设计模式(工厂模式、单例模式 … )</a></li>
-<li><a href="#常用框架">常用框架(Spring、Zookeeper … )</a></li>
-<li><a href="#数据通信">数据通信(消息队列、Dubbo … )</a></li>
-<li><a href="#网站架构">网站架构</a></li>
-</ul>
-</li>
-<li><a href="#面试指南">面试指南</a><ul>
-<li><a href="#备战面试">备战面试</a></li>
-<li><a href="#常见面试题总结">常见面试题总结</a></li>
-<li><a href="#面经">面经</a></li>
-</ul>
-</li>
-<li><a href="#工具">工具</a><ul>
-<li><a href="#git">Git</a></li>
-<li><a href="#Docker">Docker</a></li>
-</ul>
-</li>
-<li><a href="#资源">资源</a><ul>
-<li><a href="#书单">书单</a></li>
-<li><a href="#Github榜单">Github榜单</a></li>
-</ul>
-</li>
-<li><a href="#待办">待办</a></li>
-<li><a href="#说明">说明</a></li>
-</ul>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
-<li><a href="docs/java/Java基础知识.md">Java 基础知识回顾</a></li>
-<li><a href="docs/java/Java疑难点.md">Java 基础知识疑难点/易错点</a></li>
-<li><a href="docs/java/Java程序设计题.md">一些重要的Java程序设计题</a></li>
-<li><a href="docs/java/J2EE基础知识.md">J2EE 基础知识回顾</a></li>
-</ul>
-<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
-<li><a href="docs/java/collection/Java集合框架常见面试题.md">Java容器常见面试题/知识点总结</a></li>
-<li><a href="docs/java/collection/ArrayList.md">ArrayList 源码学习</a>  </li>
-<li><a href="docs/java/collection/LinkedList.md">LinkedList 源码学习</a>   </li>
-<li><a href="docs/java/collection/HashMap.md">HashMap(JDK1.8)源码学习</a>  </li>
-</ul>
-<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ul>
-<li><a href="docs/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md">Java 并发基础常见面试题总结</a></li>
-<li><a href="docs/java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md">Java 并发进阶常见面试题总结</a></li>
-<li><a href="docs/java/Multithread/并发容器总结.md">并发容器总结</a></li>
-<li><a href="docs/essential-content-for-interview/面试必备之乐观锁与悲观锁.md">乐观锁与悲观锁</a></li>
-<li><a href="docs/java/Multithread/Atomic.md">JUC 中的 Atomic 原子类总结</a></li>
-<li><a href="docs/java/Multithread/AQS.md">AQS 原理以及 AQS 同步组件总结</a></li>
-</ul>
-<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><ul>
-<li><a href="docs/java/jvm/Java内存区域.md">一 Java内存区域</a></li>
-<li><a href="docs/java/jvm/JVM垃圾回收.md">二 JVM垃圾回收</a></li>
-<li><a href="docs/java/jvm/JDK监控和故障处理工具总结.md">三 JDK 监控和故障处理工具</a></li>
-<li><a href="docs/java/jvm/类文件结构.md">四 类文件结构</a></li>
-<li><a href="docs/java/jvm/类加载过程.md">五 类加载过程</a></li>
-<li><a href="docs/java/jvm/类加载器.md">六 类加载器</a></li>
-</ul>
-<h3 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h3><ul>
-<li><a href="docs/java/BIO-NIO-AIO.md">BIO,NIO,AIO 总结 </a></li>
-<li><a href="docs/java/Java%20IO与NIO.md">Java IO 与 NIO系列文章</a></li>
-</ul>
-<h3 id="Java-8"><a href="#Java-8" class="headerlink" title="Java 8"></a>Java 8</h3><ul>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8Tutorial.md">Java 8 新特性总结</a></li>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8教程推荐.md">Java 8 学习资源推荐</a></li>
-<li><a href="docs/java/What's%20New%20in%20JDK8/Java8foreach指南.md">Java8 forEach 指南</a></li>
-</ul>
-<h3 id="编程规范"><a href="#编程规范" class="headerlink" title="编程规范"></a>编程规范</h3><ul>
-<li><a href="docs/java/Java编程规范.md">Java 编程规范</a></li>
-</ul>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
-<li><a href="docs/network/计算机网络.md">计算机网络常见面试题</a></li>
-<li><a href="docs/network/干货：计算机网络知识总结.md">计算机网络基础知识总结</a></li>
-<li><a href="docs/network/HTTPS中的TLS.md">HTTPS中的TLS</a></li>
-</ul>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h3><ul>
-<li><a href="docs/operating-system/后端程序员必备的Linux基础知识.md">后端程序员必备的 Linux 基础知识</a>  </li>
-<li><a href="docs/operating-system/Shell.md">Shell 编程入门</a> </li>
-</ul>
-<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul>
-<li><a href="docs/dataStructures-algorithms/数据结构.md">数据结构知识学习与面试</a></li>
-</ul>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul>
-<li><a href="docs/dataStructures-algorithms/算法学习资源推荐.md">算法学习资源推荐</a>  </li>
-<li><a href="docs/dataStructures-algorithms/几道常见的子符串算法题.md">几道常见的字符串算法题总结 </a></li>
-<li><a href="docs/dataStructures-algorithms/几道常见的链表算法题.md">几道常见的链表算法题总结 </a>   </li>
-<li><a href="docs/dataStructures-algorithms/剑指offer部分编程题.md">剑指offer部分编程题</a></li>
-<li><a href="docs/dataStructures-algorithms/公司真题.md">公司真题</a></li>
-<li><a href="docs/dataStructures-algorithms/Backtracking-NQueens.md">回溯算法经典案例之N皇后问题</a></li>
-</ul>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
-<li><a href="docs/database/MySQL.md">MySQL 学习与面试</a></li>
-<li><a href="docs/database/一千行MySQL命令.md">一千行MySQL学习笔记</a></li>
-<li><a href="docs/database/MySQL高性能优化规范建议.md">MySQL高性能优化规范建议</a></li>
-<li><a href="docs/database/MySQL%20Index.md">数据库索引总结</a></li>
-<li><a href="docs/database/事务隔离级别(图文详解).md">事务隔离级别(图文详解)</a></li>
-<li><a href="docs/database/一条sql语句在mysql中如何执行的.md">一条SQL语句在MySQL中如何执行的</a></li>
-</ul>
-<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
-<li><a href="docs/database/Redis/Redis.md">Redis 总结</a></li>
-<li><a href="docs/database/Redis/Redlock分布式锁.md">Redlock分布式锁</a></li>
-<li><a href="docs/database/Redis/如何做可靠的分布式锁，Redlock真的可行么.md">如何做可靠的分布式锁，Redlock真的可行么</a></li>
-</ul>
-<h2 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h2><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
-<li><a href="docs/system-design/设计模式.md">设计模式系列文章</a></li>
-</ul>
-<h3 id="常用框架"><a href="#常用框架" class="headerlink" title="常用框架"></a>常用框架</h3><h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><ul>
-<li><a href="docs/system-design/framework/spring/Spring.md">Spring 学习与面试</a></li>
-<li><a href="docs/system-design/framework/spring/SpringInterviewQuestions.md">Spring 常见问题总结</a></li>
-<li><a href="docs/system-design/framework/spring/SpringBean.md">Spring中bean的作用域与生命周期</a></li>
-<li><a href="docs/system-design/framework/spring/SpringMVC-Principle.md">SpringMVC 工作原理详解</a></li>
-<li><a href="docs/system-design/framework/spring/Spring-Design-Patterns.md">Spring中都用到了那些设计模式?</a></li>
-<li><a href="https://github.com/Snailclimb/springboot-guide" target="_blank" rel="noopener">SpringBoot 使用指南</a></li>
-<li><a href="https://github.com/Snailclimb/spring-security-jwt-guide" target="_blank" rel="noopener">Spring Security with JWT</a></li>
-</ul>
-<h4 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h4><ul>
-<li><a href="docs/system-design/framework/ZooKeeper.md">ZooKeeper 相关概念总结</a></li>
-<li><a href="docs/system-design/framework/ZooKeeper数据模型和常见命令.md">ZooKeeper 数据模型和常见命令</a></li>
-</ul>
-<h3 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h3><ul>
-<li><a href="docs/system-design/data-communication/summary.md">数据通信(RESTful、RPC、消息队列)相关知识点总结</a></li>
-<li><a href="docs/system-design/data-communication/dubbo.md">Dubbo 总结：关于 Dubbo 的重要知识点</a></li>
-<li><a href="docs/system-design/data-communication/message-queue.md">消息队列总结</a></li>
-<li><a href="docs/system-design/data-communication/rabbitmq.md">RabbitMQ 入门</a></li>
-<li><a href="docs/system-design/data-communication/RocketMQ-Questions.md">RocketMQ的几个简单问题与答案</a></li>
-<li><a href="docs/system-design/data-communication/Kafka系统设计开篇-面试看这篇就够了.md">Kafka系统设计开篇-面试看这篇就够了</a></li>
-</ul>
-<h3 id="网站架构"><a href="#网站架构" class="headerlink" title="网站架构"></a>网站架构</h3><ul>
-<li><a href="docs/system-design/website-architecture/分布式.md">一文读懂分布式应该学什么</a></li>
-<li><a href="docs/system-design/website-architecture/8%20张图读懂大型网站技术架构.md">8 张图读懂大型网站技术架构</a></li>
-<li><a href="docs/system-design/website-architecture/【面试精选】关于大型网站系统架构你不得不懂的10个问题.md">【面试精选】关于大型网站系统架构你不得不懂的10个问题</a></li>
-</ul>
-<h2 id="面试指南"><a href="#面试指南" class="headerlink" title="面试指南"></a>面试指南</h2><h3 id="备战面试"><a href="#备战面试" class="headerlink" title="备战面试"></a>备战面试</h3><ul>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/程序员的简历之道.md">【备战面试1】程序员的简历就该这样写</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/interviewPrepare.md">【备战面试2】初出茅庐的程序员该如何准备面试？</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaProgrammerNeedKnow.md">【备战面试3】7个大部分程序员在面试前很关心的问题</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaInterviewLibrary.md">【备战面试4】Github上开源的Java面试/学习相关的仓库推荐</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/如果面试官问你“你有什么问题问我吗？”时，你该如何回答.md">【备战面试5】如果面试官问你“你有什么问题问我吗？”时，你该如何回答</a></li>
-<li><a href="docs/essential-content-for-interview/PreparingForInterview/美团面试常见问题总结.md">【备战面试6】美团面试常见问题总结（附详解答案）</a></li>
-</ul>
-<h3 id="常见面试题总结"><a href="#常见面试题总结" class="headerlink" title="常见面试题总结"></a>常见面试题总结</h3><ul>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第一周（2018-8-7）.md">第一周（2018-8-7）</a> (为什么 Java 中只有值传递、==与equals、 hashCode与equals)</li>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第二周(2018-8-13).md">第二周（2018-8-13）</a>(String和StringBuffer、StringBuilder的区别是什么？String为什么是不可变的？、什么是反射机制？反射机制的应用场景有哪些？……)</li>
-<li><a href="docs/java/collection/Java集合框架常见面试题.md">第三周（2018-08-22）</a> （Arraylist 与 LinkedList 异同、ArrayList 与 Vector 区别、HashMap的底层实现、HashMap 和 Hashtable 的区别、HashMap 的长度为什么是2的幂次方、HashSet 和 HashMap 区别、ConcurrentHashMap 和 Hashtable 的区别、ConcurrentHashMap线程安全的具体实现方式/底层具体实现、集合框架底层数据结构总结）</li>
-<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第四周(2018-8-30).md">第四周(2018-8-30).md</a> （主要内容是几道面试常问的多线程基础题。）</li>
-</ul>
-<h3 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h3><ul>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/5面阿里,终获offer.md">5面阿里,终获offer(2018年秋招)</a></li>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/蚂蚁金服实习生面经总结(已拿口头offer).md">蚂蚁金服2019实习生面经总结(已拿口头offer)</a></li>
-<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/2019alipay-pinduoduo-toutiao.md">2019年蚂蚁金服、头条、拼多多的面试总结</a></li>
-</ul>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
-<li><a href="docs/tools/Git.md">Git入门</a></li>
-</ul>
-<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><ul>
-<li><a href="docs/tools/Docker.md">Docker 入门</a></li>
-<li><a href="docs/tools/Docker-Image.md">一文搞懂 Docker 镜像的常用操作！</a></li>
-</ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h3><ul>
-<li><a href="docs/data/java-recommended-books.md">Java程序员必备书单</a></li>
-</ul>
-<h3 id="实战项目推荐"><a href="#实战项目推荐" class="headerlink" title="实战项目推荐"></a>实战项目推荐</h3><ul>
-<li><a href="https://github.com/YunaiV/onemall" target="_blank" rel="noopener">onemall</a> : mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba 。</li>
-</ul>
-<h3 id="Github-历史榜单"><a href="#Github-历史榜单" class="headerlink" title="Github 历史榜单"></a>Github 历史榜单</h3><ul>
-<li><a href="docs/github-trending/JavaGithubTrending.md">Java 项目月榜单</a></li>
-</ul>
+    <title>Zookeeper</title>
+    <url>/2020/03/27/Zookeeper/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Zookeeper-安装"><a href="#Zookeeper-安装" class="headerlink" title="Zookeeper 安装"></a>Zookeeper 安装</h1><h2 id="1-1Zookeeper"><a href="#1-1Zookeeper" class="headerlink" title="1.1Zookeeper"></a>1.1Zookeeper</h2><h3 id="1-1-1Zookeeper介绍"><a href="#1-1-1Zookeeper介绍" class="headerlink" title="1.1.1Zookeeper介绍"></a>1.1.1Zookeeper介绍</h3><p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。<br>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。<br>ZooKeeper包含一个简单的原语集,提供Java和C的接口。<br>ZooKeeper代码版本中，提供了分布式独享锁、选举、队列的接口，代码在zookeeper-3.4.3\src\recipes。其中分布锁和队列有Java和C两个版本，选举只有Java版本。<br>总结:Zookeeper负责服务的协调调度.当客户端发起请求时,返回正确的服务器地址.</p>
+<h3 id="1-1-2Zookeeper下载"><a href="#1-1-2Zookeeper下载" class="headerlink" title="1.1.2Zookeeper下载"></a>1.1.2Zookeeper下载</h3><p>网址: <a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">http://zookeeper.apache.org/releases.html</a>.<br>如图-2所示</p>
 <hr>
-<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
-<li><input disabled="" type="checkbox"> Java 多线程类别知识重构(—正在进行中—)</li>
-<li><input disabled="" type="checkbox"> Netty 总结(—正在进行中—)</li>
-<li><input disabled="" type="checkbox"> 数据结构总结重构(—正在进行中—)</li>
-</ul>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>]]></content>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-8216270faedd430d85ed24fe29898f31.png" alt="image.png"></h2><p>图-2<br>下载路径,点击download.<br>如图-3所示</p>
+<hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-eedd0e510d7943ee829628375061624f.png" alt="image.png"></h2><p>图-3<br>下载Zookeeper地址.<br><a href="http://mirrors.hust.edu.cn/apache/zookeeper/" target="_blank" rel="noopener">http://mirrors.hust.edu.cn/apache/zookeeper/</a><br>如图-4所示</p>
+<hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-41f07c949eaf4d71b10d3d1df73fa693.png" alt="image.png"></h2><p>图-4</p>
+<h2 id="1-2Zookeeper安装"><a href="#1-2Zookeeper安装" class="headerlink" title="1.2Zookeeper安装"></a>1.2Zookeeper安装</h2><h3 id="1-2-1安装JDK"><a href="#1-2-1安装JDK" class="headerlink" title="1.2.1安装JDK"></a>1.2.1安装JDK</h3><p>将JDK1.8文件上传到Linux操作系统中/src/usr/local/java/文件下.<br>如图-5所示</p>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7074267a86504a7bb7d608e53530c7b6.png" alt="image.png"></h2><p>图-5<br>1.解压文件<br>tar -xvf jdk-8u51-linux-x64.tar.gz<br>2.配置环境变量<br>编辑环境变量配置文件<br>vim /etc/profile<br>如图-6所示</p>
+<hr>
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-860af512cce74a00983685715f187959.png" alt="image.png"></h2><p>图-6<br>使JDK生效,之后检查jdk安装是否成功<br>source /etc/profile<br>如图 -7所示</p>
+<hr>
+<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-781c797140fe4380881e91619d8fcf5c.png" alt="image.png"></h2><p>图-7</p>
+<h3 id="1-2-2上传安装文件"><a href="#1-2-2上传安装文件" class="headerlink" title="1.2.2上传安装文件"></a>1.2.2上传安装文件</h3><p>说明:上传zookeeper安装文件.之后解压.<br>如图-8所示</p>
+<hr>
+<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-971e330e1d7341ea872052081c42fc9b.png" alt="image.png"></h2><p>图-8<br>解压目录:<br>tar -xvf zookeeper-3.4.8.tar.gz</p>
+<h3 id="1-2-3修改配置文件"><a href="#1-2-3修改配置文件" class="headerlink" title="1.2.3修改配置文件"></a>1.2.3修改配置文件</h3><p>在zk根目录下创建文件夹data/log<br>mkdir data log<br>如图-9所示</p>
+<hr>
+<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-a57e315772904f6fa0e053f88211be4f.png" alt="image.png"></h2><p>图-9<br>复制配置文件并且修改名称<br>cp zoo_sample.cfg zoo.cfg<br>如图-10所示</p>
+<hr>
+<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-9185194983bf4296b3331ee19c6b55a2.png" alt="image.png"></h2><p>图-10</p>
+<h3 id="1-2-4启动zk"><a href="#1-2-4启动zk" class="headerlink" title="1.2.4启动zk"></a>1.2.4启动zk</h3><p>zk启动关闭命令如下.<br>sh zkServer.sh start     或者  ./zkServer.sh start<br>sh zkServer.sh stop<br>sh zkServer.sh status<br>如图-11所示</p>
+<hr>
+<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-47e0942ad88443fab74a7328a65bdbb0.png" alt="image.png"></h2><p>图-11</p>
+<h2 id="1-3Zookeeper集群安装"><a href="#1-3Zookeeper集群安装" class="headerlink" title="1.3Zookeeper集群安装"></a>1.3Zookeeper集群安装</h2><h3 id="1-3-1准备文件夹"><a href="#1-3-1准备文件夹" class="headerlink" title="1.3.1准备文件夹"></a>1.3.1准备文件夹</h3><p>在zookeeper根目录中创建新的文件夹zkCluster.<br>如图-12所示</p>
+<hr>
+<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6f229215118a4742b272dcd82284412a.png" alt="image.png"></h2><p>图-12<br>如图-13所示</p>
+<h2 id="创建zk1-zk2-zk3文件夹"><a href="#创建zk1-zk2-zk3文件夹" class="headerlink" title="创建zk1/zk2/zk3文件夹."></a>创建zk1/zk2/zk3文件夹.</h2><h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-a231d6cf8f624ea6afe754f027cc4026.png" alt="image.png"></h2><p>图-13<br>在每个文件夹里创建data/log文件夹.<br>mkdir {zk1,zk2,zk3}/{data,log}<br>如图-14所示</p>
+<hr>
+<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-22fca11a61de4db5944f17c7ceca09f7.png" alt="image.png"></h2><p>图-14</p>
+<h3 id="1-3-2添加myid文件"><a href="#1-3-2添加myid文件" class="headerlink" title="1.3.2添加myid文件"></a>1.3.2添加myid文件</h3><p>分别在zk1/zk2/zk3中的data文件夹中创建新的文件myid.其中的内容依次为1/2/3,与zk节点号对应.<br>如图-15所示</p>
+<hr>
+<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6efe08a4dac84be38670a491f08851a1.png" alt="image.png"></h2><p>图-15<br>编辑myid文件,定义编号.<br>图-16所示</p>
+<hr>
+<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-cba24531f3b04988ba41302de0e8e8da.png" alt="image.png"></h2><p>图-16</p>
+<h3 id="1-3-3编辑配置文件"><a href="#1-3-3编辑配置文件" class="headerlink" title="1.3.3编辑配置文件"></a>1.3.3编辑配置文件</h3><p>将zoo_sample.cfg 复制为zoo1.cfg之后修改配置文件.<br>如图-17所示</p>
+<hr>
+<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f060179ff53d4e2a8c73a3304f50aa42.png" alt="image.png"></h2><p>图-17</p>
+<h3 id="1-3-4修改zoo1-cfg"><a href="#1-3-4修改zoo1-cfg" class="headerlink" title="1.3.4修改zoo1.cfg"></a>1.3.4修改zoo1.cfg</h3><p>如图-18所示</p>
+<hr>
+<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7ec28ae2215a4f45a49c784263cb5023.png" alt="image.png"></h2><p>图-18<br>配置完成后将zoo1.cfg复制2份.之后需要修改对应的文件夹目录.和不同的端口即可.</p>
+<h3 id="1-3-5ZK集群测试"><a href="#1-3-5ZK集群测试" class="headerlink" title="1.3.5ZK集群测试"></a>1.3.5ZK集群测试</h3><p>通过下面的命令启动zk集群.<br>sh zkServer.sh start   zoo1.cfg<br>sh zkServer.sh stop    zoo1.cfg<br>sh zkServer.sh status  zoo1.cfg<br>检查主从关系,从机情况说明.<br>如图-19所示</p>
+<hr>
+<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-de4854b240504612b6dce11f46ed2645.png" alt="image.png"></h2><p>图-19<br>检查主从关系,主机情况说明.<br>如图-20所示</p>
+<hr>
+<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-748f94c832c343c08ac3cdeff31ea15f.png" alt="image.png"></h2><p>图-20</p>
+<h3 id="1-3-6关于zookeeper集群说明"><a href="#1-3-6关于zookeeper集群说明" class="headerlink" title="1.3.6关于zookeeper集群说明"></a>1.3.6关于zookeeper集群说明</h3><p>Zookeeper集群中leader负责监控集群状态,follower主要负责客户端链接获取服务列表信息.同时参与投票.</p>
+]]></content>
       <categories>
-        <category>面试题</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>github</tag>
+        <tag>java</tag>
+        <tag>zookeeper</tag>
       </tags>
   </entry>
   <entry>
@@ -2150,65 +2004,229 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
-    <title>Zookeeper</title>
-    <url>/2020/03/27/Zookeeper/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Zookeeper-安装"><a href="#Zookeeper-安装" class="headerlink" title="Zookeeper 安装"></a>Zookeeper 安装</h1><h2 id="1-1Zookeeper"><a href="#1-1Zookeeper" class="headerlink" title="1.1Zookeeper"></a>1.1Zookeeper</h2><h3 id="1-1-1Zookeeper介绍"><a href="#1-1-1Zookeeper介绍" class="headerlink" title="1.1.1Zookeeper介绍"></a>1.1.1Zookeeper介绍</h3><p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。<br>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。<br>ZooKeeper包含一个简单的原语集,提供Java和C的接口。<br>ZooKeeper代码版本中，提供了分布式独享锁、选举、队列的接口，代码在zookeeper-3.4.3\src\recipes。其中分布锁和队列有Java和C两个版本，选举只有Java版本。<br>总结:Zookeeper负责服务的协调调度.当客户端发起请求时,返回正确的服务器地址.</p>
-<h3 id="1-1-2Zookeeper下载"><a href="#1-1-2Zookeeper下载" class="headerlink" title="1.1.2Zookeeper下载"></a>1.1.2Zookeeper下载</h3><p>网址: <a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">http://zookeeper.apache.org/releases.html</a>.<br>如图-2所示</p>
+    <title>github仓库--JavaGuide</title>
+    <url>/2020/04/12/github%E4%BB%93%E5%BA%93--JavaGuide/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>传送门—–<a href="https://github.com/zhangpengpeng69/JavaGuide" target="_blank" rel="noopener">java基础知识</a></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#java">Java</a><ul>
+<li><a href="#基础">基础</a></li>
+<li><a href="#容器">容器</a></li>
+<li><a href="#并发">并发</a></li>
+<li><a href="#jvm">JVM</a></li>
+<li><a href="#io">I/O</a></li>
+<li><a href="#java-8">Java 8</a></li>
+<li><a href="#编程规范">编程规范</a></li>
+</ul>
+</li>
+<li><a href="#网络">网络</a></li>
+<li><a href="#操作系统">操作系统</a><ul>
+<li><a href="#linux相关">Linux相关</a></li>
+</ul>
+</li>
+<li><a href="#数据结构与算法">数据结构与算法</a><ul>
+<li><a href="#数据结构">数据结构</a></li>
+<li><a href="#算法">算法</a></li>
+</ul>
+</li>
+<li><a href="#数据库">数据库</a><ul>
+<li><a href="#mysql">MySQL</a></li>
+<li><a href="#redis">Redis</a></li>
+</ul>
+</li>
+<li><a href="#系统设计">系统设计</a><ul>
+<li><a href="#设计模式">设计模式(工厂模式、单例模式 … )</a></li>
+<li><a href="#常用框架">常用框架(Spring、Zookeeper … )</a></li>
+<li><a href="#数据通信">数据通信(消息队列、Dubbo … )</a></li>
+<li><a href="#网站架构">网站架构</a></li>
+</ul>
+</li>
+<li><a href="#面试指南">面试指南</a><ul>
+<li><a href="#备战面试">备战面试</a></li>
+<li><a href="#常见面试题总结">常见面试题总结</a></li>
+<li><a href="#面经">面经</a></li>
+</ul>
+</li>
+<li><a href="#工具">工具</a><ul>
+<li><a href="#git">Git</a></li>
+<li><a href="#Docker">Docker</a></li>
+</ul>
+</li>
+<li><a href="#资源">资源</a><ul>
+<li><a href="#书单">书单</a></li>
+<li><a href="#Github榜单">Github榜单</a></li>
+</ul>
+</li>
+<li><a href="#待办">待办</a></li>
+<li><a href="#说明">说明</a></li>
+</ul>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
+<li><a href="docs/java/Java基础知识.md">Java 基础知识回顾</a></li>
+<li><a href="docs/java/Java疑难点.md">Java 基础知识疑难点/易错点</a></li>
+<li><a href="docs/java/Java程序设计题.md">一些重要的Java程序设计题</a></li>
+<li><a href="docs/java/J2EE基础知识.md">J2EE 基础知识回顾</a></li>
+</ul>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
+<li><a href="docs/java/collection/Java集合框架常见面试题.md">Java容器常见面试题/知识点总结</a></li>
+<li><a href="docs/java/collection/ArrayList.md">ArrayList 源码学习</a>  </li>
+<li><a href="docs/java/collection/LinkedList.md">LinkedList 源码学习</a>   </li>
+<li><a href="docs/java/collection/HashMap.md">HashMap(JDK1.8)源码学习</a>  </li>
+</ul>
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ul>
+<li><a href="docs/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md">Java 并发基础常见面试题总结</a></li>
+<li><a href="docs/java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md">Java 并发进阶常见面试题总结</a></li>
+<li><a href="docs/java/Multithread/并发容器总结.md">并发容器总结</a></li>
+<li><a href="docs/essential-content-for-interview/面试必备之乐观锁与悲观锁.md">乐观锁与悲观锁</a></li>
+<li><a href="docs/java/Multithread/Atomic.md">JUC 中的 Atomic 原子类总结</a></li>
+<li><a href="docs/java/Multithread/AQS.md">AQS 原理以及 AQS 同步组件总结</a></li>
+</ul>
+<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><ul>
+<li><a href="docs/java/jvm/Java内存区域.md">一 Java内存区域</a></li>
+<li><a href="docs/java/jvm/JVM垃圾回收.md">二 JVM垃圾回收</a></li>
+<li><a href="docs/java/jvm/JDK监控和故障处理工具总结.md">三 JDK 监控和故障处理工具</a></li>
+<li><a href="docs/java/jvm/类文件结构.md">四 类文件结构</a></li>
+<li><a href="docs/java/jvm/类加载过程.md">五 类加载过程</a></li>
+<li><a href="docs/java/jvm/类加载器.md">六 类加载器</a></li>
+</ul>
+<h3 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h3><ul>
+<li><a href="docs/java/BIO-NIO-AIO.md">BIO,NIO,AIO 总结 </a></li>
+<li><a href="docs/java/Java%20IO与NIO.md">Java IO 与 NIO系列文章</a></li>
+</ul>
+<h3 id="Java-8"><a href="#Java-8" class="headerlink" title="Java 8"></a>Java 8</h3><ul>
+<li><a href="docs/java/What's%20New%20in%20JDK8/Java8Tutorial.md">Java 8 新特性总结</a></li>
+<li><a href="docs/java/What's%20New%20in%20JDK8/Java8教程推荐.md">Java 8 学习资源推荐</a></li>
+<li><a href="docs/java/What's%20New%20in%20JDK8/Java8foreach指南.md">Java8 forEach 指南</a></li>
+</ul>
+<h3 id="编程规范"><a href="#编程规范" class="headerlink" title="编程规范"></a>编程规范</h3><ul>
+<li><a href="docs/java/Java编程规范.md">Java 编程规范</a></li>
+</ul>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
+<li><a href="docs/network/计算机网络.md">计算机网络常见面试题</a></li>
+<li><a href="docs/network/干货：计算机网络知识总结.md">计算机网络基础知识总结</a></li>
+<li><a href="docs/network/HTTPS中的TLS.md">HTTPS中的TLS</a></li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h3><ul>
+<li><a href="docs/operating-system/后端程序员必备的Linux基础知识.md">后端程序员必备的 Linux 基础知识</a>  </li>
+<li><a href="docs/operating-system/Shell.md">Shell 编程入门</a> </li>
+</ul>
+<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul>
+<li><a href="docs/dataStructures-algorithms/数据结构.md">数据结构知识学习与面试</a></li>
+</ul>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul>
+<li><a href="docs/dataStructures-algorithms/算法学习资源推荐.md">算法学习资源推荐</a>  </li>
+<li><a href="docs/dataStructures-algorithms/几道常见的子符串算法题.md">几道常见的字符串算法题总结 </a></li>
+<li><a href="docs/dataStructures-algorithms/几道常见的链表算法题.md">几道常见的链表算法题总结 </a>   </li>
+<li><a href="docs/dataStructures-algorithms/剑指offer部分编程题.md">剑指offer部分编程题</a></li>
+<li><a href="docs/dataStructures-algorithms/公司真题.md">公司真题</a></li>
+<li><a href="docs/dataStructures-algorithms/Backtracking-NQueens.md">回溯算法经典案例之N皇后问题</a></li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
+<li><a href="docs/database/MySQL.md">MySQL 学习与面试</a></li>
+<li><a href="docs/database/一千行MySQL命令.md">一千行MySQL学习笔记</a></li>
+<li><a href="docs/database/MySQL高性能优化规范建议.md">MySQL高性能优化规范建议</a></li>
+<li><a href="docs/database/MySQL%20Index.md">数据库索引总结</a></li>
+<li><a href="docs/database/事务隔离级别(图文详解).md">事务隔离级别(图文详解)</a></li>
+<li><a href="docs/database/一条sql语句在mysql中如何执行的.md">一条SQL语句在MySQL中如何执行的</a></li>
+</ul>
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><ul>
+<li><a href="docs/database/Redis/Redis.md">Redis 总结</a></li>
+<li><a href="docs/database/Redis/Redlock分布式锁.md">Redlock分布式锁</a></li>
+<li><a href="docs/database/Redis/如何做可靠的分布式锁，Redlock真的可行么.md">如何做可靠的分布式锁，Redlock真的可行么</a></li>
+</ul>
+<h2 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h2><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
+<li><a href="docs/system-design/设计模式.md">设计模式系列文章</a></li>
+</ul>
+<h3 id="常用框架"><a href="#常用框架" class="headerlink" title="常用框架"></a>常用框架</h3><h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><ul>
+<li><a href="docs/system-design/framework/spring/Spring.md">Spring 学习与面试</a></li>
+<li><a href="docs/system-design/framework/spring/SpringInterviewQuestions.md">Spring 常见问题总结</a></li>
+<li><a href="docs/system-design/framework/spring/SpringBean.md">Spring中bean的作用域与生命周期</a></li>
+<li><a href="docs/system-design/framework/spring/SpringMVC-Principle.md">SpringMVC 工作原理详解</a></li>
+<li><a href="docs/system-design/framework/spring/Spring-Design-Patterns.md">Spring中都用到了那些设计模式?</a></li>
+<li><a href="https://github.com/Snailclimb/springboot-guide" target="_blank" rel="noopener">SpringBoot 使用指南</a></li>
+<li><a href="https://github.com/Snailclimb/spring-security-jwt-guide" target="_blank" rel="noopener">Spring Security with JWT</a></li>
+</ul>
+<h4 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h4><ul>
+<li><a href="docs/system-design/framework/ZooKeeper.md">ZooKeeper 相关概念总结</a></li>
+<li><a href="docs/system-design/framework/ZooKeeper数据模型和常见命令.md">ZooKeeper 数据模型和常见命令</a></li>
+</ul>
+<h3 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h3><ul>
+<li><a href="docs/system-design/data-communication/summary.md">数据通信(RESTful、RPC、消息队列)相关知识点总结</a></li>
+<li><a href="docs/system-design/data-communication/dubbo.md">Dubbo 总结：关于 Dubbo 的重要知识点</a></li>
+<li><a href="docs/system-design/data-communication/message-queue.md">消息队列总结</a></li>
+<li><a href="docs/system-design/data-communication/rabbitmq.md">RabbitMQ 入门</a></li>
+<li><a href="docs/system-design/data-communication/RocketMQ-Questions.md">RocketMQ的几个简单问题与答案</a></li>
+<li><a href="docs/system-design/data-communication/Kafka系统设计开篇-面试看这篇就够了.md">Kafka系统设计开篇-面试看这篇就够了</a></li>
+</ul>
+<h3 id="网站架构"><a href="#网站架构" class="headerlink" title="网站架构"></a>网站架构</h3><ul>
+<li><a href="docs/system-design/website-architecture/分布式.md">一文读懂分布式应该学什么</a></li>
+<li><a href="docs/system-design/website-architecture/8%20张图读懂大型网站技术架构.md">8 张图读懂大型网站技术架构</a></li>
+<li><a href="docs/system-design/website-architecture/【面试精选】关于大型网站系统架构你不得不懂的10个问题.md">【面试精选】关于大型网站系统架构你不得不懂的10个问题</a></li>
+</ul>
+<h2 id="面试指南"><a href="#面试指南" class="headerlink" title="面试指南"></a>面试指南</h2><h3 id="备战面试"><a href="#备战面试" class="headerlink" title="备战面试"></a>备战面试</h3><ul>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/程序员的简历之道.md">【备战面试1】程序员的简历就该这样写</a></li>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/interviewPrepare.md">【备战面试2】初出茅庐的程序员该如何准备面试？</a></li>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaProgrammerNeedKnow.md">【备战面试3】7个大部分程序员在面试前很关心的问题</a></li>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/JavaInterviewLibrary.md">【备战面试4】Github上开源的Java面试/学习相关的仓库推荐</a></li>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/如果面试官问你“你有什么问题问我吗？”时，你该如何回答.md">【备战面试5】如果面试官问你“你有什么问题问我吗？”时，你该如何回答</a></li>
+<li><a href="docs/essential-content-for-interview/PreparingForInterview/美团面试常见问题总结.md">【备战面试6】美团面试常见问题总结（附详解答案）</a></li>
+</ul>
+<h3 id="常见面试题总结"><a href="#常见面试题总结" class="headerlink" title="常见面试题总结"></a>常见面试题总结</h3><ul>
+<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第一周（2018-8-7）.md">第一周（2018-8-7）</a> (为什么 Java 中只有值传递、==与equals、 hashCode与equals)</li>
+<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第二周(2018-8-13).md">第二周（2018-8-13）</a>(String和StringBuffer、StringBuilder的区别是什么？String为什么是不可变的？、什么是反射机制？反射机制的应用场景有哪些？……)</li>
+<li><a href="docs/java/collection/Java集合框架常见面试题.md">第三周（2018-08-22）</a> （Arraylist 与 LinkedList 异同、ArrayList 与 Vector 区别、HashMap的底层实现、HashMap 和 Hashtable 的区别、HashMap 的长度为什么是2的幂次方、HashSet 和 HashMap 区别、ConcurrentHashMap 和 Hashtable 的区别、ConcurrentHashMap线程安全的具体实现方式/底层具体实现、集合框架底层数据结构总结）</li>
+<li><a href="docs/essential-content-for-interview/MostCommonJavaInterviewQuestions/第四周(2018-8-30).md">第四周(2018-8-30).md</a> （主要内容是几道面试常问的多线程基础题。）</li>
+</ul>
+<h3 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h3><ul>
+<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/5面阿里,终获offer.md">5面阿里,终获offer(2018年秋招)</a></li>
+<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/蚂蚁金服实习生面经总结(已拿口头offer).md">蚂蚁金服2019实习生面经总结(已拿口头offer)</a></li>
+<li><a href="docs/essential-content-for-interview/BATJrealInterviewExperience/2019alipay-pinduoduo-toutiao.md">2019年蚂蚁金服、头条、拼多多的面试总结</a></li>
+</ul>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
+<li><a href="docs/tools/Git.md">Git入门</a></li>
+</ul>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><ul>
+<li><a href="docs/tools/Docker.md">Docker 入门</a></li>
+<li><a href="docs/tools/Docker-Image.md">一文搞懂 Docker 镜像的常用操作！</a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h3><ul>
+<li><a href="docs/data/java-recommended-books.md">Java程序员必备书单</a></li>
+</ul>
+<h3 id="实战项目推荐"><a href="#实战项目推荐" class="headerlink" title="实战项目推荐"></a>实战项目推荐</h3><ul>
+<li><a href="https://github.com/YunaiV/onemall" target="_blank" rel="noopener">onemall</a> : mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba 。</li>
+</ul>
+<h3 id="Github-历史榜单"><a href="#Github-历史榜单" class="headerlink" title="Github 历史榜单"></a>Github 历史榜单</h3><ul>
+<li><a href="docs/github-trending/JavaGithubTrending.md">Java 项目月榜单</a></li>
+</ul>
 <hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-8216270faedd430d85ed24fe29898f31.png" alt="image.png"></h2><p>图-2<br>下载路径,点击download.<br>如图-3所示</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-eedd0e510d7943ee829628375061624f.png" alt="image.png"></h2><p>图-3<br>下载Zookeeper地址.<br><a href="http://mirrors.hust.edu.cn/apache/zookeeper/" target="_blank" rel="noopener">http://mirrors.hust.edu.cn/apache/zookeeper/</a><br>如图-4所示</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-41f07c949eaf4d71b10d3d1df73fa693.png" alt="image.png"></h2><p>图-4</p>
-<h2 id="1-2Zookeeper安装"><a href="#1-2Zookeeper安装" class="headerlink" title="1.2Zookeeper安装"></a>1.2Zookeeper安装</h2><h3 id="1-2-1安装JDK"><a href="#1-2-1安装JDK" class="headerlink" title="1.2.1安装JDK"></a>1.2.1安装JDK</h3><p>将JDK1.8文件上传到Linux操作系统中/src/usr/local/java/文件下.<br>如图-5所示</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7074267a86504a7bb7d608e53530c7b6.png" alt="image.png"></h2><p>图-5<br>1.解压文件<br>tar -xvf jdk-8u51-linux-x64.tar.gz<br>2.配置环境变量<br>编辑环境变量配置文件<br>vim /etc/profile<br>如图-6所示</p>
-<hr>
-<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-860af512cce74a00983685715f187959.png" alt="image.png"></h2><p>图-6<br>使JDK生效,之后检查jdk安装是否成功<br>source /etc/profile<br>如图 -7所示</p>
-<hr>
-<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-781c797140fe4380881e91619d8fcf5c.png" alt="image.png"></h2><p>图-7</p>
-<h3 id="1-2-2上传安装文件"><a href="#1-2-2上传安装文件" class="headerlink" title="1.2.2上传安装文件"></a>1.2.2上传安装文件</h3><p>说明:上传zookeeper安装文件.之后解压.<br>如图-8所示</p>
-<hr>
-<h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-971e330e1d7341ea872052081c42fc9b.png" alt="image.png"></h2><p>图-8<br>解压目录:<br>tar -xvf zookeeper-3.4.8.tar.gz</p>
-<h3 id="1-2-3修改配置文件"><a href="#1-2-3修改配置文件" class="headerlink" title="1.2.3修改配置文件"></a>1.2.3修改配置文件</h3><p>在zk根目录下创建文件夹data/log<br>mkdir data log<br>如图-9所示</p>
-<hr>
-<h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-a57e315772904f6fa0e053f88211be4f.png" alt="image.png"></h2><p>图-9<br>复制配置文件并且修改名称<br>cp zoo_sample.cfg zoo.cfg<br>如图-10所示</p>
-<hr>
-<h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-9185194983bf4296b3331ee19c6b55a2.png" alt="image.png"></h2><p>图-10</p>
-<h3 id="1-2-4启动zk"><a href="#1-2-4启动zk" class="headerlink" title="1.2.4启动zk"></a>1.2.4启动zk</h3><p>zk启动关闭命令如下.<br>sh zkServer.sh start     或者  ./zkServer.sh start<br>sh zkServer.sh stop<br>sh zkServer.sh status<br>如图-11所示</p>
-<hr>
-<h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-47e0942ad88443fab74a7328a65bdbb0.png" alt="image.png"></h2><p>图-11</p>
-<h2 id="1-3Zookeeper集群安装"><a href="#1-3Zookeeper集群安装" class="headerlink" title="1.3Zookeeper集群安装"></a>1.3Zookeeper集群安装</h2><h3 id="1-3-1准备文件夹"><a href="#1-3-1准备文件夹" class="headerlink" title="1.3.1准备文件夹"></a>1.3.1准备文件夹</h3><p>在zookeeper根目录中创建新的文件夹zkCluster.<br>如图-12所示</p>
-<hr>
-<h2 id="-10"><a href="#-10" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6f229215118a4742b272dcd82284412a.png" alt="image.png"></h2><p>图-12<br>如图-13所示</p>
-<h2 id="创建zk1-zk2-zk3文件夹"><a href="#创建zk1-zk2-zk3文件夹" class="headerlink" title="创建zk1/zk2/zk3文件夹."></a>创建zk1/zk2/zk3文件夹.</h2><h2 id="-11"><a href="#-11" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-a231d6cf8f624ea6afe754f027cc4026.png" alt="image.png"></h2><p>图-13<br>在每个文件夹里创建data/log文件夹.<br>mkdir {zk1,zk2,zk3}/{data,log}<br>如图-14所示</p>
-<hr>
-<h2 id="-12"><a href="#-12" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-22fca11a61de4db5944f17c7ceca09f7.png" alt="image.png"></h2><p>图-14</p>
-<h3 id="1-3-2添加myid文件"><a href="#1-3-2添加myid文件" class="headerlink" title="1.3.2添加myid文件"></a>1.3.2添加myid文件</h3><p>分别在zk1/zk2/zk3中的data文件夹中创建新的文件myid.其中的内容依次为1/2/3,与zk节点号对应.<br>如图-15所示</p>
-<hr>
-<h2 id="-13"><a href="#-13" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6efe08a4dac84be38670a491f08851a1.png" alt="image.png"></h2><p>图-15<br>编辑myid文件,定义编号.<br>图-16所示</p>
-<hr>
-<h2 id="-14"><a href="#-14" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-cba24531f3b04988ba41302de0e8e8da.png" alt="image.png"></h2><p>图-16</p>
-<h3 id="1-3-3编辑配置文件"><a href="#1-3-3编辑配置文件" class="headerlink" title="1.3.3编辑配置文件"></a>1.3.3编辑配置文件</h3><p>将zoo_sample.cfg 复制为zoo1.cfg之后修改配置文件.<br>如图-17所示</p>
-<hr>
-<h2 id="-15"><a href="#-15" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f060179ff53d4e2a8c73a3304f50aa42.png" alt="image.png"></h2><p>图-17</p>
-<h3 id="1-3-4修改zoo1-cfg"><a href="#1-3-4修改zoo1-cfg" class="headerlink" title="1.3.4修改zoo1.cfg"></a>1.3.4修改zoo1.cfg</h3><p>如图-18所示</p>
-<hr>
-<h2 id="-16"><a href="#-16" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-7ec28ae2215a4f45a49c784263cb5023.png" alt="image.png"></h2><p>图-18<br>配置完成后将zoo1.cfg复制2份.之后需要修改对应的文件夹目录.和不同的端口即可.</p>
-<h3 id="1-3-5ZK集群测试"><a href="#1-3-5ZK集群测试" class="headerlink" title="1.3.5ZK集群测试"></a>1.3.5ZK集群测试</h3><p>通过下面的命令启动zk集群.<br>sh zkServer.sh start   zoo1.cfg<br>sh zkServer.sh stop    zoo1.cfg<br>sh zkServer.sh status  zoo1.cfg<br>检查主从关系,从机情况说明.<br>如图-19所示</p>
-<hr>
-<h2 id="-17"><a href="#-17" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-de4854b240504612b6dce11f46ed2645.png" alt="image.png"></h2><p>图-19<br>检查主从关系,主机情况说明.<br>如图-20所示</p>
-<hr>
-<h2 id="-18"><a href="#-18" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-748f94c832c343c08ac3cdeff31ea15f.png" alt="image.png"></h2><p>图-20</p>
-<h3 id="1-3-6关于zookeeper集群说明"><a href="#1-3-6关于zookeeper集群说明" class="headerlink" title="1.3.6关于zookeeper集群说明"></a>1.3.6关于zookeeper集群说明</h3><p>Zookeeper集群中leader负责监控集群状态,follower主要负责客户端链接获取服务列表信息.同时参与投票.</p>
-]]></content>
+<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
+<li><input disabled="" type="checkbox"> Java 多线程类别知识重构(—正在进行中—)</li>
+<li><input disabled="" type="checkbox"> Netty 总结(—正在进行中—)</li>
+<li><input disabled="" type="checkbox"> 数据结构总结重构(—正在进行中—)</li>
+</ul>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2>]]></content>
       <categories>
-        <category>后端</category>
+        <category>面试题</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>zookeeper</tag>
+        <tag>github</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/30/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>github仓库-CS-Notes</title>
@@ -2311,24 +2329,6 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/30/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>github部署静态网页</title>
     <url>/2020/04/21/github%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>用github部署静态网页其实很简单还不用动服务器，记录一次静态网页的部署。</p>
@@ -2367,6 +2367,28 @@ order by... -- 根据指定的列进行排序
       </categories>
       <tags>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea安装与破解</title>
+    <url>/2020/05/03/idea%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>之前一直使用eclipse，决定不用了，以后用idea。。</p>
+<blockquote>
+<p>IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ在业界被公认为最好的java开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE支持、各类版本工具(git、svn等)、JUnit、CVS整合、代码分析、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持HTML，CSS，PHP，MySQL，Python等。免费版只支持Java等少数语言。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.下载<br>官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a><br>下载：<a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-11-53-c17a04424522428ba82a33f534456267.jpg" alt="Snipaste_2020-05-03_21-11-53"><br>开源版和旗舰版的区别<br>开源版（Community）完全免费，旗舰版（Ultimate）需要收费，但是注册账号后可以试用30天<br>两者的安装包是不同的，同一台机器可以同时安装开源版和旗舰版<br>旗舰版比开源版多了很多功能，例如支持HTML/CSS/JavaScript/TypeScript的代码智能提醒、提供常用框架（Spring，Play，Grails）的实用插件、提供数据库工具、自动检查代码重复等。<br>旗舰版的收费目前是订阅模式收费策略，支持按年订阅或者按月订阅。</p>
+<p>2.安装<br>无特殊，选择安装位置安装就好<br>我的安装路径：D:\software2\idea\IntelliJ IDEA 2019.3.3<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-06-24-cc857dd4e3504ba3b3a2b02ca1b12fa2.jpg" alt="Snipaste_2020-05-03_21-06-24"></p>
+<p>##破解<br>1.先适用30天进入idea，新建个项目<br>2.网上下载破解补丁jetbrains-agent.jar<br>3.放在idea安装目录的bin目录下<br>D:\software2\idea\IntelliJ IDEA 2019.3.3\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ee5d202b11444d1aa1275172e2fb6078.png" alt="image.png"><br>4.idea-help-Edit Custom VM Options<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ce0570929d094c028d9cf3f6a762d69b.png" alt="image.png"></p>
+<p>5.末尾加上一行（填写自己的路径）：<br>-javaagent:D:\software2\idea\IntelliJ IDEA 2019.3.3\bin\jetbrains-agent.jar<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-cf055a5139dd4717ad62be3dd816da20.png" alt="image.png"></p>
+<p>6.关掉ieda重启</p>
+<p>7.填入激活码，激活<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-082ae1ce53dd463c98a8a0dfe7c4bce1.png" alt="image.png"></p>
+<p>8.本文不包含任何资源，请自行百度。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -2445,28 +2467,6 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
-    <title>idea安装与破解</title>
-    <url>/2020/05/03/idea%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>之前一直使用eclipse，决定不用了，以后用idea。。</p>
-<blockquote>
-<p>IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ在业界被公认为最好的java开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE支持、各类版本工具(git、svn等)、JUnit、CVS整合、代码分析、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持HTML，CSS，PHP，MySQL，Python等。免费版只支持Java等少数语言。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.下载<br>官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a><br>下载：<a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-11-53-c17a04424522428ba82a33f534456267.jpg" alt="Snipaste_2020-05-03_21-11-53"><br>开源版和旗舰版的区别<br>开源版（Community）完全免费，旗舰版（Ultimate）需要收费，但是注册账号后可以试用30天<br>两者的安装包是不同的，同一台机器可以同时安装开源版和旗舰版<br>旗舰版比开源版多了很多功能，例如支持HTML/CSS/JavaScript/TypeScript的代码智能提醒、提供常用框架（Spring，Play，Grails）的实用插件、提供数据库工具、自动检查代码重复等。<br>旗舰版的收费目前是订阅模式收费策略，支持按年订阅或者按月订阅。</p>
-<p>2.安装<br>无特殊，选择安装位置安装就好<br>我的安装路径：D:\software2\idea\IntelliJ IDEA 2019.3.3<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-06-24-cc857dd4e3504ba3b3a2b02ca1b12fa2.jpg" alt="Snipaste_2020-05-03_21-06-24"></p>
-<p>##破解<br>1.先适用30天进入idea，新建个项目<br>2.网上下载破解补丁jetbrains-agent.jar<br>3.放在idea安装目录的bin目录下<br>D:\software2\idea\IntelliJ IDEA 2019.3.3\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ee5d202b11444d1aa1275172e2fb6078.png" alt="image.png"><br>4.idea-help-Edit Custom VM Options<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ce0570929d094c028d9cf3f6a762d69b.png" alt="image.png"></p>
-<p>5.末尾加上一行（填写自己的路径）：<br>-javaagent:D:\software2\idea\IntelliJ IDEA 2019.3.3\bin\jetbrains-agent.jar<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-cf055a5139dd4717ad62be3dd816da20.png" alt="image.png"></p>
-<p>6.关掉ieda重启</p>
-<p>7.填入激活码，激活<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-082ae1ce53dd463c98a8a0dfe7c4bce1.png" alt="image.png"></p>
-<p>8.本文不包含任何资源，请自行百度。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java-jdk安装与配置idea配置jdk</title>
     <url>/2020/05/05/java-jdk%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEjdk/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>·</p>
@@ -2496,27 +2496,6 @@ order by... -- 根据指定的列进行排序
       <tags>
         <tag>idea</tag>
         <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础面试题</title>
-    <url>/2020/04/06/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="java基础面试题"><a href="#java基础面试题" class="headerlink" title="java基础面试题"></a>java基础面试题</h1><h2 id="1、面向对象都有哪些特性以及你对这些特性的理解-？"><a href="#1、面向对象都有哪些特性以及你对这些特性的理解-？" class="headerlink" title="1、面向对象都有哪些特性以及你对这些特性的理解 ？"></a>1、面向对象都有哪些特性以及你对这些特性的理解 ？</h2><p>答：面向对象的三大特征：1.继承  2.封装 3.多态性<br/><br>  （1）继承：就是保留父类的属性，开扩新的东西。通过子类可以实现继承，子类继承父类的所有状态和行为，同时添加自身的状态和行为。<br/><br>  （2）封装：就是类的私有化。将代码及处理数据绑定在一起的一种编程机制，该机制保证程序和数据不受外部干扰。<br/><br>  （3）多态：是允许将父对象设置成为和一个和多个它的子对象相等的技术。包括重载和重写。重载为编译时多态，重写是运行时多态。<br/></p>
-<h2 id="2、什么是自动装箱和拆箱？"><a href="#2、什么是自动装箱和拆箱？" class="headerlink" title="2、什么是自动装箱和拆箱？"></a>2、什么是自动装箱和拆箱？</h2><p>  答：自动装箱就是Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。因为这里的装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。<br/><br>  原始类型byte,short,char,int,long,float,double和boolean对应的封装类为Byte,Short,Character,Integer,Long,Float,Double,Boolean。自动装箱和拆箱从Java 1.5开始引入，目的是将原始类型值转自动地转换成对应的对象。自动装箱与拆箱的机制可以让我们在Java的变量赋值或者是方法调用等情况下使用原始类型或者对象类型更加简单直接。<br/></p>
-<h2 id="3、什么是-java-序列化，如何实现-java-序列化？"><a href="#3、什么是-java-序列化，如何实现-java-序列化？" class="headerlink" title="3、什么是 java 序列化，如何实现 java 序列化？"></a>3、什么是 java 序列化，如何实现 java 序列化？</h2><p>  答：序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发的问题。<br/><br>  序 列 化 的 实 现 ： 将 需 要 被 序 列 化 的 类 实 现 Serializable 接 口 ， 该 接 口 没 有 需 要 实 现 的 方 法 ，implements Serializable 只是为了标注该对象是可被序列化的，然后使用一个输出流(如： FileOutputStream)来构造一个 ObjectOutputStream(对象流)对象，接着，使用 ObjectOutputStream 对象的 writeObject(Object obj)方法就可以将参数为 obj 的对象写出(即保存其状态)，要恢复的话则用输入流。<br/></p>
-<h2 id="4、char-型变量中能不能存储一个中文汉字，为什么？"><a href="#4、char-型变量中能不能存储一个中文汉字，为什么？" class="headerlink" title="4、char 型变量中能不能存储一个中文汉字，为什么？"></a>4、char 型变量中能不能存储一个中文汉字，为什么？</h2><p>  答：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。</p>
-<h2 id="5、List-和-Map、-Set-的区别？"><a href="#5、List-和-Map、-Set-的区别？" class="headerlink" title="5、List 和 Map、 Set 的区别？"></a>5、List 和 Map、 Set 的区别？</h2><p>  答：List 和 Set 是存储单列数据的集合， Map 是存储键和值这样的双列数据的集合； List 中存储的数据是有顺序，并且允许重复； Map 中存储的数据是没有顺序的，其键是不能重复的，它的值是可以有重复的， Set 中存储的数据是无序的，且不允许有重复，但元素在集合中的位置由元素的 hashcode 决定，位置是固定的（Set 集合根据 hashcode 来进行数据的存储，所以位置是固定的，但是位置不是用户可以控制的，所以对于用户来说 set 中的元素还是无序的） 。</p>
-<h2 id="6、HashMap-和-HashTable-有什么区别"><a href="#6、HashMap-和-HashTable-有什么区别" class="headerlink" title="6、HashMap 和 HashTable 有什么区别?"></a>6、HashMap 和 HashTable 有什么区别?</h2><p>  HashMap 是线程不安全的,HashMap 是一个接口,是 Map 的一个子接口,是将键映射到值得对象,不允许键值重复允许空键和空值;由于非线程安全,HashMap 的效率要较 HashTable 的效率高一些.HashTable 是线程安全的一个集合,不允许 null 值作为一个 key 值或者 Value 值;HashTable 是 sychronize,多个线程访问时不需要自己为它的方法实现同步,而 HashMap 在被多个线程访问的时候需要自己为它的方法实现同步。</p>
-<h2 id="7、谈谈-JVM-的内存结构和内存分配？"><a href="#7、谈谈-JVM-的内存结构和内存分配？" class="headerlink" title="7、谈谈 JVM 的内存结构和内存分配？"></a>7、谈谈 JVM 的内存结构和内存分配？</h2><p>a)Java 内存模型 <br/><br>    Java 虚拟机将其管辖的内存大致分三个逻辑部分：方法区(Method Area)、 Java 栈和 Java 堆。<br/><br>  1、方法区是静态分配的，编译器将变量绑定在某个存储位置上，而且这些绑定不会在运行时改变。常数池，源代码中的命名常量、 String 常量和 static 变量保存在方法区。<br/><br>  2、 Java Stack 是一个逻辑概念，特点是后进先出。一个栈的空间可能是连续的，也可能是不连续的。最典型的 Stack 应用是方法的调用， Java 虚拟机每调用一次方法就创建一个方法帧（frame），退出该方法则对应的 方法帧被弹出(pop)。栈中存储的数据也是运行时确定的。<br/><br>  3、 Java 堆分配(heap allocation)意味着以随意的顺序，在运行时进行存储空间分配和收回的内存管理模型。堆中存储的数据常常是大小、数量和生命期在编译时无法确定的。 Java 对象的内存总是在 heap 中分配。<br/><br>    b) java 内存分配<br/><br>  1、基础数据类型直接在栈空间分配;<br/><br>  2、方法的形式参数，直接在栈空间分配，当方法调用完成后从栈空间回收;<br/><br>  3、引用数据类型，需要用 new 来创建，既在栈空间分配一个地址空间，又在堆空间分配对象的类变量;<br/><br>  4、方法的引用参数，在栈空间分配一个地址空间，并指向堆空间的对象区，当方法调用完后从栈空间回收;<br/><br>  5、局部变量 new 出来时，在栈空间和堆空间中分配空间，当局部变量生命周期结束后，栈空间立刻被回收，堆空间区域等待 GC 回收;<br/><br>  6、方法调用时传入的实际参数，先在栈空间分配，在方法调用完成后从栈空间释放;<br/><br>  7、字符串常量在 DATA 区域分配 ， this 在堆空间分配;<br/><br>  8、数组既在栈空间分配数组名称， 又在堆空间分配数组实际的大小。<br/></p>
-<h2 id="8、wait-与sleep-的区别"><a href="#8、wait-与sleep-的区别" class="headerlink" title="8、wait()与sleep()的区别"></a>8、wait()与sleep()的区别</h2><p>a)sleep()来自Thread类，和wait()来自Object类.调用sleep()方法的过程中，线程不会释放对象锁。而 调用 wait 方法线程会释放对象锁。<br/><br>  b)sleep()睡眠后不出让系统资源，wait让其他线程可以占用CPU。<br/><br>  c)sleep(milliseconds)需要指定一个睡眠时间，时间一到会自动唤醒.而wait()需要配合notify()或者notifyAll()使用。<br/></p>
-<h2 id="9、说说你对-Java-中反射的理解-？"><a href="#9、说说你对-Java-中反射的理解-？" class="headerlink" title="9、说说你对 Java 中反射的理解 ？"></a>9、说说你对 Java 中反射的理解 ？</h2><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
-<h2 id="10、写出常见的5个RuntimeException"><a href="#10、写出常见的5个RuntimeException" class="headerlink" title="10、写出常见的5个RuntimeException"></a>10、写出常见的5个RuntimeException</h2><p>     (1)java.lang.NullPointerException空指针异常，出现原因：调用了未经初始化的对性爱那个或者不存在的对象。<br/><br>       (2)ClassNoFoundException 指定类找不到，出现原因：类的名称和路径加载错误，通常是试图通过字符串来加载某个类时可能引发异常。<br/><br>       (3)NumberFormatException字符串转换为数字异常，出现原因：字符串数据中包含非数字型字符。<br/><br>       (4)IndexOutOfBoundsException数组下标越界异常<br/><br>       (5)IllegalArgumentException 方法传递参数错误<br/><br>       (6)ClassCastException数据类型转换异常<br/><br>       (7)NoClassDefFoundExcetion 未找到类定义错误<br/><br>       (8)SQLException SQL异常<br/><br>       (9)InstantiationException实例化异常<br/><br>       (10)NoSuchMethodExceptioin 方法不存在异常<br/></p>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -2559,6 +2538,27 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
+    <title>java基础面试题</title>
+    <url>/2020/04/06/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="java基础面试题"><a href="#java基础面试题" class="headerlink" title="java基础面试题"></a>java基础面试题</h1><h2 id="1、面向对象都有哪些特性以及你对这些特性的理解-？"><a href="#1、面向对象都有哪些特性以及你对这些特性的理解-？" class="headerlink" title="1、面向对象都有哪些特性以及你对这些特性的理解 ？"></a>1、面向对象都有哪些特性以及你对这些特性的理解 ？</h2><p>答：面向对象的三大特征：1.继承  2.封装 3.多态性<br/><br>  （1）继承：就是保留父类的属性，开扩新的东西。通过子类可以实现继承，子类继承父类的所有状态和行为，同时添加自身的状态和行为。<br/><br>  （2）封装：就是类的私有化。将代码及处理数据绑定在一起的一种编程机制，该机制保证程序和数据不受外部干扰。<br/><br>  （3）多态：是允许将父对象设置成为和一个和多个它的子对象相等的技术。包括重载和重写。重载为编译时多态，重写是运行时多态。<br/></p>
+<h2 id="2、什么是自动装箱和拆箱？"><a href="#2、什么是自动装箱和拆箱？" class="headerlink" title="2、什么是自动装箱和拆箱？"></a>2、什么是自动装箱和拆箱？</h2><p>  答：自动装箱就是Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。因为这里的装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。<br/><br>  原始类型byte,short,char,int,long,float,double和boolean对应的封装类为Byte,Short,Character,Integer,Long,Float,Double,Boolean。自动装箱和拆箱从Java 1.5开始引入，目的是将原始类型值转自动地转换成对应的对象。自动装箱与拆箱的机制可以让我们在Java的变量赋值或者是方法调用等情况下使用原始类型或者对象类型更加简单直接。<br/></p>
+<h2 id="3、什么是-java-序列化，如何实现-java-序列化？"><a href="#3、什么是-java-序列化，如何实现-java-序列化？" class="headerlink" title="3、什么是 java 序列化，如何实现 java 序列化？"></a>3、什么是 java 序列化，如何实现 java 序列化？</h2><p>  答：序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发的问题。<br/><br>  序 列 化 的 实 现 ： 将 需 要 被 序 列 化 的 类 实 现 Serializable 接 口 ， 该 接 口 没 有 需 要 实 现 的 方 法 ，implements Serializable 只是为了标注该对象是可被序列化的，然后使用一个输出流(如： FileOutputStream)来构造一个 ObjectOutputStream(对象流)对象，接着，使用 ObjectOutputStream 对象的 writeObject(Object obj)方法就可以将参数为 obj 的对象写出(即保存其状态)，要恢复的话则用输入流。<br/></p>
+<h2 id="4、char-型变量中能不能存储一个中文汉字，为什么？"><a href="#4、char-型变量中能不能存储一个中文汉字，为什么？" class="headerlink" title="4、char 型变量中能不能存储一个中文汉字，为什么？"></a>4、char 型变量中能不能存储一个中文汉字，为什么？</h2><p>  答：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。</p>
+<h2 id="5、List-和-Map、-Set-的区别？"><a href="#5、List-和-Map、-Set-的区别？" class="headerlink" title="5、List 和 Map、 Set 的区别？"></a>5、List 和 Map、 Set 的区别？</h2><p>  答：List 和 Set 是存储单列数据的集合， Map 是存储键和值这样的双列数据的集合； List 中存储的数据是有顺序，并且允许重复； Map 中存储的数据是没有顺序的，其键是不能重复的，它的值是可以有重复的， Set 中存储的数据是无序的，且不允许有重复，但元素在集合中的位置由元素的 hashcode 决定，位置是固定的（Set 集合根据 hashcode 来进行数据的存储，所以位置是固定的，但是位置不是用户可以控制的，所以对于用户来说 set 中的元素还是无序的） 。</p>
+<h2 id="6、HashMap-和-HashTable-有什么区别"><a href="#6、HashMap-和-HashTable-有什么区别" class="headerlink" title="6、HashMap 和 HashTable 有什么区别?"></a>6、HashMap 和 HashTable 有什么区别?</h2><p>  HashMap 是线程不安全的,HashMap 是一个接口,是 Map 的一个子接口,是将键映射到值得对象,不允许键值重复允许空键和空值;由于非线程安全,HashMap 的效率要较 HashTable 的效率高一些.HashTable 是线程安全的一个集合,不允许 null 值作为一个 key 值或者 Value 值;HashTable 是 sychronize,多个线程访问时不需要自己为它的方法实现同步,而 HashMap 在被多个线程访问的时候需要自己为它的方法实现同步。</p>
+<h2 id="7、谈谈-JVM-的内存结构和内存分配？"><a href="#7、谈谈-JVM-的内存结构和内存分配？" class="headerlink" title="7、谈谈 JVM 的内存结构和内存分配？"></a>7、谈谈 JVM 的内存结构和内存分配？</h2><p>a)Java 内存模型 <br/><br>    Java 虚拟机将其管辖的内存大致分三个逻辑部分：方法区(Method Area)、 Java 栈和 Java 堆。<br/><br>  1、方法区是静态分配的，编译器将变量绑定在某个存储位置上，而且这些绑定不会在运行时改变。常数池，源代码中的命名常量、 String 常量和 static 变量保存在方法区。<br/><br>  2、 Java Stack 是一个逻辑概念，特点是后进先出。一个栈的空间可能是连续的，也可能是不连续的。最典型的 Stack 应用是方法的调用， Java 虚拟机每调用一次方法就创建一个方法帧（frame），退出该方法则对应的 方法帧被弹出(pop)。栈中存储的数据也是运行时确定的。<br/><br>  3、 Java 堆分配(heap allocation)意味着以随意的顺序，在运行时进行存储空间分配和收回的内存管理模型。堆中存储的数据常常是大小、数量和生命期在编译时无法确定的。 Java 对象的内存总是在 heap 中分配。<br/><br>    b) java 内存分配<br/><br>  1、基础数据类型直接在栈空间分配;<br/><br>  2、方法的形式参数，直接在栈空间分配，当方法调用完成后从栈空间回收;<br/><br>  3、引用数据类型，需要用 new 来创建，既在栈空间分配一个地址空间，又在堆空间分配对象的类变量;<br/><br>  4、方法的引用参数，在栈空间分配一个地址空间，并指向堆空间的对象区，当方法调用完后从栈空间回收;<br/><br>  5、局部变量 new 出来时，在栈空间和堆空间中分配空间，当局部变量生命周期结束后，栈空间立刻被回收，堆空间区域等待 GC 回收;<br/><br>  6、方法调用时传入的实际参数，先在栈空间分配，在方法调用完成后从栈空间释放;<br/><br>  7、字符串常量在 DATA 区域分配 ， this 在堆空间分配;<br/><br>  8、数组既在栈空间分配数组名称， 又在堆空间分配数组实际的大小。<br/></p>
+<h2 id="8、wait-与sleep-的区别"><a href="#8、wait-与sleep-的区别" class="headerlink" title="8、wait()与sleep()的区别"></a>8、wait()与sleep()的区别</h2><p>a)sleep()来自Thread类，和wait()来自Object类.调用sleep()方法的过程中，线程不会释放对象锁。而 调用 wait 方法线程会释放对象锁。<br/><br>  b)sleep()睡眠后不出让系统资源，wait让其他线程可以占用CPU。<br/><br>  c)sleep(milliseconds)需要指定一个睡眠时间，时间一到会自动唤醒.而wait()需要配合notify()或者notifyAll()使用。<br/></p>
+<h2 id="9、说说你对-Java-中反射的理解-？"><a href="#9、说说你对-Java-中反射的理解-？" class="headerlink" title="9、说说你对 Java 中反射的理解 ？"></a>9、说说你对 Java 中反射的理解 ？</h2><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
+<h2 id="10、写出常见的5个RuntimeException"><a href="#10、写出常见的5个RuntimeException" class="headerlink" title="10、写出常见的5个RuntimeException"></a>10、写出常见的5个RuntimeException</h2><p>     (1)java.lang.NullPointerException空指针异常，出现原因：调用了未经初始化的对性爱那个或者不存在的对象。<br/><br>       (2)ClassNoFoundException 指定类找不到，出现原因：类的名称和路径加载错误，通常是试图通过字符串来加载某个类时可能引发异常。<br/><br>       (3)NumberFormatException字符串转换为数字异常，出现原因：字符串数据中包含非数字型字符。<br/><br>       (4)IndexOutOfBoundsException数组下标越界异常<br/><br>       (5)IllegalArgumentException 方法传递参数错误<br/><br>       (6)ClassCastException数据类型转换异常<br/><br>       (7)NoClassDefFoundExcetion 未找到类定义错误<br/><br>       (8)SQLException SQL异常<br/><br>       (9)InstantiationException实例化异常<br/><br>       (10)NoSuchMethodExceptioin 方法不存在异常<br/></p>
+]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>maven安装与配置idea配置maven</title>
     <url>/2020/05/03/maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEmaven/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="maven介绍"><a href="#maven介绍" class="headerlink" title="maven介绍"></a>maven介绍</h2><p>Apache Maven是一个软件项目管理和理解工具。基于项目对象模型（POM）的概念，Maven可以从中央信息管理项目的构建，报告和文档。<br>Maven是一个项目管理和整合的工具。Maven为开发者提供了一套完整的构建生命周期框架。开发团队基本不用花多少时间就能自动完成工程的基础构建配置，因为Maven使用了一个标准的目录结构和一个默认的构建生命周期。在创建报告、检查、构建和测试自动配置时，Maven可以让开发者的工作变得更简单。<br>官网：<a href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a></p>
@@ -2578,6 +2578,33 @@ order by... -- 根据指定的列进行排序
       <tags>
         <tag>idea</tag>
         <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/2020/05/01/%E5%85%B3%E4%BA%8E%E6%88%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-订阅："><a href="#1-订阅：" class="headerlink" title="1.订阅："></a>1.订阅：</h3><p>网站：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a></p>
+<p>公众号：爱敲代码的鹏</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-81e85115b3a2458fae718b858a0680da.png" alt="扫码_搜索联合传播样式-标准色版"></p>
+<p>小程序：爱敲代码的我</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"></p>
+<p>app（安卓.苹果）：</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/app-e8bc0b4c209c4ecfa5fb6c8d70ab9b45.png" alt="app"></p>
+<p>抖音：</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%8A%96%E9%9F%B33-ee272066c20242c2b559967f64173e93.jpg" alt="抖音3"></p>
+<p>B站：<a href="https://space.bilibili.com/106097751" target="_blank" rel="noopener">https://space.bilibili.com/106097751</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/bzhan-71bc0f420d554893bdd69ae0fadf6ecc.png" alt="bzhan"></p>
+<h3 id="2-关于："><a href="#2-关于：" class="headerlink" title="2.关于："></a>2.关于：</h3><p>刚刚毕业的计算机专业的大学生，Java开发程序员一枚。<br/></p>
+<p>邮箱：<a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a><br/></p>
+<p>微信：</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-d0b96c5b99304fda9bc3fb49ed8b33d2.png" alt="image.png"><br/><br>Github：<a href="https://github.com/zhangpengpeng69" target="_blank" rel="noopener">https://github.com/zhangpengpeng69</a><br/><br>博客：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br>Github博客：<a href="https://github.com/zhangpengpeng69/ZPeng-s-Blog" target="_blank" rel="noopener">https://github.com/zhangpengpeng69/ZPeng-s-Blog</a><br/></p>
+<h3 id="3-本博客："><a href="#3-本博客：" class="headerlink" title="3.本博客："></a>3.本博客：</h3><p>Halo：<a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a>  –是一款现代化的个人独立博客系统<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-6500355f16f0478cb6659923e204170d.png" alt="image.png"><br>社区：<a href="https://bbs.halo.run/" target="_blank" rel="noopener">https://bbs.halo.run/</a><br/><br>官网：<a href="https://halo.run/" target="_blank" rel="noopener">https://halo.run/</a></p>
+<h3 id="4-留言："><a href="#4-留言：" class="headerlink" title="4.留言："></a>4.留言：</h3><p>在下方留言加友链&gt;&gt;&gt;&gt;&gt;&gt;</p>
+]]></content>
+      <categories>
+        <category>myblog</category>
+      </categories>
+      <tags>
+        <tag>me</tag>
       </tags>
   </entry>
   <entry>
@@ -2607,22 +2634,6 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
       <tags>
         <tag>wlop</tag>
         <tag>图片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于本站</title>
-    <url>/2020/05/01/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h1><blockquote>
-<p>1.本网站2019年12月上线;<br/><br> 2 访问网址: <a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br> 3.本站为个人博客网站,由本人个人维护,仅为学习所用;<br/><br> 4.网站源码并不是完全由本人开发,取自github开源项目;<br/><br> 5.本站所有文章并非全部个人原创,由本人整理发布,如有错误，请谅解;<br/><br> 6.博客中转载文章会写明来源，如果有异议，请及时联系我处理;<br/><br> 6.本网站部署在阿里云服务器,配置不高,有时加载会慢一些;<br/><br> 7.希望多多评论呦!<br/></p>
-</blockquote>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢:"></a>感谢:</h3><p><a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a></p>
-<p><a href="http://www.tedu.cn/" target="_blank" rel="noopener">http://www.tedu.cn/</a></p>
-]]></content>
-      <categories>
-        <category>myblog</category>
-      </categories>
-      <tags>
-        <tag>me</tag>
       </tags>
   </entry>
   <entry>
@@ -2685,24 +2696,13 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
       </tags>
   </entry>
   <entry>
-    <title>关于我</title>
-    <url>/2020/05/01/%E5%85%B3%E4%BA%8E%E6%88%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-订阅："><a href="#1-订阅：" class="headerlink" title="1.订阅："></a>1.订阅：</h3><p>网站：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a></p>
-<p>公众号：爱敲代码的鹏</p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-81e85115b3a2458fae718b858a0680da.png" alt="扫码_搜索联合传播样式-标准色版"></p>
-<p>小程序：爱敲代码的我</p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"></p>
-<p>app（安卓.苹果）：</p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/app-e8bc0b4c209c4ecfa5fb6c8d70ab9b45.png" alt="app"></p>
-<p>抖音：</p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%8A%96%E9%9F%B33-ee272066c20242c2b559967f64173e93.jpg" alt="抖音3"></p>
-<p>B站：<a href="https://space.bilibili.com/106097751" target="_blank" rel="noopener">https://space.bilibili.com/106097751</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/bzhan-71bc0f420d554893bdd69ae0fadf6ecc.png" alt="bzhan"></p>
-<h3 id="2-关于："><a href="#2-关于：" class="headerlink" title="2.关于："></a>2.关于：</h3><p>刚刚毕业的计算机专业的大学生，Java开发程序员一枚。<br/></p>
-<p>邮箱：<a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a><br/></p>
-<p>微信：</p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-d0b96c5b99304fda9bc3fb49ed8b33d2.png" alt="image.png"><br/><br>Github：<a href="https://github.com/zhangpengpeng69" target="_blank" rel="noopener">https://github.com/zhangpengpeng69</a><br/><br>博客：<a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br>Github博客：<a href="https://github.com/zhangpengpeng69/ZPeng-s-Blog" target="_blank" rel="noopener">https://github.com/zhangpengpeng69/ZPeng-s-Blog</a><br/></p>
-<h3 id="3-本博客："><a href="#3-本博客：" class="headerlink" title="3.本博客："></a>3.本博客：</h3><p>Halo：<a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a>  –是一款现代化的个人独立博客系统<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-6500355f16f0478cb6659923e204170d.png" alt="image.png"><br>社区：<a href="https://bbs.halo.run/" target="_blank" rel="noopener">https://bbs.halo.run/</a><br/><br>官网：<a href="https://halo.run/" target="_blank" rel="noopener">https://halo.run/</a></p>
-<h3 id="4-留言："><a href="#4-留言：" class="headerlink" title="4.留言："></a>4.留言：</h3><p>在下方留言加友链&gt;&gt;&gt;&gt;&gt;&gt;</p>
+    <title>关于本站</title>
+    <url>/2020/05/01/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h1><blockquote>
+<p>1.本网站2019年12月上线;<br/><br> 2 访问网址: <a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a><br/><br> 3.本站为个人博客网站,由本人个人维护,仅为学习所用;<br/><br> 4.网站源码并不是完全由本人开发,取自github开源项目;<br/><br> 5.本站所有文章并非全部个人原创,由本人整理发布,如有错误，请谅解;<br/><br> 6.博客中转载文章会写明来源，如果有异议，请及时联系我处理;<br/><br> 6.本网站部署在阿里云服务器,配置不高,有时加载会慢一些;<br/><br> 7.希望多多评论呦!<br/></p>
+</blockquote>
+<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢:"></a>感谢:</h3><p><a href="https://github.com/halo-dev/halo" target="_blank" rel="noopener">https://github.com/halo-dev/halo</a></p>
+<p><a href="http://www.tedu.cn/" target="_blank" rel="noopener">http://www.tedu.cn/</a></p>
 ]]></content>
       <categories>
         <category>myblog</category>
@@ -2752,6 +2752,58 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
       <tags>
         <tag>java</tag>
         <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>命令行录制工具asciinema</title>
+    <url>/2020/04/22/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7asciinema/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
+<p>Record and share your terminal sessions, the right way.</p>
+</blockquote>
+<blockquote>
+<p><strong>简单录制</strong><br>在终端上记录您的工作。要开始只是运行asciinema rec，完成使用Ctrl-D或输入exit即可</p>
+</blockquote>
+<blockquote>
+<p><strong>复制粘贴</strong><br>每当您看到要在自己的终端中尝试的命令时，只需暂停播放器并复制粘贴所需的内容即可。毕竟只是文本！</p>
+</blockquote>
+<blockquote>
+<p><strong>嵌入</strong><br>轻松地在博客文章，项目文档页面或会议演讲幻灯片中嵌入asciicast播放器。</p>
+</blockquote>
+<p>官网例子：</p>
+<script id="asciicast-239367" src="https://asciinema.org/a/239367.js" async></script>
+
+
+<p>官网：<a href="https://asciinema.org/" target="_blank" rel="noopener">https://asciinema.org/</a><br>官方教程：<a href="https://asciinema.org/docs/how-it-works" target="_blank" rel="noopener">https://asciinema.org/docs/how-it-works</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>前提：<br>1.了解服务器相关知识<br>2.注册网站账号</p>
+</blockquote>
+<p>1.在linux上安装asciinema<br>我的服务器系统为centos7，下面以这个为例，不同系统请参考官方详细安装文档。<br>#安装epel发行包<br>yum -y install epel-release<br>yum -y install asciinema</p>
+<p>#用命令测试版本<br>asciinema –version</p>
+<p>#安装expect命令 用于交互<br>yum -y install expect<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-037157144b674b64bf12dffbcb3ea4cd.png" alt="image.png"><br>2. 录制</p>
+<p>执行录制<br>asciinema rec test   （test为文件名，可自定义）</p>
+<p>这里我先胡乱输入一些东西。<br>ctrl+d退出录屏，回车则上传录制内容到网站，ctrl+c可以保存到本地（后续也可以通过asciinema upload来上传）</p>
+<p>执行播放<br>asciinema play test</p>
+<p>上传asciinema upload test<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-f80895e02e3942c4bcd74576ebef35a1.png" alt="image.png"></p>
+<ol start="3">
+<li><p>打开网址或者进入网站就会发现已经有这个东西了<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-73db2980e9b24cab91abc27e3e428269.png" alt="image.png"></p>
+</li>
+<li><p>使用方法<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-4e9cc7e47d24405781f2f85c3e6774cf.png" alt="image.png"></p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Link</span><br><span class="line">https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj</span><br><span class="line"></span><br><span class="line">Append ?t&#x3D;30 to start the playback at 30s, ?t&#x3D;3:20 to start the playback at 3m 20s.</span><br><span class="line"></span><br><span class="line">Embed image link</span><br><span class="line">Use snippets below to display a screenshot linking to this recording.</span><br><span class="line">Useful in places where scripts are not allowed (e.g. in a project&#39;s README file).</span><br><span class="line"></span><br><span class="line">HTML:</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">Markdown:</span><br><span class="line">[![asciicast](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg)](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj)</span><br><span class="line"></span><br><span class="line">Embed the player</span><br><span class="line">If you&#39;re embedding on your own page or on a site which permits script tags, you can use the full player widget:</span><br><span class="line"></span><br><span class="line">&lt;script id&#x3D;&quot;asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj&quot; src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">Paste the above script tag where you want the player to be displayed on your page.</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>效果<script id="asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj" src="https://asciinema.org/a/E9zOTdPU5eb1CoC9F8EXQdIVj.js" async></script>
+
+</li>
+</ol>
+<p>6.结束</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>asciinema</tag>
       </tags>
   </entry>
   <entry>
@@ -2856,58 +2908,6 @@ end</code></pre><p>测试类</p>
       </tags>
   </entry>
   <entry>
-    <title>命令行录制工具asciinema</title>
-    <url>/2020/04/22/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7asciinema/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
-<p>Record and share your terminal sessions, the right way.</p>
-</blockquote>
-<blockquote>
-<p><strong>简单录制</strong><br>在终端上记录您的工作。要开始只是运行asciinema rec，完成使用Ctrl-D或输入exit即可</p>
-</blockquote>
-<blockquote>
-<p><strong>复制粘贴</strong><br>每当您看到要在自己的终端中尝试的命令时，只需暂停播放器并复制粘贴所需的内容即可。毕竟只是文本！</p>
-</blockquote>
-<blockquote>
-<p><strong>嵌入</strong><br>轻松地在博客文章，项目文档页面或会议演讲幻灯片中嵌入asciicast播放器。</p>
-</blockquote>
-<p>官网例子：</p>
-<script id="asciicast-239367" src="https://asciinema.org/a/239367.js" async></script>
-
-
-<p>官网：<a href="https://asciinema.org/" target="_blank" rel="noopener">https://asciinema.org/</a><br>官方教程：<a href="https://asciinema.org/docs/how-it-works" target="_blank" rel="noopener">https://asciinema.org/docs/how-it-works</a></p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>前提：<br>1.了解服务器相关知识<br>2.注册网站账号</p>
-</blockquote>
-<p>1.在linux上安装asciinema<br>我的服务器系统为centos7，下面以这个为例，不同系统请参考官方详细安装文档。<br>#安装epel发行包<br>yum -y install epel-release<br>yum -y install asciinema</p>
-<p>#用命令测试版本<br>asciinema –version</p>
-<p>#安装expect命令 用于交互<br>yum -y install expect<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-037157144b674b64bf12dffbcb3ea4cd.png" alt="image.png"><br>2. 录制</p>
-<p>执行录制<br>asciinema rec test   （test为文件名，可自定义）</p>
-<p>这里我先胡乱输入一些东西。<br>ctrl+d退出录屏，回车则上传录制内容到网站，ctrl+c可以保存到本地（后续也可以通过asciinema upload来上传）</p>
-<p>执行播放<br>asciinema play test</p>
-<p>上传asciinema upload test<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-f80895e02e3942c4bcd74576ebef35a1.png" alt="image.png"></p>
-<ol start="3">
-<li><p>打开网址或者进入网站就会发现已经有这个东西了<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-73db2980e9b24cab91abc27e3e428269.png" alt="image.png"></p>
-</li>
-<li><p>使用方法<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-4e9cc7e47d24405781f2f85c3e6774cf.png" alt="image.png"></p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Link</span><br><span class="line">https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj</span><br><span class="line"></span><br><span class="line">Append ?t&#x3D;30 to start the playback at 30s, ?t&#x3D;3:20 to start the playback at 3m 20s.</span><br><span class="line"></span><br><span class="line">Embed image link</span><br><span class="line">Use snippets below to display a screenshot linking to this recording.</span><br><span class="line">Useful in places where scripts are not allowed (e.g. in a project&#39;s README file).</span><br><span class="line"></span><br><span class="line">HTML:</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">Markdown:</span><br><span class="line">[![asciicast](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg)](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj)</span><br><span class="line"></span><br><span class="line">Embed the player</span><br><span class="line">If you&#39;re embedding on your own page or on a site which permits script tags, you can use the full player widget:</span><br><span class="line"></span><br><span class="line">&lt;script id&#x3D;&quot;asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj&quot; src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">Paste the above script tag where you want the player to be displayed on your page.</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>效果<script id="asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj" src="https://asciinema.org/a/E9zOTdPU5eb1CoC9F8EXQdIVj.js" async></script>
-
-</li>
-</ol>
-<p>6.结束</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>asciinema</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小工具</title>
     <url>/2020/04/14/%E5%B0%8F%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://lovelive.tools/" target="_blank" rel="noopener">https://lovelive.tools/</a></p>
@@ -2941,6 +2941,24 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
       <tags>
         <tag>html</tag>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本博客微信小程序正式上线</title>
+    <url>/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p>
+<h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p>
+<p>欢迎大家来看看哟！</p>
+<h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p>
+<h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p>
+<h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>
+]]></content>
+      <categories>
+        <category>myblog</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
       </tags>
   </entry>
   <entry>
@@ -3044,24 +3062,6 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>本博客微信小程序正式上线</title>
-    <url>/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p>
-<h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p>
-<p>欢迎大家来看看哟！</p>
-<h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p>
-<h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p>
-<h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>
-]]></content>
-      <categories>
-        <category>myblog</category>
-      </categories>
-      <tags>
-        <tag>小程序</tag>
       </tags>
   </entry>
   <entry>
