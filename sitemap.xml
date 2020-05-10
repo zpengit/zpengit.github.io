@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zpengit.github.io/photo/index.html</loc>
+    
+    <lastmod>2020-05-10T13:56:11.126Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zpengit.github.io/2020/05/08/vuepress+github%E9%83%A8%E7%BD%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2020-05-08T06:32:08.376Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://zpengit.github.io/artitalk/index.html</loc>
     
     <lastmod>2020-05-07T06:19:48.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zpengit.github.io/photo/index.html</loc>
-    
-    <lastmod>2020-05-07T06:17:58.153Z</lastmod>
     
   </url>
   
