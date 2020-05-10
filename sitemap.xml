@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zpengit.github.io/about/index.html</loc>
+    
+    <lastmod>2020-05-10T15:55:36.196Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zpengit.github.io/photo/index.html</loc>
     
     <lastmod>2020-05-10T13:56:11.126Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>https://zpengit.github.io/tags/index.html</loc>
     
     <lastmod>2020-05-05T13:36:40.348Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zpengit.github.io/about/index.html</loc>
-    
-    <lastmod>2020-05-05T13:34:15.610Z</lastmod>
     
   </url>
   

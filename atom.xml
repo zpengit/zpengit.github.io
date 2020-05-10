@@ -38,9 +38,9 @@
       <category term="前端" scheme="https://zpengit.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="github" scheme="https://zpengit.github.io/tags/github/"/>
-    
       <category term="java" scheme="https://zpengit.github.io/tags/java/"/>
+    
+      <category term="github" scheme="https://zpengit.github.io/tags/github/"/>
     
       <category term="vue" scheme="https://zpengit.github.io/tags/vue/"/>
     
@@ -211,32 +211,6 @@
   </entry>
   
   <entry>
-    <title>本博客微信小程序正式上线</title>
-    <link href="https://zpengit.github.io/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/"/>
-    <id>https://zpengit.github.io/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</id>
-    <published>2020-05-01T08:00:47.000Z</published>
-    <updated>2020-05-01T18:06:44.748Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p><h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p><p>欢迎大家来看看哟！</p><h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p><h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p><h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-      <category term="myblog" scheme="https://zpengit.github.io/categories/myblog/"/>
-    
-    
-      <category term="小程序" scheme="https://zpengit.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我的java学习路线总结</title>
     <link href="https://zpengit.github.io/2020/05/01/%E6%88%91%E7%9A%84java%E4%B9%8B%E8%B7%AF%E6%80%BB%E7%BB%93/"/>
     <id>https://zpengit.github.io/2020/05/01/%E6%88%91%E7%9A%84java%E4%B9%8B%E8%B7%AF%E6%80%BB%E7%BB%93/</id>
@@ -261,6 +235,32 @@
       <category term="java" scheme="https://zpengit.github.io/tags/java/"/>
     
       <category term="me" scheme="https://zpengit.github.io/tags/me/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本博客微信小程序正式上线</title>
+    <link href="https://zpengit.github.io/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/"/>
+    <id>https://zpengit.github.io/2020/05/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF/</id>
+    <published>2020-05-01T08:00:47.000Z</published>
+    <updated>2020-05-01T18:06:44.748Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="经过一番努力，本博客微信小程序正式上线"><a href="#经过一番努力，本博客微信小程序正式上线" class="headerlink" title="经过一番努力，本博客微信小程序正式上线"></a>经过一番努力，本博客微信小程序正式上线</h2><h3 id="1-微信搜索"><a href="#1-微信搜索" class="headerlink" title="1.微信搜索"></a>1.微信搜索</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88-1eba896f22fd4b409edd064695228758.png" alt="扫码_搜索联合传播样式-标准色版"><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/%E6%90%9C%E7%B4%A2%E6%A1%86%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88-170e1e41e25241519090fa8a932779c6.png" alt="搜索框传播样式-白色版"></p><h3 id="2-开发过程"><a href="#2-开发过程" class="headerlink" title="2.开发过程"></a>2.开发过程</h3><p>又掉了几根头发。。。。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-17-51-0a06443abe794b38b40d76502b774263.png" alt="Snipaste_2020-03-31_13-17-51"></p><p>欢迎大家来看看哟！</p><h2 id="3-小程序截图"><a href="#3-小程序截图" class="headerlink" title="3.小程序截图"></a>3.小程序截图</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-31-6cbf7ded31b1415786f4ab9aa58f7402.png" alt="Snipaste_2020-03-31_13-21-31"></p><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/03/Snipaste_2020-03-31_13-21-44-7ab41765a4e04ed2b41391486d119c29.png" alt="Snipaste_2020-03-31_13-21-44"><br>哈哈~</p><h2 id="4-个人博客"><a href="#4-个人博客" class="headerlink" title="4.个人博客"></a>4.个人博客</h2><p><a href="https://www.zhangpeng.fun/" target="_blank" rel="noopener">https://www.zhangpeng.fun/</a>  —-我的个人博客<br/><br><a href="mailto:zpeng_it@163.com">zpeng_it@163.com</a>   —- 我的邮箱</p><h2 id="5-感谢"><a href="#5-感谢" class="headerlink" title="5.感谢"></a>5.感谢</h2><p><a href="https://github.com/aquanlerou/WeHalo" target="_blank" rel="noopener">WeHalo</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="myblog" scheme="https://zpengit.github.io/categories/myblog/"/>
+    
+    
+      <category term="小程序" scheme="https://zpengit.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
