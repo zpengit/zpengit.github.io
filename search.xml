@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github上那些Java面试、学习相关仓库</title>
+    <url>/2020/04/13/Github%E4%B8%8A%E9%82%A3%E4%BA%9BJava%E9%9D%A2%E8%AF%95%E3%80%81%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-JavaGuide"><a href="#1-JavaGuide" class="headerlink" title="1.JavaGuide"></a>1.JavaGuide</h3><p>•Github地址： <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a> 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
+<h3 id="2-CS-Notes"><a href="#2-CS-Notes" class="headerlink" title="2.CS-Notes"></a>2.CS-Notes</h3><p>•Github 地址：<a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a> [2]•Star: 68.3k•介绍: 技术面试必备基础知识、Leetcode 题解、后端面试、Java 面试、春招、秋招、操作系统、计算机网络、系统设计。</p>
+<h3 id="3-advanced-java"><a href="#3-advanced-java" class="headerlink" title="3.advanced-java"></a>3.advanced-java</h3><p>•Github地址：<a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">https://github.com/doocs/advanced-java</a> [3]•star: 23.4k•介绍: 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。</p>
+<h3 id="4-JCSprout"><a href="#4-JCSprout" class="headerlink" title="4.JCSprout"></a>4.JCSprout</h3><p>•Github地址：<a href="https://github.com/crossoverJie/JCSprout" target="_blank" rel="noopener">https://github.com/crossoverJie/JCSprout</a> [4]•star: 21.2k•介绍: Java Core Sprout：处于萌芽阶段的 Java 核心知识库。</p>
+<h3 id="5-technology-talk"><a href="#5-technology-talk" class="headerlink" title="5.technology-talk"></a>5.technology-talk</h3><p>•Github地址： <a href="https://github.com/aalansehaiyang/technology-talk[5]•star" target="_blank" rel="noopener">https://github.com/aalansehaiyang/technology-talk[5]•star</a>: 6.1k•介绍: 汇总java生态圈常用技术框架、开源中间件，系统架构、项目管理、经典架构案例、数据库、常用三方库、线上运维等知识。</p>
+<h3 id="6-Linux-Tutorial"><a href="#6-Linux-Tutorial" class="headerlink" title="6.Linux-Tutorial"></a>6.Linux-Tutorial</h3><p>后端（尤其是Java）程序员的 Linux 学习仓库-Linux-Tutorial：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="noopener">https://github.com/judasn/Linux-Tutorial</a> ( Star:4.6k)</p>
+]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dubbo</title>
+    <url>/2020/03/28/Dubbo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
+<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
+<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
+<p>层级关系与对应的协议.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
+<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
+<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
+<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
+<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
+<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
+<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+
+<p>1.6.4    轮循算法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Dubbo</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chrome 插件推荐</title>
     <url>/2020/04/15/Chrome%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Chrome-插件推荐"><a href="#Chrome-插件推荐" class="headerlink" title="Chrome 插件推荐"></a>Chrome 插件推荐</h2><p>&emsp;&emsp;不知不觉我的chrome浏览器装了如此之多的插件，以前都没注意过，现在就简单介绍几个给大家，说明，不建议大家安装太多插件，因为会占用太多内存。&emsp;<br>&emsp;&emsp;作为一名开发人员，浏览器是我们平时用到的最多的工具之一，信很多人都在使用 Chrome 浏览器，其流畅的浏览体验得到了不少用户的偏爱，但流畅只是一方面， Chrome 最大的优势还是其支持众多强大好用的扩展程序,以下都是我正在使用或用过的，个人认为比较实用的，排名不分先后。</p>
@@ -64,65 +123,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dubbo</title>
-    <url>/2020/03/28/Dubbo/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="1-1-SOA思想"><a href="#1-1-SOA思想" class="headerlink" title="1.1 SOA思想"></a>1.1 SOA思想</h2><h3 id="1-1-1-SOA介绍"><a href="#1-1-1-SOA介绍" class="headerlink" title="1.1.1 SOA介绍"></a>1.1.1 SOA介绍</h3><p><strong>SOA</strong> （面向服务的架构）<br/><br>  面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）进行拆分，并通过这些服务之间定义良好的接口和协议联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构件在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ae856a7313ea47bd8f74c64d9fa6222a.png" alt="image.png"></p>
-<h2 id="1-2-RPC协议"><a href="#1-2-RPC协议" class="headerlink" title="1.2 RPC协议"></a>1.2 RPC协议</h2><h3 id="1-2-1-RPC介绍"><a href="#1-2-1-RPC介绍" class="headerlink" title="1.2.1 RPC介绍"></a>1.2.1 RPC介绍</h3><p>  RPC是远程过程调用（Remote Procedure Call）的缩写形式。SAP系统RPC调用的原理其实很简单，有一些类似于三层构架的C/S系统，第三方的客户程序通过接口调用SAP内部的标准或自定义函数，获得函数返回的数据进行处理后显示或打印。<br/><br>  RPC:实现系统之间的通信,用户不需要了解底层原理.</p>
-<h3 id="1-1-2-RPC与HTTP区别"><a href="#1-1-2-RPC与HTTP区别" class="headerlink" title="1.1.2 RPC与HTTP区别"></a>1.1.2 RPC与HTTP区别</h3><p>网络7层协议如图所示.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-f5538a7b128f47afba3045baa6e87bf5.png" alt="image.png"></p>
-<p>层级关系与对应的协议.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c655388dc2494930aa4790fbba69eee7.png" alt="image.png"></p>
-<p>区别:<br/><br>  1.RPC是传输层协议(4层).而HTTP协议是应用层协议(7层).<br/><br>  2.RPC协议可以直接调用中立接口,HTTP协议不可以.<br/><br>  3.RPC通信协议是长链接,HTTP协议一般采用短连接需要3次握手(可以配置长链接添加请求头Keep-Alive: timeout=20).(长连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。)<br/><br>  4.RPC协议传递数据是加密压缩传输.HTTP协议需要传递大量的请求头信息.<br/><br>  5.RPC协议一般都有注册中心.有丰富的监控机制.<br/></p>
-<h2 id="1-3-Dubbo"><a href="#1-3-Dubbo" class="headerlink" title="1.3 Dubbo"></a>1.3 Dubbo</h2><h3 id="1-3-1-Dubbo介绍"><a href="#1-3-1-Dubbo介绍" class="headerlink" title="1.3.1 Dubbo介绍"></a>1.3.1 Dubbo介绍</h3><p>   Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。<br>   Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。<br><a href="http://dubbo.apache.org/en-us/" target="_blank" rel="noopener" title="http://dubbo.apache.org/en-us/">http://dubbo.apache.org/en-us/</a></p>
-<h3 id="1-3-2-Dubbo调用原理"><a href="#1-3-2-Dubbo调用原理" class="headerlink" title="1.3.2 Dubbo调用原理"></a>1.3.2 Dubbo调用原理</h3><hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-6c7a6b6179be4349b18d174583961183.png" alt="image.png"></p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-88b29022ac3148cf8390805f527708e0.png" alt="image.png"></p>
-<h2 id="1-4-Dubbo负载均衡算法"><a href="#1-4-Dubbo负载均衡算法" class="headerlink" title="1.4 Dubbo负载均衡算法"></a>1.4 Dubbo负载均衡算法</h2><h3 id="1-4-1-Nginx负载均衡机制"><a href="#1-4-1-Nginx负载均衡机制" class="headerlink" title="1.4.1 Nginx负载均衡机制"></a>1.4.1 Nginx负载均衡机制</h3><p>说明:nginx是服务端负载均衡,所有的请求都会由nginx实现负载.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-925dac6ef8b3409db365d2480b0cb6a6.png" alt="image.png"></p>
-<h3 id="1-4-2-Dubbo的负载均衡模式"><a href="#1-4-2-Dubbo的负载均衡模式" class="headerlink" title="1.4.2 Dubbo的负载均衡模式"></a>1.4.2 Dubbo的负载均衡模式</h3><p>dubbo采用客户端负载均衡机制,并且是正向代理.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-0573b98f88c2453f8ece46a0e497d2f0.png" alt="image.png"></p>
-<p>1.6.3    随机机制<br>说明:dubbo默认采用的负载均衡算法为随机.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"random"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-
-<p>1.6.4    轮循算法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">			loadbalance = <span class="string">"roundrobin"</span>)</span><br><span class="line">	<span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.5    IPHASH算法<br>说明:根据IP绑定服务器.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"consistenthash"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
-<p>1.6.6    最小访问量机制<br>说明:根据当前服务器的最小访问量实现负载均衡.(压力小先访问)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Reference</span>(timeout=<span class="number">3000</span>,check=<span class="keyword">false</span>,</span><br><span class="line">		loadbalance = <span class="string">"leastactive"</span>)</span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Dubbo</tag>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github上那些Java面试、学习相关仓库</title>
-    <url>/2020/04/13/Github%E4%B8%8A%E9%82%A3%E4%BA%9BJava%E9%9D%A2%E8%AF%95%E3%80%81%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="1-JavaGuide"><a href="#1-JavaGuide" class="headerlink" title="1.JavaGuide"></a>1.JavaGuide</h3><p>•Github地址： <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a> 64.0k• 介绍: 【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。</p>
-<h3 id="2-CS-Notes"><a href="#2-CS-Notes" class="headerlink" title="2.CS-Notes"></a>2.CS-Notes</h3><p>•Github 地址：<a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a> [2]•Star: 68.3k•介绍: 技术面试必备基础知识、Leetcode 题解、后端面试、Java 面试、春招、秋招、操作系统、计算机网络、系统设计。</p>
-<h3 id="3-advanced-java"><a href="#3-advanced-java" class="headerlink" title="3.advanced-java"></a>3.advanced-java</h3><p>•Github地址：<a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">https://github.com/doocs/advanced-java</a> [3]•star: 23.4k•介绍: 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务等领域知识，后端同学必看，前端同学也可学习。</p>
-<h3 id="4-JCSprout"><a href="#4-JCSprout" class="headerlink" title="4.JCSprout"></a>4.JCSprout</h3><p>•Github地址：<a href="https://github.com/crossoverJie/JCSprout" target="_blank" rel="noopener">https://github.com/crossoverJie/JCSprout</a> [4]•star: 21.2k•介绍: Java Core Sprout：处于萌芽阶段的 Java 核心知识库。</p>
-<h3 id="5-technology-talk"><a href="#5-technology-talk" class="headerlink" title="5.technology-talk"></a>5.technology-talk</h3><p>•Github地址： <a href="https://github.com/aalansehaiyang/technology-talk[5]•star" target="_blank" rel="noopener">https://github.com/aalansehaiyang/technology-talk[5]•star</a>: 6.1k•介绍: 汇总java生态圈常用技术框架、开源中间件，系统架构、项目管理、经典架构案例、数据库、常用三方库、线上运维等知识。</p>
-<h3 id="6-Linux-Tutorial"><a href="#6-Linux-Tutorial" class="headerlink" title="6.Linux-Tutorial"></a>6.Linux-Tutorial</h3><p>后端（尤其是Java）程序员的 Linux 学习仓库-Linux-Tutorial：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="noopener">https://github.com/judasn/Linux-Tutorial</a> ( Star:4.6k)</p>
-]]></content>
-      <categories>
-        <category>面试题</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nginx相关知识</title>
     <url>/2020/04/16/Nginx%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1-nginx-介绍"><a href="#1-nginx-介绍" class="headerlink" title="1.nginx 介绍"></a>1.nginx 介绍</h2><p>Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。</p>
@@ -170,112 +170,6 @@
       </categories>
       <tags>
         <tag>nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis</title>
-    <url>/2020/03/24/Redis/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="1、什么是Redis？"><a href="#1、什么是Redis？" class="headerlink" title="1、什么是Redis？"></a>1、什么是Redis？</h2><p>Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据flush到硬盘上进行保存。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。 Redis的出色之处不仅仅是性能，Redis最大的魅力是支持保存多种数据结构，此外单个value的最大限制是1GB，不像 memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能，比方说用他的List来做FIFO双向链表，实现一个轻量级的高性 能消息队列服务，用他的Set可以做高性能的tag系统等等。另外Redis也可以对存入的Key-Value设置expire时间，因此也可以被当作一 个功能加强版的memcached来用。 Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</p>
-<h2 id="2、Redis相比memcached有哪些优势？"><a href="#2、Redis相比memcached有哪些优势？" class="headerlink" title="2、Redis相比memcached有哪些优势？"></a>2、Redis相比memcached有哪些优势？</h2><p>(1) memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型</p>
-<p>(2) redis的速度比memcached快很多</p>
-<p>(3) redis可以持久化其数据</p>
-<h2 id="3、Redis支持哪几种数据类型？"><a href="#3、Redis支持哪几种数据类型？" class="headerlink" title="3、Redis支持哪几种数据类型？"></a>3、Redis支持哪几种数据类型？</h2><p>String、List、Set、Sorted Set、hashes</p>
-<h2 id="4、Redis主要消耗什么物理资源？"><a href="#4、Redis主要消耗什么物理资源？" class="headerlink" title="4、Redis主要消耗什么物理资源？"></a>4、Redis主要消耗什么物理资源？</h2><p>内存。</p>
-<h2 id="5、Redis的全称是什么？"><a href="#5、Redis的全称是什么？" class="headerlink" title="5、Redis的全称是什么？"></a>5、Redis的全称是什么？</h2><p>Remote Dictionary Server。</p>
-<h2 id="6、Redis有哪几种数据淘汰策略？"><a href="#6、Redis有哪几种数据淘汰策略？" class="headerlink" title="6、Redis有哪几种数据淘汰策略？"></a>6、Redis有哪几种数据淘汰策略？</h2><p>noeviction:返回错误当内存限制达到并且客户端尝试执行会让更多内存被使用的命令（大部分的写入指令，但DEL和几个例外）</p>
-<p>allkeys-lru: 尝试回收最少使用的键（LRU），使得新添加的数据有空间存放。</p>
-<p>volatile-lru: 尝试回收最少使用的键（LRU），但仅限于在过期集合的键,使得新添加的数据有空间存放。</p>
-<p>allkeys-random: 回收随机的键使得新添加的数据有空间存放。</p>
-<p>volatile-random: 回收随机的键使得新添加的数据有空间存放，但仅限于在过期集合的键。</p>
-<p>volatile-ttl: 回收在过期集合的键，并且优先回收存活时间（TTL）较短的键,使得新添加的数据有空间存放。</p>
-<h2 id="7、Redis官方为什么不提供Windows版本？"><a href="#7、Redis官方为什么不提供Windows版本？" class="headerlink" title="7、Redis官方为什么不提供Windows版本？"></a>7、Redis官方为什么不提供Windows版本？</h2><p>因为目前Linux版本已经相当稳定，而且用户量很大，无需开发windows版本，反而会带来兼容性等问题。</p>
-<h2 id="8、一个字符串类型的值能存储最大容量是多少？"><a href="#8、一个字符串类型的值能存储最大容量是多少？" class="headerlink" title="8、一个字符串类型的值能存储最大容量是多少？"></a>8、一个字符串类型的值能存储最大容量是多少？</h2><p>512M</p>
-<h2 id="9、为什么Redis需要把所有数据放到内存中？"><a href="#9、为什么Redis需要把所有数据放到内存中？" class="headerlink" title="9、为什么Redis需要把所有数据放到内存中？"></a>9、为什么Redis需要把所有数据放到内存中？</h2><p>Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。 如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。</p>
-<h2 id="10、Redis集群方案应该怎么做？都有哪些方案？"><a href="#10、Redis集群方案应该怎么做？都有哪些方案？" class="headerlink" title="10、Redis集群方案应该怎么做？都有哪些方案？"></a>10、Redis集群方案应该怎么做？都有哪些方案？</h2><p>1.twemproxy，大概概念是，它类似于一个代理方式，使用方法和普通redis无任何区别，设置好它下属的多个redis实例后，使用时在本需要连接redis的地方改为连接twemproxy，它会以一个代理的身份接收请求并使用一致性hash算法，将请求转接到具体redis，将结果再返回twemproxy。使用方式简便(相对redis只需修改连接端口)，对旧项目扩展的首选。 问题：twemproxy自身单端口实例的压力，使用一致性hash后，对redis节点数量改变时候的计算值的改变，数据无法自动移动到新的节点。</p>
-<p>2.codis，目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在 节点数量改变情况下，旧节点数据可恢复到新hash节点。</p>
-<p>3.redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方文档介绍。</p>
-<p>4.在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key 进行hash计算，然后去对应的redis实例操作数据。 这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的自动脚本恢复，实例的监控，等等。</p>
-<h2 id="11、Redis集群方案什么情况下会导致整个集群不可用？"><a href="#11、Redis集群方案什么情况下会导致整个集群不可用？" class="headerlink" title="11、Redis集群方案什么情况下会导致整个集群不可用？"></a>11、Redis集群方案什么情况下会导致整个集群不可用？</h2><p>有A，B，C三个节点的集群,在没有复制模型的情况下,如果节点B失败了，那么整个集群就会以为缺少5501-11000这个范围的槽而不可用。</p>
-<h2 id="12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？"><a href="#12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？" class="headerlink" title="12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？"></a>12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？</h2><p>redis内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。</p>
-<h2 id="13、Redis有哪些适合的场景？"><a href="#13、Redis有哪些适合的场景？" class="headerlink" title="13、Redis有哪些适合的场景？"></a>13、Redis有哪些适合的场景？</h2><p>（1）、会话缓存（Session Cache）</p>
-<p>最常用的一种使用Redis的情景是会话缓存（session cache）。用Redis缓存会话比其他存储（如Memcached）的优势在于：Redis提供持久化。当维护一个不是严格要求一致性的缓存时，如果用户的购物车信息全部丢失，大部分人都会不高兴的，现在，他们还会这样吗？</p>
-<p>幸运的是，随着 Redis 这些年的改进，很容易找到怎么恰当的使用Redis来缓存会话的文档。甚至广为人知的商业平台Magento也提供Redis的插件。</p>
-<p>（2）、全页缓存（FPC）</p>
-<p>除基本的会话token之外，Redis还提供很简便的FPC平台。回到一致性问题，即使重启了Redis实例，因为有磁盘的持久化，用户也不会看到页面加载速度的下降，这是一个极大改进，类似PHP本地FPC。</p>
-<p>再次以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。</p>
-<p>此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
-<p>（3）、队列</p>
-<p>Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。Redis作为队列使用的操作，就类似于本地程序语言（如Python）对 list 的 push/pop 操作。</p>
-<p>如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。</p>
-<p>（4），排行榜/计数器</p>
-<p>Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：</p>
-<p>当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：</p>
-<p>ZRANGE user_scores 0 10 WITHSCORES</p>
-<p>Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。</p>
-<p>（5）、发布/订阅</p>
-<p>最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统！（不，这是真的，你可以去核实）。</p>
-<h2 id="14、Redis支持的Java客户端都有哪些？官方推荐用哪个？"><a href="#14、Redis支持的Java客户端都有哪些？官方推荐用哪个？" class="headerlink" title="14、Redis支持的Java客户端都有哪些？官方推荐用哪个？"></a>14、Redis支持的Java客户端都有哪些？官方推荐用哪个？</h2><p>Redisson、Jedis、lettuce等等，官方推荐使用Redisson。</p>
-<h2 id="15、Redis和Redisson有什么关系？"><a href="#15、Redis和Redisson有什么关系？" class="headerlink" title="15、Redis和Redisson有什么关系？"></a>15、Redis和Redisson有什么关系？</h2><p>Redisson是一个高级的分布式协调Redis客服端，能帮助用户在分布式环境中轻松实现一些Java的对象 (Bloom filter, BitSet, Set, SetMultimap, ScoredSortedSet, SortedSet, Map, ConcurrentMap, List, ListMultimap, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, ReadWriteLock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog)。</p>
-<h2 id="16、Jedis与Redisson对比有什么优缺点？"><a href="#16、Jedis与Redisson对比有什么优缺点？" class="headerlink" title="16、Jedis与Redisson对比有什么优缺点？"></a>16、Jedis与Redisson对比有什么优缺点？</h2><p>Jedis是Redis的Java实现的客户端，其API提供了比较全面的Redis命令的支持；Redisson实现了分布式和可扩展的Java数据结构，和Jedis相比，功能较为简单，不支持字符串操作，不支持排序、事务、管道、分区等Redis特性。Redisson的宗旨是促进使用者对Redis的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上。</p>
-<h2 id="17、Redis如何设置密码及验证密码？"><a href="#17、Redis如何设置密码及验证密码？" class="headerlink" title="17、Redis如何设置密码及验证密码？"></a>17、Redis如何设置密码及验证密码？</h2><p>设置密码：config set requirepass 123456</p>
-<p>授权密码：auth 123456</p>
-<h2 id="18、说说Redis哈希槽的概念？"><a href="#18、说说Redis哈希槽的概念？" class="headerlink" title="18、说说Redis哈希槽的概念？"></a>18、说说Redis哈希槽的概念？</h2><p>Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
-<h2 id="19、Redis集群的主从复制模型是怎样的？"><a href="#19、Redis集群的主从复制模型是怎样的？" class="headerlink" title="19、Redis集群的主从复制模型是怎样的？"></a>19、Redis集群的主从复制模型是怎样的？</h2><p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了主从复制模型,每个节点都会有N-1个复制品.</p>
-<h2 id="20、Redis集群会有写操作丢失吗？为什么？"><a href="#20、Redis集群会有写操作丢失吗？为什么？" class="headerlink" title="20、Redis集群会有写操作丢失吗？为什么？"></a>20、Redis集群会有写操作丢失吗？为什么？</h2><p>Redis并不能保证数据的强一致性，这意味这在实际中集群在特定的条件下可能会丢失写操作。</p>
-<h2 id="21、Redis集群之间是如何复制的？"><a href="#21、Redis集群之间是如何复制的？" class="headerlink" title="21、Redis集群之间是如何复制的？"></a>21、Redis集群之间是如何复制的？</h2><p>异步复制</p>
-<h2 id="22、Redis集群最大节点个数是多少？"><a href="#22、Redis集群最大节点个数是多少？" class="headerlink" title="22、Redis集群最大节点个数是多少？"></a>22、Redis集群最大节点个数是多少？</h2><p>16384个。</p>
-<h2 id="23、Redis集群如何选择数据库？"><a href="#23、Redis集群如何选择数据库？" class="headerlink" title="23、Redis集群如何选择数据库？"></a>23、Redis集群如何选择数据库？</h2><p>Redis集群目前无法做数据库选择，默认在0数据库。</p>
-<h2 id="24、怎么测试Redis的连通性？"><a href="#24、怎么测试Redis的连通性？" class="headerlink" title="24、怎么测试Redis的连通性？"></a>24、怎么测试Redis的连通性？</h2><p>ping</p>
-<h2 id="25、Redis中的管道有什么用？"><a href="#25、Redis中的管道有什么用？" class="headerlink" title="25、Redis中的管道有什么用？"></a>25、Redis中的管道有什么用？</h2><p>一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。</p>
-<p>这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
-<h2 id="26、怎么理解Redis事务？"><a href="#26、怎么理解Redis事务？" class="headerlink" title="26、怎么理解Redis事务？"></a>26、怎么理解Redis事务？</h2><p>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
-<p>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
-<h2 id="27、Redis事务相关的命令有哪几个？"><a href="#27、Redis事务相关的命令有哪几个？" class="headerlink" title="27、Redis事务相关的命令有哪几个？"></a>27、Redis事务相关的命令有哪几个？</h2><p>MULTI、EXEC、DISCARD、WATCH</p>
-<h2 id="28、Redis-key的过期时间和永久有效分别怎么设置？"><a href="#28、Redis-key的过期时间和永久有效分别怎么设置？" class="headerlink" title="28、Redis key的过期时间和永久有效分别怎么设置？"></a>28、Redis key的过期时间和永久有效分别怎么设置？</h2><p>EXPIRE和PERSIST命令。</p>
-<h2 id="29、Redis如何做内存优化？"><a href="#29、Redis如何做内存优化？" class="headerlink" title="29、Redis如何做内存优化？"></a>29、Redis如何做内存优化？</h2><p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
-<h2 id="30、Redis回收进程如何工作的？"><a href="#30、Redis回收进程如何工作的？" class="headerlink" title="30、Redis回收进程如何工作的？"></a>30、Redis回收进程如何工作的？</h2><p>一个客户端运行了新的命令，添加了新的数据。<br>Redi检查内存使用情况，如果大于maxmemory的限制, 则根据设定好的策略进行回收。<br>一个新的命令被执行，等等。<br>所以我们不断地穿越内存限制的边界，通过不断达到边界然后不断地回收回到边界以下。<br>如果一个命令的结果导致大量内存被使用（例如很大的集合的交集保存到一个新的键），不用多久内存限制就会被这个内存使用量超越。</p>
-<h2 id="31、Redis回收使用的是什么算法？"><a href="#31、Redis回收使用的是什么算法？" class="headerlink" title="31、Redis回收使用的是什么算法？"></a>31、Redis回收使用的是什么算法？</h2><p>LRU算法</p>
-<h2 id="32、Redis如何做大量数据插入？"><a href="#32、Redis如何做大量数据插入？" class="headerlink" title="32、Redis如何做大量数据插入？"></a>32、Redis如何做大量数据插入？</h2><p>Redis2.6开始redis-cli支持一种新的被称之为pipe mode的新模式用于执行大量数据插入工作。</p>
-<h2 id="33、为什么要做Redis分区？"><a href="#33、为什么要做Redis分区？" class="headerlink" title="33、为什么要做Redis分区？"></a>33、为什么要做Redis分区？</h2><p>分区可以让Redis管理更大的内存，Redis将可以使用所有机器的内存。如果没有分区，你最多只能使用一台机器的内存。分区使Redis的计算能力通过简单地增加计算机得到成倍提升,Redis的网络带宽也会随着计算机和网卡的增加而成倍增长。</p>
-<h2 id="34、你知道有哪些Redis分区实现方案？"><a href="#34、你知道有哪些Redis分区实现方案？" class="headerlink" title="34、你知道有哪些Redis分区实现方案？"></a>34、你知道有哪些Redis分区实现方案？</h2><p>客户端分区就是在客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。大多数客户端已经实现了客户端分区。</p>
-<p>代理分区 意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些Redis实例，然后根据Redis的响应结果返回给客户端。redis和memcached的一种代理实现就是Twemproxy</p>
-<p>查询路由(Query routing) 的意思是客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。Redis Cluster实现了一种混合形式的查询路由，但并不是直接将请求从一个redis节点转发到另一个redis节点，而是在客户端的帮助下直接redirected到正确的redis节点。</p>
-<h2 id="35、Redis分区有什么缺点？"><a href="#35、Redis分区有什么缺点？" class="headerlink" title="35、Redis分区有什么缺点？"></a>35、Redis分区有什么缺点？</h2><p>涉及多个key的操作通常不会被支持。例如你不能对两个集合求交集，因为他们可能被存储到不同的Redis实例（实际上这种情况也有办法，但是不能直接使用交集指令）。<br>同时操作多个key,则不能使用Redis事务.<br>分区使用的粒度是key，不能使用一个非常长的排序key存储一个数据集（The partitioning granularity is the key, so it is not possible to shard a dataset with a single huge key like a very big sorted set）.<br>当使用分区的时候，数据处理会非常复杂，例如为了备份你必须从不同的Redis实例和主机同时收集RDB / AOF文件。<br>分区时动态扩容或缩容可能非常复杂。Redis集群在运行时增加或者删除Redis节点，能做到最大程度对用户透明地数据再平衡，但其他一些客户端分区或者代理分区方法则不支持这种特性。然而，有一种预分片的技术也可以较好的解决这个问题。</p>
-<h2 id="36、Redis持久化数据和缓存怎么做扩容？"><a href="#36、Redis持久化数据和缓存怎么做扩容？" class="headerlink" title="36、Redis持久化数据和缓存怎么做扩容？"></a>36、Redis持久化数据和缓存怎么做扩容？</h2><p>如果Redis被当做缓存使用，使用一致性哈希实现动态扩容缩容。<br>如果Redis被当做一个持久化存储使用，必须使用固定的keys-to-nodes映射关系，节点的数量一旦确定不能变化。否则的话(即Redis节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有Redis集群可以做到这样。</p>
-<h2 id="37、分布式Redis是前期做还是后期规模上来了再做好？为什么？"><a href="#37、分布式Redis是前期做还是后期规模上来了再做好？为什么？" class="headerlink" title="37、分布式Redis是前期做还是后期规模上来了再做好？为什么？"></a>37、分布式Redis是前期做还是后期规模上来了再做好？为什么？</h2><p>既然Redis是如此的轻量（单实例只使用1M内存）,为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便你只有一台服务器，你也可以一开始就让Redis以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。</p>
-<p>一开始就多设置几个Redis实例，例如32或者64个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。</p>
-<p>这样的话，当你的数据不断增长，需要更多的Redis服务器时，你需要做的就是仅仅将Redis实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的Redis实例从第一台机器迁移到第二台机器。</p>
-<h2 id="38、Twemproxy是什么？"><a href="#38、Twemproxy是什么？" class="headerlink" title="38、Twemproxy是什么？"></a>38、Twemproxy是什么？</h2><p>Twemproxy是Twitter维护的（缓存）代理系统，代理Memcached的ASCII协议和Redis协议。它是单线程程序，使用c语言编写，运行起来非常快。它是采用Apache 2.0 license的开源软件。 Twemproxy支持自动分区，如果其代理的其中一个Redis节点不可用时，会自动将该节点排除（这将改变原来的keys-instances的映射关系，所以你应该仅在把Redis当缓存时使用Twemproxy)。 Twemproxy本身不存在单点问题，因为你可以启动多个Twemproxy实例，然后让你的客户端去连接任意一个Twemproxy实例。 Twemproxy是Redis客户端和服务器端的一个中间层，由它来处理分区功能应该不算复杂，并且应该算比较可靠的。</p>
-<h2 id="39、支持一致性哈希的客户端有哪些？"><a href="#39、支持一致性哈希的客户端有哪些？" class="headerlink" title="39、支持一致性哈希的客户端有哪些？"></a>39、支持一致性哈希的客户端有哪些？</h2><p>Redis-rb、Predis等。</p>
-<h2 id="40、Redis与其他key-value存储有什么不同？"><a href="#40、Redis与其他key-value存储有什么不同？" class="headerlink" title="40、Redis与其他key-value存储有什么不同？"></a>40、Redis与其他key-value存储有什么不同？</h2><p>Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。<br>Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，应为数据量不能大于硬件内存。在内存数据库方面的另一个优点是， 相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。 同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。</p>
-<h2 id="41、Redis的内存占用情况怎么样？"><a href="#41、Redis的内存占用情况怎么样？" class="headerlink" title="41、Redis的内存占用情况怎么样？"></a>41、Redis的内存占用情况怎么样？</h2><p>给你举个例子： 100万个键值对（键是0到999999值是字符串“hello world”）在我的32位的Mac笔记本上 用了100MB。同样的数据放到一个key里只需要16MB， 这是因为键值有一个很大的开销。 在Memcached上执行也是类似的结果，但是相对Redis的开销要小一点点，因为Redis会记录类型信息引用计数等等。</p>
-<p>当然，大键值对时两者的比例要好很多。</p>
-<p>64位的系统比32位的需要更多的内存开销，尤其是键值对都较小时，这是因为64位的系统里指针占用了8个字节。 但是，当然，64位系统支持更大的内存，所以为了运行大型的Redis服务器或多或少的需要使用64位的系统。</p>
-<h2 id="42、都有哪些办法可以降低Redis的内存使用情况呢？"><a href="#42、都有哪些办法可以降低Redis的内存使用情况呢？" class="headerlink" title="42、都有哪些办法可以降低Redis的内存使用情况呢？"></a>42、都有哪些办法可以降低Redis的内存使用情况呢？</h2><p>如果你使用的是32位的Redis实例，可以好好利用Hash,list,sorted set,set等集合类型数据，因为通常情况下很多小的Key-Value可以用更紧凑的方式存放到一起。</p>
-<h2 id="43、查看Redis使用情况及状态信息用什么命令？"><a href="#43、查看Redis使用情况及状态信息用什么命令？" class="headerlink" title="43、查看Redis使用情况及状态信息用什么命令？"></a>43、查看Redis使用情况及状态信息用什么命令？</h2><p>info</p>
-<h2 id="44、Redis的内存用完了会发生什么？"><a href="#44、Redis的内存用完了会发生什么？" class="headerlink" title="44、Redis的内存用完了会发生什么？"></a>44、Redis的内存用完了会发生什么？</h2><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正常返回。）或者你可以将Redis当缓存来使用配置淘汰机制，当Redis达到内存上限时会冲刷掉旧的内容。</p>
-<h2 id="45、Redis是单线程的，如何提高多核CPU的利用率？"><a href="#45、Redis是单线程的，如何提高多核CPU的利用率？" class="headerlink" title="45、Redis是单线程的，如何提高多核CPU的利用率？"></a>45、Redis是单线程的，如何提高多核CPU的利用率？</h2><p>可以在同一个服务器部署多个Redis的实例，并把他们当作不同的服务器来使用，在某些时候，无论如何一个服务器是不够的， 所以，如果你想使用多个CPU，你可以考虑一下分片（shard）。</p>
-<h2 id="46、一个Redis实例最多能存放多少的keys？List、Set、Sorted-Set他们最多能存放多少元素？"><a href="#46、一个Redis实例最多能存放多少的keys？List、Set、Sorted-Set他们最多能存放多少元素？" class="headerlink" title="46、一个Redis实例最多能存放多少的keys？List、Set、Sorted Set他们最多能存放多少元素？"></a>46、一个Redis实例最多能存放多少的keys？List、Set、Sorted Set他们最多能存放多少元素？</h2><p>理论上Redis可以处理多达232的keys，并且在实际中进行了测试，每个实例至少存放了2亿5千万的keys。我们正在测试一些较大的值。</p>
-<p>任何list、set、和sorted set都可以放232个元素。</p>
-<p>换句话说，Redis的存储极限是系统中的可用内存值。</p>
-<h2 id="47、Redis常见性能问题和解决方案？"><a href="#47、Redis常见性能问题和解决方案？" class="headerlink" title="47、Redis常见性能问题和解决方案？"></a>47、Redis常见性能问题和解决方案？</h2><p>(1) Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件</p>
-<p>(2) 如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次</p>
-<p>(3) 为了主从复制的速度和连接的稳定性，Master和Slave最好在同一个局域网内</p>
-<p>(4) 尽量避免在压力很大的主库上增加从库</p>
-<p>(5) 主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3…</p>
-<p>这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变。</p>
-<h2 id="48、Redis提供了哪几种持久化方式？"><a href="#48、Redis提供了哪几种持久化方式？" class="headerlink" title="48、Redis提供了哪几种持久化方式？"></a>48、Redis提供了哪几种持久化方式？</h2><p>RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.<br>AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大.<br>如果你只希望你的数据在服务器运行的时候存在,你也可以不使用任何持久化方式.<br>你也可以同时开启两种持久化方式, 在这种情况下, 当redis重启的时候会优先载入AOF文件来恢复原始的数据,因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整.<br>最重要的事情是了解RDB和AOF持久化方式的不同,让我们以RDB持久化方式开始。</p>
-<h2 id="49、如何选择合适的持久化方式？"><a href="#49、如何选择合适的持久化方式？" class="headerlink" title="49、如何选择合适的持久化方式？"></a>49、如何选择合适的持久化方式？</h2><p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性， 你应该同时使用两种持久化功能。如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用RDB持久化。</p>
-<p>有很多用户都只使用AOF持久化，但并不推荐这种方式：因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外， 使用RDB还可以避免之前提到的AOF程序的bug。</p>
-<h2 id="50、修改配置不重启Redis会实时生效吗？"><a href="#50、修改配置不重启Redis会实时生效吗？" class="headerlink" title="50、修改配置不重启Redis会实时生效吗？"></a>50、修改配置不重启Redis会实时生效吗？</h2><p>针对运行实例，有许多配置选项可以通过 CONFIG SET 命令进行修改，而无需执行任何形式的重启。 从 Redis 2.2 开始，可以从 AOF 切换到 RDB 的快照持久性或其他方式而不需要重启 Redis。检索 ‘CONFIG GET *’ 命令获取更多信息。</p>
-<p>但偶尔重新启动是必须的，如为升级 Redis 程序到新的版本，或者当你需要修改某些目前 CONFIG 命令还不支持的配置参数的时候。</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -815,6 +709,112 @@ public void test02(){
       </tags>
   </entry>
   <entry>
+    <title>Redis</title>
+    <url>/2020/03/24/Redis/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="1、什么是Redis？"><a href="#1、什么是Redis？" class="headerlink" title="1、什么是Redis？"></a>1、什么是Redis？</h2><p>Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据flush到硬盘上进行保存。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。 Redis的出色之处不仅仅是性能，Redis最大的魅力是支持保存多种数据结构，此外单个value的最大限制是1GB，不像 memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能，比方说用他的List来做FIFO双向链表，实现一个轻量级的高性 能消息队列服务，用他的Set可以做高性能的tag系统等等。另外Redis也可以对存入的Key-Value设置expire时间，因此也可以被当作一 个功能加强版的memcached来用。 Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</p>
+<h2 id="2、Redis相比memcached有哪些优势？"><a href="#2、Redis相比memcached有哪些优势？" class="headerlink" title="2、Redis相比memcached有哪些优势？"></a>2、Redis相比memcached有哪些优势？</h2><p>(1) memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型</p>
+<p>(2) redis的速度比memcached快很多</p>
+<p>(3) redis可以持久化其数据</p>
+<h2 id="3、Redis支持哪几种数据类型？"><a href="#3、Redis支持哪几种数据类型？" class="headerlink" title="3、Redis支持哪几种数据类型？"></a>3、Redis支持哪几种数据类型？</h2><p>String、List、Set、Sorted Set、hashes</p>
+<h2 id="4、Redis主要消耗什么物理资源？"><a href="#4、Redis主要消耗什么物理资源？" class="headerlink" title="4、Redis主要消耗什么物理资源？"></a>4、Redis主要消耗什么物理资源？</h2><p>内存。</p>
+<h2 id="5、Redis的全称是什么？"><a href="#5、Redis的全称是什么？" class="headerlink" title="5、Redis的全称是什么？"></a>5、Redis的全称是什么？</h2><p>Remote Dictionary Server。</p>
+<h2 id="6、Redis有哪几种数据淘汰策略？"><a href="#6、Redis有哪几种数据淘汰策略？" class="headerlink" title="6、Redis有哪几种数据淘汰策略？"></a>6、Redis有哪几种数据淘汰策略？</h2><p>noeviction:返回错误当内存限制达到并且客户端尝试执行会让更多内存被使用的命令（大部分的写入指令，但DEL和几个例外）</p>
+<p>allkeys-lru: 尝试回收最少使用的键（LRU），使得新添加的数据有空间存放。</p>
+<p>volatile-lru: 尝试回收最少使用的键（LRU），但仅限于在过期集合的键,使得新添加的数据有空间存放。</p>
+<p>allkeys-random: 回收随机的键使得新添加的数据有空间存放。</p>
+<p>volatile-random: 回收随机的键使得新添加的数据有空间存放，但仅限于在过期集合的键。</p>
+<p>volatile-ttl: 回收在过期集合的键，并且优先回收存活时间（TTL）较短的键,使得新添加的数据有空间存放。</p>
+<h2 id="7、Redis官方为什么不提供Windows版本？"><a href="#7、Redis官方为什么不提供Windows版本？" class="headerlink" title="7、Redis官方为什么不提供Windows版本？"></a>7、Redis官方为什么不提供Windows版本？</h2><p>因为目前Linux版本已经相当稳定，而且用户量很大，无需开发windows版本，反而会带来兼容性等问题。</p>
+<h2 id="8、一个字符串类型的值能存储最大容量是多少？"><a href="#8、一个字符串类型的值能存储最大容量是多少？" class="headerlink" title="8、一个字符串类型的值能存储最大容量是多少？"></a>8、一个字符串类型的值能存储最大容量是多少？</h2><p>512M</p>
+<h2 id="9、为什么Redis需要把所有数据放到内存中？"><a href="#9、为什么Redis需要把所有数据放到内存中？" class="headerlink" title="9、为什么Redis需要把所有数据放到内存中？"></a>9、为什么Redis需要把所有数据放到内存中？</h2><p>Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。 如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。</p>
+<h2 id="10、Redis集群方案应该怎么做？都有哪些方案？"><a href="#10、Redis集群方案应该怎么做？都有哪些方案？" class="headerlink" title="10、Redis集群方案应该怎么做？都有哪些方案？"></a>10、Redis集群方案应该怎么做？都有哪些方案？</h2><p>1.twemproxy，大概概念是，它类似于一个代理方式，使用方法和普通redis无任何区别，设置好它下属的多个redis实例后，使用时在本需要连接redis的地方改为连接twemproxy，它会以一个代理的身份接收请求并使用一致性hash算法，将请求转接到具体redis，将结果再返回twemproxy。使用方式简便(相对redis只需修改连接端口)，对旧项目扩展的首选。 问题：twemproxy自身单端口实例的压力，使用一致性hash后，对redis节点数量改变时候的计算值的改变，数据无法自动移动到新的节点。</p>
+<p>2.codis，目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在 节点数量改变情况下，旧节点数据可恢复到新hash节点。</p>
+<p>3.redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方文档介绍。</p>
+<p>4.在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key 进行hash计算，然后去对应的redis实例操作数据。 这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的自动脚本恢复，实例的监控，等等。</p>
+<h2 id="11、Redis集群方案什么情况下会导致整个集群不可用？"><a href="#11、Redis集群方案什么情况下会导致整个集群不可用？" class="headerlink" title="11、Redis集群方案什么情况下会导致整个集群不可用？"></a>11、Redis集群方案什么情况下会导致整个集群不可用？</h2><p>有A，B，C三个节点的集群,在没有复制模型的情况下,如果节点B失败了，那么整个集群就会以为缺少5501-11000这个范围的槽而不可用。</p>
+<h2 id="12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？"><a href="#12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？" class="headerlink" title="12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？"></a>12、MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据？</h2><p>redis内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。</p>
+<h2 id="13、Redis有哪些适合的场景？"><a href="#13、Redis有哪些适合的场景？" class="headerlink" title="13、Redis有哪些适合的场景？"></a>13、Redis有哪些适合的场景？</h2><p>（1）、会话缓存（Session Cache）</p>
+<p>最常用的一种使用Redis的情景是会话缓存（session cache）。用Redis缓存会话比其他存储（如Memcached）的优势在于：Redis提供持久化。当维护一个不是严格要求一致性的缓存时，如果用户的购物车信息全部丢失，大部分人都会不高兴的，现在，他们还会这样吗？</p>
+<p>幸运的是，随着 Redis 这些年的改进，很容易找到怎么恰当的使用Redis来缓存会话的文档。甚至广为人知的商业平台Magento也提供Redis的插件。</p>
+<p>（2）、全页缓存（FPC）</p>
+<p>除基本的会话token之外，Redis还提供很简便的FPC平台。回到一致性问题，即使重启了Redis实例，因为有磁盘的持久化，用户也不会看到页面加载速度的下降，这是一个极大改进，类似PHP本地FPC。</p>
+<p>再次以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。</p>
+<p>此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
+<p>（3）、队列</p>
+<p>Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。Redis作为队列使用的操作，就类似于本地程序语言（如Python）对 list 的 push/pop 操作。</p>
+<p>如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。</p>
+<p>（4），排行榜/计数器</p>
+<p>Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：</p>
+<p>当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：</p>
+<p>ZRANGE user_scores 0 10 WITHSCORES</p>
+<p>Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。</p>
+<p>（5）、发布/订阅</p>
+<p>最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统！（不，这是真的，你可以去核实）。</p>
+<h2 id="14、Redis支持的Java客户端都有哪些？官方推荐用哪个？"><a href="#14、Redis支持的Java客户端都有哪些？官方推荐用哪个？" class="headerlink" title="14、Redis支持的Java客户端都有哪些？官方推荐用哪个？"></a>14、Redis支持的Java客户端都有哪些？官方推荐用哪个？</h2><p>Redisson、Jedis、lettuce等等，官方推荐使用Redisson。</p>
+<h2 id="15、Redis和Redisson有什么关系？"><a href="#15、Redis和Redisson有什么关系？" class="headerlink" title="15、Redis和Redisson有什么关系？"></a>15、Redis和Redisson有什么关系？</h2><p>Redisson是一个高级的分布式协调Redis客服端，能帮助用户在分布式环境中轻松实现一些Java的对象 (Bloom filter, BitSet, Set, SetMultimap, ScoredSortedSet, SortedSet, Map, ConcurrentMap, List, ListMultimap, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, ReadWriteLock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog)。</p>
+<h2 id="16、Jedis与Redisson对比有什么优缺点？"><a href="#16、Jedis与Redisson对比有什么优缺点？" class="headerlink" title="16、Jedis与Redisson对比有什么优缺点？"></a>16、Jedis与Redisson对比有什么优缺点？</h2><p>Jedis是Redis的Java实现的客户端，其API提供了比较全面的Redis命令的支持；Redisson实现了分布式和可扩展的Java数据结构，和Jedis相比，功能较为简单，不支持字符串操作，不支持排序、事务、管道、分区等Redis特性。Redisson的宗旨是促进使用者对Redis的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上。</p>
+<h2 id="17、Redis如何设置密码及验证密码？"><a href="#17、Redis如何设置密码及验证密码？" class="headerlink" title="17、Redis如何设置密码及验证密码？"></a>17、Redis如何设置密码及验证密码？</h2><p>设置密码：config set requirepass 123456</p>
+<p>授权密码：auth 123456</p>
+<h2 id="18、说说Redis哈希槽的概念？"><a href="#18、说说Redis哈希槽的概念？" class="headerlink" title="18、说说Redis哈希槽的概念？"></a>18、说说Redis哈希槽的概念？</h2><p>Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
+<h2 id="19、Redis集群的主从复制模型是怎样的？"><a href="#19、Redis集群的主从复制模型是怎样的？" class="headerlink" title="19、Redis集群的主从复制模型是怎样的？"></a>19、Redis集群的主从复制模型是怎样的？</h2><p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了主从复制模型,每个节点都会有N-1个复制品.</p>
+<h2 id="20、Redis集群会有写操作丢失吗？为什么？"><a href="#20、Redis集群会有写操作丢失吗？为什么？" class="headerlink" title="20、Redis集群会有写操作丢失吗？为什么？"></a>20、Redis集群会有写操作丢失吗？为什么？</h2><p>Redis并不能保证数据的强一致性，这意味这在实际中集群在特定的条件下可能会丢失写操作。</p>
+<h2 id="21、Redis集群之间是如何复制的？"><a href="#21、Redis集群之间是如何复制的？" class="headerlink" title="21、Redis集群之间是如何复制的？"></a>21、Redis集群之间是如何复制的？</h2><p>异步复制</p>
+<h2 id="22、Redis集群最大节点个数是多少？"><a href="#22、Redis集群最大节点个数是多少？" class="headerlink" title="22、Redis集群最大节点个数是多少？"></a>22、Redis集群最大节点个数是多少？</h2><p>16384个。</p>
+<h2 id="23、Redis集群如何选择数据库？"><a href="#23、Redis集群如何选择数据库？" class="headerlink" title="23、Redis集群如何选择数据库？"></a>23、Redis集群如何选择数据库？</h2><p>Redis集群目前无法做数据库选择，默认在0数据库。</p>
+<h2 id="24、怎么测试Redis的连通性？"><a href="#24、怎么测试Redis的连通性？" class="headerlink" title="24、怎么测试Redis的连通性？"></a>24、怎么测试Redis的连通性？</h2><p>ping</p>
+<h2 id="25、Redis中的管道有什么用？"><a href="#25、Redis中的管道有什么用？" class="headerlink" title="25、Redis中的管道有什么用？"></a>25、Redis中的管道有什么用？</h2><p>一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。</p>
+<p>这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
+<h2 id="26、怎么理解Redis事务？"><a href="#26、怎么理解Redis事务？" class="headerlink" title="26、怎么理解Redis事务？"></a>26、怎么理解Redis事务？</h2><p>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
+<p>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
+<h2 id="27、Redis事务相关的命令有哪几个？"><a href="#27、Redis事务相关的命令有哪几个？" class="headerlink" title="27、Redis事务相关的命令有哪几个？"></a>27、Redis事务相关的命令有哪几个？</h2><p>MULTI、EXEC、DISCARD、WATCH</p>
+<h2 id="28、Redis-key的过期时间和永久有效分别怎么设置？"><a href="#28、Redis-key的过期时间和永久有效分别怎么设置？" class="headerlink" title="28、Redis key的过期时间和永久有效分别怎么设置？"></a>28、Redis key的过期时间和永久有效分别怎么设置？</h2><p>EXPIRE和PERSIST命令。</p>
+<h2 id="29、Redis如何做内存优化？"><a href="#29、Redis如何做内存优化？" class="headerlink" title="29、Redis如何做内存优化？"></a>29、Redis如何做内存优化？</h2><p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
+<h2 id="30、Redis回收进程如何工作的？"><a href="#30、Redis回收进程如何工作的？" class="headerlink" title="30、Redis回收进程如何工作的？"></a>30、Redis回收进程如何工作的？</h2><p>一个客户端运行了新的命令，添加了新的数据。<br>Redi检查内存使用情况，如果大于maxmemory的限制, 则根据设定好的策略进行回收。<br>一个新的命令被执行，等等。<br>所以我们不断地穿越内存限制的边界，通过不断达到边界然后不断地回收回到边界以下。<br>如果一个命令的结果导致大量内存被使用（例如很大的集合的交集保存到一个新的键），不用多久内存限制就会被这个内存使用量超越。</p>
+<h2 id="31、Redis回收使用的是什么算法？"><a href="#31、Redis回收使用的是什么算法？" class="headerlink" title="31、Redis回收使用的是什么算法？"></a>31、Redis回收使用的是什么算法？</h2><p>LRU算法</p>
+<h2 id="32、Redis如何做大量数据插入？"><a href="#32、Redis如何做大量数据插入？" class="headerlink" title="32、Redis如何做大量数据插入？"></a>32、Redis如何做大量数据插入？</h2><p>Redis2.6开始redis-cli支持一种新的被称之为pipe mode的新模式用于执行大量数据插入工作。</p>
+<h2 id="33、为什么要做Redis分区？"><a href="#33、为什么要做Redis分区？" class="headerlink" title="33、为什么要做Redis分区？"></a>33、为什么要做Redis分区？</h2><p>分区可以让Redis管理更大的内存，Redis将可以使用所有机器的内存。如果没有分区，你最多只能使用一台机器的内存。分区使Redis的计算能力通过简单地增加计算机得到成倍提升,Redis的网络带宽也会随着计算机和网卡的增加而成倍增长。</p>
+<h2 id="34、你知道有哪些Redis分区实现方案？"><a href="#34、你知道有哪些Redis分区实现方案？" class="headerlink" title="34、你知道有哪些Redis分区实现方案？"></a>34、你知道有哪些Redis分区实现方案？</h2><p>客户端分区就是在客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。大多数客户端已经实现了客户端分区。</p>
+<p>代理分区 意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些Redis实例，然后根据Redis的响应结果返回给客户端。redis和memcached的一种代理实现就是Twemproxy</p>
+<p>查询路由(Query routing) 的意思是客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。Redis Cluster实现了一种混合形式的查询路由，但并不是直接将请求从一个redis节点转发到另一个redis节点，而是在客户端的帮助下直接redirected到正确的redis节点。</p>
+<h2 id="35、Redis分区有什么缺点？"><a href="#35、Redis分区有什么缺点？" class="headerlink" title="35、Redis分区有什么缺点？"></a>35、Redis分区有什么缺点？</h2><p>涉及多个key的操作通常不会被支持。例如你不能对两个集合求交集，因为他们可能被存储到不同的Redis实例（实际上这种情况也有办法，但是不能直接使用交集指令）。<br>同时操作多个key,则不能使用Redis事务.<br>分区使用的粒度是key，不能使用一个非常长的排序key存储一个数据集（The partitioning granularity is the key, so it is not possible to shard a dataset with a single huge key like a very big sorted set）.<br>当使用分区的时候，数据处理会非常复杂，例如为了备份你必须从不同的Redis实例和主机同时收集RDB / AOF文件。<br>分区时动态扩容或缩容可能非常复杂。Redis集群在运行时增加或者删除Redis节点，能做到最大程度对用户透明地数据再平衡，但其他一些客户端分区或者代理分区方法则不支持这种特性。然而，有一种预分片的技术也可以较好的解决这个问题。</p>
+<h2 id="36、Redis持久化数据和缓存怎么做扩容？"><a href="#36、Redis持久化数据和缓存怎么做扩容？" class="headerlink" title="36、Redis持久化数据和缓存怎么做扩容？"></a>36、Redis持久化数据和缓存怎么做扩容？</h2><p>如果Redis被当做缓存使用，使用一致性哈希实现动态扩容缩容。<br>如果Redis被当做一个持久化存储使用，必须使用固定的keys-to-nodes映射关系，节点的数量一旦确定不能变化。否则的话(即Redis节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有Redis集群可以做到这样。</p>
+<h2 id="37、分布式Redis是前期做还是后期规模上来了再做好？为什么？"><a href="#37、分布式Redis是前期做还是后期规模上来了再做好？为什么？" class="headerlink" title="37、分布式Redis是前期做还是后期规模上来了再做好？为什么？"></a>37、分布式Redis是前期做还是后期规模上来了再做好？为什么？</h2><p>既然Redis是如此的轻量（单实例只使用1M内存）,为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便你只有一台服务器，你也可以一开始就让Redis以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。</p>
+<p>一开始就多设置几个Redis实例，例如32或者64个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。</p>
+<p>这样的话，当你的数据不断增长，需要更多的Redis服务器时，你需要做的就是仅仅将Redis实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的Redis实例从第一台机器迁移到第二台机器。</p>
+<h2 id="38、Twemproxy是什么？"><a href="#38、Twemproxy是什么？" class="headerlink" title="38、Twemproxy是什么？"></a>38、Twemproxy是什么？</h2><p>Twemproxy是Twitter维护的（缓存）代理系统，代理Memcached的ASCII协议和Redis协议。它是单线程程序，使用c语言编写，运行起来非常快。它是采用Apache 2.0 license的开源软件。 Twemproxy支持自动分区，如果其代理的其中一个Redis节点不可用时，会自动将该节点排除（这将改变原来的keys-instances的映射关系，所以你应该仅在把Redis当缓存时使用Twemproxy)。 Twemproxy本身不存在单点问题，因为你可以启动多个Twemproxy实例，然后让你的客户端去连接任意一个Twemproxy实例。 Twemproxy是Redis客户端和服务器端的一个中间层，由它来处理分区功能应该不算复杂，并且应该算比较可靠的。</p>
+<h2 id="39、支持一致性哈希的客户端有哪些？"><a href="#39、支持一致性哈希的客户端有哪些？" class="headerlink" title="39、支持一致性哈希的客户端有哪些？"></a>39、支持一致性哈希的客户端有哪些？</h2><p>Redis-rb、Predis等。</p>
+<h2 id="40、Redis与其他key-value存储有什么不同？"><a href="#40、Redis与其他key-value存储有什么不同？" class="headerlink" title="40、Redis与其他key-value存储有什么不同？"></a>40、Redis与其他key-value存储有什么不同？</h2><p>Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。<br>Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，应为数据量不能大于硬件内存。在内存数据库方面的另一个优点是， 相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。 同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。</p>
+<h2 id="41、Redis的内存占用情况怎么样？"><a href="#41、Redis的内存占用情况怎么样？" class="headerlink" title="41、Redis的内存占用情况怎么样？"></a>41、Redis的内存占用情况怎么样？</h2><p>给你举个例子： 100万个键值对（键是0到999999值是字符串“hello world”）在我的32位的Mac笔记本上 用了100MB。同样的数据放到一个key里只需要16MB， 这是因为键值有一个很大的开销。 在Memcached上执行也是类似的结果，但是相对Redis的开销要小一点点，因为Redis会记录类型信息引用计数等等。</p>
+<p>当然，大键值对时两者的比例要好很多。</p>
+<p>64位的系统比32位的需要更多的内存开销，尤其是键值对都较小时，这是因为64位的系统里指针占用了8个字节。 但是，当然，64位系统支持更大的内存，所以为了运行大型的Redis服务器或多或少的需要使用64位的系统。</p>
+<h2 id="42、都有哪些办法可以降低Redis的内存使用情况呢？"><a href="#42、都有哪些办法可以降低Redis的内存使用情况呢？" class="headerlink" title="42、都有哪些办法可以降低Redis的内存使用情况呢？"></a>42、都有哪些办法可以降低Redis的内存使用情况呢？</h2><p>如果你使用的是32位的Redis实例，可以好好利用Hash,list,sorted set,set等集合类型数据，因为通常情况下很多小的Key-Value可以用更紧凑的方式存放到一起。</p>
+<h2 id="43、查看Redis使用情况及状态信息用什么命令？"><a href="#43、查看Redis使用情况及状态信息用什么命令？" class="headerlink" title="43、查看Redis使用情况及状态信息用什么命令？"></a>43、查看Redis使用情况及状态信息用什么命令？</h2><p>info</p>
+<h2 id="44、Redis的内存用完了会发生什么？"><a href="#44、Redis的内存用完了会发生什么？" class="headerlink" title="44、Redis的内存用完了会发生什么？"></a>44、Redis的内存用完了会发生什么？</h2><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正常返回。）或者你可以将Redis当缓存来使用配置淘汰机制，当Redis达到内存上限时会冲刷掉旧的内容。</p>
+<h2 id="45、Redis是单线程的，如何提高多核CPU的利用率？"><a href="#45、Redis是单线程的，如何提高多核CPU的利用率？" class="headerlink" title="45、Redis是单线程的，如何提高多核CPU的利用率？"></a>45、Redis是单线程的，如何提高多核CPU的利用率？</h2><p>可以在同一个服务器部署多个Redis的实例，并把他们当作不同的服务器来使用，在某些时候，无论如何一个服务器是不够的， 所以，如果你想使用多个CPU，你可以考虑一下分片（shard）。</p>
+<h2 id="46、一个Redis实例最多能存放多少的keys？List、Set、Sorted-Set他们最多能存放多少元素？"><a href="#46、一个Redis实例最多能存放多少的keys？List、Set、Sorted-Set他们最多能存放多少元素？" class="headerlink" title="46、一个Redis实例最多能存放多少的keys？List、Set、Sorted Set他们最多能存放多少元素？"></a>46、一个Redis实例最多能存放多少的keys？List、Set、Sorted Set他们最多能存放多少元素？</h2><p>理论上Redis可以处理多达232的keys，并且在实际中进行了测试，每个实例至少存放了2亿5千万的keys。我们正在测试一些较大的值。</p>
+<p>任何list、set、和sorted set都可以放232个元素。</p>
+<p>换句话说，Redis的存储极限是系统中的可用内存值。</p>
+<h2 id="47、Redis常见性能问题和解决方案？"><a href="#47、Redis常见性能问题和解决方案？" class="headerlink" title="47、Redis常见性能问题和解决方案？"></a>47、Redis常见性能问题和解决方案？</h2><p>(1) Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件</p>
+<p>(2) 如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次</p>
+<p>(3) 为了主从复制的速度和连接的稳定性，Master和Slave最好在同一个局域网内</p>
+<p>(4) 尽量避免在压力很大的主库上增加从库</p>
+<p>(5) 主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3…</p>
+<p>这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变。</p>
+<h2 id="48、Redis提供了哪几种持久化方式？"><a href="#48、Redis提供了哪几种持久化方式？" class="headerlink" title="48、Redis提供了哪几种持久化方式？"></a>48、Redis提供了哪几种持久化方式？</h2><p>RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.<br>AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大.<br>如果你只希望你的数据在服务器运行的时候存在,你也可以不使用任何持久化方式.<br>你也可以同时开启两种持久化方式, 在这种情况下, 当redis重启的时候会优先载入AOF文件来恢复原始的数据,因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整.<br>最重要的事情是了解RDB和AOF持久化方式的不同,让我们以RDB持久化方式开始。</p>
+<h2 id="49、如何选择合适的持久化方式？"><a href="#49、如何选择合适的持久化方式？" class="headerlink" title="49、如何选择合适的持久化方式？"></a>49、如何选择合适的持久化方式？</h2><p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性， 你应该同时使用两种持久化功能。如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用RDB持久化。</p>
+<p>有很多用户都只使用AOF持久化，但并不推荐这种方式：因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外， 使用RDB还可以避免之前提到的AOF程序的bug。</p>
+<h2 id="50、修改配置不重启Redis会实时生效吗？"><a href="#50、修改配置不重启Redis会实时生效吗？" class="headerlink" title="50、修改配置不重启Redis会实时生效吗？"></a>50、修改配置不重启Redis会实时生效吗？</h2><p>针对运行实例，有许多配置选项可以通过 CONFIG SET 命令进行修改，而无需执行任何形式的重启。 从 Redis 2.2 开始，可以从 AOF 切换到 RDB 的快照持久性或其他方式而不需要重启 Redis。检索 ‘CONFIG GET *’ 命令获取更多信息。</p>
+<p>但偶尔重新启动是必须的，如为升级 Redis 程序到新的版本，或者当你需要修改某些目前 CONFIG 命令还不支持的配置参数的时候。</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis集群实现</title>
     <url>/2020/03/26/Redis%E9%9B%86%E7%BE%A4%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1Redis集群实现"><a href="#1Redis集群实现" class="headerlink" title="1Redis集群实现"></a>1Redis集群实现</h1><h2 id="1-1Redis集群"><a href="#1-1Redis集群" class="headerlink" title="1.1Redis集群"></a>1.1Redis集群</h2><h3 id="1-1-1为什么要搭建集群"><a href="#1-1-1为什么要搭建集群" class="headerlink" title="1.1.1为什么要搭建集群"></a>1.1.1为什么要搭建集群</h3><p>通常，为了提高网站响应速度，总是把热点数据保存在内存中而不是直接从后端数据库中读取。<br>Redis是一个很好的Cache工具。大型网站应用，热点数据量往往巨大，几十G上百G是很正常的事儿。<br>由于内存大小的限制，使用一台 Redis 实例显然无法满足需求，这时就需要使用多台 Redis作为缓存数据库。但是如何保证数据存储的一致性呢,这时就需要搭建redis集群.采用合理的机制,保证用户的正常的访问需求.<br>采用redis集群,可以保证数据分散存储,同时保证数据存储的一致性.并且在内部实现高可用的机制.实现了服务故障的自动迁移.</p>
@@ -1107,6 +1107,253 @@ public class ResponseHandleController {
       </tags>
   </entry>
   <entry>
+    <title>SPRING 框架核心进阶</title>
+    <url>/2020/03/21/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-SPRING-框架核心进阶"><a href="#1-SPRING-框架核心进阶" class="headerlink" title="1.SPRING 框架核心进阶"></a>1.SPRING 框架核心进阶</h1><h2 id="1-1-SPRING-框架架构分析"><a href="#1-1-SPRING-框架架构分析" class="headerlink" title="1.1.SPRING 框架架构分析"></a>1.1.SPRING 框架架构分析</h2><h3 id="1-1-1-Spring-框架应用架构"><a href="#1-1-1-Spring-框架应用架构" class="headerlink" title="1.1.1.Spring 框架应用架构"></a>1.1.1.Spring 框架应用架构</h3><hr>
+<p>Spring 官网资源:spring.io/projects<br>Spring 是一个”资源整合”框架,通过spring可将很多资源(例如连接池,<br>mybatis,…)等整合在一起,对外提供相关服务(例如,秒杀服务,支付服务,…)。</p>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-d92bfc62abae4b1abbc7a002da599370.png" alt="image.png"></h2><p>说明:spring 框架中一切资源的整合都源于IOC模块，IOC要实现对象生命周期的管理，对象依赖关系的管理。</p>
+<h3 id="1-1-2-Spring-框架产品架构"><a href="#1-1-2-Spring-框架产品架构" class="headerlink" title="1.1.2. Spring 框架产品架构"></a>1.1.2. Spring 框架产品架构</h3><hr>
+<p>产品架构主要从这个框架对外提供的服务（功能）进行理解.</p>
+<hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-9dbc108b167f467ca8b895cd29288f64.png" alt="image.png"></h2><h3 id="1-1-3-Spring-框架技术架构"><a href="#1-1-3-Spring-框架技术架构" class="headerlink" title="1.1.3.Spring 框架技术架构"></a>1.1.3.Spring 框架技术架构</h3><p>IOC API基础架构(Spring 工厂对象分析)</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-96662d4783ed4306993deb401bac9c8b.png" alt="image.png"><br>IOC(控制反转) 容器初始化过程分析.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-92dc43a7d1364ae694bd834ebf80e959.png" alt="image.png"></p>
+<h2 id="1-2-SPRING框架快速实践-注解方式-脱离文档"><a href="#1-2-SPRING框架快速实践-注解方式-脱离文档" class="headerlink" title="1.2.SPRING框架快速实践 (注解方式-脱离文档)"></a>1.2.SPRING框架快速实践 (注解方式-脱离文档)</h2><h3 id="1-2-1-Spring项目创建及配置"><a href="#1-2-1-Spring项目创建及配置" class="headerlink" title="1.2.1.Spring项目创建及配置"></a>1.2.1.Spring项目创建及配置</h3><p>1.创建maven项目(jar包项目)<br>1)项目名称 CGB-SPRING-01<br>2)组id:com.cy<br>3)打包方式:jar</p>
+<p>2.添加项目依赖(spring-context)</p>
+<p>添加spring依赖</p>
+<pre><code>&lt;dependency&gt;
+ &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+ &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+ &lt;version&gt;5.1.9.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>添加junit依赖</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;junit&lt;/groupId&gt;
+  &lt;artifactId&gt;junit&lt;/artifactId&gt;
+  &lt;version&gt;4.12&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><h3 id="1-2-2-Spring基本测试环境创建"><a href="#1-2-2-Spring基本测试环境创建" class="headerlink" title="1.2.2.Spring基本测试环境创建"></a>1.2.2.Spring基本测试环境创建</h3><p>添加spring配置类(SpringConfig)</p>
+<pre><code>package com.cy.spring.config;
+import org.springframework.context.annotation.ComponentScan;
+/**
+ * @ComponentScan 用于告诉spring容器从
+   * 从指定包进行bean的扫描
+ */
+@ComponentScan(&quot;com.cy.spring.beans&quot;)
+public class SpringConfig {//spring-configs.xml
+
+}</code></pre><p>定义测试基类 </p>
+<pre><code>package com.spring;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+public class TestBase {
+     protected AnnotationConfigApplicationContext ctx;
+     @Before
+     public void init() {
+      ctx=new AnnotationConfigApplicationContext(
+                 SpringConfig.class);
+     }
+     @After
+     public void close() {
+         ctx.close();
+     }
+     @Test
+     public void testCtx() {
+         System.out.println(ctx);
+     }
+}</code></pre><h3 id="1-2-3-Spring项目基本业务实现"><a href="#1-2-3-Spring项目基本业务实现" class="headerlink" title="1.2.3.Spring项目基本业务实现"></a>1.2.3.Spring项目基本业务实现</h3><p>业务描述,创建一个DefaultCache对象然后将此对象交给Spring容器管理.<br>创建DefaultCache类,并明确此类交给spring管理.</p>
+<pre><code>package com.cy.spring.beans;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+/**
+@Component 注解用于告诉spring容器
+请将这个类交给spring管理.
+@Lazy 用于告诉spring容器此对象要延迟加载
+@Scope 用于告诉spring容器此bean的作用域
+1)singleton (单例作用域-默认,会存储到池中)
+2)prototype (多例作用域,每次获取都创建新对象)
+ */
+@Lazy
+@Scope(&quot;singleton&quot;) 
+@Component //@Controller,@Service,...
+public class DefaultCache {
+     public DefaultCache() {
+         System.out.println(&quot;DefaultCache()&quot;);
+     }
+     @PostConstruct //告诉spring 此对象初始化时执行init方法
+     public void init() {
+         System.out.println(&quot;init()&quot;);
+     }
+     @PreDestroy//告诉spring 此对象销毁时执行close方法
+     public void close() {
+         System.out.println(&quot;close()&quot;);
+     }
+}</code></pre><p>定义测试类,从spring容器中获取bean对象</p>
+<pre><code>package com.cy.test;
+import org.junit.Assert;
+import org.junit.Test;
+import com.cy.spring.beans.DefaultCache;
+public class TestCache extends TestBase {
+    @Test
+    public void testDefaultCahce() {
+        DefaultCache cache01=
+        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
+        Assert.assertNotEquals(null, cache01);
+        DefaultCache cache02=
+        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
+        Assert.assertNotEquals(null, cache02);
+        System.out.println(cache01==cache02);
+    }
+}</code></pre><h3 id="1-2-4-Spring项目课堂练习分析及实现"><a href="#1-2-4-Spring项目课堂练习分析及实现" class="headerlink" title="1.2.4.Spring项目课堂练习分析及实现"></a>1.2.4.Spring项目课堂练习分析及实现</h3><p>1.整合第三方连接池DRUID.<br>1)步骤分析:<br>step01:添加依赖(数据库驱动依赖,连接池依赖)<br>step02:对druid连接池进行配置<br>step03:对连接池进行单元测试.<br>2)关键代码实现</p>
+<p>添加mysql依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0.17&lt;/version&gt;
+ &lt;/dependency&gt;</code></pre><p>添加Druid依赖</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+  &lt;artifactId&gt;druid&lt;/artifactId&gt;
+  &lt;version&gt;1.1.19&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>定义数据源配置类</p>
+<pre><code>package com.cy.spring.beans;
+import javax.sql.DataSource;
+@Configuration
+public class DataSourceConfig {
+      @Bean(value=&quot;druid&quot;,initMethod=&quot;init&quot;,destroyMethod=&quot;close&quot;)
+      public DataSource newDruid() {
+         // System.out.println(&quot;newDruid()&quot;);
+          DruidDataSource ds=new DruidDataSource();
+          //ds.setDriverClassName(&quot;com.mysql.cj.jdbc.Driver&quot;);
+          ds.setUrl(&quot;jdbc:mysql:///test?serverTimezone=GMT&quot;);
+          ds.setUsername(&quot;root&quot;);
+          ds.setPassword(&quot;root&quot;);
+          ds.setMaxWait(10000);
+          //....
+          return ds;
+      }      
+}</code></pre><p>创建单元测试类</p>
+<pre><code>package com.cy.test;
+import javax.sql.DataSource;
+import org.junit.Assert;
+import org.junit.Test;
+import com.zaxxer.hikari.HikariDataSource;
+public class TestDataSource extends TestBase{
+    @Test
+    public void testDruidDataSource()throws Exception {
+        DataSource ds=
+        ctx.getBean(&quot;druid&quot;,DataSource.class);
+        Assert.assertNotEquals(null, ds);
+        System.out.println(ds.getConnection());
+    }
+}</code></pre><h1 id="2-整合第三方连接池HiKariCP连接池-扩展"><a href="#2-整合第三方连接池HiKariCP连接池-扩展" class="headerlink" title="2.整合第三方连接池HiKariCP连接池(扩展)."></a>2.整合第三方连接池HiKariCP连接池(扩展).</h1><h2 id="1-3-SPRING-IOC-应用原理进阶分析"><a href="#1-3-SPRING-IOC-应用原理进阶分析" class="headerlink" title="1.3.SPRING IOC 应用原理进阶分析"></a>1.3.SPRING IOC 应用原理进阶分析</h2><h3 id="1-3-1-Spring-IOC设计思想分析"><a href="#1-3-1-Spring-IOC设计思想分析" class="headerlink" title="1.3.1.Spring IOC设计思想分析"></a>1.3.1.Spring IOC设计思想分析</h3><p>IOC 是一种设计思想，称之为控制反转。基于这种思想实现对象创建，对象的科学管理以及应用时的解耦(借助DI机制实现)。Spring框架核心就是基于这种机制进行了完美实现。<br>说明：<br>1)控制反转探讨的是什么？谁控制谁的问题（spring控制对象的创建管理）<br>2)生活中的IOC的实现？(例如股票操盘手,父母包办婚姻）</p>
+<h3 id="1-3-2-Spring-Bean-工厂的初始化"><a href="#1-3-2-Spring-Bean-工厂的初始化" class="headerlink" title="1.3.2.Spring Bean 工厂的初始化"></a>1.3.2.Spring Bean 工厂的初始化</h3><p>基于xml方式实现Spring中Bean工厂的初始化.</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-630cb3fbad434155b03166a0ec10b184.png" alt="image.png"><br>说明:Spring 中的Bean工厂会基于Bean对象描述,创建bean的实例,并可以有选择性的对实例对象进行管理(例如单例作用域的对象).</p>
+<h3 id="1-3-3-Spring-中的两大map对象分析"><a href="#1-3-3-Spring-中的两大map对象分析" class="headerlink" title="1.3.3.Spring 中的两大map对象分析"></a>1.3.3.Spring 中的两大map对象分析</h3><p>1.如何理解Spring中的两大map对象(存储对象的两个容器)？<br>1）一个map用于存储bean的配置信息(工厂的原材料)<br>2）一个map用于存储bean的实例信息(工厂中的成品对象)</p>
+<p>基于xml配置文件实现:</p>
+<hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c49b3bb717964a3189411cc5c0387a3f.png" alt="image.png"></h2><p>基于注解配置实现:</p>
+<hr>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-1e18b43a520043d681eea9e4a79a5f7e.png" alt="image.png"></h2><h3 id="1-3-4-Spring-中两大bean对象分析-了解"><a href="#1-3-4-Spring-中两大bean对象分析-了解" class="headerlink" title="1.3.4.Spring 中两大bean对象分析(了解)"></a>1.3.4.Spring 中两大bean对象分析(了解)</h3><p>Bean对象创建<br>1)未实现FactoryBean接口(直接构造方法);<br>2)实现FactoryBean接口（调用FactoryBean对象的getObject方法）</p>
+<hr>
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-5bdbf2e837434d1eabb4a2ddc7c838e2.png" alt="image.png"></h2><p>说明：一般在创建一些相对复杂的工厂对象时，通常会写一个工厂bean对象，<br>然后基于工厂bean对象创建具体的工厂对象，例如SqlSessionFactoryBean,<br>ShiroFilterFactoryBean，ProxyFactoryBean等。</p>
+<h3 id="1-3-5-Spring-中两大bean对象描述方式"><a href="#1-3-5-Spring-中两大bean对象描述方式" class="headerlink" title="1.3.5.Spring 中两大bean对象描述方式"></a>1.3.5.Spring 中两大bean对象描述方式</h3><p>Bean 对象的描述<br>1)xml方式 (例如<bean id=”factory” class=”com.beans.Factory”>)<br>2)annotation方式（@Service,@Controller，@Configuration，@Bean，..）</p>
+<p>Spring 中用于描述这是一个Bean对象的相关注解如下:</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ec7bdf52e7324e209438f176a87a0527.png" alt="image.png"><br>说明:无论使用如上图中的哪个注解对Bean进行描述,对Spring而言都认为是一样的Bean.</p>
+<h2 id="1-1-Spring-依赖注入实践增强"><a href="#1-1-Spring-依赖注入实践增强" class="headerlink" title="1.1.Spring 依赖注入实践增强"></a>1.1.Spring 依赖注入实践增强</h2><h3 id="1-1-1-Spring-中Bean对象依赖注入分析-重点"><a href="#1-1-1-Spring-中Bean对象依赖注入分析-重点" class="headerlink" title="1.1.1.Spring 中Bean对象依赖注入分析(重点)"></a>1.1.1.Spring 中Bean对象依赖注入分析(重点)</h3><p>依赖注入(DI)是一种设计思想,简单点就是对象通过set或构造方法直接为对象属性赋值,在Spring框架中为这种注入基于反射技术提供一种自动实现方式.例如:</p>
+<p>IOC 依赖注入在项目中的应用实现：</p>
+<hr>
+<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-8effc442fbba466fbdf7b27016a7bab9.png" alt="image.png"></h2><p>实际项目中为了解耦和,对象之间通常会通过接口进行通讯,也就是<br>说对象要耦合与接口,例如2</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-aa073ba90cc446a3ab1018da3c585284.png" alt="image.png"></p>
+<p>个人认为：IOC的核心是对象生命周期管理(资源管理)以及<br>依赖注入（资源协同）；</p>
+<h3 id="1-1-2-Spring-中Bean对象依赖注入实践"><a href="#1-1-2-Spring-中Bean对象依赖注入实践" class="headerlink" title="1.1.2.Spring 中Bean对象依赖注入实践"></a>1.1.2.Spring 中Bean对象依赖注入实践</h3><p>在1.2小节基础上,基于如下设计,进行代码实践分析及实现。</p>
+<hr>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-31a98667ce2d4cd89c0896f59d297459.png" alt="image.png"></p>
+<p>核心步骤分析：<br>Step01:创建Cache接口以及对应的实现DefaultCache<br>Step02:创建SearchService接口以及对应的实现类。<br>Step03:将DefaultCache对象注入给DefaultSearchService。<br>Step03:创建SynchronizedCache测试@Autowired注解。</p>
+<p>关键代码分析及实现：</p>
+<p>Cache接口定义</p>
+<pre><code>public interface Cache {
+
+}</code></pre><p>DefaultCache类定义</p>
+<pre><code>@Lazy
+@Component
+public class DefaultCache implements Cache{
+    public DefaultCache() {
+        System.out.println(&quot;DefaultCache()&quot;);
+    }
+}</code></pre><p>SynchronizedCache定义</p>
+<pre><code>@Component
+public class SynchronizedCache implements Cache {
+
+}</code></pre><p>SearchService接口定义</p>
+<pre><code>public interface SearchService {
+
+}</code></pre><p>SearchService实现类定义</p>
+<pre><code>@Service
+public class DefaultSearchService implements SearchService {
+    /**@Autowired 可以修饰属性，set方法，构造方法等
+     * 默认按照属性类型，方法参数类型为对象属性注入值,
+     * 假如相同类型的对象有多个，还会按属性名或方法参
+     * 数名等进行查找。
+     * @Qualifier 配合@Autowired，用于指定要注入的对
+     * 象的名字。
+     */
+    @Autowired
+    @Qualifier(&quot;defaultCache&quot;)
+    private Cache cache;
+    @Override
+    public  String toString() {
+        return &quot;DefaultSearchService [cache=&quot; + cache + &quot;]&quot;;
+    }
+}</code></pre><p>测试实现</p>
+<pre><code>public class TestSearchService extends TestBase {
+    @Test
+    public void testSearchService() {
+        DefaultSearchService ds=
+        ctx.getBean(&quot;defaultSearchService&quot;,
+                DefaultSearchService.class);
+        System.out.println(ds);
+    }
+}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</title>
+    <url>/2020/03/29/SpringCloud%E3%80%81RabbitMQ%E3%80%81Solr%E3%80%81Docker%E3%80%81Kubernetes/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"><a href="#SpringCloud、RabbitMQ、Solr、Docker、Kubernetes" class="headerlink" title="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"></a>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</h1><p><a href="https://blog.csdn.net/weixin_38305440/article/details/102775484" target="_blank" rel="noopener" title="Spring Cloud入门操作手册(Greenwich)">Spring Cloud入门操作手册(Greenwich)</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810522" target="_blank" rel="noopener" title="RabbitMQ">RabbitMQ</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810509" target="_blank" rel="noopener" title="Lucene Solr 811">Lucene Solr 811</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810532" target="_blank" rel="noopener" title="Docker">Docker</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810541" target="_blank" rel="noopener" title="Docker案例">Docker案例</a></p>
+<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810548" target="_blank" rel="noopener" title="Kubernetes">Kubernetes</a></p>
+<p>老师的笔记，收藏备用。2019-12-05 10:20:47 星期四 &euro;</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>springCloud</tag>
+        <tag>rabbitMQ</tag>
+        <tag>solr</tag>
+        <tag>docker</tag>
+        <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSM框架综合案例实现</title>
     <url>/2020/03/23/SSM%E6%A1%86%E6%9E%B6%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="2-SSM框架综合案例实现-注解方式"><a href="#2-SSM框架综合案例实现-注解方式" class="headerlink" title="2.SSM框架综合案例实现(注解方式)"></a>2.SSM框架综合案例实现(注解方式)</h1><h2 id="2-1-业务描述"><a href="#2-1-业务描述" class="headerlink" title="2.1.业务描述"></a>2.1.业务描述</h2><p>通过spring整合mybatis完成商品数据库中数据的查询,并在客户端以json格式对数据进行输出?<br>思路:<br>1)创建maven web项目(打包方式war):CGB-SSM-01<br>2)配置项目?(运行时环境,编码,编译版本)<br>3)添加依赖?(mysql,druid,mybatis,junit,spring-webmvc,..)<br>4)整合资源?(连接池,mybatis,spring mvc..)</p>
@@ -1362,253 +1609,6 @@ public class GoodsController {
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SPRING 框架核心进阶</title>
-    <url>/2020/03/21/SPRING%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-SPRING-框架核心进阶"><a href="#1-SPRING-框架核心进阶" class="headerlink" title="1.SPRING 框架核心进阶"></a>1.SPRING 框架核心进阶</h1><h2 id="1-1-SPRING-框架架构分析"><a href="#1-1-SPRING-框架架构分析" class="headerlink" title="1.1.SPRING 框架架构分析"></a>1.1.SPRING 框架架构分析</h2><h3 id="1-1-1-Spring-框架应用架构"><a href="#1-1-1-Spring-框架应用架构" class="headerlink" title="1.1.1.Spring 框架应用架构"></a>1.1.1.Spring 框架应用架构</h3><hr>
-<p>Spring 官网资源:spring.io/projects<br>Spring 是一个”资源整合”框架,通过spring可将很多资源(例如连接池,<br>mybatis,…)等整合在一起,对外提供相关服务(例如,秒杀服务,支付服务,…)。</p>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-d92bfc62abae4b1abbc7a002da599370.png" alt="image.png"></h2><p>说明:spring 框架中一切资源的整合都源于IOC模块，IOC要实现对象生命周期的管理，对象依赖关系的管理。</p>
-<h3 id="1-1-2-Spring-框架产品架构"><a href="#1-1-2-Spring-框架产品架构" class="headerlink" title="1.1.2. Spring 框架产品架构"></a>1.1.2. Spring 框架产品架构</h3><hr>
-<p>产品架构主要从这个框架对外提供的服务（功能）进行理解.</p>
-<hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-9dbc108b167f467ca8b895cd29288f64.png" alt="image.png"></h2><h3 id="1-1-3-Spring-框架技术架构"><a href="#1-1-3-Spring-框架技术架构" class="headerlink" title="1.1.3.Spring 框架技术架构"></a>1.1.3.Spring 框架技术架构</h3><p>IOC API基础架构(Spring 工厂对象分析)</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-96662d4783ed4306993deb401bac9c8b.png" alt="image.png"><br>IOC(控制反转) 容器初始化过程分析.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-92dc43a7d1364ae694bd834ebf80e959.png" alt="image.png"></p>
-<h2 id="1-2-SPRING框架快速实践-注解方式-脱离文档"><a href="#1-2-SPRING框架快速实践-注解方式-脱离文档" class="headerlink" title="1.2.SPRING框架快速实践 (注解方式-脱离文档)"></a>1.2.SPRING框架快速实践 (注解方式-脱离文档)</h2><h3 id="1-2-1-Spring项目创建及配置"><a href="#1-2-1-Spring项目创建及配置" class="headerlink" title="1.2.1.Spring项目创建及配置"></a>1.2.1.Spring项目创建及配置</h3><p>1.创建maven项目(jar包项目)<br>1)项目名称 CGB-SPRING-01<br>2)组id:com.cy<br>3)打包方式:jar</p>
-<p>2.添加项目依赖(spring-context)</p>
-<p>添加spring依赖</p>
-<pre><code>&lt;dependency&gt;
- &lt;groupId&gt;org.springframework&lt;/groupId&gt;
- &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
- &lt;version&gt;5.1.9.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>添加junit依赖</p>
-<pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;junit&lt;/groupId&gt;
-  &lt;artifactId&gt;junit&lt;/artifactId&gt;
-  &lt;version&gt;4.12&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><h3 id="1-2-2-Spring基本测试环境创建"><a href="#1-2-2-Spring基本测试环境创建" class="headerlink" title="1.2.2.Spring基本测试环境创建"></a>1.2.2.Spring基本测试环境创建</h3><p>添加spring配置类(SpringConfig)</p>
-<pre><code>package com.cy.spring.config;
-import org.springframework.context.annotation.ComponentScan;
-/**
- * @ComponentScan 用于告诉spring容器从
-   * 从指定包进行bean的扫描
- */
-@ComponentScan(&quot;com.cy.spring.beans&quot;)
-public class SpringConfig {//spring-configs.xml
-
-}</code></pre><p>定义测试基类 </p>
-<pre><code>package com.spring;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-public class TestBase {
-     protected AnnotationConfigApplicationContext ctx;
-     @Before
-     public void init() {
-      ctx=new AnnotationConfigApplicationContext(
-                 SpringConfig.class);
-     }
-     @After
-     public void close() {
-         ctx.close();
-     }
-     @Test
-     public void testCtx() {
-         System.out.println(ctx);
-     }
-}</code></pre><h3 id="1-2-3-Spring项目基本业务实现"><a href="#1-2-3-Spring项目基本业务实现" class="headerlink" title="1.2.3.Spring项目基本业务实现"></a>1.2.3.Spring项目基本业务实现</h3><p>业务描述,创建一个DefaultCache对象然后将此对象交给Spring容器管理.<br>创建DefaultCache类,并明确此类交给spring管理.</p>
-<pre><code>package com.cy.spring.beans;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-/**
-@Component 注解用于告诉spring容器
-请将这个类交给spring管理.
-@Lazy 用于告诉spring容器此对象要延迟加载
-@Scope 用于告诉spring容器此bean的作用域
-1)singleton (单例作用域-默认,会存储到池中)
-2)prototype (多例作用域,每次获取都创建新对象)
- */
-@Lazy
-@Scope(&quot;singleton&quot;) 
-@Component //@Controller,@Service,...
-public class DefaultCache {
-     public DefaultCache() {
-         System.out.println(&quot;DefaultCache()&quot;);
-     }
-     @PostConstruct //告诉spring 此对象初始化时执行init方法
-     public void init() {
-         System.out.println(&quot;init()&quot;);
-     }
-     @PreDestroy//告诉spring 此对象销毁时执行close方法
-     public void close() {
-         System.out.println(&quot;close()&quot;);
-     }
-}</code></pre><p>定义测试类,从spring容器中获取bean对象</p>
-<pre><code>package com.cy.test;
-import org.junit.Assert;
-import org.junit.Test;
-import com.cy.spring.beans.DefaultCache;
-public class TestCache extends TestBase {
-    @Test
-    public void testDefaultCahce() {
-        DefaultCache cache01=
-        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
-        Assert.assertNotEquals(null, cache01);
-        DefaultCache cache02=
-        ctx.getBean(&quot;defaultCache&quot;,DefaultCache.class);
-        Assert.assertNotEquals(null, cache02);
-        System.out.println(cache01==cache02);
-    }
-}</code></pre><h3 id="1-2-4-Spring项目课堂练习分析及实现"><a href="#1-2-4-Spring项目课堂练习分析及实现" class="headerlink" title="1.2.4.Spring项目课堂练习分析及实现"></a>1.2.4.Spring项目课堂练习分析及实现</h3><p>1.整合第三方连接池DRUID.<br>1)步骤分析:<br>step01:添加依赖(数据库驱动依赖,连接池依赖)<br>step02:对druid连接池进行配置<br>step03:对连接池进行单元测试.<br>2)关键代码实现</p>
-<p>添加mysql依赖</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;mysql&lt;/groupId&gt;
-    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-    &lt;version&gt;8.0.17&lt;/version&gt;
- &lt;/dependency&gt;</code></pre><p>添加Druid依赖</p>
-<pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-  &lt;artifactId&gt;druid&lt;/artifactId&gt;
-  &lt;version&gt;1.1.19&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>定义数据源配置类</p>
-<pre><code>package com.cy.spring.beans;
-import javax.sql.DataSource;
-@Configuration
-public class DataSourceConfig {
-      @Bean(value=&quot;druid&quot;,initMethod=&quot;init&quot;,destroyMethod=&quot;close&quot;)
-      public DataSource newDruid() {
-         // System.out.println(&quot;newDruid()&quot;);
-          DruidDataSource ds=new DruidDataSource();
-          //ds.setDriverClassName(&quot;com.mysql.cj.jdbc.Driver&quot;);
-          ds.setUrl(&quot;jdbc:mysql:///test?serverTimezone=GMT&quot;);
-          ds.setUsername(&quot;root&quot;);
-          ds.setPassword(&quot;root&quot;);
-          ds.setMaxWait(10000);
-          //....
-          return ds;
-      }      
-}</code></pre><p>创建单元测试类</p>
-<pre><code>package com.cy.test;
-import javax.sql.DataSource;
-import org.junit.Assert;
-import org.junit.Test;
-import com.zaxxer.hikari.HikariDataSource;
-public class TestDataSource extends TestBase{
-    @Test
-    public void testDruidDataSource()throws Exception {
-        DataSource ds=
-        ctx.getBean(&quot;druid&quot;,DataSource.class);
-        Assert.assertNotEquals(null, ds);
-        System.out.println(ds.getConnection());
-    }
-}</code></pre><h1 id="2-整合第三方连接池HiKariCP连接池-扩展"><a href="#2-整合第三方连接池HiKariCP连接池-扩展" class="headerlink" title="2.整合第三方连接池HiKariCP连接池(扩展)."></a>2.整合第三方连接池HiKariCP连接池(扩展).</h1><h2 id="1-3-SPRING-IOC-应用原理进阶分析"><a href="#1-3-SPRING-IOC-应用原理进阶分析" class="headerlink" title="1.3.SPRING IOC 应用原理进阶分析"></a>1.3.SPRING IOC 应用原理进阶分析</h2><h3 id="1-3-1-Spring-IOC设计思想分析"><a href="#1-3-1-Spring-IOC设计思想分析" class="headerlink" title="1.3.1.Spring IOC设计思想分析"></a>1.3.1.Spring IOC设计思想分析</h3><p>IOC 是一种设计思想，称之为控制反转。基于这种思想实现对象创建，对象的科学管理以及应用时的解耦(借助DI机制实现)。Spring框架核心就是基于这种机制进行了完美实现。<br>说明：<br>1)控制反转探讨的是什么？谁控制谁的问题（spring控制对象的创建管理）<br>2)生活中的IOC的实现？(例如股票操盘手,父母包办婚姻）</p>
-<h3 id="1-3-2-Spring-Bean-工厂的初始化"><a href="#1-3-2-Spring-Bean-工厂的初始化" class="headerlink" title="1.3.2.Spring Bean 工厂的初始化"></a>1.3.2.Spring Bean 工厂的初始化</h3><p>基于xml方式实现Spring中Bean工厂的初始化.</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-630cb3fbad434155b03166a0ec10b184.png" alt="image.png"><br>说明:Spring 中的Bean工厂会基于Bean对象描述,创建bean的实例,并可以有选择性的对实例对象进行管理(例如单例作用域的对象).</p>
-<h3 id="1-3-3-Spring-中的两大map对象分析"><a href="#1-3-3-Spring-中的两大map对象分析" class="headerlink" title="1.3.3.Spring 中的两大map对象分析"></a>1.3.3.Spring 中的两大map对象分析</h3><p>1.如何理解Spring中的两大map对象(存储对象的两个容器)？<br>1）一个map用于存储bean的配置信息(工厂的原材料)<br>2）一个map用于存储bean的实例信息(工厂中的成品对象)</p>
-<p>基于xml配置文件实现:</p>
-<hr>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-c49b3bb717964a3189411cc5c0387a3f.png" alt="image.png"></h2><p>基于注解配置实现:</p>
-<hr>
-<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-1e18b43a520043d681eea9e4a79a5f7e.png" alt="image.png"></h2><h3 id="1-3-4-Spring-中两大bean对象分析-了解"><a href="#1-3-4-Spring-中两大bean对象分析-了解" class="headerlink" title="1.3.4.Spring 中两大bean对象分析(了解)"></a>1.3.4.Spring 中两大bean对象分析(了解)</h3><p>Bean对象创建<br>1)未实现FactoryBean接口(直接构造方法);<br>2)实现FactoryBean接口（调用FactoryBean对象的getObject方法）</p>
-<hr>
-<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-5bdbf2e837434d1eabb4a2ddc7c838e2.png" alt="image.png"></h2><p>说明：一般在创建一些相对复杂的工厂对象时，通常会写一个工厂bean对象，<br>然后基于工厂bean对象创建具体的工厂对象，例如SqlSessionFactoryBean,<br>ShiroFilterFactoryBean，ProxyFactoryBean等。</p>
-<h3 id="1-3-5-Spring-中两大bean对象描述方式"><a href="#1-3-5-Spring-中两大bean对象描述方式" class="headerlink" title="1.3.5.Spring 中两大bean对象描述方式"></a>1.3.5.Spring 中两大bean对象描述方式</h3><p>Bean 对象的描述<br>1)xml方式 (例如<bean id=”factory” class=”com.beans.Factory”>)<br>2)annotation方式（@Service,@Controller，@Configuration，@Bean，..）</p>
-<p>Spring 中用于描述这是一个Bean对象的相关注解如下:</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-ec7bdf52e7324e209438f176a87a0527.png" alt="image.png"><br>说明:无论使用如上图中的哪个注解对Bean进行描述,对Spring而言都认为是一样的Bean.</p>
-<h2 id="1-1-Spring-依赖注入实践增强"><a href="#1-1-Spring-依赖注入实践增强" class="headerlink" title="1.1.Spring 依赖注入实践增强"></a>1.1.Spring 依赖注入实践增强</h2><h3 id="1-1-1-Spring-中Bean对象依赖注入分析-重点"><a href="#1-1-1-Spring-中Bean对象依赖注入分析-重点" class="headerlink" title="1.1.1.Spring 中Bean对象依赖注入分析(重点)"></a>1.1.1.Spring 中Bean对象依赖注入分析(重点)</h3><p>依赖注入(DI)是一种设计思想,简单点就是对象通过set或构造方法直接为对象属性赋值,在Spring框架中为这种注入基于反射技术提供一种自动实现方式.例如:</p>
-<p>IOC 依赖注入在项目中的应用实现：</p>
-<hr>
-<h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-8effc442fbba466fbdf7b27016a7bab9.png" alt="image.png"></h2><p>实际项目中为了解耦和,对象之间通常会通过接口进行通讯,也就是<br>说对象要耦合与接口,例如2</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-aa073ba90cc446a3ab1018da3c585284.png" alt="image.png"></p>
-<p>个人认为：IOC的核心是对象生命周期管理(资源管理)以及<br>依赖注入（资源协同）；</p>
-<h3 id="1-1-2-Spring-中Bean对象依赖注入实践"><a href="#1-1-2-Spring-中Bean对象依赖注入实践" class="headerlink" title="1.1.2.Spring 中Bean对象依赖注入实践"></a>1.1.2.Spring 中Bean对象依赖注入实践</h3><p>在1.2小节基础上,基于如下设计,进行代码实践分析及实现。</p>
-<hr>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2019/12/image-31a98667ce2d4cd89c0896f59d297459.png" alt="image.png"></p>
-<p>核心步骤分析：<br>Step01:创建Cache接口以及对应的实现DefaultCache<br>Step02:创建SearchService接口以及对应的实现类。<br>Step03:将DefaultCache对象注入给DefaultSearchService。<br>Step03:创建SynchronizedCache测试@Autowired注解。</p>
-<p>关键代码分析及实现：</p>
-<p>Cache接口定义</p>
-<pre><code>public interface Cache {
-
-}</code></pre><p>DefaultCache类定义</p>
-<pre><code>@Lazy
-@Component
-public class DefaultCache implements Cache{
-    public DefaultCache() {
-        System.out.println(&quot;DefaultCache()&quot;);
-    }
-}</code></pre><p>SynchronizedCache定义</p>
-<pre><code>@Component
-public class SynchronizedCache implements Cache {
-
-}</code></pre><p>SearchService接口定义</p>
-<pre><code>public interface SearchService {
-
-}</code></pre><p>SearchService实现类定义</p>
-<pre><code>@Service
-public class DefaultSearchService implements SearchService {
-    /**@Autowired 可以修饰属性，set方法，构造方法等
-     * 默认按照属性类型，方法参数类型为对象属性注入值,
-     * 假如相同类型的对象有多个，还会按属性名或方法参
-     * 数名等进行查找。
-     * @Qualifier 配合@Autowired，用于指定要注入的对
-     * 象的名字。
-     */
-    @Autowired
-    @Qualifier(&quot;defaultCache&quot;)
-    private Cache cache;
-    @Override
-    public  String toString() {
-        return &quot;DefaultSearchService [cache=&quot; + cache + &quot;]&quot;;
-    }
-}</code></pre><p>测试实现</p>
-<pre><code>public class TestSearchService extends TestBase {
-    @Test
-    public void testSearchService() {
-        DefaultSearchService ds=
-        ctx.getBean(&quot;defaultSearchService&quot;,
-                DefaultSearchService.class);
-        System.out.println(ds);
-    }
-}</code></pre><h1 id="少年易老学难成，一寸光阴不可轻。"><a href="#少年易老学难成，一寸光阴不可轻。" class="headerlink" title="少年易老学难成，一寸光阴不可轻。"></a>少年易老学难成，一寸光阴不可轻。</h1>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</title>
-    <url>/2020/03/29/SpringCloud%E3%80%81RabbitMQ%E3%80%81Solr%E3%80%81Docker%E3%80%81Kubernetes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"><a href="#SpringCloud、RabbitMQ、Solr、Docker、Kubernetes" class="headerlink" title="SpringCloud、RabbitMQ、Solr、Docker、Kubernetes"></a>SpringCloud、RabbitMQ、Solr、Docker、Kubernetes</h1><p><a href="https://blog.csdn.net/weixin_38305440/article/details/102775484" target="_blank" rel="noopener" title="Spring Cloud入门操作手册(Greenwich)">Spring Cloud入门操作手册(Greenwich)</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810522" target="_blank" rel="noopener" title="RabbitMQ">RabbitMQ</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810509" target="_blank" rel="noopener" title="Lucene Solr 811">Lucene Solr 811</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810532" target="_blank" rel="noopener" title="Docker">Docker</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810541" target="_blank" rel="noopener" title="Docker案例">Docker案例</a></p>
-<p><a href="https://blog.csdn.net/weixin_38305440/article/details/102810548" target="_blank" rel="noopener" title="Kubernetes">Kubernetes</a></p>
-<p>老师的笔记，收藏备用。2019-12-05 10:20:47 星期四 &euro;</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>springCloud</tag>
-        <tag>rabbitMQ</tag>
-        <tag>solr</tag>
-        <tag>docker</tag>
-        <tag>kubernetes</tag>
       </tags>
   </entry>
   <entry>
@@ -2351,6 +2351,24 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/04/30/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>hexo+github部署自己的静态博客</title>
     <url>/2020/05/01/hexo+github%E9%83%A8%E7%BD%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -2426,22 +2444,26 @@ order by... -- 根据指定的列进行排序
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/30/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>idea安装与破解</title>
+    <url>/2020/05/03/idea%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>之前一直使用eclipse，决定不用了，以后用idea。。</p>
+<blockquote>
+<p>IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ在业界被公认为最好的java开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE支持、各类版本工具(git、svn等)、JUnit、CVS整合、代码分析、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持HTML，CSS，PHP，MySQL，Python等。免费版只支持Java等少数语言。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.下载<br>官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a><br>下载：<a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-11-53-c17a04424522428ba82a33f534456267.jpg" alt="Snipaste_2020-05-03_21-11-53"><br>开源版和旗舰版的区别<br>开源版（Community）完全免费，旗舰版（Ultimate）需要收费，但是注册账号后可以试用30天<br>两者的安装包是不同的，同一台机器可以同时安装开源版和旗舰版<br>旗舰版比开源版多了很多功能，例如支持HTML/CSS/JavaScript/TypeScript的代码智能提醒、提供常用框架（Spring，Play，Grails）的实用插件、提供数据库工具、自动检查代码重复等。<br>旗舰版的收费目前是订阅模式收费策略，支持按年订阅或者按月订阅。</p>
+<p>2.安装<br>无特殊，选择安装位置安装就好<br>我的安装路径：D:\software2\idea\IntelliJ IDEA 2019.3.3<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-06-24-cc857dd4e3504ba3b3a2b02ca1b12fa2.jpg" alt="Snipaste_2020-05-03_21-06-24"></p>
+<p>##破解<br>1.先适用30天进入idea，新建个项目<br>2.网上下载破解补丁jetbrains-agent.jar<br>3.放在idea安装目录的bin目录下<br>D:\software2\idea\IntelliJ IDEA 2019.3.3\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ee5d202b11444d1aa1275172e2fb6078.png" alt="image.png"><br>4.idea-help-Edit Custom VM Options<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ce0570929d094c028d9cf3f6a762d69b.png" alt="image.png"></p>
+<p>5.末尾加上一行（填写自己的路径）：<br>-javaagent:D:\software2\idea\IntelliJ IDEA 2019.3.3\bin\jetbrains-agent.jar<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-cf055a5139dd4717ad62be3dd816da20.png" alt="image.png"></p>
+<p>6.关掉ieda重启</p>
+<p>7.填入激活码，激活<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-082ae1ce53dd463c98a8a0dfe7c4bce1.png" alt="image.png"></p>
+<p>8.本文不包含任何资源，请自行百度。</p>
 ]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
   </entry>
   <entry>
     <title>java-jdk安装与配置idea配置jdk</title>
@@ -2471,8 +2493,8 @@ order by... -- 根据指定的列进行排序
         <category>工具</category>
       </categories>
       <tags>
-        <tag>jdk</tag>
         <tag>idea</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -2494,28 +2516,6 @@ order by... -- 根据指定的列进行排序
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>idea安装与破解</title>
-    <url>/2020/05/03/idea%E5%AE%89%E8%A3%85%E4%B8%8E%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>之前一直使用eclipse，决定不用了，以后用idea。。</p>
-<blockquote>
-<p>IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ在业界被公认为最好的java开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE支持、各类版本工具(git、svn等)、JUnit、CVS整合、代码分析、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持HTML，CSS，PHP，MySQL，Python等。免费版只支持Java等少数语言。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.下载<br>官网：<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">https://www.jetbrains.com/</a><br>下载：<a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-11-53-c17a04424522428ba82a33f534456267.jpg" alt="Snipaste_2020-05-03_21-11-53"><br>开源版和旗舰版的区别<br>开源版（Community）完全免费，旗舰版（Ultimate）需要收费，但是注册账号后可以试用30天<br>两者的安装包是不同的，同一台机器可以同时安装开源版和旗舰版<br>旗舰版比开源版多了很多功能，例如支持HTML/CSS/JavaScript/TypeScript的代码智能提醒、提供常用框架（Spring，Play，Grails）的实用插件、提供数据库工具、自动检查代码重复等。<br>旗舰版的收费目前是订阅模式收费策略，支持按年订阅或者按月订阅。</p>
-<p>2.安装<br>无特殊，选择安装位置安装就好<br>我的安装路径：D:\software2\idea\IntelliJ IDEA 2019.3.3<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-06-24-cc857dd4e3504ba3b3a2b02ca1b12fa2.jpg" alt="Snipaste_2020-05-03_21-06-24"></p>
-<p>##破解<br>1.先适用30天进入idea，新建个项目<br>2.网上下载破解补丁jetbrains-agent.jar<br>3.放在idea安装目录的bin目录下<br>D:\software2\idea\IntelliJ IDEA 2019.3.3\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ee5d202b11444d1aa1275172e2fb6078.png" alt="image.png"><br>4.idea-help-Edit Custom VM Options<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-ce0570929d094c028d9cf3f6a762d69b.png" alt="image.png"></p>
-<p>5.末尾加上一行（填写自己的路径）：<br>-javaagent:D:\software2\idea\IntelliJ IDEA 2019.3.3\bin\jetbrains-agent.jar<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-cf055a5139dd4717ad62be3dd816da20.png" alt="image.png"></p>
-<p>6.关掉ieda重启</p>
-<p>7.填入激活码，激活<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-082ae1ce53dd463c98a8a0dfe7c4bce1.png" alt="image.png"></p>
-<p>8.本文不包含任何资源，请自行百度。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -2555,28 +2555,6 @@ order by... -- 根据指定的列进行排序
       <tags>
         <tag>插件</tag>
         <tag>lombok</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>maven安装与配置idea配置maven</title>
-    <url>/2020/05/03/maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEmaven/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="maven介绍"><a href="#maven介绍" class="headerlink" title="maven介绍"></a>maven介绍</h2><p>Apache Maven是一个软件项目管理和理解工具。基于项目对象模型（POM）的概念，Maven可以从中央信息管理项目的构建，报告和文档。<br>Maven是一个项目管理和整合的工具。Maven为开发者提供了一套完整的构建生命周期框架。开发团队基本不用花多少时间就能自动完成工程的基础构建配置，因为Maven使用了一个标准的目录结构和一个默认的构建生命周期。在创建报告、检查、构建和测试自动配置时，Maven可以让开发者的工作变得更简单。<br>官网：<a href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a></p>
-<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p>1.下载：<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">https://maven.apache.org/download.cgi</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-08-30-e054caf2efd14a5bbd157f7678a25a87.png" alt="Snipaste_2020-05-03_22-08-30"><br>2.安装<br>next<br>我的路径：D:\java\maven\apache-maven-3.6.2</p>
-<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>1.右击此电脑&gt;属性&gt;高级系统设置&gt;环境变量&gt;单击[新建(W)]添加以下环境变量<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-32-17-17f4088ae5bc4ee886779780704d189b.png" alt="Snipaste_2020-05-03_21-32-17"><br>2.新建环境变量<br>M2_HOME<br>D:\java\maven\apache-maven-3.6.2<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-13-28-1e1f407b86134790b3734495ec5d7777.png" alt="Snipaste_2020-05-03_22-13-28"><br>3.更新 PATH 变量，添加 Maven bin 文件夹到 PATH 的最后<br>Path<br>D:\java\maven\apache-maven-3.6.2\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-14-36-7b23a71b9d4c4893a54520da2392990c.png" alt="Snipaste_2020-05-03_22-14-36"></p>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>windows+r调出cmd窗口输入  mvn -v<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-8dfa789d6490436fb27485bb5c582eac.png" alt="image.png"><br>成功</p>
-<h2 id="settings文件修改"><a href="#settings文件修改" class="headerlink" title="settings文件修改"></a>settings文件修改</h2><p>（1）本地仓库（可选）<br>Default: ${user.home}/.m2/repository<br><localRepository>D:\java\repository\rep1</localRepository><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-26-19-d83c003d3b7f4991ae296213c83ec4dd.png" alt="Snipaste_2020-05-03_22-26-19"><br>（2）配置阿里云镜像仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;alimaven-central&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;name&gt;aliyun maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;repositories&#x2F;central&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line">        </span><br><span class="line">  &lt;&#x2F;mirrors&gt;</span><br></pre></td></tr></table></figure>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-27-44-77c6ea7ac3a04d64a611e7dd1c373cf6.png" alt="Snipaste_2020-05-03_22-27-44"><br>（3）配置jdk版本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">            &lt;id&gt;jdk18&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;activation&gt;</span><br><span class="line">                &lt;jdk&gt;1.8&lt;&#x2F;jdk&gt;</span><br><span class="line">                &lt;activeByDefault&gt;true&lt;&#x2F;activeByDefault&gt;</span><br><span class="line">            &lt;&#x2F;activation&gt;</span><br><span class="line">            &lt;properties&gt;</span><br><span class="line">                &lt;maven.compiler.source&gt;1.8&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">                &lt;maven.compiler.target&gt;1.8&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">                &lt;maven.compiler.compilerVersion&gt;1.8&lt;&#x2F;maven.compiler.compilerVersion&gt;</span><br><span class="line">            &lt;&#x2F;properties&gt;</span><br><span class="line">        &lt;&#x2F;profile&gt;</span><br></pre></td></tr></table></figure>
-<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-27-53-ad6d6ea2d6c047d29dfeee9837523a27.png" alt="Snipaste_2020-05-03_22-27-53"></p>
-<h2 id="idea配置maven"><a href="#idea配置maven" class="headerlink" title="idea配置maven"></a>idea配置maven</h2><p>File-settings-Build，Excution，Deployment-BuildTools-Maven<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-22-29-0f8e492bb6fb41aa80faeb535f21c6f2.png" alt="Snipaste_2020-05-03_22-22-29"></p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-        <tag>maven</tag>
       </tags>
   </entry>
   <entry>
@@ -2630,10 +2608,32 @@ order by... -- 根据指定的列进行排序
         <category>前端</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>github</tag>
+        <tag>java</tag>
         <tag>vue</tag>
         <tag>vuepress</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>maven安装与配置idea配置maven</title>
+    <url>/2020/05/03/maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEidea%E9%85%8D%E7%BD%AEmaven/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="maven介绍"><a href="#maven介绍" class="headerlink" title="maven介绍"></a>maven介绍</h2><p>Apache Maven是一个软件项目管理和理解工具。基于项目对象模型（POM）的概念，Maven可以从中央信息管理项目的构建，报告和文档。<br>Maven是一个项目管理和整合的工具。Maven为开发者提供了一套完整的构建生命周期框架。开发团队基本不用花多少时间就能自动完成工程的基础构建配置，因为Maven使用了一个标准的目录结构和一个默认的构建生命周期。在创建报告、检查、构建和测试自动配置时，Maven可以让开发者的工作变得更简单。<br>官网：<a href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a></p>
+<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p>1.下载：<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">https://maven.apache.org/download.cgi</a><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-08-30-e054caf2efd14a5bbd157f7678a25a87.png" alt="Snipaste_2020-05-03_22-08-30"><br>2.安装<br>next<br>我的路径：D:\java\maven\apache-maven-3.6.2</p>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>1.右击此电脑&gt;属性&gt;高级系统设置&gt;环境变量&gt;单击[新建(W)]添加以下环境变量<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_21-32-17-17f4088ae5bc4ee886779780704d189b.png" alt="Snipaste_2020-05-03_21-32-17"><br>2.新建环境变量<br>M2_HOME<br>D:\java\maven\apache-maven-3.6.2<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-13-28-1e1f407b86134790b3734495ec5d7777.png" alt="Snipaste_2020-05-03_22-13-28"><br>3.更新 PATH 变量，添加 Maven bin 文件夹到 PATH 的最后<br>Path<br>D:\java\maven\apache-maven-3.6.2\bin<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-14-36-7b23a71b9d4c4893a54520da2392990c.png" alt="Snipaste_2020-05-03_22-14-36"></p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>windows+r调出cmd窗口输入  mvn -v<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/image-8dfa789d6490436fb27485bb5c582eac.png" alt="image.png"><br>成功</p>
+<h2 id="settings文件修改"><a href="#settings文件修改" class="headerlink" title="settings文件修改"></a>settings文件修改</h2><p>（1）本地仓库（可选）<br>Default: ${user.home}/.m2/repository<br><localRepository>D:\java\repository\rep1</localRepository><br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-26-19-d83c003d3b7f4991ae296213c83ec4dd.png" alt="Snipaste_2020-05-03_22-26-19"><br>（2）配置阿里云镜像仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;alimaven-central&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;name&gt;aliyun maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;repositories&#x2F;central&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line">        </span><br><span class="line">  &lt;&#x2F;mirrors&gt;</span><br></pre></td></tr></table></figure>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-27-44-77c6ea7ac3a04d64a611e7dd1c373cf6.png" alt="Snipaste_2020-05-03_22-27-44"><br>（3）配置jdk版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">            &lt;id&gt;jdk18&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;activation&gt;</span><br><span class="line">                &lt;jdk&gt;1.8&lt;&#x2F;jdk&gt;</span><br><span class="line">                &lt;activeByDefault&gt;true&lt;&#x2F;activeByDefault&gt;</span><br><span class="line">            &lt;&#x2F;activation&gt;</span><br><span class="line">            &lt;properties&gt;</span><br><span class="line">                &lt;maven.compiler.source&gt;1.8&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">                &lt;maven.compiler.target&gt;1.8&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">                &lt;maven.compiler.compilerVersion&gt;1.8&lt;&#x2F;maven.compiler.compilerVersion&gt;</span><br><span class="line">            &lt;&#x2F;properties&gt;</span><br><span class="line">        &lt;&#x2F;profile&gt;</span><br></pre></td></tr></table></figure>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-27-53-ad6d6ea2d6c047d29dfeee9837523a27.png" alt="Snipaste_2020-05-03_22-27-53"></p>
+<h2 id="idea配置maven"><a href="#idea配置maven" class="headerlink" title="idea配置maven"></a>idea配置maven</h2><p>File-settings-Build，Excution，Deployment-BuildTools-Maven<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/05/Snipaste_2020-05-03_22-22-29-0f8e492bb6fb41aa80faeb535f21c6f2.png" alt="Snipaste_2020-05-03_22-22-29"></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>maven</tag>
       </tags>
   </entry>
   <entry>
@@ -2811,6 +2811,58 @@ document.getElementById("spkjj").style.height=document.getElementById("spkj").sc
       </tags>
   </entry>
   <entry>
+    <title>命令行录制工具asciinema</title>
+    <url>/2020/04/22/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7asciinema/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
+<p>Record and share your terminal sessions, the right way.</p>
+</blockquote>
+<blockquote>
+<p><strong>简单录制</strong><br>在终端上记录您的工作。要开始只是运行asciinema rec，完成使用Ctrl-D或输入exit即可</p>
+</blockquote>
+<blockquote>
+<p><strong>复制粘贴</strong><br>每当您看到要在自己的终端中尝试的命令时，只需暂停播放器并复制粘贴所需的内容即可。毕竟只是文本！</p>
+</blockquote>
+<blockquote>
+<p><strong>嵌入</strong><br>轻松地在博客文章，项目文档页面或会议演讲幻灯片中嵌入asciicast播放器。</p>
+</blockquote>
+<p>官网例子：</p>
+<script id="asciicast-239367" src="https://asciinema.org/a/239367.js" async></script>
+
+
+<p>官网：<a href="https://asciinema.org/" target="_blank" rel="noopener">https://asciinema.org/</a><br>官方教程：<a href="https://asciinema.org/docs/how-it-works" target="_blank" rel="noopener">https://asciinema.org/docs/how-it-works</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p>前提：<br>1.了解服务器相关知识<br>2.注册网站账号</p>
+</blockquote>
+<p>1.在linux上安装asciinema<br>我的服务器系统为centos7，下面以这个为例，不同系统请参考官方详细安装文档。<br>#安装epel发行包<br>yum -y install epel-release<br>yum -y install asciinema</p>
+<p>#用命令测试版本<br>asciinema –version</p>
+<p>#安装expect命令 用于交互<br>yum -y install expect<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-037157144b674b64bf12dffbcb3ea4cd.png" alt="image.png"><br>2. 录制</p>
+<p>执行录制<br>asciinema rec test   （test为文件名，可自定义）</p>
+<p>这里我先胡乱输入一些东西。<br>ctrl+d退出录屏，回车则上传录制内容到网站，ctrl+c可以保存到本地（后续也可以通过asciinema upload来上传）</p>
+<p>执行播放<br>asciinema play test</p>
+<p>上传asciinema upload test<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-f80895e02e3942c4bcd74576ebef35a1.png" alt="image.png"></p>
+<ol start="3">
+<li><p>打开网址或者进入网站就会发现已经有这个东西了<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-73db2980e9b24cab91abc27e3e428269.png" alt="image.png"></p>
+</li>
+<li><p>使用方法<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-4e9cc7e47d24405781f2f85c3e6774cf.png" alt="image.png"></p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Link</span><br><span class="line">https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj</span><br><span class="line"></span><br><span class="line">Append ?t&#x3D;30 to start the playback at 30s, ?t&#x3D;3:20 to start the playback at 3m 20s.</span><br><span class="line"></span><br><span class="line">Embed image link</span><br><span class="line">Use snippets below to display a screenshot linking to this recording.</span><br><span class="line">Useful in places where scripts are not allowed (e.g. in a project&#39;s README file).</span><br><span class="line"></span><br><span class="line">HTML:</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">Markdown:</span><br><span class="line">[![asciicast](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg)](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj)</span><br><span class="line"></span><br><span class="line">Embed the player</span><br><span class="line">If you&#39;re embedding on your own page or on a site which permits script tags, you can use the full player widget:</span><br><span class="line"></span><br><span class="line">&lt;script id&#x3D;&quot;asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj&quot; src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">Paste the above script tag where you want the player to be displayed on your page.</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>效果<script id="asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj" src="https://asciinema.org/a/E9zOTdPU5eb1CoC9F8EXQdIVj.js" async></script>
+
+</li>
+</ol>
+<p>6.结束</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>asciinema</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分布式锁</title>
     <url>/2020/04/04/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><h2 id="1-什么是分布式锁？"><a href="#1-什么是分布式锁？" class="headerlink" title="1.什么是分布式锁？"></a>1.什么是分布式锁？</h2><p>&emsp;&emsp;分布式锁是控制分布式系统之间同步访问共享资源的一种方式。在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，在这种情况下，便需要使用到分布式锁。<br/><br>&emsp;&emsp;在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，这个时候，便需要使用到分布式锁。</p>
@@ -2867,79 +2919,17 @@ end</code></pre><p>测试类</p>
       </tags>
   </entry>
   <entry>
-    <title>命令行录制工具asciinema</title>
-    <url>/2020/04/22/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7asciinema/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
-<p>Record and share your terminal sessions, the right way.</p>
-</blockquote>
-<blockquote>
-<p><strong>简单录制</strong><br>在终端上记录您的工作。要开始只是运行asciinema rec，完成使用Ctrl-D或输入exit即可</p>
-</blockquote>
-<blockquote>
-<p><strong>复制粘贴</strong><br>每当您看到要在自己的终端中尝试的命令时，只需暂停播放器并复制粘贴所需的内容即可。毕竟只是文本！</p>
-</blockquote>
-<blockquote>
-<p><strong>嵌入</strong><br>轻松地在博客文章，项目文档页面或会议演讲幻灯片中嵌入asciicast播放器。</p>
-</blockquote>
-<p>官网例子：</p>
-<script id="asciicast-239367" src="https://asciinema.org/a/239367.js" async></script>
-
-
-<p>官网：<a href="https://asciinema.org/" target="_blank" rel="noopener">https://asciinema.org/</a><br>官方教程：<a href="https://asciinema.org/docs/how-it-works" target="_blank" rel="noopener">https://asciinema.org/docs/how-it-works</a></p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>前提：<br>1.了解服务器相关知识<br>2.注册网站账号</p>
-</blockquote>
-<p>1.在linux上安装asciinema<br>我的服务器系统为centos7，下面以这个为例，不同系统请参考官方详细安装文档。<br>#安装epel发行包<br>yum -y install epel-release<br>yum -y install asciinema</p>
-<p>#用命令测试版本<br>asciinema –version</p>
-<p>#安装expect命令 用于交互<br>yum -y install expect<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-037157144b674b64bf12dffbcb3ea4cd.png" alt="image.png"><br>2. 录制</p>
-<p>执行录制<br>asciinema rec test   （test为文件名，可自定义）</p>
-<p>这里我先胡乱输入一些东西。<br>ctrl+d退出录屏，回车则上传录制内容到网站，ctrl+c可以保存到本地（后续也可以通过asciinema upload来上传）</p>
-<p>执行播放<br>asciinema play test</p>
-<p>上传asciinema upload test<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-f80895e02e3942c4bcd74576ebef35a1.png" alt="image.png"></p>
-<ol start="3">
-<li><p>打开网址或者进入网站就会发现已经有这个东西了<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-73db2980e9b24cab91abc27e3e428269.png" alt="image.png"></p>
-</li>
-<li><p>使用方法<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-4e9cc7e47d24405781f2f85c3e6774cf.png" alt="image.png"></p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Link</span><br><span class="line">https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj</span><br><span class="line"></span><br><span class="line">Append ?t&#x3D;30 to start the playback at 30s, ?t&#x3D;3:20 to start the playback at 3m 20s.</span><br><span class="line"></span><br><span class="line">Embed image link</span><br><span class="line">Use snippets below to display a screenshot linking to this recording.</span><br><span class="line">Useful in places where scripts are not allowed (e.g. in a project&#39;s README file).</span><br><span class="line"></span><br><span class="line">HTML:</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg&quot; &#x2F;&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">Markdown:</span><br><span class="line">[![asciicast](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.svg)](https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj)</span><br><span class="line"></span><br><span class="line">Embed the player</span><br><span class="line">If you&#39;re embedding on your own page or on a site which permits script tags, you can use the full player widget:</span><br><span class="line"></span><br><span class="line">&lt;script id&#x3D;&quot;asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj&quot; src&#x3D;&quot;https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;E9zOTdPU5eb1CoC9F8EXQdIVj.js&quot; async&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">Paste the above script tag where you want the player to be displayed on your page.</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>效果<script id="asciicast-E9zOTdPU5eb1CoC9F8EXQdIVj" src="https://asciinema.org/a/E9zOTdPU5eb1CoC9F8EXQdIVj.js" async></script>
-
-</li>
-</ol>
-<p>6.结束</p>
-]]></content>
+    <title>小工具</title>
+    <url>/2020/04/14/%E5%B0%8F%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://lovelive.tools/" target="_blank" rel="noopener">https://lovelive.tools/</a></p>
+<iframe id="jjj"  src="https://lovelive.tools/" width="100%" height="700px"   frameborder="0"  name="我的博客"     scrolling="auto">   
+</iframe>
+<script type="text/javascript">  
+document.getElementById("jjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
+</script>]]></content>
       <categories>
         <category>工具</category>
       </categories>
-      <tags>
-        <tag>asciinema</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>愿逝者安息，让全站黑白！</title>
-    <url>/2020/04/17/%E6%84%BF%E9%80%9D%E8%80%85%E5%AE%89%E6%81%AF%EF%BC%8C%E8%AE%A9%E5%85%A8%E7%AB%99%E9%BB%91%E7%99%BD%EF%BC%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="愿逝者安息，愿生者奋发，愿祖国昌盛！"><a href="#愿逝者安息，愿生者奋发，愿祖国昌盛！" class="headerlink" title="愿逝者安息，愿生者奋发，愿祖国昌盛！"></a>愿逝者安息，愿生者奋发，愿祖国昌盛！</h3><p>&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车、舰船鸣笛，防空警报鸣响。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/5e873b96a3107bb6f533a554-b7dea45003c4466c829c6a40dca52589.jpeg" alt="5e873b96a3107bb6f533a554"></p>
-<p>今天是2020年4月4日，全国将举行哀悼活动，为表达敬意与尊重，应将网站设置为灰度。<br>愿逝者安息，愿生者奋发，愿祖国昌盛！</p>
-<p>例如：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-1dc913a7557043338ce1d3edad11b5de.png" alt="image.png"></p>
-<p>实现：<br>下面三种方式任选一种都可以，只需要放入html的head标签中即可实现。<br>（1）方式一</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">html&#123;</span><br><span class="line">     filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale&#x3D;1);-webkit-filter:saturate(0)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（2）方式二</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&gt;*&#123;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);</span><br><span class="line">    -webkit-filter: grayscale(1);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>（3）方式三</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">html &#123; </span><br><span class="line">      -webkit-filter: grayscale(100%); </span><br><span class="line">      -moz-filter: grayscale(100%); </span><br><span class="line">      -ms-filter: grayscale(100%); </span><br><span class="line">      -o-filter: grayscale(100%); </span><br><span class="line">      filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);  </span><br><span class="line">      _filter:none; </span><br><span class="line"> &#125; </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-bcb9c3c4d39a4e3080235c1451d67765.png" alt="image.png"><br>赶紧行动起来吧！</p>
-<p>来源：<a href="https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA</a></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-        <tag>css</tag>
-      </tags>
   </entry>
   <entry>
     <title>喜欢收集图片的小伙伴点进来（artstation+pixiv）</title>
@@ -2987,38 +2977,26 @@ end</code></pre><p>测试类</p>
       </tags>
   </entry>
   <entry>
-    <title>小工具</title>
-    <url>/2020/04/14/%E5%B0%8F%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://lovelive.tools/" target="_blank" rel="noopener">https://lovelive.tools/</a></p>
-<iframe id="jjj"  src="https://lovelive.tools/" width="100%" height="700px"   frameborder="0"  name="我的博客"     scrolling="auto">   
-</iframe>
-<script type="text/javascript">  
-document.getElementById("jjj").style.height=document.getElementById("spkj").scrollWidth*0.76+"px";
-</script>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/2020/04/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>  数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</p>
-<h2 id="1-1常用的数据结构编辑"><a href="#1-1常用的数据结构编辑" class="headerlink" title="1.1常用的数据结构编辑"></a>1.1常用的数据结构编辑</h2><p>  在计算机科学的发展过程中，数据结构也随之发展。程序设计中常用的数据结构包括如下几个。 [5] </p>
-<h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h3><p>  数组是一种聚合数据类型，它是将具有相同类型的若干变量有序地组织在一起的集合。数组可以说是最基本的数据结构，在各种编程语言中都有对应。一个数组可以分解为多个数组元素，按照数据元素的类型，数组可以分为整型数组、字符型数组、浮点型数组、指针数组和结构数组等。数组还可以有一维、二维以及多维等表现形式。 [5] </p>
-<h3 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈( Stack)"></a>栈( Stack)</h3><p>  栈是一种特殊的线性表，它只能在一个表的一个固定端进行数据结点的插入和删除操作。栈按照后进先出的原则来存储数据，也就是说，先插入的数据将被压入栈底，最后插入的数据在栈顶，读出数据时，从栈顶开始逐个读出。栈在汇编语言程序中，经常用于重要数据的现场保护。栈中没有数据时，称为空栈。 [5] </p>
-<h3 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列(Queue)"></a>队列(Queue)</h3><p>  队列和栈类似，也是一种特殊的线性表。和栈不同的是，队列只允许在表的一端进行插入操作，而在另一端进行删除操作。一般来说，进行插入操作的一端称为队尾，进行删除操作的一端称为队头。队列中没有元素时，称为空队列。 [5] </p>
-<h3 id="链表-Linked-List"><a href="#链表-Linked-List" class="headerlink" title="链表( Linked List)"></a>链表( Linked List)</h3><p>  链表是一种数据元素按照链式存储结构进行存储的数据结构，这种存储结构具有在物理上存在非连续的特点。链表由一系列数据结点构成，每个数据结点包括数据域和指针域两部分。其中，指针域保存了数据结构中下一个元素存放的地址。链表结构中数据元素的逻辑顺序是通过链表中的指针链接次序来实现的。 [5] </p>
-<h3 id="树-Tree"><a href="#树-Tree" class="headerlink" title="树( Tree)"></a>树( Tree)</h3><p>  树是典型的非线性结构，它是包括，2个结点的有穷集合K。在树结构中，有且仅有一个根结点，该结点没有前驱结点。在树结构中的其他结点都有且仅有一个前驱结点，而且可以有两个后继结点，m≥0。 [5] </p>
-<h3 id="图-Graph"><a href="#图-Graph" class="headerlink" title="图(Graph)"></a>图(Graph)</h3><p>  图是另一种非线性数据结构。在图结构中，数据结点一般称为顶点，而边是顶点的有序偶对。如果两个顶点之间存在一条边，那么就表示这两个顶点具有相邻关系。 [5] </p>
-<h3 id="堆-Heap"><a href="#堆-Heap" class="headerlink" title="堆(Heap)"></a>堆(Heap)</h3><p>  堆是一种特殊的树形数据结构，一般讨论的堆都是二叉堆。堆的特点是根结点的值是所有结点中最小的或者最大的，并且根结点的两个子树也是一个堆结构。 [5] </p>
-<h3 id="散列表-Hash"><a href="#散列表-Hash" class="headerlink" title="散列表(Hash)"></a>散列表(Hash)</h3><p>  散列表源自于散列函数(Hash function)，其思想是如果在结构中存在关键字和T相等的记录，那么必定在F(T)的存储位置可以找到该记录，这样就可以不用进行比较操作而直接取得所查记录。 [5]</p>
-<h2 id="1-2常用算法编辑"><a href="#1-2常用算法编辑" class="headerlink" title="1.2常用算法编辑"></a>1.2常用算法编辑</h2><p>  数据结构研究的内容：就是如何按一定的逻辑结构，把数据组织起来，并选择适当的存储表示方法把逻辑结构组织好的数据存储到计算机的存储器里。研究的目的是为了更有效的处理数据，提高数据运算效率。数据的运算是定义在数据的逻辑结构上，但运算的具体实现要在存储结构上进行。一般有以下几种常用运算：<br><br/><br>(1)检索。检索就是在数据结构里查找满足一定条件的节点。一般是给定一个某字段的值，找具有该字段值的节点。<br><br/><br>(2)插入。往数据结构中增加新的节点。<br><br/><br>(3)删除。把指定的结点从数据结构中去掉。<br><br/><br>(4)更新。改变指定节点的一个或多个字段的值。<br><br/><br>(5)排序。把节点按某种指定的顺序重新排列。例如递增或递减。<br><br/></p>
+    <title>愿逝者安息，让全站黑白！</title>
+    <url>/2020/04/17/%E6%84%BF%E9%80%9D%E8%80%85%E5%AE%89%E6%81%AF%EF%BC%8C%E8%AE%A9%E5%85%A8%E7%AB%99%E9%BB%91%E7%99%BD%EF%BC%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="愿逝者安息，愿生者奋发，愿祖国昌盛！"><a href="#愿逝者安息，愿生者奋发，愿祖国昌盛！" class="headerlink" title="愿逝者安息，愿生者奋发，愿祖国昌盛！"></a>愿逝者安息，愿生者奋发，愿祖国昌盛！</h3><p>&emsp;&emsp;为表达全国各族人民对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼，国务院今天发布公告，决定2020年4月4日举行全国性哀悼活动。在此期间，全国和驻外使领馆下半旗志哀，全国停止公共娱乐活动。4月4日10时起，全国人民默哀3分钟，汽车、火车、舰船鸣笛，防空警报鸣响。<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/5e873b96a3107bb6f533a554-b7dea45003c4466c829c6a40dca52589.jpeg" alt="5e873b96a3107bb6f533a554"></p>
+<p>今天是2020年4月4日，全国将举行哀悼活动，为表达敬意与尊重，应将网站设置为灰度。<br>愿逝者安息，愿生者奋发，愿祖国昌盛！</p>
+<p>例如：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-1dc913a7557043338ce1d3edad11b5de.png" alt="image.png"></p>
+<p>实现：<br>下面三种方式任选一种都可以，只需要放入html的head标签中即可实现。<br>（1）方式一</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">html&#123;</span><br><span class="line">     filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale&#x3D;1);-webkit-filter:saturate(0)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>（2）方式二</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">body&gt;*&#123;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);</span><br><span class="line">    -webkit-filter: grayscale(1);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>（3）方式三</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt; </span><br><span class="line">html &#123; </span><br><span class="line">      -webkit-filter: grayscale(100%); </span><br><span class="line">      -moz-filter: grayscale(100%); </span><br><span class="line">      -ms-filter: grayscale(100%); </span><br><span class="line">      -o-filter: grayscale(100%); </span><br><span class="line">      filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale&#x3D;1);  </span><br><span class="line">      _filter:none; </span><br><span class="line"> &#125; </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://www.zhangpeng.fun/upload/2020/04/image-bcb9c3c4d39a4e3080235c1451d67765.png" alt="image.png"><br>赶紧行动起来吧！</p>
+<p>来源：<a href="https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/PtPy6WdltNWRiq8X0b-BeA</a></p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>html</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -3100,6 +3078,28 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
       <tags>
         <tag>java</tag>
         <tag>me</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/2020/04/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>  数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</p>
+<h2 id="1-1常用的数据结构编辑"><a href="#1-1常用的数据结构编辑" class="headerlink" title="1.1常用的数据结构编辑"></a>1.1常用的数据结构编辑</h2><p>  在计算机科学的发展过程中，数据结构也随之发展。程序设计中常用的数据结构包括如下几个。 [5] </p>
+<h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h3><p>  数组是一种聚合数据类型，它是将具有相同类型的若干变量有序地组织在一起的集合。数组可以说是最基本的数据结构，在各种编程语言中都有对应。一个数组可以分解为多个数组元素，按照数据元素的类型，数组可以分为整型数组、字符型数组、浮点型数组、指针数组和结构数组等。数组还可以有一维、二维以及多维等表现形式。 [5] </p>
+<h3 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈( Stack)"></a>栈( Stack)</h3><p>  栈是一种特殊的线性表，它只能在一个表的一个固定端进行数据结点的插入和删除操作。栈按照后进先出的原则来存储数据，也就是说，先插入的数据将被压入栈底，最后插入的数据在栈顶，读出数据时，从栈顶开始逐个读出。栈在汇编语言程序中，经常用于重要数据的现场保护。栈中没有数据时，称为空栈。 [5] </p>
+<h3 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列(Queue)"></a>队列(Queue)</h3><p>  队列和栈类似，也是一种特殊的线性表。和栈不同的是，队列只允许在表的一端进行插入操作，而在另一端进行删除操作。一般来说，进行插入操作的一端称为队尾，进行删除操作的一端称为队头。队列中没有元素时，称为空队列。 [5] </p>
+<h3 id="链表-Linked-List"><a href="#链表-Linked-List" class="headerlink" title="链表( Linked List)"></a>链表( Linked List)</h3><p>  链表是一种数据元素按照链式存储结构进行存储的数据结构，这种存储结构具有在物理上存在非连续的特点。链表由一系列数据结点构成，每个数据结点包括数据域和指针域两部分。其中，指针域保存了数据结构中下一个元素存放的地址。链表结构中数据元素的逻辑顺序是通过链表中的指针链接次序来实现的。 [5] </p>
+<h3 id="树-Tree"><a href="#树-Tree" class="headerlink" title="树( Tree)"></a>树( Tree)</h3><p>  树是典型的非线性结构，它是包括，2个结点的有穷集合K。在树结构中，有且仅有一个根结点，该结点没有前驱结点。在树结构中的其他结点都有且仅有一个前驱结点，而且可以有两个后继结点，m≥0。 [5] </p>
+<h3 id="图-Graph"><a href="#图-Graph" class="headerlink" title="图(Graph)"></a>图(Graph)</h3><p>  图是另一种非线性数据结构。在图结构中，数据结点一般称为顶点，而边是顶点的有序偶对。如果两个顶点之间存在一条边，那么就表示这两个顶点具有相邻关系。 [5] </p>
+<h3 id="堆-Heap"><a href="#堆-Heap" class="headerlink" title="堆(Heap)"></a>堆(Heap)</h3><p>  堆是一种特殊的树形数据结构，一般讨论的堆都是二叉堆。堆的特点是根结点的值是所有结点中最小的或者最大的，并且根结点的两个子树也是一个堆结构。 [5] </p>
+<h3 id="散列表-Hash"><a href="#散列表-Hash" class="headerlink" title="散列表(Hash)"></a>散列表(Hash)</h3><p>  散列表源自于散列函数(Hash function)，其思想是如果在结构中存在关键字和T相等的记录，那么必定在F(T)的存储位置可以找到该记录，这样就可以不用进行比较操作而直接取得所查记录。 [5]</p>
+<h2 id="1-2常用算法编辑"><a href="#1-2常用算法编辑" class="headerlink" title="1.2常用算法编辑"></a>1.2常用算法编辑</h2><p>  数据结构研究的内容：就是如何按一定的逻辑结构，把数据组织起来，并选择适当的存储表示方法把逻辑结构组织好的数据存储到计算机的存储器里。研究的目的是为了更有效的处理数据，提高数据运算效率。数据的运算是定义在数据的逻辑结构上，但运算的具体实现要在存储结构上进行。一般有以下几种常用运算：<br><br/><br>(1)检索。检索就是在数据结构里查找满足一定条件的节点。一般是给定一个某字段的值，找具有该字段值的节点。<br><br/><br>(2)插入。往数据结构中增加新的节点。<br><br/><br>(3)删除。把指定的结点从数据结构中去掉。<br><br/><br>(4)更新。改变指定节点的一个或多个字段的值。<br><br/><br>(5)排序。把节点按某种指定的顺序重新排列。例如递增或递减。<br><br/></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -3284,32 +3284,6 @@ document.getElementById("jjj").style.height=document.getElementById("spkj").scro
       </tags>
   </entry>
   <entry>
-    <title>软件工具推荐</title>
-    <url>/2020/04/10/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Windows软件推荐，全面武装你的电脑！提高工作工作学习效率，不一定是最好的，但是都是我用的，用起来非常方便，推荐给大家。</p>
-<h3 id="1-安全"><a href="#1-安全" class="headerlink" title="1. 安全"></a>1. 安全</h3><p>   火绒</p>
-<h3 id="2-浏览器"><a href="#2-浏览器" class="headerlink" title="2. 浏览器"></a>2. 浏览器</h3><p>   chrome<br>   火狐</p>
-<h3 id="3-下载工具"><a href="#3-下载工具" class="headerlink" title="3.下载工具"></a>3.下载工具</h3><p>   迅雷<br>   XDM<br>   IDM</p>
-<h3 id="4-网络存储"><a href="#4-网络存储" class="headerlink" title="4.网络存储"></a>4.网络存储</h3><p>   百度网盘<br>   金山文档</p>
-<h3 id="5-社交"><a href="#5-社交" class="headerlink" title="5.社交"></a>5.社交</h3><p>   微信<br>   TIM</p>
-<h3 id="6-媒体"><a href="#6-媒体" class="headerlink" title="6.媒体"></a>6.媒体</h3><p>   网易云音乐<br>   potplayer</p>
-<h3 id="7-写作"><a href="#7-写作" class="headerlink" title="7.写作"></a>7.写作</h3><p>   onenote<br>   Typora<br>   印象笔记</p>
-<h3 id="8-办公"><a href="#8-办公" class="headerlink" title="8.办公"></a>8.办公</h3><p>   office<br>   foxmail</p>
-<h3 id="9-画图"><a href="#9-画图" class="headerlink" title="9.画图"></a>9.画图</h3><p>   Xmind</p>
-<h3 id="10-远程"><a href="#10-远程" class="headerlink" title="10. 远程"></a>10. 远程</h3><p>  向日葵<br>  Timeviver</p>
-<h3 id="11-工具"><a href="#11-工具" class="headerlink" title="11.工具"></a>11.工具</h3><p>  everything –文件搜索<br>  sinpaste  –屏幕截图<br>  7zip  –压缩<br>  qttabbar  –文件资源管理<br>  officeboxgong  –办公小工具合集<br>  quicklook  –文件预览<br>  chmeditor –chm帮助文档编写<br>  caesium  –图片批量压缩<br>  geek  –卸载<br>  obs  –录屏<br>  ccleaner  –清理<br>  wox  – 快捷启动+搜索<br>  pandownload  –网盘资源下载<br>  ditto  –剪贴板<br>  mydock  –桌面美化<br>  wallpaper enginer  –壁纸</p>
-<h3 id="Java开发常用"><a href="#Java开发常用" class="headerlink" title="Java开发常用"></a>Java开发常用</h3><p>   eclipse<br>   sts<br>   idea<br>   postman<br>   everedit<br>   navicat<br>   filezilla<br>   Xshell<br>   HBuilder<br>   git<br>   switchhosts<br>   mysql<br>   oracle<br>   powerdesigner<br>   MarkdownPad 2<br>   vmware<br>   等。。。。。。</p>
-<h3 id="我的桌面"><a href="#我的桌面" class="headerlink" title="我的桌面"></a>我的桌面</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2020/3/Snipaste_2020-03-27_02-21-40-fdff0aa862484eef8ae028177afcd42c.png" alt="Snipaste_2020-03-27_02-21-40"></p>
-<p>????????</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>面试题目web</title>
     <url>/2020/04/07/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AEweb/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第二阶段面试题"><a href="#第二阶段面试题" class="headerlink" title="第二阶段面试题"></a>第二阶段面试题</h1><h2 id="1-1-描述Servlet调用过程？"><a href="#1-1-描述Servlet调用过程？" class="headerlink" title="1.1.描述Servlet调用过程？"></a>1.1.描述Servlet调用过程？</h2><p>答案：<br/><br>（1）在浏览器输入地址，浏览器先去查找hosts文件，将主机名翻译为ip地址，如果找不到就再去查询dns服务器将主机名翻译成ip地址。<br/><br>（2）浏览器根据ip地址和端口号访问服务器，组织http请求信息发送给服务器。<br/><br>（3）服务器收到请求后首先根据Host请求头判断当前访问的是哪台虚拟主机。<br/><br>（4）服务器根据http请求头中的请求URI判断当前访问的是哪个web应用。<br/><br>（5）服务器根据http请求头中的请求URI判断当前访问的是web应用中的哪个web资源。<br/><br>（6）检查web应用的web.xml文件，如果根据路径找到具体的servlet处理类的全路径名交给该servlet处理,如果找不到就交给缺省servlet处理。<br/><br>（7）这个过程中浏览器只知道自己发出来http请求，不久就收到了http响应，浏览器不知道也不关心服务器内部是如何处理的。浏览器和服务器之间的关系是非常单纯的，只有HTTP协议。<br/><br>（8）解析请求、封装RequestResponse对象、创建Servlet、调用Service方法都是服务器自动进行的，开发人员只需要写好Servlet配置进容器中即可，无需操心具体的底层实现。<br/></p>
@@ -3425,6 +3399,32 @@ Public void releasConnection(Connection conn){
       </categories>
       <tags>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工具推荐</title>
+    <url>/2020/04/10/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Windows软件推荐，全面武装你的电脑！提高工作工作学习效率，不一定是最好的，但是都是我用的，用起来非常方便，推荐给大家。</p>
+<h3 id="1-安全"><a href="#1-安全" class="headerlink" title="1. 安全"></a>1. 安全</h3><p>   火绒</p>
+<h3 id="2-浏览器"><a href="#2-浏览器" class="headerlink" title="2. 浏览器"></a>2. 浏览器</h3><p>   chrome<br>   火狐</p>
+<h3 id="3-下载工具"><a href="#3-下载工具" class="headerlink" title="3.下载工具"></a>3.下载工具</h3><p>   迅雷<br>   XDM<br>   IDM</p>
+<h3 id="4-网络存储"><a href="#4-网络存储" class="headerlink" title="4.网络存储"></a>4.网络存储</h3><p>   百度网盘<br>   金山文档</p>
+<h3 id="5-社交"><a href="#5-社交" class="headerlink" title="5.社交"></a>5.社交</h3><p>   微信<br>   TIM</p>
+<h3 id="6-媒体"><a href="#6-媒体" class="headerlink" title="6.媒体"></a>6.媒体</h3><p>   网易云音乐<br>   potplayer</p>
+<h3 id="7-写作"><a href="#7-写作" class="headerlink" title="7.写作"></a>7.写作</h3><p>   onenote<br>   Typora<br>   印象笔记</p>
+<h3 id="8-办公"><a href="#8-办公" class="headerlink" title="8.办公"></a>8.办公</h3><p>   office<br>   foxmail</p>
+<h3 id="9-画图"><a href="#9-画图" class="headerlink" title="9.画图"></a>9.画图</h3><p>   Xmind</p>
+<h3 id="10-远程"><a href="#10-远程" class="headerlink" title="10. 远程"></a>10. 远程</h3><p>  向日葵<br>  Timeviver</p>
+<h3 id="11-工具"><a href="#11-工具" class="headerlink" title="11.工具"></a>11.工具</h3><p>  everything –文件搜索<br>  sinpaste  –屏幕截图<br>  7zip  –压缩<br>  qttabbar  –文件资源管理<br>  officeboxgong  –办公小工具合集<br>  quicklook  –文件预览<br>  chmeditor –chm帮助文档编写<br>  caesium  –图片批量压缩<br>  geek  –卸载<br>  obs  –录屏<br>  ccleaner  –清理<br>  wox  – 快捷启动+搜索<br>  pandownload  –网盘资源下载<br>  ditto  –剪贴板<br>  mydock  –桌面美化<br>  wallpaper enginer  –壁纸</p>
+<h3 id="Java开发常用"><a href="#Java开发常用" class="headerlink" title="Java开发常用"></a>Java开发常用</h3><p>   eclipse<br>   sts<br>   idea<br>   postman<br>   everedit<br>   navicat<br>   filezilla<br>   Xshell<br>   HBuilder<br>   git<br>   switchhosts<br>   mysql<br>   oracle<br>   powerdesigner<br>   MarkdownPad 2<br>   vmware<br>   等。。。。。。</p>
+<h3 id="我的桌面"><a href="#我的桌面" class="headerlink" title="我的桌面"></a>我的桌面</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="http://www.zhangpeng.fun/upload/2020/3/Snipaste_2020-03-27_02-21-40-fdff0aa862484eef8ae028177afcd42c.png" alt="Snipaste_2020-03-27_02-21-40"></p>
+<p>????????</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
       </tags>
   </entry>
   <entry>
